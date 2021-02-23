@@ -12,6 +12,7 @@ GEM
       rack
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
+    require_all (3.0.0)
     rspec (3.10.0)
       rspec-core (~> 3.10.0)
       rspec-expectations (~> 3.10.0)
@@ -26,6 +27,7 @@ GEM
       rspec-support (~> 3.10.0)
     rspec-support (3.10.2)
     ruby2_keywords (0.0.4)
+    sequel (5.41.0)
     sinatra (2.1.0)
       mustermann (~> 1.0)
       rack (~> 2.2)
@@ -37,6 +39,7 @@ GEM
       rack-protection (= 2.1.0)
       sinatra (= 2.1.0)
       tilt (~> 2.0)
+    sqlite3 (1.4.2)
     thin (1.8.0)
       daemons (~> 1.0, >= 1.0.9)
       eventmachine (~> 1.0, >= 1.0.4)
@@ -48,9 +51,12 @@ PLATFORMS
 
 DEPENDENCIES
   rack-test!
+  require_all!
   rspec!
+  sequel!
   sinatra!
   sinatra-contrib!
+  sqlite3!
   thin!
 
 BUNDLED WITH
