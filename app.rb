@@ -1,7 +1,7 @@
 require "sinatra"
 require "sinatra/reloader"
+require "require_all"
 set :bind, "0.0.0.0"
 
-get "/hello-world" do
-    erb :index
-end
+require_all "controllers"
+require_all "models"

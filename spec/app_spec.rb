@@ -10,9 +10,9 @@ RSpec.describe "App Test" do
     Sinatra::Application
   end
 
-  describe "GET /hello-world" do
+  describe "GET /" do
     it "has a status code of 200 (OK)" do
-      get "/hello-world"
+      get "/"
       expect(last_response.status).to eq(200)
     end
 
