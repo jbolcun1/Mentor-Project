@@ -4,8 +4,9 @@ CREATE TABLE users (
     surname TEXT,
     email TEXT,
     password TEXT,
-    privalige TEXT,
-    has_mentee INTEGER
+    privilige TEXT,
+    has_mentee INTEGER,
+    last_send TEXT
 );
 
 CREATE TABLE descriptions (
