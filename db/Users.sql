@@ -4,7 +4,7 @@ CREATE TABLE users (
     surname TEXT,
     email TEXT,
     password TEXT,
-    privilige TEXT,
+    privilege TEXT,
     has_mentee INTEGER,
     last_send TEXT
 );

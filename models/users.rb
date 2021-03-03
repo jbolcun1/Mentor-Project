@@ -1,8 +1,6 @@
-require "sequel"
-require "sqlite3"
 
 #a record of a user from the database
-class User < Sequel::Model
+class Users < Sequel::Model
     
     #.name returns the concatonated first and surname
     def name
