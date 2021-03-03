@@ -5,3 +5,4 @@ set :bind, "0.0.0.0"
 
 require_all "controllers"
 require_all "models"
+require_relative "db/db"
