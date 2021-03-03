@@ -24,7 +24,8 @@ class Users < Sequel::Model
         descriptions
     end
 
-    def 
+    # def
+    # end
 end
 
 class Description < Sequel::Model
