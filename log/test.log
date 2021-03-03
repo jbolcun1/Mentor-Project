@@ -32,3 +32,8 @@ I, [2021-03-03T16:48:59.347211 #1532]  INFO -- : (0.000092s) SELECT sqlite_versi
 I, [2021-03-03T16:48:59.347619 #1532]  INFO -- : (0.000194s) PRAGMA table_info('users')
 I, [2021-03-03T16:48:59.348771 #1532]  INFO -- : (0.000126s) PRAGMA table_info('descriptions')
 
+I, [2021-03-03T20:49:06.888413 #137]  INFO -- : (0.000195s) PRAGMA foreign_keys = 1
+I, [2021-03-03T20:49:06.888573 #137]  INFO -- : (0.000019s) PRAGMA case_sensitive_like = 1
+I, [2021-03-03T20:49:06.890863 #137]  INFO -- : (0.000078s) SELECT sqlite_version()
+I, [2021-03-03T20:49:06.891126 #137]  INFO -- : (0.000118s) PRAGMA table_info('users')
+I, [2021-03-03T20:49:06.891870 #137]  INFO -- : (0.000122s) PRAGMA table_info('descriptions')
