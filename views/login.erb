@@ -17,19 +17,20 @@
       
         <main>
             <p>Fill in credentials below to log into E-Mentor:</p>
-            <p>
-                <label>Username:</label> 
-                <input type="text" name="username" id="username"
-                maxlength="50" size="30" required>
-            </p>
-            <p><label>Password:</label> 
-                <input type="text" name="username" id="username"
-                maxlength="50" size="30" required>
-            </p>
-
-            <p>
-                <button>Submit</button>
-            </p>
+            <form method="post" action="/post-login"> 
+                <p>
+                    <label>Username:</label> 
+                    <input type="text" name="username" id="username"
+                    maxlength="50" size="30" required>
+                </p>
+                <p><label>Password:</label> 
+                    <input type="password" name="password" id="username"
+                    maxlength="50" size="30" required>
+                </p>
+                <p>
+                    <input type="submit" value="Submit">
+                </p>
+            </form>
 
             <p>
                 Don't have an account? 
