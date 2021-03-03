@@ -1,1 +1,69 @@
-..
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Welcome to E-Mentor!</title>
+        <meta charset="utf-8">
+        <meta name="author" content="Team 2"/>
+        <link rel="stylesheet" href="styles/style.css">
+    </head>
+
+    <body id="Welcome Page">
+
+        
+        <header>
+          <h1>E-Mentor</h1>
+        </header>
+      
+        <main>
+            <p>Please fill in the fields below to complete registration</p>
+            <p><label>First Name:</label></p><p>
+                <input type="text" name="firstname" id="firstname"
+                maxlength="50" size="30" required>
+            </p>
+
+            <p><label>Surname:</label></p><p>
+                <input type="text" name="surname" id="surname"
+                maxlength="50" size="30" required>
+            </p>
+
+            <p><label>Email:</label></p><p>
+                <input type="text" name="email" id="email"
+                maxlength="50" size="30" required>
+            </p>
+
+            <p><label>Password:</label></p><p>
+                <input type="text" name="password" id="password"
+                maxlength="50" size="30" required>
+            </p>
+
+            <p><label>Confirm Password:</label></p><p>
+                <input type="text" name="confirmpassword" id="confirmpassword"
+                maxlength="50" size="30" required>
+            </p>
+
+            <p>Are you wanting to be a mentor or mentee?</p>
+            <input type="radio" id="mentee" name="privilege" value="mentee">
+            <label for="mentee">Mentee</label>
+            <input type="radio" id="mentor" name="privilege" value="mentor">
+            <label for="mentor">Mentor</label><br>
+
+            <p><button>Sign up</button></p>
+
+            <p>If you already have an account, <a href="login.erb">Press here</a></p>
+
+        </main>
+      
+        <footer id="top"> 
+          <p> </p>
+        </footer>
+
+        <footer id="bottom"> 
+            <p> </p>
+          </footer>
+
+
+     
+      </body>
+</html>
+
