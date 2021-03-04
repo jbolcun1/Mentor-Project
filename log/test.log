@@ -61,3 +61,29 @@ I, [2021-03-04T13:31:59.640849 #18400]  INFO -- : (0.000173s) SELECT * FROM `use
 I, [2021-03-04T13:32:14.667033 #18400]  INFO -- : (0.000170s) SELECT * FROM `users` WHERE ((`email` = 'dc10@gmail.com') AND (`password` = 'Password1')) LIMIT 1
 I, [2021-03-04T13:34:40.261151 #18400]  INFO -- : (0.000178s) SELECT * FROM `users` WHERE ((`email` = 'dc10@gmail.com') AND (`password` = 'Password1')) LIMIT 1
 I, [2021-03-04T13:34:54.995070 #18400]  INFO -- : (0.000158s) SELECT * FROM `users` WHERE ((`email` = 'dc10@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-04T17:21:01.002885 #276]  INFO -- : (0.000186s) PRAGMA foreign_keys = 1
+I, [2021-03-04T17:21:01.002977 #276]  INFO -- : (0.000015s) PRAGMA case_sensitive_like = 1
+I, [2021-03-04T17:21:01.005451 #276]  INFO -- : (0.000063s) SELECT sqlite_version()
+I, [2021-03-04T17:21:01.005705 #276]  INFO -- : (0.000124s) PRAGMA table_info('users')
+I, [2021-03-04T17:21:01.006402 #276]  INFO -- : (0.000081s) PRAGMA table_info('descriptions')
+I, [2021-03-04T17:28:12.330325 #309]  INFO -- : (0.000173s) PRAGMA foreign_keys = 1
+I, [2021-03-04T17:28:12.330432 #309]  INFO -- : (0.000019s) PRAGMA case_sensitive_like = 1
+I, [2021-03-04T17:28:12.332956 #309]  INFO -- : (0.000070s) SELECT sqlite_version()
+I, [2021-03-04T17:28:12.333249 #309]  INFO -- : (0.000140s) PRAGMA table_info('users')
+I, [2021-03-04T17:28:12.333948 #309]  INFO -- : (0.000096s) PRAGMA table_info('descriptions')
+I, [2021-03-04T17:37:59.109649 #309]  INFO -- : (0.000172s) SELECT * FROM `users` WHERE ((`email` = 'dc10@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-04T17:44:42.136538 #309]  INFO -- : (0.000164s) SELECT * FROM `users` WHERE ((`email` = 'dc10@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-04T17:57:54.610690 #309]  INFO -- : (0.000178s) SELECT * FROM `users` WHERE ((`email` = 'dc10@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-04T17:58:54.753164 #309]  INFO -- : (0.000164s) SELECT * FROM `users` WHERE ((`email` = 'dc10@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-04T18:01:19.984404 #309]  INFO -- : (0.000168s) SELECT * FROM `users` WHERE ((`email` = 'dc10@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-04T18:01:24.240385 #309]  INFO -- : (0.000154s) SELECT * FROM `users` WHERE ((`email` = 'dc10@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-04T18:01:38.720396 #309]  INFO -- : (0.000159s) SELECT * FROM `users` WHERE ((`email` = 'dc10@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-04T18:03:20.881430 #309]  INFO -- : (0.000164s) SELECT * FROM `users` WHERE ((`email` = 'dc10@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-04T18:05:31.990357 #309]  INFO -- : (0.000214s) SELECT * FROM `users` WHERE ((`email` = 'dc10@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-04T18:06:18.916338 #309]  INFO -- : (0.000162s) SELECT * FROM `users` WHERE ((`email` = 'dc10@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-04T18:06:39.821725 #309]  INFO -- : (0.000163s) SELECT * FROM `users` WHERE ((`email` = 'dc10@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-04T18:07:10.113469 #309]  INFO -- : (0.000159s) SELECT * FROM `users` WHERE ((`email` = 'dc10@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-04T18:07:31.345558 #309]  INFO -- : (0.000160s) SELECT * FROM `users` WHERE ((`email` = 'dc10@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-04T18:17:09.780239 #309]  INFO -- : (0.000163s) SELECT * FROM `users` WHERE ((`email` = 'dc10@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-04T18:20:05.483457 #309]  INFO -- : (0.000158s) SELECT * FROM `users` WHERE ((`email` = 'dc10@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-04T18:22:46.695928 #309]  INFO -- : (0.015924s) SELECT * FROM `users` WHERE ((`email` = 'dc10@gmail.com') AND (`password` = 'Password1')) LIMIT 1

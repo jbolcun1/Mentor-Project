@@ -3,7 +3,7 @@ get "/" do
 end
 
 get "/login" do
-  erb :login
+  erb :login  
 end
 
 get "/register" do
@@ -30,6 +30,22 @@ post "/post-login" do
   # else
   #     @foundUser = false
   # end
-
-  user.name.to_s
+  #s = "Welcome, #{user.name}. \n You have sucessfully logged in as a #{user.privilige.downcase}."
+  #s
+  @isLogged = false
+  @privilige = user.privilige
+  #puts user.privilige
+  if @privilige == "Mentee"
+      @isLogged = true
+      redirect "/mentee"
+  
+  elsif @privilige == "Mentor"
+    @isLogged = true
+    redirect "/mentor"
+  
+  else 
+      @isLogged = true
+      redirect "/admin"
+  end
 end
+
