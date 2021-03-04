@@ -52,3 +52,12 @@ I, [2021-03-03T19:40:28.202349 #5099]  INFO -- : (0.000086s) SELECT sqlite_versi
 I, [2021-03-03T19:40:28.202677 #5099]  INFO -- : (0.000148s) PRAGMA table_info('users')
 I, [2021-03-03T19:40:28.203457 #5099]  INFO -- : (0.000085s) PRAGMA table_info('descriptions')
 I, [2021-03-03T19:40:49.013935 #5099]  INFO -- : (0.000260s) SELECT * FROM `users` WHERE ((`email` = 'dc10@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-04T13:28:03.550676 #18400]  INFO -- : (0.002032s) PRAGMA foreign_keys = 1
+I, [2021-03-04T13:28:03.550831 #18400]  INFO -- : (0.000018s) PRAGMA case_sensitive_like = 1
+I, [2021-03-04T13:28:03.554280 #18400]  INFO -- : (0.000056s) SELECT sqlite_version()
+I, [2021-03-04T13:28:03.554569 #18400]  INFO -- : (0.000129s) PRAGMA table_xinfo('users')
+I, [2021-03-04T13:28:03.555147 #18400]  INFO -- : (0.000085s) PRAGMA table_xinfo('descriptions')
+I, [2021-03-04T13:31:59.640849 #18400]  INFO -- : (0.000173s) SELECT * FROM `users` WHERE ((`email` = 'c10@gmail.com') AND (`password` = 'Passsowrd1')) LIMIT 1
+I, [2021-03-04T13:32:14.667033 #18400]  INFO -- : (0.000170s) SELECT * FROM `users` WHERE ((`email` = 'dc10@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-04T13:34:40.261151 #18400]  INFO -- : (0.000178s) SELECT * FROM `users` WHERE ((`email` = 'dc10@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-04T13:34:54.995070 #18400]  INFO -- : (0.000158s) SELECT * FROM `users` WHERE ((`email` = 'dc10@gmail.com') AND (`password` = 'Password1')) LIMIT 1
