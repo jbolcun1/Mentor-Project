@@ -7,6 +7,7 @@ get "/login" do
 end
 
 get "/register" do
+  @user = User.new
   erb :register
 end
 
@@ -37,6 +38,7 @@ post "/post-login" do
   #puts user.privilige
   if @privilige == "Mentee"
       @isLogged = true
+      @id = user.id
       redirect "/mentee"
   
   elsif @privilige == "Mentor"
@@ -49,3 +51,14 @@ post "/post-login" do
   end
 end
 
+post "/post-register" do
+  puts params
+  @user = User.new
+  @user.load(params)
+  if @user.valid?
+    @user.save_changes
+    redirect "/login"
+  end
+
+  erb :register
+end

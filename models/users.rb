@@ -1,13 +1,13 @@
 # a record of a user from the database
 class Users < Sequel::Model
   # .name returns the concatonated first and surname
-  def name
+  def name()
     "#{first_name} #{surname}"
   end
 
   # .getDescriptions returns a string array of all of the user's
   # descriptions
-  def getDescriptions
+  def getDescriptions(id)
     # retrieves a dataset from the database
     dataset = Description.where(id: id)
     descriptions = []
@@ -22,8 +22,19 @@ class Users < Sequel::Model
     descriptions
   end
 
-  # def
-  # end
+  def load(params)
+    self.first_name = params.fetch("first_name", "").strip
+    self.surname = params.fetch("surname", "").strip
+    self.email = params.fetch("email", "").strip
+    self.password = params.fetch("password", "").
+    self.privilege = params.fetch("privilege", "").strip
+  end
+  def validate(params) 
+    super
+    if params.fetch("password") != params.fetch("confirmpassword")
+      errors.add("password", "The two passwords have to be the same!")
+    end
+  end
 end
 
 class Description < Sequel::Model
