@@ -17,40 +17,58 @@
     
         <main>
             <p>Please fill in the fields below to complete registration</p>
-            <p><label>First Name:</label></p><p>
-                <input type="text" name="firstname" id="firstname"
-                maxlength="50" size="30" required>
-            </p>
 
-            <p><label>Surname:</label></p><p>
-                <input type="text" name="surname" id="surname"
-                maxlength="50" size="30" required>
-            </p>
+            <% unless @user.errors.size.zero? %>
+            <p><strong class="error">Please correct the errors below:com1001-code/forms/football_players/views/add.erb</strong></p>
+            <% end %>
 
-            <p><label>Email:</label></p><p>
-                <input type="text" name="email" id="email"
-                maxlength="50" size="30" required>
-            </p>
+            <form method="post" action="/post-register">
+                <p><label>First Name:</label></p><p>
+                    <input type="text" name="first_name" id="firstname"
+                    maxlength="50" size="30" required>
+                </p>
 
-            <p><label>Password:</label></p><p>
-                <input type="text" name="password" id="password"
-                maxlength="50" size="30" required>
-            </p>
+                <p><label>Surname:</label></p><p>
+                    <input type="text" name="surname" id="surname"
+                    maxlength="50" size="30" required>
+                </p>
 
-            <p><label>Confirm Password:</label></p><p>
-                <input type="text" name="confirmpassword" id="confirmpassword"
-                maxlength="50" size="30" required>
-            </p>
+                <p><label>Email:</label></p><p>
+                    <input type="email" name="email" id="email"
+                    maxlength="50" size="30" required>
+                </p>
 
-            <p>Are you wanting to be a mentor or mentee?</p>
-            <input type="radio" id="mentee" name="privilege" value="mentee">
-            <label for="mentee">Mentee</label>
-            <input type="radio" id="mentor" name="privilege" value="mentor">
-            <label for="mentor">Mentor</label><br>
+                <>
 
-            <p><button>Sign up</button></p>
+                <p><label>Password:</label></p><p>
+                    <input type="password" name="password" id="password"
+                    maxlength="50" size="30" required>
+                </p>
 
-            <p>If you already have an account, <a href="login.erb">Press here</a></p>
+                <p><label>Confirm Password:</label></p><p>
+                    <input type="password" name="confirmpassword" id="confirmpassword"
+                    maxlength="50" size="30" required>
+                </p>
+
+                <% if @user.errors.include?("password") %>
+                    <% @user.errors["password"].each do |error| %>
+                    <p class="error"><strong>Password <%= error %></strong></p>
+                    <% end %>
+                <% end %>
+
+                <p>Are you wanting to be a mentor or mentee?</p>
+                <input type="radio" id="mentee" name="privilege" value="mentee">
+                <label for="mentee">Mentee</label>
+                <input type="radio" id="mentor" name="privilege" value="mentor">
+                <label for="mentor">Mentor</label><br>
+
+                <input type="submit" value="Sign Up">
+            </form>
+
+
+
+            <p>If you already have an account, <a href="/login">Press here</a></p>
+
 
         </main>
     
