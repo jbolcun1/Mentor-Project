@@ -7,7 +7,7 @@ get "/login" do
 end
 
 get "/register" do
-  @user = User.new
+  @user = Users.new
   erb :register
 end
 
@@ -16,8 +16,8 @@ post "/post-login" do
   password_u = params.fetch("password")
   # puts emailU
   # puts passwordU
-  user = Users.first(email: email_u, password: password_u)
-  puts user
+  @user = Users.first(email: email_u, password: password_u)
+  puts @user
   # if !user.empty?
   #     @foundUser = true
   #     @privilege = user.privilege
@@ -34,12 +34,13 @@ post "/post-login" do
   #s = "Welcome, #{user.name}. \n You have sucessfully logged in as a #{user.privilige.downcase}."
   #s
   @isLogged = false
-  @privilige = user.privilige
+  @privilige = @user.privilige
   #puts user.privilige
   if @privilige == "Mentee"
       @isLogged = true
-      @id = user.id
-      redirect "/mentee"
+      @id = @user.id
+      puts @id
+      redirect "/mentee?id=#{@id}"
   
   elsif @privilige == "Mentor"
     @isLogged = true
