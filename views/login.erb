@@ -12,24 +12,25 @@
 
 
         <header>
-          <h1>E-Mentor</h1>
+            <h1>E-Mentor</h1>
         </header>
-      
+
         <main>
             <p>Fill in credentials below to log into E-Mentor:</p>
-            <p>
-                <label>Username:</label> 
-                <input type="text" name="username" id="username"
-                maxlength="50" size="30" required>
-            </p>
-            <p><label>Password:</label> 
-                <input type="text" name="username" id="username"
-                maxlength="50" size="30" required>
-            </p>
-
-            <p>
-                <button>Submit</button>
-            </p>
+            <form method="post" action="/post-login"> 
+                <p>
+                    <label>Email:</label> 
+                    <input type="text" name="email" id="email"
+                    maxlength="50" size="30" required>
+                </p>
+                <p><label>Password:</label> 
+                    <input type="password" name="password" id="password"
+                    maxlength="50" size="30" required>
+                </p>
+                <p>
+                    <input type="submit" value="Submit">
+                </p>
+            </form>
 
             <p>
                 Don't have an account? 
@@ -37,15 +38,14 @@
             </p>
 
         </main>
-      
+
         <footer id="top"> 
-          <p> </p>
+            <p> </p>
         </footer>
 
         <footer id="bottom"> 
             <p> </p>
-          </footer>
+        </footer>
 
-      </body>
+    </body>
 </html>
-

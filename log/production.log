@@ -1,0 +1,3 @@
+# Logfile created on 2021-03-03 14:11:20 +0000 by logger.rb/66358
+I, [2021-03-03T14:11:20.150150 #234]  INFO -- : (0.010520s) PRAGMA foreign_keys = 1
+I, [2021-03-03T14:11:20.150274 #234]  INFO -- : (0.000020s) PRAGMA case_sensitive_like = 1

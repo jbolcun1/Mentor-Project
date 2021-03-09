@@ -23,6 +23,9 @@ class Users < Sequel::Model
         #returns an array of strings 
         descriptions
     end
+
+    # def
+    # end
 end
 
 class Description < Sequel::Model
