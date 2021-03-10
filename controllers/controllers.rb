@@ -29,7 +29,8 @@ post "/post-login" do
         @isLogged = true
         @id = @user.id
         puts @id
-        redirect "/mentee?id=#{@id}"
+        response.set_cookie("id", @id)
+        redirect "/mentee"
     elsif @privilige == "Mentor"
       @isLogged = true
       redirect "/mentor"
