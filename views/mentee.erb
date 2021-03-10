@@ -16,8 +16,13 @@
       
         <main>
             <p>Your Mentee Page</p>
-            <%= @s %> 
-        
+            <%= @s %>
+            <p>
+              Please input the Job Title and Industry Sector of the mentor you want to find!
+            </p>
+            <form method="post" action="/mentee">
+              <%= erb :"common/industrySector" %>
+            </form>
         </main>
       
         <footer id="top"> 
