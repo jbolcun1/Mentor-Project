@@ -3,11 +3,14 @@ get "/" do
 end
 
 get "/login" do
+  if params.fetch("error","0") == "1"
+    @errorCorrect = true
+  end
   erb :login  
 end
 
 get "/register" do
-  @user = Users.new
+  @user = User.new
   erb :register
 end
 
@@ -16,40 +19,28 @@ post "/post-login" do
   password_u = params.fetch("password")
   # puts emailU
   # puts passwordU
-  @user = Users.first(email: email_u, password: password_u)
+  @user = User.first(email: email_u, password: password_u)
   puts @user
-  # if !user.empty?
-  #     @foundUser = true
-  #     @privilege = user.privilege
-  #     if @privilege == "mentor"
-  #         redirect "/mentorW"
-  #     elsif @privilege == "mentee"
-  #         redirect "/menteeW"
-  #     else
-  #         redirect "/admin"
-  #     end
-  # else
-  #     @foundUser = false
-  # end
-  #s = "Welcome, #{user.name}. \n You have sucessfully logged in as a #{user.privilige.downcase}."
-  #s
-  @isLogged = false
-  @privilige = @user.privilige
-  #puts user.privilige
-  if @privilige == "Mentee"
+  if @user != nil 
+    @isLogged = false
+    @privilige = @user.privilige
+    #puts user.privilige
+    if @privilige == "Mentee"
+        @isLogged = true
+        @id = @user.id
+        puts @id
+        redirect "/mentee?id=#{@id}"
+    elsif @privilige == "Mentor"
       @isLogged = true
-      @id = @user.id
-      puts @id
-      redirect "/mentee?id=#{@id}"
-  
-  elsif @privilige == "Mentor"
-    @isLogged = true
-    redirect "/mentor"
-  
-  else 
-      @isLogged = true
-      redirect "/admin"
+      redirect "/mentor"
+    else 
+        @isLogged = true
+        redirect "/admin"
+    end
+  else
+    redirect "/login?error=1"
   end
+
 end
 
 post "/post-register" do
@@ -60,6 +51,5 @@ post "/post-register" do
     @user.save_changes
     redirect "/login"
   end
-
   erb :register
 end
