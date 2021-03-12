@@ -18,5 +18,6 @@ source "https://rubygems.org" do
   # Rubocop
   gem 'rubocop', require: false
   gem 'rubocop-rspec', require: false
+  gem 'rubocop-sequel'
   
 end

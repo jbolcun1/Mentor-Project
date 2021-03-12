@@ -1,8 +1,10 @@
-require: rubocop-rspec
+require:
+  - rubocop-rspec
+  - rubocop-sequel
 
 AllCops:
     NewCops: enable
-    
+
 Style/FrozenStringLiteralComment:
   Enabled: false
 
