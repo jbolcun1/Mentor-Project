@@ -10,7 +10,9 @@ get "/login" do
 end
 
 get "/register" do
-  @user = User.new
+  if params.fetch("error","0") == "1"
+    @errorCorrect = true
+  end
   erb :register
 end
 
@@ -45,12 +47,14 @@ post "/post-login" do
 end
 
 post "/post-register" do
-  puts params
   @user = User.new
+  puts params.fetch("privilege", "")
   @user.load(params)
-  if @user.valid?
+  if @user.validPass(params)
     @user.save_changes
     redirect "/login"
+  else 
+    redirect "/register?error=1"
   end
   erb :register
 end

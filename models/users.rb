@@ -23,19 +23,24 @@ class User < Sequel::Model
   end
 
   def load(params)
+    puts params
     self.first_name = params.fetch("first_name", "").strip
     self.surname = params.fetch("surname", "").strip
     self.email = params.fetch("email", "").strip
     self.password = params.fetch("password", "").strip
-    self.privilege = params.fetch("privilege", "").strip
+    self.privilige = params.fetch("privilege", "").strip
+    self.has_mentee = 0
+
   end
-    
-  def validate(params) 
-    super
-    if params.fetch("password") != params.fetch("confirmpassword")
-      errors.add("password", "The two passwords have to be the same!")
+  
+  def validPass(params) 
+    if params.fetch("password") == params.fetch("confirmpassword")
+      return true
+    else
+      return false
     end
-  end   
+  end
+
 end
 
 class Description < Sequel::Model
