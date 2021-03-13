@@ -8,19 +8,20 @@ get "/mentee" do
   puts @user
   job_TitleM = params.fetch("job_Title", "")
   industry_SectorM = params.fetch("industry_Sector", "")
-  puts job_TitleM
-  puts industry_SectorM
+  # puts job_TitleM
+  # puts industry_SectorM
 
   if job_TitleM != ""
-    @mentors = User.where(job_Title: job_TitleM).or(job_Induestry: industry_SectorM)
-    puts @mentors
+    @table_Show = true 
+    @mentors = User.where(job_Title: job_TitleM).or(industry_Sector: industry_SectorM)
+    puts "Checked"
     if !@mentors.empty?
       puts "Here"
       @mentors.each do |mentor|
         puts mentor.name
       end
     else 
-      puts "Outta luck"
+      @error = true
     end
   end
   @s = "Welcome, #{@user.name}. \n You have sucessfully logged in as a #{@user.privilege.downcase}."
