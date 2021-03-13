@@ -25,15 +25,15 @@ post "/post-login" do
   puts @user
   if @user != nil 
     @isLogged = false
-    @privilige = @user.privilige
+    @privilege = @user.privilege
     #puts user.privilige
-    if @privilige == "Mentee"
-        @isLogged = true
+    if @privilege == "Mentee"
+        @privilege = true
         @id = @user.id
         puts @id
         response.set_cookie("id", @id)
         redirect "/mentee"
-    elsif @privilige == "Mentor"
+    elsif @privilege == "Mentor"
       @isLogged = true
       redirect "/mentor"
     else 
@@ -52,7 +52,14 @@ post "/post-register" do
   @user.load(params)
   if @user.validPass(params)
     @user.save_changes
-    redirect "/login"
+    @id = @user.id
+    response.set_cookie("id", @id)
+    @privilege = @user.privilege
+    if @privilege == "Mentee"
+        redirect "/mentee-register"
+    elsif @privilege == "Mentor"
+      redirect "/mentor-register"
+    end
   else 
     redirect "/register?error=1"
   end

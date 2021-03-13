@@ -205,3 +205,283 @@ I, [2021-03-09T12:10:20.321324 #836]  INFO -- : (0.000172s) SELECT * FROM `users
 I, [2021-03-09T12:10:40.432683 #836]  INFO -- : (0.000164s) SELECT * FROM `users` WHERE ((`email` = 'dc10@gmail.com') AND (`password` = 'Password1')) LIMIT 1
 I, [2021-03-09T12:10:40.541845 #836]  INFO -- : (0.000160s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
 
+I, [2021-03-10T18:32:52.031204 #279]  INFO -- : (0.000205s) PRAGMA foreign_keys = 1
+I, [2021-03-10T18:32:52.031370 #279]  INFO -- : (0.000021s) PRAGMA case_sensitive_like = 1
+I, [2021-03-10T18:32:52.039437 #279]  INFO -- : (0.000073s) SELECT sqlite_version()
+I, [2021-03-10T18:32:52.039702 #279]  INFO -- : (0.000122s) PRAGMA table_info('users')
+I, [2021-03-10T18:32:52.040380 #279]  INFO -- : (0.000078s) PRAGMA table_info('descriptions')
+I, [2021-03-10T18:33:58.279393 #354]  INFO -- : (0.000161s) PRAGMA foreign_keys = 1
+I, [2021-03-10T18:33:58.279484 #354]  INFO -- : (0.000014s) PRAGMA case_sensitive_like = 1
+I, [2021-03-10T18:33:58.284257 #354]  INFO -- : (0.000057s) SELECT sqlite_version()
+I, [2021-03-10T18:33:58.284510 #354]  INFO -- : (0.000129s) PRAGMA table_info('users')
+I, [2021-03-10T18:33:58.285123 #354]  INFO -- : (0.000074s) PRAGMA table_info('descriptions')
+I, [2021-03-10T18:34:18.409151 #354]  INFO -- : (0.000771s) SELECT * FROM `users` WHERE ((`email` = 'dc10@gmail.com') AND (`password` = 'Password')) LIMIT 1
+I, [2021-03-10T18:34:24.950835 #354]  INFO -- : (0.000171s) SELECT * FROM `users` WHERE ((`email` = 'dc10@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-10T18:35:10.345795 #354]  INFO -- : (0.000212s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-10T18:38:28.270653 #354]  INFO -- : (0.000146s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-10T18:38:29.385125 #354]  INFO -- : (0.000148s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-10T19:01:37.462171 #354]  INFO -- : (0.000142s) SELECT * FROM `users` WHERE ((`email` = 'dc10@gmail.com') AND (`password` = 'wasd')) LIMIT 1
+I, [2021-03-10T19:02:00.033943 #354]  INFO -- : (0.000163s) SELECT * FROM `users` WHERE ((`email` = 'dc10@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-10T19:02:00.157005 #354]  INFO -- : (0.000154s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-10T19:29:05.508674 #354]  INFO -- : (0.000179s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-10T19:29:14.795070 #354]  INFO -- : (0.000150s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-10T19:30:22.793104 #354]  INFO -- : (0.000147s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-10T19:30:34.346881 #354]  INFO -- : (0.000136s) SELECT * FROM `users` WHERE (`id` IS NULL) LIMIT 1
+I, [2021-03-10T19:33:32.609228 #3692]  INFO -- : (0.000263s) PRAGMA foreign_keys = 1
+I, [2021-03-10T19:33:32.609382 #3692]  INFO -- : (0.000021s) PRAGMA case_sensitive_like = 1
+I, [2021-03-10T19:33:32.617522 #3692]  INFO -- : (0.000081s) SELECT sqlite_version()
+I, [2021-03-10T19:33:32.617942 #3692]  INFO -- : (0.000220s) PRAGMA table_info('users')
+I, [2021-03-10T19:33:32.618825 #3692]  INFO -- : (0.000084s) PRAGMA table_info('descriptions')
+I, [2021-03-10T19:33:43.442174 #3692]  INFO -- : (0.005881s) SELECT * FROM `users` WHERE ((`email` = 'dc10@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-10T19:33:43.582331 #3692]  INFO -- : (0.000148s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-10T19:33:49.674422 #3692]  INFO -- : (0.000140s) SELECT * FROM `users` WHERE (`id` IS NULL) LIMIT 1
+I, [2021-03-10T19:35:03.322421 #3692]  INFO -- : (0.000202s) SELECT * FROM `users` WHERE (`id` IS NULL) LIMIT 1
+I, [2021-03-10T19:43:35.238548 #3692]  INFO -- : (0.000142s) SELECT * FROM `users` WHERE ((`email` = 'dc10@gmail.com') AND (`password` = 'wasd')) LIMIT 1
+I, [2021-03-10T19:43:42.689378 #3692]  INFO -- : (0.000165s) SELECT * FROM `users` WHERE ((`email` = 'dc10@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-10T19:43:42.818090 #3692]  INFO -- : (0.000151s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-10T19:43:58.754657 #3692]  INFO -- : (0.000201s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-10T19:44:01.704571 #3692]  INFO -- : (0.000130s) SELECT * FROM `users` WHERE (`id` = 'job_Title=qweqinduystry_Sector=Charity and voluntary work') LIMIT 1
+I, [2021-03-10T19:51:54.727021 #4992]  INFO -- : (0.000183s) PRAGMA foreign_keys = 1
+I, [2021-03-10T19:51:54.727126 #4992]  INFO -- : (0.000014s) PRAGMA case_sensitive_like = 1
+I, [2021-03-10T19:51:54.732173 #4992]  INFO -- : (0.000064s) SELECT sqlite_version()
+I, [2021-03-10T19:51:54.732440 #4992]  INFO -- : (0.000114s) PRAGMA table_info('users')
+I, [2021-03-10T19:51:54.733072 #4992]  INFO -- : (0.000078s) PRAGMA table_info('descriptions')
+I, [2021-03-10T19:52:04.979452 #4992]  INFO -- : (0.000184s) SELECT * FROM `users` WHERE ((`email` = 'dc10@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-10T19:52:05.090322 #4992]  INFO -- : (0.000155s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-10T19:52:11.370089 #4992]  INFO -- : (0.000160s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-10T19:53:55.875157 #4992]  INFO -- : (0.000150s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-10T19:54:02.035958 #4992]  INFO -- : (0.000186s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-10T19:54:33.358386 #4992]  INFO -- : (0.000140s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-10T19:55:29.570672 #4992]  INFO -- : (0.000150s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-10T19:55:34.631561 #4992]  INFO -- : (0.000161s) SELECT * FROM `users` WHERE ((`email` = 'dc10@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-10T19:55:34.751607 #4992]  INFO -- : (0.000938s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-10T19:55:41.194032 #4992]  INFO -- : (0.000178s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-10T19:56:11.499278 #4992]  INFO -- : (0.000145s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-10T19:58:03.172743 #4992]  INFO -- : (0.000173s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-10T19:58:23.130158 #4992]  INFO -- : (0.000150s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-10T19:58:51.161014 #4992]  INFO -- : (0.000212s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-10T20:06:34.253784 #5512]  INFO -- : (0.000211s) PRAGMA foreign_keys = 1
+I, [2021-03-10T20:06:34.253944 #5512]  INFO -- : (0.000023s) PRAGMA case_sensitive_like = 1
+I, [2021-03-10T20:07:16.600710 #5586]  INFO -- : (0.000174s) PRAGMA foreign_keys = 1
+I, [2021-03-10T20:07:16.600816 #5586]  INFO -- : (0.000014s) PRAGMA case_sensitive_like = 1
+I, [2021-03-10T20:07:16.605918 #5586]  INFO -- : (0.000071s) SELECT sqlite_version()
+I, [2021-03-10T20:07:16.606226 #5586]  INFO -- : (0.000133s) PRAGMA table_info('users')
+I, [2021-03-10T20:07:16.606997 #5586]  INFO -- : (0.000084s) PRAGMA table_info('descriptions')
+I, [2021-03-10T20:07:31.776881 #5586]  INFO -- : (0.000212s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-10T20:07:46.958186 #5586]  INFO -- : (0.000173s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-10T20:08:13.278272 #5586]  INFO -- : (0.000178s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-10T20:08:43.870058 #5586]  INFO -- : (0.000170s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-10T20:08:52.933695 #5586]  INFO -- : (0.000166s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-11T10:30:20.402375 #242]  INFO -- : (0.000198s) PRAGMA foreign_keys = 1
+I, [2021-03-11T10:30:20.408208 #242]  INFO -- : (0.000035s) PRAGMA case_sensitive_like = 1
+I, [2021-03-11T10:30:20.413772 #242]  INFO -- : (0.000088s) SELECT sqlite_version()
+I, [2021-03-11T10:30:20.414101 #242]  INFO -- : (0.000147s) PRAGMA table_info('users')
+I, [2021-03-11T10:30:20.414984 #242]  INFO -- : (0.000116s) PRAGMA table_info('descriptions')
+I, [2021-03-11T10:31:50.680809 #242]  INFO -- : (0.000183s) SELECT * FROM `users` WHERE ((`email` = 'dc10@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-11T10:31:50.787371 #242]  INFO -- : (0.000165s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-11T10:31:54.514179 #242]  INFO -- : (0.000167s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-11T10:33:02.438517 #242]  INFO -- : (0.000202s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-11T10:33:19.899329 #242]  INFO -- : (0.000165s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-11T10:33:32.529008 #242]  INFO -- : (0.000160s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-11T10:34:59.876158 #242]  INFO -- : (0.000182s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+E, [2021-03-11T10:34:59.876510 #242] ERROR -- : SQLite3::SQLException: no such column: industry_Sector: SELECT * FROM `users` WHERE ((`job_Title` = 'qweq') OR (`industry_Sector` = 'Accountancy, banking and finance'))
+I, [2021-03-11T10:35:27.986993 #242]  INFO -- : (0.000200s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+E, [2021-03-11T10:35:27.988559 #242] ERROR -- : SQLite3::SQLException: no such column: industry_Sector: SELECT * FROM `users` WHERE ((`job_Title` = 'qweq') OR (`industry_Sector` = 'Accountancy, banking and finance'))
+I, [2021-03-11T10:35:41.431153 #242]  INFO -- : (0.000620s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+E, [2021-03-11T10:35:41.431489 #242] ERROR -- : SQLite3::SQLException: no such column: industry_Sector: SELECT * FROM `users` WHERE ((`job_Title` = 'qweq') OR (`industry_Sector` = 'Accountancy, banking and finance'))
+I, [2021-03-11T10:35:43.357134 #242]  INFO -- : (0.000169s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+E, [2021-03-11T10:35:43.357487 #242] ERROR -- : SQLite3::SQLException: no such column: industry_Sector: SELECT * FROM `users` WHERE ((`job_Title` = 'qweq') OR (`industry_Sector` = 'Accountancy, banking and finance'))
+I, [2021-03-11T10:35:45.855855 #242]  INFO -- : (0.000166s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+E, [2021-03-11T10:35:45.856237 #242] ERROR -- : SQLite3::SQLException: no such column: industry_Sector: SELECT * FROM `users` WHERE ((`job_Title` = 'qweq') OR (`industry_Sector` = 'Accountancy, banking and finance'))
+I, [2021-03-11T10:49:30.645289 #242]  INFO -- : (0.000199s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+E, [2021-03-11T10:49:30.645736 #242] ERROR -- : SQLite3::SQLException: no such column: industry_Sector: SELECT * FROM `users` WHERE ((`job_Title` = 'qweq') OR (`industry_Sector` = 'Accountancy, banking and finance'))
+I, [2021-03-11T10:49:41.765482 #242]  INFO -- : (0.000181s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+E, [2021-03-11T10:49:41.765807 #242] ERROR -- : SQLite3::SQLException: no such column: industry_Sector: SELECT * FROM `users` WHERE ((`job_Title` = 'qweq') OR (`industry_Sector` = 'Accountancy, banking and finance'))
+I, [2021-03-11T10:49:46.599993 #242]  INFO -- : (0.000257s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-11T10:49:46.600518 #242]  INFO -- : (0.000170s) SELECT * FROM `users` WHERE ((`job_Title` = 'qweq') OR (`job_Induestry` = 'Accountancy, banking and finance'))
+I, [2021-03-11T10:49:59.764960 #242]  INFO -- : (0.000161s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-11T10:50:04.723459 #242]  INFO -- : (0.000158s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-11T10:50:04.723868 #242]  INFO -- : (0.000123s) SELECT * FROM `users` WHERE ((`job_Title` = 'qweq') OR (`job_Induestry` = 'Accountancy, banking and finance'))
+I, [2021-03-11T10:50:33.832120 #242]  INFO -- : (0.000152s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-11T10:50:33.832571 #242]  INFO -- : (0.000128s) SELECT * FROM `users` WHERE ((`job_Title` = 'qweq') OR (`job_Induestry` = 'Accountancy, banking and finance'))
+I, [2021-03-11T10:50:58.440574 #242]  INFO -- : (0.000157s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-11T10:50:58.440960 #242]  INFO -- : (0.000097s) SELECT * FROM `users` WHERE ((`job_Title` = 'qweq') OR (`job_Induestry` = 'Accountancy, banking and finance'))
+I, [2021-03-11T10:51:02.515202 #242]  INFO -- : (0.000163s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-11T10:51:02.515655 #242]  INFO -- : (0.000115s) SELECT * FROM `users` WHERE ((`job_Title` = 'qwewqe') OR (`job_Induestry` = 'Accountancy, banking and finance'))
+I, [2021-03-11T10:51:49.785005 #242]  INFO -- : (0.000152s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-11T10:51:49.785422 #242]  INFO -- : (0.000099s) SELECT * FROM `users` WHERE ((`job_Title` = 'qwewqe') OR (`job_Induestry` = 'Accountancy, banking and finance'))
+I, [2021-03-11T10:52:55.110274 #242]  INFO -- : (0.000151s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-11T10:52:55.110685 #242]  INFO -- : (0.000076s) SELECT 1 AS 'one' FROM `users` WHERE ((`job_Title` = 'qwewqe') OR (`job_Induestry` = 'Accountancy, banking and finance')) LIMIT 1
+I, [2021-03-11T10:52:55.110887 #242]  INFO -- : (0.000090s) SELECT * FROM `users` WHERE ((`job_Title` = 'qwewqe') OR (`job_Induestry` = 'Accountancy, banking and finance'))
+I, [2021-03-11T10:52:59.665565 #242]  INFO -- : (0.000152s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-11T10:53:01.207162 #242]  INFO -- : (0.000159s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-11T10:53:01.207615 #242]  INFO -- : (0.000083s) SELECT 1 AS 'one' FROM `users` WHERE ((`job_Title` = 'qweq') OR (`job_Induestry` = 'Accountancy, banking and finance')) LIMIT 1
+I, [2021-03-12T16:51:32.205557 #280]  INFO -- : (0.000197s) PRAGMA foreign_keys = 1
+I, [2021-03-12T16:51:32.212682 #280]  INFO -- : (0.000040s) PRAGMA case_sensitive_like = 1
+I, [2021-03-12T16:51:32.218389 #280]  INFO -- : (0.000087s) SELECT sqlite_version()
+I, [2021-03-12T16:51:32.218686 #280]  INFO -- : (0.000138s) PRAGMA table_info('users')
+I, [2021-03-12T16:51:32.219521 #280]  INFO -- : (0.000100s) PRAGMA table_info('descriptions')
+I, [2021-03-12T16:52:22.331757 #280]  INFO -- : (0.000209s) SELECT * FROM `users` WHERE ((`email` = 'dc10@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-12T16:52:24.081491 #280]  INFO -- : (0.000193s) SELECT * FROM `users` WHERE ((`email` = 'dc10@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-12T16:52:25.045552 #280]  INFO -- : (0.000860s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-12T17:00:20.066430 #701]  INFO -- : (0.000179s) PRAGMA foreign_keys = 1
+I, [2021-03-12T17:00:20.066576 #701]  INFO -- : (0.000020s) PRAGMA case_sensitive_like = 1
+I, [2021-03-12T17:00:20.072272 #701]  INFO -- : (0.000086s) SELECT sqlite_version()
+I, [2021-03-12T17:00:20.072692 #701]  INFO -- : (0.000210s) PRAGMA table_info('users')
+I, [2021-03-12T17:00:20.073757 #701]  INFO -- : (0.000090s) PRAGMA table_info('descriptions')
+I, [2021-03-12T17:12:36.310645 #1064]  INFO -- : (0.000174s) PRAGMA foreign_keys = 1
+I, [2021-03-12T17:12:36.310768 #1064]  INFO -- : (0.000020s) PRAGMA case_sensitive_like = 1
+I, [2021-03-12T17:12:36.316579 #1064]  INFO -- : (0.000089s) SELECT sqlite_version()
+I, [2021-03-12T17:12:36.316900 #1064]  INFO -- : (0.000146s) PRAGMA table_info('users')
+I, [2021-03-12T17:12:36.317708 #1064]  INFO -- : (0.000087s) PRAGMA table_info('descriptions')
+I, [2021-03-12T17:24:55.329602 #1750]  INFO -- : (0.000196s) PRAGMA foreign_keys = 1
+I, [2021-03-12T17:24:55.329719 #1750]  INFO -- : (0.000015s) PRAGMA case_sensitive_like = 1
+I, [2021-03-12T17:24:55.336655 #1750]  INFO -- : (0.000097s) SELECT sqlite_version()
+I, [2021-03-12T17:24:55.336997 #1750]  INFO -- : (0.000146s) PRAGMA table_info('users')
+I, [2021-03-12T17:24:55.337799 #1750]  INFO -- : (0.000087s) PRAGMA table_info('descriptions')
+I, [2021-03-12T17:25:42.108152 #1750]  INFO -- : (0.000041s) BEGIN
+I, [2021-03-12T17:25:42.124887 #1750]  INFO -- : (0.004014s) INSERT INTO `users` (`first_name`, `surname`, `email`, `password`, `privilige`) VALUES ('Ariful', 'Haque', 'ArifulH@gmail.com', 'Password1', 'Mentee')
+I, [2021-03-12T17:25:42.125228 #1750]  INFO -- : (0.000145s) SELECT * FROM `users` WHERE `id` = 2
+I, [2021-03-12T17:25:42.224363 #1750]  INFO -- : (0.099035s) COMMIT
+I, [2021-03-12T17:26:45.356874 #1750]  INFO -- : (0.000187s) SELECT * FROM `users` WHERE ((`email` = 'ArifulH@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-12T17:26:45.478703 #1750]  INFO -- : (0.000167s) SELECT * FROM `users` WHERE (`id` = '2') LIMIT 1
+I, [2021-03-12T17:36:17.496907 #1750]  INFO -- : (0.000052s) BEGIN
+I, [2021-03-12T17:36:17.497412 #1750]  INFO -- : (0.000272s) INSERT INTO `users` (`first_name`, `surname`, `email`, `password`, `privilige`) VALUES ('AAAAAAA', 'wqewqe', 'asd@gmail.com', 'qwe', 'Mentee')
+I, [2021-03-12T17:36:17.497684 #1750]  INFO -- : (0.000129s) SELECT * FROM `users` WHERE `id` = 3
+I, [2021-03-12T17:36:17.665360 #1750]  INFO -- : (0.167581s) COMMIT
+I, [2021-03-12T17:36:59.418333 #1750]  INFO -- : (0.000055s) BEGIN
+I, [2021-03-12T17:36:59.418765 #1750]  INFO -- : (0.000221s) INSERT INTO `users` (`first_name`, `surname`, `email`, `password`, `privilige`) VALUES ('AAAAAAA', 'wqewqe', 'asd@gmail.com', 'qwe', 'Mentor')
+I, [2021-03-12T17:36:59.419013 #1750]  INFO -- : (0.000112s) SELECT * FROM `users` WHERE `id` = 4
+I, [2021-03-12T17:36:59.533801 #1750]  INFO -- : (0.114691s) COMMIT
+I, [2021-03-12T17:37:33.542947 #2200]  INFO -- : (0.000236s) PRAGMA foreign_keys = 1
+I, [2021-03-12T17:37:33.543101 #2200]  INFO -- : (0.000020s) PRAGMA case_sensitive_like = 1
+I, [2021-03-12T17:37:33.551166 #2200]  INFO -- : (0.000118s) SELECT sqlite_version()
+I, [2021-03-12T17:37:33.551593 #2200]  INFO -- : (0.000199s) PRAGMA table_info('users')
+I, [2021-03-12T17:37:33.552777 #2200]  INFO -- : (0.000117s) PRAGMA table_info('descriptions')
+I, [2021-03-12T17:38:00.975467 #2200]  INFO -- : (0.000054s) BEGIN
+I, [2021-03-12T17:38:00.976631 #2200]  INFO -- : (0.000562s) INSERT INTO `users` (`first_name`, `surname`, `email`, `password`, `privilige`, `has_mentee`) VALUES ('Ariful123', 'Haque123', 'ArifulH6464@gmail.com', 'ppp', 'Mentor', 0)
+I, [2021-03-12T17:38:00.977037 #2200]  INFO -- : (0.000159s) SELECT * FROM `users` WHERE `id` = 5
+I, [2021-03-12T17:38:01.074992 #2200]  INFO -- : (0.096623s) COMMIT
+I, [2021-03-12T17:58:13.236658 #3600]  INFO -- : (0.000197s) PRAGMA foreign_keys = 1
+I, [2021-03-12T17:58:13.236821 #3600]  INFO -- : (0.000020s) PRAGMA case_sensitive_like = 1
+I, [2021-03-12T17:58:13.242220 #3600]  INFO -- : (0.000090s) SELECT sqlite_version()
+I, [2021-03-12T17:58:13.242571 #3600]  INFO -- : (0.000170s) PRAGMA table_info('users')
+I, [2021-03-12T17:58:13.243397 #3600]  INFO -- : (0.000086s) PRAGMA table_info('descriptions')
+I, [2021-03-12T17:58:25.610532 #3600]  INFO -- : (0.000043s) BEGIN
+I, [2021-03-12T17:58:25.611085 #3600]  INFO -- : (0.000285s) INSERT INTO `users` (`first_name`, `surname`, `email`, `password`, `privilige`, `has_mentee`) VALUES ('Ariful', 'Haque', 'ArifulH6464@gmail.com', 'qwe', 'Mentee', 0)
+I, [2021-03-12T17:58:25.611353 #3600]  INFO -- : (0.000117s) SELECT * FROM `users` WHERE `id` = 6
+I, [2021-03-12T17:58:25.718545 #3600]  INFO -- : (0.107091s) COMMIT
+I, [2021-03-12T18:02:37.017945 #3600]  INFO -- : (0.000870s) SELECT * FROM `users` WHERE ((`email` = 'ArifulH@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-12T18:02:37.151011 #3600]  INFO -- : (0.000173s) SELECT * FROM `users` WHERE (`id` = '2') LIMIT 1
+I, [2021-03-13T19:30:30.187497 #198]  INFO -- : (0.000190s) PRAGMA foreign_keys = 1
+I, [2021-03-13T19:30:30.191083 #198]  INFO -- : (0.000032s) PRAGMA case_sensitive_like = 1
+I, [2021-03-13T19:30:30.201434 #198]  INFO -- : (0.000086s) SELECT sqlite_version()
+I, [2021-03-13T19:30:30.201808 #198]  INFO -- : (0.000195s) PRAGMA table_info('users')
+I, [2021-03-13T19:30:30.202580 #198]  INFO -- : (0.000081s) PRAGMA table_info('descriptions')
+I, [2021-03-13T19:42:21.392158 #198]  INFO -- : (0.000039s) BEGIN
+E, [2021-03-13T19:42:21.393281 #198] ERROR -- : SQLite3::SQLException: table users has no column named privilige: INSERT INTO `users` (`first_name`, `surname`, `email`, `password`, `privilige`, `has_mentee`) VALUES ('Dominic', 'Calvert', 'dc10@gmail.com', 'Password1', 'Mentee', 0)
+I, [2021-03-13T19:42:21.393574 #198]  INFO -- : (0.000037s) ROLLBACK
+I, [2021-03-13T19:42:38.031229 #198]  INFO -- : (0.000037s) BEGIN
+E, [2021-03-13T19:42:38.031585 #198] ERROR -- : SQLite3::SQLException: table users has no column named privilige: INSERT INTO `users` (`first_name`, `surname`, `email`, `password`, `privilige`, `has_mentee`) VALUES ('Dominic', 'Calvert', 'dc10@gmail.com', 'Password1', 'Mentee', 0)
+I, [2021-03-13T19:42:38.031803 #198]  INFO -- : (0.000024s) ROLLBACK
+I, [2021-03-13T19:42:50.692305 #198]  INFO -- : (0.000036s) BEGIN
+E, [2021-03-13T19:42:50.692556 #198] ERROR -- : SQLite3::SQLException: table users has no column named privilige: INSERT INTO `users` (`first_name`, `surname`, `email`, `password`, `privilige`, `has_mentee`) VALUES ('Dominic', 'Calvert', 'dc10@gmail.com', 'Password1', 'Mentee', 0)
+I, [2021-03-13T19:42:50.692729 #198]  INFO -- : (0.000019s) ROLLBACK
+I, [2021-03-13T19:43:22.843456 #198]  INFO -- : (0.000037s) BEGIN
+E, [2021-03-13T19:43:22.843731 #198] ERROR -- : SQLite3::SQLException: table users has no column named privilige: INSERT INTO `users` (`first_name`, `surname`, `email`, `password`, `privilige`, `has_mentee`) VALUES ('Dominic', 'Calvert', 'dc10@gmail.com', 'Password1', 'Mentee', 0)
+I, [2021-03-13T19:43:22.843945 #198]  INFO -- : (0.000021s) ROLLBACK
+I, [2021-03-13T19:44:25.520120 #866]  INFO -- : (0.000166s) PRAGMA foreign_keys = 1
+I, [2021-03-13T19:44:25.520230 #866]  INFO -- : (0.000013s) PRAGMA case_sensitive_like = 1
+I, [2021-03-13T19:44:25.527781 #866]  INFO -- : (0.000054s) SELECT sqlite_version()
+I, [2021-03-13T19:44:25.528056 #866]  INFO -- : (0.000141s) PRAGMA table_info('users')
+I, [2021-03-13T19:44:25.528767 #866]  INFO -- : (0.000073s) PRAGMA table_info('descriptions')
+I, [2021-03-13T19:44:59.341201 #866]  INFO -- : (0.000039s) BEGIN
+I, [2021-03-13T19:44:59.341718 #866]  INFO -- : (0.000265s) INSERT INTO `users` (`first_name`, `surname`, `email`, `password`, `privilege`, `has_mentee`, `has_mentor`) VALUES ('Dominic', 'Calvert', 'dc10@gmail.com', 'Password1', 'Mentee', 0, 0)
+I, [2021-03-13T19:44:59.341996 #866]  INFO -- : (0.000124s) SELECT * FROM `users` WHERE `id` = 1
+I, [2021-03-13T19:44:59.442003 #866]  INFO -- : (0.099928s) COMMIT
+I, [2021-03-13T19:53:52.186736 #866]  INFO -- : (0.000155s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-13T19:54:13.307766 #866]  INFO -- : (0.000158s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-13T19:54:18.190065 #866]  INFO -- : (0.000174s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-13T19:54:31.380977 #866]  INFO -- : (0.000174s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-13T19:55:04.544336 #866]  INFO -- : (0.000164s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-13T19:55:04.642822 #866]  INFO -- : (0.000148s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-13T19:58:28.225682 #866]  INFO -- : (0.000038s) BEGIN
+I, [2021-03-13T19:58:28.226088 #866]  INFO -- : (0.000198s) INSERT INTO `users` (`first_name`, `surname`, `email`, `password`, `privilege`, `has_mentee`, `has_mentor`) VALUES ('Ariful', 'Haque', 'ArifulH@gmail.com', 'Password1', 'Mentor', 0, 0)
+I, [2021-03-13T19:58:28.226326 #866]  INFO -- : (0.000116s) SELECT * FROM `users` WHERE `id` = 2
+I, [2021-03-13T19:58:28.331291 #866]  INFO -- : (0.104877s) COMMIT
+I, [2021-03-13T19:58:28.449549 #866]  INFO -- : (0.000155s) SELECT * FROM `users` WHERE (`id` = '2') LIMIT 1
+I, [2021-03-13T19:59:06.754451 #866]  INFO -- : (0.000161s) SELECT * FROM `users` WHERE (`id` = '2') LIMIT 1
+I, [2021-03-13T19:59:06.926891 #866]  INFO -- : (0.000156s) SELECT * FROM `users` WHERE (`id` = '2') LIMIT 1
+I, [2021-03-13T20:02:17.050731 #866]  INFO -- : (0.000163s) SELECT * FROM `users` WHERE (`id` = '2') LIMIT 1
+I, [2021-03-13T20:02:17.170246 #866]  INFO -- : (0.000152s) SELECT * FROM `users` WHERE (`id` = '2') LIMIT 1
+I, [2021-03-13T20:04:53.669003 #866]  INFO -- : (0.000161s) SELECT * FROM `users` WHERE (`id` = '2') LIMIT 1
+I, [2021-03-13T20:04:53.794491 #866]  INFO -- : (0.000148s) SELECT * FROM `users` WHERE (`id` = '2') LIMIT 1
+I, [2021-03-13T20:06:05.169787 #866]  INFO -- : (0.000036s) BEGIN
+I, [2021-03-13T20:06:05.170295 #866]  INFO -- : (0.000273s) INSERT INTO `users` (`first_name`, `surname`, `email`, `password`, `privilege`, `has_mentee`, `has_mentor`) VALUES ('Ariful', 'Haque', 'ArifulH@gmail.com', 'Password1', 'Mentor', 0, 0)
+I, [2021-03-13T20:06:05.170541 #866]  INFO -- : (0.000117s) SELECT * FROM `users` WHERE `id` = 3
+I, [2021-03-13T20:06:05.285867 #866]  INFO -- : (0.115235s) COMMIT
+I, [2021-03-13T20:06:05.406690 #866]  INFO -- : (0.000186s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-13T20:06:10.515783 #866]  INFO -- : (0.000169s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-13T20:06:10.640312 #866]  INFO -- : (0.000159s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-13T20:07:22.675001 #866]  INFO -- : (0.000157s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-13T20:07:22.782866 #866]  INFO -- : (0.000151s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-13T20:07:22.843441 #866]  INFO -- : (0.000142s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-13T20:07:22.955317 #866]  INFO -- : (0.000134s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-13T20:07:32.830902 #2458]  INFO -- : (0.000160s) PRAGMA foreign_keys = 1
+I, [2021-03-13T20:07:32.831000 #2458]  INFO -- : (0.000013s) PRAGMA case_sensitive_like = 1
+I, [2021-03-13T20:07:32.842046 #2458]  INFO -- : (0.000059s) SELECT sqlite_version()
+I, [2021-03-13T20:07:32.842327 #2458]  INFO -- : (0.000145s) PRAGMA table_info('users')
+I, [2021-03-13T20:07:32.843050 #2458]  INFO -- : (0.000074s) PRAGMA table_info('descriptions')
+I, [2021-03-13T20:07:54.676491 #2458]  INFO -- : (0.000039s) BEGIN
+I, [2021-03-13T20:07:54.677019 #2458]  INFO -- : (0.000273s) INSERT INTO `users` (`first_name`, `surname`, `email`, `password`, `privilege`, `has_mentee`, `has_mentor`) VALUES ('Ariful', 'Haque', 'ArifulH@gmail.com', 'Password1', 'Mentor', 0, 0)
+I, [2021-03-13T20:07:54.677283 #2458]  INFO -- : (0.000121s) SELECT * FROM `users` WHERE `id` = 4
+I, [2021-03-13T20:07:54.781491 #2458]  INFO -- : (0.104127s) COMMIT
+I, [2021-03-13T20:07:54.888837 #2458]  INFO -- : (0.000161s) SELECT * FROM `users` WHERE (`id` = '4') LIMIT 1
+I, [2021-03-13T20:08:03.829930 #2458]  INFO -- : (0.000163s) SELECT * FROM `users` WHERE (`id` = '4') LIMIT 1
+I, [2021-03-13T20:08:03.937397 #2458]  INFO -- : (0.000173s) SELECT * FROM `users` WHERE (`id` = '4') LIMIT 1
+I, [2021-03-13T20:09:15.028917 #2458]  INFO -- : (0.000168s) SELECT * FROM `users` WHERE (`id` = '4') LIMIT 1
+I, [2021-03-13T20:12:29.908008 #2458]  INFO -- : (0.000055s) BEGIN
+E, [2021-03-13T20:12:29.908392 #2458] ERROR -- : SQLite3::SQLException: no such table: users: INSERT INTO `users` (`first_name`, `surname`, `email`, `password`, `privilege`, `has_mentee`, `has_mentor`) VALUES ('Mentee1', 'TestDude', 'Mentee1@gmail.com', 'Password1', 'Mentee', 0, 0)
+I, [2021-03-13T20:12:29.908604 #2458]  INFO -- : (0.000024s) ROLLBACK
+I, [2021-03-13T20:13:03.350765 #2458]  INFO -- : (0.000035s) BEGIN
+I, [2021-03-13T20:13:03.351223 #2458]  INFO -- : (0.000261s) INSERT INTO `users` (`first_name`, `surname`, `email`, `password`, `privilege`, `has_mentee`, `has_mentor`) VALUES ('Mentee1', 'TestDude', 'Mentee1@gmail.com', 'Password1', 'Mentee', 0, 0)
+I, [2021-03-13T20:13:03.351455 #2458]  INFO -- : (0.000102s) SELECT * FROM `users` WHERE `id` = 1
+I, [2021-03-13T20:13:03.455635 #2458]  INFO -- : (0.104106s) COMMIT
+I, [2021-03-13T20:13:03.590740 #2458]  INFO -- : (0.000158s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-13T20:13:17.626510 #2458]  INFO -- : (0.000163s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-13T20:13:17.626726 #2458]  INFO -- : (0.000018s) BEGIN
+I, [2021-03-13T20:13:17.627084 #2458]  INFO -- : (0.000148s) UPDATE `users` SET `degree` = 'EEEEEEEEEEEEEE' WHERE (`id` = 1)
+I, [2021-03-13T20:13:17.750451 #2458]  INFO -- : (0.123283s) COMMIT
+I, [2021-03-13T20:13:17.869266 #2458]  INFO -- : (0.000153s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-13T20:14:10.483320 #2458]  INFO -- : (0.000035s) BEGIN
+I, [2021-03-13T20:14:10.483762 #2458]  INFO -- : (0.000226s) INSERT INTO `users` (`first_name`, `surname`, `email`, `password`, `privilege`, `has_mentee`, `has_mentor`) VALUES ('Mentee2', 'TestDude', 'Mentee2@gmail.com', 'Password1', 'Mentee', 0, 0)
+I, [2021-03-13T20:14:10.484052 #2458]  INFO -- : (0.000137s) SELECT * FROM `users` WHERE `id` = 2
+I, [2021-03-13T20:14:10.597716 #2458]  INFO -- : (0.113584s) COMMIT
+I, [2021-03-13T20:14:10.724391 #2458]  INFO -- : (0.000153s) SELECT * FROM `users` WHERE (`id` = '2') LIMIT 1
+I, [2021-03-13T20:14:16.890916 #2458]  INFO -- : (0.000219s) SELECT * FROM `users` WHERE (`id` = '2') LIMIT 1
+I, [2021-03-13T20:14:16.891142 #2458]  INFO -- : (0.000020s) BEGIN
+I, [2021-03-13T20:14:16.891443 #2458]  INFO -- : (0.000143s) UPDATE `users` SET `degree` = 'aaaaaaaaaaaaaaaaaaa' WHERE (`id` = 2)
+I, [2021-03-13T20:14:16.995418 #2458]  INFO -- : (0.103890s) COMMIT
+I, [2021-03-13T20:14:17.121085 #2458]  INFO -- : (0.000153s) SELECT * FROM `users` WHERE (`id` = '2') LIMIT 1
+I, [2021-03-13T20:15:05.505280 #2458]  INFO -- : (0.000035s) BEGIN
+I, [2021-03-13T20:15:05.505702 #2458]  INFO -- : (0.000232s) INSERT INTO `users` (`first_name`, `surname`, `email`, `password`, `privilege`, `has_mentee`, `has_mentor`) VALUES ('Mentor1', 'TestDudette', 'Mentor1@gmail.com', 'Password123', 'Mentor', 0, 0)
+I, [2021-03-13T20:15:05.505940 #2458]  INFO -- : (0.000124s) SELECT * FROM `users` WHERE `id` = 3
+I, [2021-03-13T20:15:05.610582 #2458]  INFO -- : (0.104571s) COMMIT
+I, [2021-03-13T20:15:05.732759 #2458]  INFO -- : (0.000157s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-13T20:15:16.336510 #2458]  INFO -- : (0.000161s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-13T20:15:16.336740 #2458]  INFO -- : (0.000021s) BEGIN
+I, [2021-03-13T20:15:16.337090 #2458]  INFO -- : (0.000145s) UPDATE `users` SET `job_Title` = 'why no', `industry_Sector` = 'Transport and logistics' WHERE (`id` = 3)
+I, [2021-03-13T20:15:16.456865 #2458]  INFO -- : (0.119706s) COMMIT
+I, [2021-03-13T20:15:16.592604 #2458]  INFO -- : (0.000177s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-13T20:16:01.377697 #2458]  INFO -- : (0.000054s) BEGIN
+I, [2021-03-13T20:16:01.378136 #2458]  INFO -- : (0.000214s) INSERT INTO `users` (`first_name`, `surname`, `email`, `password`, `privilege`, `has_mentee`, `has_mentor`) VALUES ('Mentor2', 'TestDudette', 'Mentor2@gmail.com', 'Password2021', 'Mentor', 0, 0)
+I, [2021-03-13T20:16:01.378399 #2458]  INFO -- : (0.000121s) SELECT * FROM `users` WHERE `id` = 4
+I, [2021-03-13T20:16:01.545054 #2458]  INFO -- : (0.166563s) COMMIT
+I, [2021-03-13T20:16:01.669469 #2458]  INFO -- : (0.000174s) SELECT * FROM `users` WHERE (`id` = '4') LIMIT 1
+I, [2021-03-13T20:16:31.916056 #2458]  INFO -- : (0.000228s) SELECT * FROM `users` WHERE (`id` = '4') LIMIT 1
+I, [2021-03-13T20:16:31.916300 #2458]  INFO -- : (0.000024s) BEGIN
+I, [2021-03-13T20:16:31.916679 #2458]  INFO -- : (0.000207s) UPDATE `users` SET `job_Title` = 'Twitch Streamer', `industry_Sector` = 'Media and internet' WHERE (`id` = 4)
+I, [2021-03-13T20:16:32.014614 #2458]  INFO -- : (0.097840s) COMMIT
+I, [2021-03-13T20:16:32.161255 #2458]  INFO -- : (0.000176s) SELECT * FROM `users` WHERE (`id` = '4') LIMIT 1
+I, [2021-03-13T20:16:49.448848 #2458]  INFO -- : (0.000175s) SELECT * FROM `users` WHERE ((`email` = 'Mentor2@gmail.com') AND (`password` = 'Password2021')) LIMIT 1
+I, [2021-03-13T20:16:49.571752 #2458]  INFO -- : (0.000161s) SELECT * FROM `users` WHERE (`id` = '4') LIMIT 1

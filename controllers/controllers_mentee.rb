@@ -1,13 +1,10 @@
 get "/mentee" do
   @id = request.cookies.fetch("id", 0)
-  puts @id
+  # puts @id
   if @id == "0" 
     redirect "/login"
   end
   @user = User.first(id: @id)
-  if @isLogged then
-      redirect "/login"
-  end
   puts @user
   job_TitleM = params.fetch("job_Title", "")
   industry_SectorM = params.fetch("industry_Sector", "")
@@ -15,18 +12,39 @@ get "/mentee" do
   puts industry_SectorM
 
   if job_TitleM != ""
-    @mentor = User.where(job_Title = job_TitleM | industry_Sector = industry_SectorM )
-    if mentor != nil
-      puts @mentor
+    @mentors = User.where(job_Title: job_TitleM).or(job_Induestry: industry_SectorM)
+    puts @mentors
+    if !@mentors.empty?
+      puts "Here"
+      @mentors.each do |mentor|
+        puts mentor.name
+      end
     else 
       puts "Outta luck"
     end
   end
-  @s = "Welcome, #{@user.name}. \n You have sucessfully logged in as a #{@user.privilige.downcase}."
+  @s = "Welcome, #{@user.name}. \n You have sucessfully logged in as a #{@user.privilege.downcase}."
   erb :mentee
 end
 
 post "/mentee" do
   redirect "/mentee?job_Title=#{params[:job_Title]}&industry_Sector=#{params[:industry_Sector]}"
+end
+
+get "/mentee-register" do
+  @id = request.cookies.fetch("id")
+  @user = User.first(id: @id)
+  @message = "Hello prospective Mentee, #{@user.name}. Please input the details below!"
+
+  erb :mentee_register
+end
+
+post "/post-mentee-register" do
+  @id = request.cookies.fetch("id")
+  @user = User.first(id: @id)
+  @user.degree = params.fetch("degree", "")
+  puts @user.degree
+  @user.save_changes
+  redirect "/mentee"
 end
 

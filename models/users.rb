@@ -28,8 +28,9 @@ class User < Sequel::Model
     self.surname = params.fetch("surname", "").strip
     self.email = params.fetch("email", "").strip
     self.password = params.fetch("password", "").strip
-    self.privilige = params.fetch("privilege", "").strip
+    self.privilege = params.fetch("privilege", "").strip
     self.has_mentee = 0
+    self.has_mentor = 0
 
   end
   
