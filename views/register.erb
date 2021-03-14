@@ -18,10 +18,6 @@
         <main>
             <p>Please fill in the fields below to complete registration</p>
 
-            <% unless @user.errors.size.zero? %>
-            <p><strong class="error">Please correct the errors below:com1001-code/forms/football_players/views/add.erb</strong></p>
-            <% end %>
-
             <form method="post" action="/post-register">
                 <p><label>First Name:</label></p><p>
                     <input type="text" name="first_name" id="firstname"
@@ -38,8 +34,6 @@
                     maxlength="50" size="30" required>
                 </p>
 
-                <>
-
                 <p><label>Password:</label></p><p>
                     <input type="password" name="password" id="password"
                     maxlength="50" size="30" required>
@@ -50,16 +44,16 @@
                     maxlength="50" size="30" required>
                 </p>
 
-                <% if @user.errors.include?("password") %>
-                    <% @user.errors["password"].each do |error| %>
-                    <p class="error"><strong>Password <%= error %></strong></p>
-                    <% end %>
+                <% if @errorCorrect%>
+                <p class = "error">
+                    The two password entries must be correct
+                </p>
                 <% end %>
 
                 <p>Are you wanting to be a mentor or mentee?</p>
-                <input type="radio" id="mentee" name="privilege" value="mentee">
+                <input type="radio" id="mentee" name="privilege" value="Mentee">
                 <label for="mentee">Mentee</label>
-                <input type="radio" id="mentor" name="privilege" value="mentor">
+                <input type="radio" id="mentor" name="privilege" value="Mentor">
                 <label for="mentor">Mentor</label><br>
 
                 <input type="submit" value="Sign Up">

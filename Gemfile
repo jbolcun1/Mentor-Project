@@ -12,4 +12,12 @@ source "https://rubygems.org" do
   # RSpec Testing
   gem "rack-test"
   gem "rspec"
+  gem "capybara"
+  gem "simplecov"
+  
+  # Rubocop
+  gem 'rubocop', require: false
+  gem 'rubocop-rspec', require: false
+  gem 'rubocop-sequel'
+  
 end

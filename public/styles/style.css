@@ -14,6 +14,18 @@ body {
     margin: 0 auto;
   }
 
+  .centerTable {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    background-color: red;
+  }
+
+  #mentorTable th {
+    padding: 15px;
+
+  }
+
   main {
       text-align: center;
       padding: 20px;

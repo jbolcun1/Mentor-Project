@@ -3,11 +3,16 @@ get "/" do
 end
 
 get "/login" do
+  if params.fetch("error","0") == "1"
+    @errorCorrect = true
+  end
   erb :login  
 end
 
 get "/register" do
-  @user = User.new
+  if params.fetch("error","0") == "1"
+    @errorCorrect = true
+  end
   erb :register
 end
 
@@ -16,49 +21,47 @@ post "/post-login" do
   password_u = params.fetch("password")
   # puts emailU
   # puts passwordU
-  user = Users.first(email: email_u, password: password_u)
-  puts user
-  # if !user.empty?
-  #     @foundUser = true
-  #     @privilege = user.privilege
-  #     if @privilege == "mentor"
-  #         redirect "/mentorW"
-  #     elsif @privilege == "mentee"
-  #         redirect "/menteeW"
-  #     else
-  #         redirect "/admin"
-  #     end
-  # else
-  #     @foundUser = false
-  # end
-  #s = "Welcome, #{user.name}. \n You have sucessfully logged in as a #{user.privilige.downcase}."
-  #s
-  @isLogged = false
-  @privilige = user.privilige
-  #puts user.privilige
-  if @privilige == "Mentee"
+  @user = User.first(email: email_u, password: password_u)
+  puts @user
+  if @user != nil 
+    @isLogged = false
+    @privilege = @user.privilege
+    #puts user.privilige
+    if @privilege == "Mentee"
+        @privilege = true
+        @id = @user.id
+        puts @id
+        response.set_cookie("id", @id)
+        redirect "/mentee"
+    elsif @privilege == "Mentor"
       @isLogged = true
-      @id = user.id
-      redirect "/mentee"
-  
-  elsif @privilige == "Mentor"
-    @isLogged = true
-    redirect "/mentor"
-  
-  else 
-      @isLogged = true
-      redirect "/admin"
+      redirect "/mentor"
+    else 
+        @isLogged = true
+        redirect "/admin"
+    end
+  else
+    redirect "/login?error=1"
   end
+
 end
 
 post "/post-register" do
-  puts params
   @user = User.new
+  puts params.fetch("privilege", "")
   @user.load(params)
-  if @user.valid?
+  if @user.validPass(params)
     @user.save_changes
-    redirect "/login"
+    @id = @user.id
+    response.set_cookie("id", @id)
+    @privilege = @user.privilege
+    if @privilege == "Mentee"
+        redirect "/mentee-register"
+    elsif @privilege == "Mentor"
+      redirect "/mentor-register"
+    end
+  else 
+    redirect "/register?error=1"
   end
-
   erb :register
 end
