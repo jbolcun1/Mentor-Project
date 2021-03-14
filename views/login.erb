@@ -1,55 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>Welcome to E-Mentor!</title>
-        <meta charset="utf-8">
-        <meta name="author" content="Team 2"/>
-        <link rel="stylesheet" href="styles/style.css">
-    </head>
+<%= erb :"common/header" %>
+<body id="Log in Page">
+    <header>
+        <h1>E-Mentor</h1>
+    </header>
 
-    <body id="Log in Page">
-
-
-        <header>
-            <h1>E-Mentor</h1>
-        </header>
-
-        <main>
-            <p>Fill in credentials below to log into E-Mentor:</p>
-            <% if @errorCorrect%>
-                <p class = "error">
-                    There has been an error try again
-                </p>
-            <% end %>
-            <form method="post" action="/post-login"> 
-                <p>
-                    <label>Email:</label> 
-                    <input type="email" name="email" id="email"
-                    maxlength="50" size="30" required>
-                </p>
-                <p><label>Password:</label> 
-                    <input type="password" name="password" id="password"
-                    maxlength="50" size="30" required>
-                </p>
-                <p>
-                    <input type="submit" value="Submit">
-                </p>
-            </form>
-
-            <p>
-                Don't have an account? 
-                <a href="/register">Press here</a>
+    <main>
+        <p>Fill in credentials below to log into E-Mentor:</p>
+        <% if @errorCorrect%>
+            <p class = "error">
+                There has been an error try again
             </p>
+        <% end %>
+        <form method="post" action="/post-login"> 
+            <p>
+                <label>Email:</label> 
+                <input type="email" name="email" id="email"
+                maxlength="50" size="30" required>
+            </p>
+            <p><label>Password:</label> 
+                <input type="password" name="password" id="password"
+                maxlength="50" size="30" required>
+            </p>
+            <p>
+                <input type="submit" value="Submit">
+            </p>
+        </form>
 
-        </main>
-
-        <footer id="top"> 
-            <p> </p>
-        </footer>
-
-        <footer id="bottom"> 
-            <p> </p>
-        </footer>
-
-    </body>
-</html>
+        <p>
+            Don't have an account? 
+            <a href="/register">Press here</a>
+        </p>
+    </main>
+</body>
+<%= erb :"common/footer" %>

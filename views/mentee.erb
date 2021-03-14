@@ -1,55 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>Welcome to E-Mentor!</title>
-        <meta charset="utf-8">
-        <meta name="author" content="Team 2"/>
-        <link rel="stylesheet" href="styles/style.css">
-    </head>
+<%= erb :"common/header" %>
+<body id="Welcome Page">
+    <header>
+        <h1>E-Mentor</h1>
+    </header>
 
-    <body id="Welcome Page">
-        <header>
-          <h1>E-Mentor</h1>
-        </header>
-      
-        <main>
-            <p>Your Mentee Page</p>
-            <%= h @s %>
-            <p>
-              Please input the Job Title and Industry Sector of the mentor you want to find!
-            </p>
-            <form method="post" action="/mentee">
-              <%= erb :"common/industrySector" %>
-            </form>
-            
-            <% if @table_Show%>
-              <% if @mentors.count > 0 %>
+    <main>
+        <p>Your Mentee Page</p>
+        <%= h @s %>
+        <p>
+            Please input the Job Title and Industry Sector of the mentor you want to find!
+        </p>
+        <form method="post" action="/mentee">
+            <%= erb :"common/industrySector" %>
+        </form>
+
+        <% if @table_Show%>
+            <% if @mentors.count > 0 %>
                 <table class = "centerTable">
-                  <tr  id = "mentorTable">
-                    <th>Name</th>
-                    <th>Job Title</th>
-                    <th>Industry Sector</th>
-                  </tr>
-                <% @mentors.each do |mentor| %>
-                  <tr>
-                    <td><%= h mentor.name %></td>
-                    <td><%= h mentor.job_Title %></td>
-                    <td><%= h mentor.industry_Sector %></td>
-                    <td><a href="/view-Mentor?id=<%= h mentor.id %>">View More?</a></td>
-                  </tr>
-                <% end %>
+                    <tr  id = "mentorTable">
+                        <th>Name</th>
+                        <th>Job Title</th>
+                        <th>Industry Sector</th>
+                    </tr>
+                    <% @mentors.each do |mentor| %>
+                    <tr>
+                        <td><%= h mentor.name %></td>
+                        <td><%= h mentor.job_Title %></td>
+                        <td><%= h mentor.industry_Sector %></td>
+                        <td><a href="/view-Mentor?id=<%= h mentor.id %>">View More?</a></td>
+                    </tr>
+                    <% end %>
                 </table>
-              <% end %>
             <% end %>
-        </main>
-      
-        <footer id="top"> 
-          <p> </p>
-        </footer>
-
-        <footer id="bottom"> 
-            <p> </p>
-          </footer>
-
-      </body>
-</html>
+        <% end %>
+    </main>
+</body>
+<%= erb :"common/footer" %>
