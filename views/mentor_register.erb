@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Welcome to E-Mentor!</title>
+        <meta charset="utf-8">
+        <meta name="author" content="Team 2"/>
+        <link rel="stylesheet" href="styles/style.css">
+    </head>
+
+    <body id="Welcome Page">
+
+        
+        <header>
+          <h1>E-Mentor</h1>
+        </header>
+      
+        <main>
+            <%= h @message %>
+
+            <form method="post" action="/post-mentor-register">
+              <%= erb :"common/industrySector" %>
+            </form>
+        </main>
+      
+        <footer id="top"> 
+          <p> </p>
+        </footer>
+
+        <footer id="bottom"> 
+            <p> </p>
+          </footer>
+
+      </body>
+</html>
