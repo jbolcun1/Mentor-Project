@@ -581,3 +581,15 @@ I, [2021-03-13T21:26:35.431425 #5820]  INFO -- : (0.000134s) SELECT 1 AS 'one' F
 I, [2021-03-13T21:26:35.431773 #5820]  INFO -- : (0.000192s) SELECT * FROM `users` WHERE ((`job_Title` = 'qwe') OR (`industry_Sector` = 'Media and internet'))
 I, [2021-03-13T21:26:35.433226 #5820]  INFO -- : (0.000118s) SELECT count(*) AS 'count' FROM `users` WHERE ((`job_Title` = 'qwe') OR (`industry_Sector` = 'Media and internet')) LIMIT 1
 I, [2021-03-13T21:26:35.433562 #5820]  INFO -- : (0.000236s) SELECT * FROM `users` WHERE ((`job_Title` = 'qwe') OR (`industry_Sector` = 'Media and internet'))
+I, [2021-03-14T14:17:29.010321 #836]  INFO -- : (0.000162s) PRAGMA foreign_keys = 1
+I, [2021-03-14T14:17:29.012478 #836]  INFO -- : (0.000026s) PRAGMA case_sensitive_like = 1
+I, [2021-03-14T14:17:29.023417 #836]  INFO -- : (0.000057s) SELECT sqlite_version()
+I, [2021-03-14T14:17:29.023706 #836]  INFO -- : (0.000150s) PRAGMA table_info('users')
+I, [2021-03-14T14:17:29.024475 #836]  INFO -- : (0.000078s) PRAGMA table_info('descriptions')
+I, [2021-03-14T14:18:44.632434 #836]  INFO -- : (0.000641s) SELECT * FROM `users` WHERE ((`email` = 'Mentee1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-14T14:18:44.761361 #836]  INFO -- : (0.000164s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-14T14:29:33.294110 #836]  INFO -- : (0.000180s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-14T14:29:33.294567 #836]  INFO -- : (0.000088s) SELECT 1 AS 'one' FROM `users` WHERE ((`job_Title` = 'Media manager') OR (`industry_Sector` = 'Media and internet')) LIMIT 1
+I, [2021-03-14T14:29:33.294839 #836]  INFO -- : (0.000142s) SELECT * FROM `users` WHERE ((`job_Title` = 'Media manager') OR (`industry_Sector` = 'Media and internet'))
+I, [2021-03-14T14:29:33.296380 #836]  INFO -- : (0.000088s) SELECT count(*) AS 'count' FROM `users` WHERE ((`job_Title` = 'Media manager') OR (`industry_Sector` = 'Media and internet')) LIMIT 1
+I, [2021-03-14T14:29:33.296568 #836]  INFO -- : (0.000128s) SELECT * FROM `users` WHERE ((`job_Title` = 'Media manager') OR (`industry_Sector` = 'Media and internet'))
