@@ -618,3 +618,65 @@ I, [2021-03-14T16:40:08.878247 #275]  INFO -- : (0.000016s) PRAGMA case_sensitiv
 I, [2021-03-14T16:40:08.889873 #275]  INFO -- : (0.000069s) SELECT sqlite_version()
 I, [2021-03-14T16:40:08.890194 #275]  INFO -- : (0.000159s) PRAGMA table_info('users')
 I, [2021-03-14T16:40:08.891005 #275]  INFO -- : (0.000079s) PRAGMA table_info('descriptions')
+I, [2021-03-15T19:58:55.423217 #211]  INFO -- : (0.000232s) PRAGMA foreign_keys = 1
+I, [2021-03-15T19:58:55.423333 #211]  INFO -- : (0.000018s) PRAGMA case_sensitive_like = 1
+I, [2021-03-15T19:58:55.434934 #211]  INFO -- : (0.000090s) SELECT sqlite_version()
+I, [2021-03-15T19:58:55.435516 #211]  INFO -- : (0.000407s) PRAGMA table_info('users')
+I, [2021-03-15T19:58:55.436444 #211]  INFO -- : (0.000085s) PRAGMA table_info('descriptions')
+I, [2021-03-15T20:37:11.698426 #211]  INFO -- : (0.017851s) SELECT * FROM `users` WHERE ((`email` = 'Mentee1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-15T20:37:11.841127 #211]  INFO -- : (0.000288s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-15T20:37:41.105292 #211]  INFO -- : (0.000286s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-15T20:37:41.106975 #211]  INFO -- : (0.000174s) SELECT 1 AS 'one' FROM `users` WHERE ((`job_Title` = 'why no') OR (`industry_Sector` = 'Media and internet')) LIMIT 1
+I, [2021-03-15T20:37:41.107449 #211]  INFO -- : (0.000228s) SELECT * FROM `users` WHERE ((`job_Title` = 'why no') OR (`industry_Sector` = 'Media and internet'))
+I, [2021-03-15T20:37:41.110116 #211]  INFO -- : (0.000153s) SELECT count(*) AS 'count' FROM `users` WHERE ((`job_Title` = 'why no') OR (`industry_Sector` = 'Media and internet')) LIMIT 1
+I, [2021-03-15T20:37:41.110626 #211]  INFO -- : (0.000256s) SELECT * FROM `users` WHERE ((`job_Title` = 'why no') OR (`industry_Sector` = 'Media and internet'))
+I, [2021-03-15T20:38:49.231444 #211]  INFO -- : (0.000212s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-15T20:38:49.232111 #211]  INFO -- : (0.000149s) SELECT 1 AS 'one' FROM `users` WHERE ((`job_Title` = 'why no') OR (`industry_Sector` = 'Charity and voluntary work')) LIMIT 1
+I, [2021-03-15T20:38:49.236186 #211]  INFO -- : (0.000208s) SELECT count(*) AS 'count' FROM `users` WHERE ((`job_Title` = 'why no') OR (`industry_Sector` = 'Charity and voluntary work')) LIMIT 1
+I, [2021-03-15T20:38:49.238507 #211]  INFO -- : (0.000310s) SELECT * FROM `users` WHERE ((`job_Title` = 'why no') OR (`industry_Sector` = 'Charity and voluntary work'))
+I, [2021-03-15T20:38:53.045361 #211]  INFO -- : (0.000305s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-15T20:38:53.045956 #211]  INFO -- : (0.000113s) SELECT 1 AS 'one' FROM `users` WHERE ((`job_Title` = 'qweqweqweqwe') OR (`industry_Sector` = 'Charity and voluntary work')) LIMIT 1
+I, [2021-03-15T20:38:53.050034 #211]  INFO -- : (0.000157s) SELECT count(*) AS 'count' FROM `users` WHERE ((`job_Title` = 'qweqweqweqwe') OR (`industry_Sector` = 'Charity and voluntary work')) LIMIT 1
+I, [2021-03-15T20:39:04.353217 #211]  INFO -- : (0.000206s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-15T20:39:04.353684 #211]  INFO -- : (0.000096s) SELECT 1 AS 'one' FROM `users` WHERE ((`job_Title` = 'qweqweqweqwe') OR (`industry_Sector` = 'Charity and voluntary work')) LIMIT 1
+I, [2021-03-15T20:39:04.354985 #211]  INFO -- : (0.000099s) SELECT count(*) AS 'count' FROM `users` WHERE ((`job_Title` = 'qweqweqweqwe') OR (`industry_Sector` = 'Charity and voluntary work')) LIMIT 1
+I, [2021-03-15T20:39:06.510882 #211]  INFO -- : (0.000221s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-15T20:39:06.512415 #211]  INFO -- : (0.000144s) SELECT 1 AS 'one' FROM `users` WHERE ((`job_Title` = 'qweqwe') OR (`industry_Sector` = 'Charity and voluntary work')) LIMIT 1
+I, [2021-03-15T20:39:06.515659 #211]  INFO -- : (0.000177s) SELECT count(*) AS 'count' FROM `users` WHERE ((`job_Title` = 'qweqwe') OR (`industry_Sector` = 'Charity and voluntary work')) LIMIT 1
+I, [2021-03-15T20:39:31.379445 #211]  INFO -- : (0.000283s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-15T20:39:31.380150 #211]  INFO -- : (0.000146s) SELECT 1 AS 'one' FROM `users` WHERE ((`job_Title` = 'qweqwe') OR (`industry_Sector` = 'Charity and voluntary work')) LIMIT 1
+I, [2021-03-15T20:39:31.392856 #211]  INFO -- : (0.000210s) SELECT count(*) AS 'count' FROM `users` WHERE ((`job_Title` = 'qweqwe') OR (`industry_Sector` = 'Charity and voluntary work')) LIMIT 1
+I, [2021-03-15T20:41:05.532529 #211]  INFO -- : (0.000311s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-15T20:41:05.534281 #211]  INFO -- : (0.000191s) SELECT 1 AS 'one' FROM `users` WHERE ((`job_Title` = 'qweqweq') OR (`industry_Sector` = 'Charity and voluntary work')) LIMIT 1
+I, [2021-03-15T20:41:05.537771 #211]  INFO -- : (0.000202s) SELECT count(*) AS 'count' FROM `users` WHERE ((`job_Title` = 'qweqweq') OR (`industry_Sector` = 'Charity and voluntary work')) LIMIT 1
+I, [2021-03-15T20:41:36.625411 #211]  INFO -- : (0.005044s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-15T20:41:36.626051 #211]  INFO -- : (0.000161s) SELECT 1 AS 'one' FROM `users` WHERE ((`job_Title` = 'why no') OR (`industry_Sector` = 'Charity and voluntary work')) LIMIT 1
+I, [2021-03-15T20:41:36.627655 #211]  INFO -- : (0.000144s) SELECT count(*) AS 'count' FROM `users` WHERE ((`job_Title` = 'why no') OR (`industry_Sector` = 'Charity and voluntary work')) LIMIT 1
+I, [2021-03-15T20:41:36.629316 #211]  INFO -- : (0.000210s) SELECT * FROM `users` WHERE ((`job_Title` = 'why no') OR (`industry_Sector` = 'Charity and voluntary work'))
+I, [2021-03-15T20:41:40.539662 #211]  INFO -- : (0.000217s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-15T20:41:40.540265 #211]  INFO -- : (0.000109s) SELECT 1 AS 'one' FROM `users` WHERE ((`job_Title` = 'qweqweqwe') OR (`industry_Sector` = 'Charity and voluntary work')) LIMIT 1
+I, [2021-03-15T20:41:40.541514 #211]  INFO -- : (0.000091s) SELECT count(*) AS 'count' FROM `users` WHERE ((`job_Title` = 'qweqweqwe') OR (`industry_Sector` = 'Charity and voluntary work')) LIMIT 1
+I, [2021-03-15T20:42:02.096682 #211]  INFO -- : (0.000236s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-15T20:42:02.097284 #211]  INFO -- : (0.000145s) SELECT 1 AS 'one' FROM `users` WHERE ((`job_Title` = 'why no') OR (`industry_Sector` = 'Charity and voluntary work')) LIMIT 1
+I, [2021-03-15T20:42:02.098791 #211]  INFO -- : (0.000103s) SELECT count(*) AS 'count' FROM `users` WHERE ((`job_Title` = 'why no') OR (`industry_Sector` = 'Charity and voluntary work')) LIMIT 1
+I, [2021-03-15T20:42:02.099328 #211]  INFO -- : (0.000214s) SELECT * FROM `users` WHERE ((`job_Title` = 'why no') OR (`industry_Sector` = 'Charity and voluntary work'))
+I, [2021-03-15T20:42:03.944152 #211]  INFO -- : (0.000357s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-15T20:42:03.944783 #211]  INFO -- : (0.000132s) SELECT 1 AS 'one' FROM `users` WHERE ((`job_Title` = 'why no') OR (`industry_Sector` = 'Charity and voluntary work')) LIMIT 1
+I, [2021-03-15T20:42:03.946404 #211]  INFO -- : (0.000151s) SELECT count(*) AS 'count' FROM `users` WHERE ((`job_Title` = 'why no') OR (`industry_Sector` = 'Charity and voluntary work')) LIMIT 1
+I, [2021-03-15T20:42:03.946828 #211]  INFO -- : (0.000222s) SELECT * FROM `users` WHERE ((`job_Title` = 'why no') OR (`industry_Sector` = 'Charity and voluntary work'))
+I, [2021-03-15T20:42:10.813506 #2068]  INFO -- : (0.000257s) PRAGMA foreign_keys = 1
+I, [2021-03-15T20:42:10.813670 #2068]  INFO -- : (0.000026s) PRAGMA case_sensitive_like = 1
+I, [2021-03-15T20:42:10.832330 #2068]  INFO -- : (0.000153s) SELECT sqlite_version()
+I, [2021-03-15T20:42:10.833411 #2068]  INFO -- : (0.000653s) PRAGMA table_info('users')
+I, [2021-03-15T20:42:10.835266 #2068]  INFO -- : (0.000156s) PRAGMA table_info('descriptions')
+I, [2021-03-15T20:42:13.372813 #2068]  INFO -- : (0.000323s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-15T20:42:13.374713 #2068]  INFO -- : (0.000143s) SELECT 1 AS 'one' FROM `users` WHERE ((`job_Title` = 'why no') OR (`industry_Sector` = 'Charity and voluntary work')) LIMIT 1
+I, [2021-03-15T20:42:13.394887 #2068]  INFO -- : (0.000208s) SELECT count(*) AS 'count' FROM `users` WHERE ((`job_Title` = 'why no') OR (`industry_Sector` = 'Charity and voluntary work')) LIMIT 1
+I, [2021-03-15T20:42:13.395337 #2068]  INFO -- : (0.000206s) SELECT * FROM `users` WHERE ((`job_Title` = 'why no') OR (`industry_Sector` = 'Charity and voluntary work'))
+I, [2021-03-15T20:42:16.077246 #2068]  INFO -- : (0.000245s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-15T20:42:16.077863 #2068]  INFO -- : (0.000144s) SELECT 1 AS 'one' FROM `users` WHERE ((`job_Title` = 'qweq') OR (`industry_Sector` = 'Charity and voluntary work')) LIMIT 1
+I, [2021-03-15T20:42:16.079595 #2068]  INFO -- : (0.000129s) SELECT count(*) AS 'count' FROM `users` WHERE ((`job_Title` = 'qweq') OR (`industry_Sector` = 'Charity and voluntary work')) LIMIT 1
+I, [2021-03-15T20:42:18.799992 #2068]  INFO -- : (0.000343s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-15T20:42:18.800750 #2068]  INFO -- : (0.000238s) SELECT 1 AS 'one' FROM `users` WHERE ((`job_Title` = 'why no') OR (`industry_Sector` = 'Charity and voluntary work')) LIMIT 1
+I, [2021-03-15T20:42:18.804175 #2068]  INFO -- : (0.000182s) SELECT count(*) AS 'count' FROM `users` WHERE ((`job_Title` = 'why no') OR (`industry_Sector` = 'Charity and voluntary work')) LIMIT 1
+I, [2021-03-15T20:42:18.804945 #2068]  INFO -- : (0.000248s) SELECT * FROM `users` WHERE ((`job_Title` = 'why no') OR (`industry_Sector` = 'Charity and voluntary work'))

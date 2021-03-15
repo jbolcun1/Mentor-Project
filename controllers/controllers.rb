@@ -19,25 +19,20 @@ end
 post "/post-login" do
   email_u = params.fetch("email")
   password_u = params.fetch("password")
-  # puts emailU
-  # puts passwordU
+
+  # Try to find the user with infomation given
   @user = User.first(email: email_u, password: password_u)
-  puts @user
+  # Check if a user is found. If not we redirect back to login with an error
   if @user != nil 
-    @isLogged = false
     @privilege = @user.privilege
-    #puts user.privilige
+    @id = @user.id
+    response.set_cookie("id", @id)
+    # Find out what type of user they are and then redirect them to the correct page
     if @privilege == "Mentee"
-        @privilege = true
-        @id = @user.id
-        puts @id
-        response.set_cookie("id", @id)
         redirect "/mentee"
     elsif @privilege == "Mentor"
-      @isLogged = true
       redirect "/mentor"
     else 
-        @isLogged = true
         redirect "/admin"
     end
   else
@@ -48,8 +43,11 @@ end
 
 post "/post-register" do
   @user = User.new
-  puts params.fetch("privilege", "")
+  # Load given info into a new user object
   @user.load(params)
+  # Check that the given info is valid.
+  # If valid redirect associated page to register more infomation
+  # If not redirect to register page with error
   if @user.validPass(params)
     @user.save_changes
     @id = @user.id
