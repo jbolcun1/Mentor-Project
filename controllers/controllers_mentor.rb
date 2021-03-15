@@ -1,12 +1,10 @@
 get "/mentor" do
-    # Get the id cookie. If there is one then continue. If not then redirect to login.
+  # Get the id cookie. If there is one then continue. If not then redirect to login.
   @id = request.cookies.fetch("id", 0)
-  if @id == "0" 
-    redirect "/login"
-  end
+  redirect "/login" if @id == "0"
   @user = User.first(id: @id)
   @s = "Welcome, #{@user.name}. \n You have sucessfully logged in as a #{@user.privilege.downcase}."
-  # TODO Add Mentor accept
+  # TODO: Add Mentor accept
   erb :mentor
 end
 
@@ -15,7 +13,7 @@ get "/mentor-register" do
   @id = request.cookies.fetch("id")
   @user = User.first(id: @id)
   @message = "Hello prospective mentor, #{@user.name}. Please input the details below!"
-  # TODO Add description
+  # TODO: Add description
   erb :mentor_register
 end
 

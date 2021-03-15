@@ -1,7 +1,7 @@
 # a record of a user from the database
 class User < Sequel::Model
   # .name returns the concatonated first and surname
-  def name()
+  def name
     "#{first_name} #{surname}"
   end
 
@@ -31,17 +31,11 @@ class User < Sequel::Model
     self.privilege = params.fetch("privilege", "").strip
     self.has_mentee = 0
     self.has_mentor = 0
-
-  end
-  
-  def validPass(params) 
-    if params.fetch("password") == params.fetch("confirmpassword")
-      return true
-    else
-      return false
-    end
   end
 
+  def validPass(params)
+    params.fetch("password") == params.fetch("confirmpassword")
+  end
 end
 
 class Description < Sequel::Model

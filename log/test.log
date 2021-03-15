@@ -680,3 +680,14 @@ I, [2021-03-15T20:42:18.799992 #2068]  INFO -- : (0.000343s) SELECT * FROM `user
 I, [2021-03-15T20:42:18.800750 #2068]  INFO -- : (0.000238s) SELECT 1 AS 'one' FROM `users` WHERE ((`job_Title` = 'why no') OR (`industry_Sector` = 'Charity and voluntary work')) LIMIT 1
 I, [2021-03-15T20:42:18.804175 #2068]  INFO -- : (0.000182s) SELECT count(*) AS 'count' FROM `users` WHERE ((`job_Title` = 'why no') OR (`industry_Sector` = 'Charity and voluntary work')) LIMIT 1
 I, [2021-03-15T20:42:18.804945 #2068]  INFO -- : (0.000248s) SELECT * FROM `users` WHERE ((`job_Title` = 'why no') OR (`industry_Sector` = 'Charity and voluntary work'))
+I, [2021-03-15T20:54:13.856295 #2858]  INFO -- : (0.000261s) PRAGMA foreign_keys = 1
+I, [2021-03-15T20:54:13.856467 #2858]  INFO -- : (0.000028s) PRAGMA case_sensitive_like = 1
+I, [2021-03-15T20:54:13.877468 #2858]  INFO -- : (0.000139s) SELECT sqlite_version()
+I, [2021-03-15T20:54:13.878440 #2858]  INFO -- : (0.000662s) PRAGMA table_info('users')
+I, [2021-03-15T20:54:13.880060 #2858]  INFO -- : (0.000138s) PRAGMA table_info('descriptions')
+I, [2021-03-15T20:54:26.310578 #2858]  INFO -- : (0.000312s) SELECT * FROM `users` WHERE ((`email` = 'Mentee1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-15T20:54:26.441189 #2858]  INFO -- : (0.000264s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-15T20:54:33.918750 #2858]  INFO -- : (0.000256s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-15T20:54:33.920091 #2858]  INFO -- : (0.000157s) SELECT 1 AS 'one' FROM `users` WHERE ((`job_Title` = 'why no') OR (`industry_Sector` = 'Media and internet')) LIMIT 1
+I, [2021-03-15T20:54:33.922826 #2858]  INFO -- : (0.000157s) SELECT count(*) AS 'count' FROM `users` WHERE ((`job_Title` = 'why no') OR (`industry_Sector` = 'Media and internet')) LIMIT 1
+I, [2021-03-15T20:54:33.923368 #2858]  INFO -- : (0.000267s) SELECT * FROM `users` WHERE ((`job_Title` = 'why no') OR (`industry_Sector` = 'Media and internet'))
