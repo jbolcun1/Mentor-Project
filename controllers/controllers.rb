@@ -26,9 +26,10 @@ post "/post-login" do
     @id = @user.id
     response.set_cookie("id", @id)
     # Find out what type of user they are and then redirect them to the correct page
-    if @privilege == "Mentee"
+    case @privilege
+    when "Mentee"
       redirect "/mentee"
-    elsif @privilege == "Mentor"
+    when "Mentor"
       redirect "/mentor"
     else
       redirect "/admin"
@@ -48,9 +49,10 @@ post "/post-register" do
     @id = @user.id
     response.set_cookie("id", @id)
     @privilege = @user.privilege
-    if @privilege == "Mentee"
+    case @privilege
+    when "Mentee"
       redirect "/mentee-register"
-    elsif @privilege == "Mentor"
+    when "Mentor"
       redirect "/mentor-register"
     end
   else
