@@ -7,6 +7,11 @@ get "/login" do
   erb :login
 end
 
+get "/index" do
+  @errorCorrect = true if params.fetch("error", "0") == "1"
+  erb :index
+end
+
 get "/register" do
   @errorCorrect = true if params.fetch("error", "0") == "1"
   erb :register
