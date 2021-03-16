@@ -25,6 +25,13 @@ body{
 
 }
 
+/* *CHECK* */
+/* error css class */ 
+.error {
+    color: bold red;
+    font-size: 14px;
+}
+
 main {
     text-align: center;
     padding: 20px;
