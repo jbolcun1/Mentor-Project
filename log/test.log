@@ -581,7 +581,6 @@ I, [2021-03-13T21:26:35.431425 #5820]  INFO -- : (0.000134s) SELECT 1 AS 'one' F
 I, [2021-03-13T21:26:35.431773 #5820]  INFO -- : (0.000192s) SELECT * FROM `users` WHERE ((`job_Title` = 'qwe') OR (`industry_Sector` = 'Media and internet'))
 I, [2021-03-13T21:26:35.433226 #5820]  INFO -- : (0.000118s) SELECT count(*) AS 'count' FROM `users` WHERE ((`job_Title` = 'qwe') OR (`industry_Sector` = 'Media and internet')) LIMIT 1
 I, [2021-03-13T21:26:35.433562 #5820]  INFO -- : (0.000236s) SELECT * FROM `users` WHERE ((`job_Title` = 'qwe') OR (`industry_Sector` = 'Media and internet'))
-<<<<<<< HEAD
 I, [2021-03-14T14:03:32.343434 #274]  INFO -- : (0.000184s) PRAGMA foreign_keys = 1
 I, [2021-03-14T14:03:32.343524 #274]  INFO -- : (0.000015s) PRAGMA case_sensitive_like = 1
 I, [2021-03-14T14:03:32.355114 #274]  INFO -- : (0.000073s) SELECT sqlite_version()
@@ -605,7 +604,6 @@ I, [2021-03-14T14:30:44.441268 #667]  INFO -- : (0.000174s) SELECT * FROM `users
 I, [2021-03-14T14:30:44.548743 #667]  INFO -- : (0.000166s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
 I, [2021-03-14T14:48:12.534950 #667]  INFO -- : (0.000175s) SELECT * FROM `users` WHERE ((`email` = 'Mentor1@gmail.com') AND (`password` = 'Password123')) LIMIT 1
 I, [2021-03-14T14:48:12.623304 #667]  INFO -- : (0.000164s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
-=======
 I, [2021-03-14T14:17:29.010321 #836]  INFO -- : (0.000162s) PRAGMA foreign_keys = 1
 I, [2021-03-14T14:17:29.012478 #836]  INFO -- : (0.000026s) PRAGMA case_sensitive_like = 1
 I, [2021-03-14T14:17:29.023417 #836]  INFO -- : (0.000057s) SELECT sqlite_version()
@@ -911,7 +909,6 @@ I, [2021-03-16T12:35:22.015972 #327]  INFO -- : (0.000044s) BEGIN
 I, [2021-03-16T12:35:22.016532 #327]  INFO -- : (0.000272s) INSERT INTO `users` (`first_name`, `surname`, `email`, `password`, `privilege`, `has_mentee`, `has_mentor`) VALUES ('', '', '', '', '', 0, 0)
 I, [2021-03-16T12:35:22.016832 #327]  INFO -- : (0.000138s) SELECT * FROM `users` WHERE `id` = 16
 I, [2021-03-16T12:35:22.118060 #327]  INFO -- : (0.101143s) COMMIT
->>>>>>> 27203191fd5a6c35621da2f036582029055397a5
 I, [2021-03-16T15:23:49.622855 #416]  INFO -- : (0.000186s) PRAGMA foreign_keys = 1
 I, [2021-03-16T15:23:49.622983 #416]  INFO -- : (0.000045s) PRAGMA case_sensitive_like = 1
 I, [2021-03-16T15:23:49.635275 #416]  INFO -- : (0.000079s) SELECT sqlite_version()
@@ -932,3 +929,12 @@ I, [2021-03-16T15:34:01.496405 #416]  INFO -- : (0.000725s) SELECT * FROM `users
 I, [2021-03-16T15:34:20.608924 #416]  INFO -- : (0.000175s) SELECT * FROM `users` WHERE ((`email` = 'Mentee1@gmail.com') AND (`password` = 'fg')) LIMIT 1
 I, [2021-03-16T15:34:31.684762 #416]  INFO -- : (0.000163s) SELECT * FROM `users` WHERE ((`email` = 'Mentee1@gmail.com') AND (`password` = 'sgf')) LIMIT 1
 I, [2021-03-16T15:35:19.798192 #416]  INFO -- : (0.000159s) SELECT * FROM `users` WHERE ((`email` = 'Mentee1@gmail.com') AND (`password` = 'Psdf')) LIMIT 1
+I, [2021-03-16T15:42:15.882436 #274]  INFO -- : (0.000207s) PRAGMA foreign_keys = 1
+I, [2021-03-16T15:42:15.882542 #274]  INFO -- : (0.000016s) PRAGMA case_sensitive_like = 1
+I, [2021-03-16T15:42:15.894981 #274]  INFO -- : (0.000092s) SELECT sqlite_version()
+I, [2021-03-16T15:42:15.895316 #274]  INFO -- : (0.000170s) PRAGMA table_info('users')
+I, [2021-03-16T15:42:15.896186 #274]  INFO -- : (0.000085s) PRAGMA table_info('descriptions')
+I, [2021-03-16T15:42:43.176995 #274]  INFO -- : (0.000179s) SELECT * FROM `users` WHERE ((`email` = 'Mentee1@gmail.com') AND (`password` = 'ggg')) LIMIT 1
+I, [2021-03-16T15:51:23.537013 #274]  INFO -- : (0.000257s) SELECT * FROM `users` WHERE ((`email` = 'Mentee1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-16T15:51:23.664814 #274]  INFO -- : (0.000187s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+
