@@ -850,3 +850,39 @@ I, [2021-03-16T12:26:44.431820 #313]  INFO -- : (0.000018s) PRAGMA case_sensitiv
 I, [2021-03-16T12:26:44.462081 #313]  INFO -- : (0.000227s) SELECT sqlite_version()
 I, [2021-03-16T12:26:44.462702 #313]  INFO -- : (0.000368s) PRAGMA table_info('users')
 I, [2021-03-16T12:26:44.463791 #313]  INFO -- : (0.000123s) PRAGMA table_info('descriptions')
+I, [2021-03-16T12:32:24.914310 #323]  INFO -- : (0.000196s) PRAGMA foreign_keys = 1
+I, [2021-03-16T12:32:24.914424 #323]  INFO -- : (0.000022s) PRAGMA case_sensitive_like = 1
+I, [2021-03-16T12:32:24.941753 #323]  INFO -- : (0.000094s) SELECT sqlite_version()
+I, [2021-03-16T12:32:24.942203 #323]  INFO -- : (0.000235s) PRAGMA table_info('users')
+I, [2021-03-16T12:32:24.943172 #323]  INFO -- : (0.000098s) PRAGMA table_info('descriptions')
+I, [2021-03-16T12:32:25.288521 #323]  INFO -- : (0.000042s) BEGIN
+I, [2021-03-16T12:32:25.289131 #323]  INFO -- : (0.000300s) INSERT INTO `users` (`first_name`, `surname`, `email`, `password`, `privilege`, `has_mentee`, `has_mentor`) VALUES ('', '', '', '', '', 0, 0)
+I, [2021-03-16T12:32:25.289432 #323]  INFO -- : (0.000134s) SELECT * FROM `users` WHERE `id` = 13
+I, [2021-03-16T12:32:25.392868 #323]  INFO -- : (0.103340s) COMMIT
+I, [2021-03-16T12:33:57.796481 #325]  INFO -- : (0.000183s) PRAGMA foreign_keys = 1
+I, [2021-03-16T12:33:57.796584 #325]  INFO -- : (0.000016s) PRAGMA case_sensitive_like = 1
+I, [2021-03-16T12:33:57.839315 #325]  INFO -- : (0.000169s) SELECT sqlite_version()
+I, [2021-03-16T12:33:57.840086 #325]  INFO -- : (0.000461s) PRAGMA table_info('users')
+I, [2021-03-16T12:33:57.842012 #325]  INFO -- : (0.000211s) PRAGMA table_info('descriptions')
+I, [2021-03-16T12:33:58.248850 #325]  INFO -- : (0.000043s) BEGIN
+I, [2021-03-16T12:33:58.249395 #325]  INFO -- : (0.000263s) INSERT INTO `users` (`first_name`, `surname`, `email`, `password`, `privilege`, `has_mentee`, `has_mentor`) VALUES ('', '', '', '', '', 0, 0)
+I, [2021-03-16T12:33:58.249685 #325]  INFO -- : (0.000134s) SELECT * FROM `users` WHERE `id` = 14
+I, [2021-03-16T12:33:58.338068 #325]  INFO -- : (0.088291s) COMMIT
+I, [2021-03-16T12:34:37.242744 #326]  INFO -- : (0.000184s) PRAGMA foreign_keys = 1
+I, [2021-03-16T12:34:37.242844 #326]  INFO -- : (0.000017s) PRAGMA case_sensitive_like = 1
+I, [2021-03-16T12:34:37.270522 #326]  INFO -- : (0.000091s) SELECT sqlite_version()
+I, [2021-03-16T12:34:37.270918 #326]  INFO -- : (0.000223s) PRAGMA table_info('users')
+I, [2021-03-16T12:34:37.271854 #326]  INFO -- : (0.000128s) PRAGMA table_info('descriptions')
+I, [2021-03-16T12:34:37.663360 #326]  INFO -- : (0.000044s) BEGIN
+I, [2021-03-16T12:34:37.663950 #326]  INFO -- : (0.000284s) INSERT INTO `users` (`first_name`, `surname`, `email`, `password`, `privilege`, `has_mentee`, `has_mentor`) VALUES ('', '', '', '', '', 0, 0)
+I, [2021-03-16T12:34:37.664250 #326]  INFO -- : (0.000137s) SELECT * FROM `users` WHERE `id` = 15
+I, [2021-03-16T12:34:37.758602 #326]  INFO -- : (0.094255s) COMMIT
+I, [2021-03-16T12:35:21.626693 #327]  INFO -- : (0.000187s) PRAGMA foreign_keys = 1
+I, [2021-03-16T12:35:21.626801 #327]  INFO -- : (0.000016s) PRAGMA case_sensitive_like = 1
+I, [2021-03-16T12:35:21.654090 #327]  INFO -- : (0.000092s) SELECT sqlite_version()
+I, [2021-03-16T12:35:21.654499 #327]  INFO -- : (0.000230s) PRAGMA table_info('users')
+I, [2021-03-16T12:35:21.655424 #327]  INFO -- : (0.000101s) PRAGMA table_info('descriptions')
+I, [2021-03-16T12:35:22.015972 #327]  INFO -- : (0.000044s) BEGIN
+I, [2021-03-16T12:35:22.016532 #327]  INFO -- : (0.000272s) INSERT INTO `users` (`first_name`, `surname`, `email`, `password`, `privilege`, `has_mentee`, `has_mentor`) VALUES ('', '', '', '', '', 0, 0)
+I, [2021-03-16T12:35:22.016832 #327]  INFO -- : (0.000138s) SELECT * FROM `users` WHERE `id` = 16
+I, [2021-03-16T12:35:22.118060 #327]  INFO -- : (0.101143s) COMMIT

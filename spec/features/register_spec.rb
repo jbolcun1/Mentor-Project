@@ -12,5 +12,5 @@ describe "the register page" do
     expect(page).to have_content "Email:"
     expect(page).to have_content "Password:"
   end
-
+    
 end
