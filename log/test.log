@@ -800,3 +800,53 @@ I, [2021-03-16T11:41:38.519310 #166]  INFO -- : (0.000247s) SELECT * FROM `users
 I, [2021-03-16T11:41:38.519784 #166]  INFO -- : (0.000108s) SELECT 1 AS 'one' FROM `users` WHERE ((`job_Title` = '*') OR (`industry_Sector` = 'Media and internet')) LIMIT 1
 I, [2021-03-16T11:41:38.522362 #166]  INFO -- : (0.000134s) SELECT count(*) AS 'count' FROM `users` WHERE ((`job_Title` = '*') OR (`industry_Sector` = 'Media and internet')) LIMIT 1
 I, [2021-03-16T11:41:38.522745 #166]  INFO -- : (0.000224s) SELECT * FROM `users` WHERE ((`job_Title` = '*') OR (`industry_Sector` = 'Media and internet'))
+I, [2021-03-16T12:03:47.367851 #166]  INFO -- : (0.000298s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-16T12:04:30.457179 #293]  INFO -- : (0.000185s) PRAGMA foreign_keys = 1
+I, [2021-03-16T12:04:30.457288 #293]  INFO -- : (0.000017s) PRAGMA case_sensitive_like = 1
+I, [2021-03-16T12:04:30.485914 #293]  INFO -- : (0.000119s) SELECT sqlite_version()
+I, [2021-03-16T12:04:30.486346 #293]  INFO -- : (0.000246s) PRAGMA table_info('users')
+I, [2021-03-16T12:04:30.487270 #293]  INFO -- : (0.000098s) PRAGMA table_info('descriptions')
+I, [2021-03-16T12:04:31.351463 #293]  INFO -- : (0.000046s) BEGIN
+I, [2021-03-16T12:04:31.351963 #293]  INFO -- : (0.000221s) INSERT INTO `users` (`first_name`, `surname`, `email`, `password`, `privilege`, `has_mentee`, `has_mentor`) VALUES ('', '', '', '', '', 0, 0)
+I, [2021-03-16T12:04:31.352256 #293]  INFO -- : (0.000134s) SELECT * FROM `users` WHERE `id` = 12
+I, [2021-03-16T12:04:31.451271 #293]  INFO -- : (0.098910s) COMMIT
+I, [2021-03-16T12:13:04.254799 #300]  INFO -- : (0.000187s) PRAGMA foreign_keys = 1
+I, [2021-03-16T12:13:04.254907 #300]  INFO -- : (0.000017s) PRAGMA case_sensitive_like = 1
+I, [2021-03-16T12:13:04.284561 #300]  INFO -- : (0.000099s) SELECT sqlite_version()
+I, [2021-03-16T12:13:04.284987 #300]  INFO -- : (0.000234s) PRAGMA table_info('users')
+I, [2021-03-16T12:13:04.286225 #300]  INFO -- : (0.000106s) PRAGMA table_info('descriptions')
+I, [2021-03-16T12:15:09.886582 #301]  INFO -- : (0.000181s) PRAGMA foreign_keys = 1
+I, [2021-03-16T12:15:09.886685 #301]  INFO -- : (0.000017s) PRAGMA case_sensitive_like = 1
+I, [2021-03-16T12:15:09.915348 #301]  INFO -- : (0.000096s) SELECT sqlite_version()
+I, [2021-03-16T12:15:09.915758 #301]  INFO -- : (0.000228s) PRAGMA table_info('users')
+I, [2021-03-16T12:15:09.916681 #301]  INFO -- : (0.000094s) PRAGMA table_info('descriptions')
+I, [2021-03-16T12:17:33.839954 #305]  INFO -- : (0.000192s) PRAGMA foreign_keys = 1
+I, [2021-03-16T12:17:33.840064 #305]  INFO -- : (0.000018s) PRAGMA case_sensitive_like = 1
+I, [2021-03-16T12:17:33.871238 #305]  INFO -- : (0.000096s) SELECT sqlite_version()
+I, [2021-03-16T12:17:33.871666 #305]  INFO -- : (0.000233s) PRAGMA table_info('users')
+I, [2021-03-16T12:17:33.872615 #305]  INFO -- : (0.000096s) PRAGMA table_info('descriptions')
+I, [2021-03-16T12:18:00.221828 #307]  INFO -- : (0.000181s) PRAGMA foreign_keys = 1
+I, [2021-03-16T12:18:00.221965 #307]  INFO -- : (0.000024s) PRAGMA case_sensitive_like = 1
+I, [2021-03-16T12:18:00.249733 #307]  INFO -- : (0.000096s) SELECT sqlite_version()
+I, [2021-03-16T12:18:00.250203 #307]  INFO -- : (0.000248s) PRAGMA table_info('users')
+I, [2021-03-16T12:18:00.251163 #307]  INFO -- : (0.000095s) PRAGMA table_info('descriptions')
+I, [2021-03-16T12:21:44.485719 #309]  INFO -- : (0.000183s) PRAGMA foreign_keys = 1
+I, [2021-03-16T12:21:44.485833 #309]  INFO -- : (0.000021s) PRAGMA case_sensitive_like = 1
+I, [2021-03-16T12:21:44.522241 #309]  INFO -- : (0.000177s) SELECT sqlite_version()
+I, [2021-03-16T12:21:44.523072 #309]  INFO -- : (0.000477s) PRAGMA table_info('users')
+I, [2021-03-16T12:21:44.525215 #309]  INFO -- : (0.000224s) PRAGMA table_info('descriptions')
+I, [2021-03-16T12:24:09.356469 #310]  INFO -- : (0.000179s) PRAGMA foreign_keys = 1
+I, [2021-03-16T12:24:09.356580 #310]  INFO -- : (0.000018s) PRAGMA case_sensitive_like = 1
+I, [2021-03-16T12:24:09.384159 #310]  INFO -- : (0.000097s) SELECT sqlite_version()
+I, [2021-03-16T12:24:09.384561 #310]  INFO -- : (0.000226s) PRAGMA table_info('users')
+I, [2021-03-16T12:24:09.385489 #310]  INFO -- : (0.000097s) PRAGMA table_info('descriptions')
+I, [2021-03-16T12:25:09.583516 #311]  INFO -- : (0.000214s) PRAGMA foreign_keys = 1
+I, [2021-03-16T12:25:09.583634 #311]  INFO -- : (0.000021s) PRAGMA case_sensitive_like = 1
+I, [2021-03-16T12:25:09.614934 #311]  INFO -- : (0.000103s) SELECT sqlite_version()
+I, [2021-03-16T12:25:09.615387 #311]  INFO -- : (0.000242s) PRAGMA table_info('users')
+I, [2021-03-16T12:25:09.616479 #311]  INFO -- : (0.000126s) PRAGMA table_info('descriptions')
+I, [2021-03-16T12:26:44.431710 #313]  INFO -- : (0.000191s) PRAGMA foreign_keys = 1
+I, [2021-03-16T12:26:44.431820 #313]  INFO -- : (0.000018s) PRAGMA case_sensitive_like = 1
+I, [2021-03-16T12:26:44.462081 #313]  INFO -- : (0.000227s) SELECT sqlite_version()
+I, [2021-03-16T12:26:44.462702 #313]  INFO -- : (0.000368s) PRAGMA table_info('users')
+I, [2021-03-16T12:26:44.463791 #313]  INFO -- : (0.000123s) PRAGMA table_info('descriptions')
