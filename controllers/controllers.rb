@@ -18,7 +18,7 @@ post "/post-login" do
 
   # Try to find the user with infomation given
   @user = User.first(email: email_u, password: password_u)
-  # Check if a user is found. If not we redirect back to login with an error
+  # Check if a user is found. If not, we redirect back to login with an error
   if @user.nil?
     redirect "/login?error=1"
   else
@@ -42,8 +42,8 @@ post "/post-register" do
   # Load given info into a new user object
   @user.load(params)
   # Check that the given info is valid.
-  # If valid redirect associated page to register more infomation
-  # If not redirect to register page with error
+  # If valid, redirect associated page to register more infomation
+  # If not, redirect to register page with error
   if @user.validPass(params)
     @user.save_changes
     @id = @user.id

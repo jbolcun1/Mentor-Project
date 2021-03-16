@@ -691,3 +691,20 @@ I, [2021-03-15T20:54:33.918750 #2858]  INFO -- : (0.000256s) SELECT * FROM `user
 I, [2021-03-15T20:54:33.920091 #2858]  INFO -- : (0.000157s) SELECT 1 AS 'one' FROM `users` WHERE ((`job_Title` = 'why no') OR (`industry_Sector` = 'Media and internet')) LIMIT 1
 I, [2021-03-15T20:54:33.922826 #2858]  INFO -- : (0.000157s) SELECT count(*) AS 'count' FROM `users` WHERE ((`job_Title` = 'why no') OR (`industry_Sector` = 'Media and internet')) LIMIT 1
 I, [2021-03-15T20:54:33.923368 #2858]  INFO -- : (0.000267s) SELECT * FROM `users` WHERE ((`job_Title` = 'why no') OR (`industry_Sector` = 'Media and internet'))
+I, [2021-03-16T08:50:33.993037 #988]  INFO -- : (0.000206s) PRAGMA foreign_keys = 1
+I, [2021-03-16T08:50:33.993147 #988]  INFO -- : (0.000017s) PRAGMA case_sensitive_like = 1
+I, [2021-03-16T08:50:34.002339 #988]  INFO -- : (0.000088s) SELECT sqlite_version()
+I, [2021-03-16T08:50:34.002670 #988]  INFO -- : (0.000161s) PRAGMA table_info('users')
+I, [2021-03-16T08:50:34.003560 #988]  INFO -- : (0.000081s) PRAGMA table_info('descriptions')
+I, [2021-03-16T08:52:57.110357 #1642]  INFO -- : (0.000193s) PRAGMA foreign_keys = 1
+I, [2021-03-16T08:52:57.110450 #1642]  INFO -- : (0.000015s) PRAGMA case_sensitive_like = 1
+I, [2021-03-16T08:52:57.119339 #1642]  INFO -- : (0.000080s) SELECT sqlite_version()
+I, [2021-03-16T08:52:57.119684 #1642]  INFO -- : (0.000161s) PRAGMA table_info('users')
+I, [2021-03-16T08:52:57.120529 #1642]  INFO -- : (0.000076s) PRAGMA table_info('descriptions')
+I, [2021-03-16T08:53:42.036927 #1642]  INFO -- : (0.000208s) SELECT * FROM `users` WHERE ((`email` = 'Mentee1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-16T08:53:42.445445 #1642]  INFO -- : (0.001502s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-16T08:54:24.286433 #1642]  INFO -- : (0.000251s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-16T08:54:24.286970 #1642]  INFO -- : (0.000123s) SELECT 1 AS 'one' FROM `users` WHERE ((`job_Title` = 'Tw') OR (`industry_Sector` = 'Media and internet')) LIMIT 1
+I, [2021-03-16T08:54:24.289368 #1642]  INFO -- : (0.000142s) SELECT count(*) AS 'count' FROM `users` WHERE ((`job_Title` = 'Tw') OR (`industry_Sector` = 'Media and internet')) LIMIT 1
+I, [2021-03-16T08:54:24.289720 #1642]  INFO -- : (0.000205s) SELECT * FROM `users` WHERE ((`job_Title` = 'Tw') OR (`industry_Sector` = 'Media and internet'))
+I, [2021-03-16T09:02:26.892932 #1642]  INFO -- : (0.000211s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1

@@ -7,7 +7,7 @@ body{
     line-height: 1.5;  
     min-width: 320px; /* minimum mobile size */
     text-align: none;
-  }
+  } 
 
 #border { /* ensures that the space on the page is filled */
   width: 100%; 

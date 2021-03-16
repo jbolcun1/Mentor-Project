@@ -1,4 +1,4 @@
-# a record of a user from the database
+# A record of a user from the database
 class User < Sequel::Model
   # .name returns the concatonated first and surname
   def name
@@ -8,17 +8,17 @@ class User < Sequel::Model
   # .getDescriptions returns a string array of all of the user's
   # descriptions
   def getDescriptions(id)
-    # retrieves a dataset from the database
+    # Retrieves a dataset from the database
     dataset = Description.where(id: id)
     descriptions = []
 
-    # appends the description field from each record in the
+    # Appends the description field from each record in the
     # dataset to the descriptions array
     dataset.each do |record|
       descriptions << record.description
     end
 
-    # returns an array of strings
+    # Returns an array of strings
     descriptions
   end
 
