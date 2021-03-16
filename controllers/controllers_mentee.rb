@@ -36,6 +36,11 @@ get "/mentee-register" do
   erb :mentee_register
 end
 
+get "/view-mentor" do
+  # TODO: Add description
+  erb :view_mentor
+end
+
 post "/post-mentee-register" do
   @id = request.cookies.fetch("id")
   @user = User.first(id: @id)

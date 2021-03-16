@@ -1,0 +1,26 @@
+<!--HTML mentor details page, displayed to logged in mentees-->
+
+<!DOCTYPE html>
+<%= erb :"common/header" %>
+<body id="Mentor Details Page">
+
+
+    <main>
+        <p>Your potential Mentor's profile</p>
+        <p>
+            The mentor you have selected is <%= h mentor.name %>
+        </p>
+        <form name="contact" action="https://www.dcs.shef.ac.uk/cgi-intranet/public/FormMail.php" method="POST">
+            <input type="hidden" name="recipients" value="vmcranga1@sheffield.ac.uk"></input>
+            <label for="GET-email">Your email address: </label><input id="GET-email" type="email" name="email" maxlength="40" size="30" required>
+            <br>
+            <br>
+            <textarea name="comments" rows="5" cols="32" placeholder="Type your comments here..."></textarea>
+            <br>
+            <br>
+            <input type="submit" value="Submit"><br>
+        </form>
+
+    </main>
+</body>
+<%= erb :"common/footer" %>
