@@ -25,6 +25,7 @@ body{
     line-height: 1.5;  
     min-width: 320px; /* minimum mobile size */
     text-align: none;
+    height: 100%
   } 
 
 #border { /* ensures that the space on the page is filled */
@@ -61,7 +62,7 @@ hr {
   margin-block-end: 0em;
 }
 
-/* ------ TEST ----- */
+
 label1 {
 display:inline-block;
 width:200px;
@@ -96,7 +97,6 @@ nav a{
     padding-right: 24px;
 }
 
-/* ---- END OF TEST ---- */
 
 
 
@@ -106,7 +106,18 @@ nav a{
 #bottom {
   background-color:black;  
   color: white;
+  width: 100%;
+  height: 50px;
+  position: absolute;
+  bottom:0;
+  left: 0;
+
 }
 
   
+
+
+
+
+
   
