@@ -1,78 +1,56 @@
+<!-- Main HTML registration page -->
 
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>Welcome to E-Mentor!</title>
-        <meta charset="utf-8">
-        <meta name="author" content="Team 2"/>
-        <link rel="stylesheet" href="styles/style.css">
-    </head>
+<%= erb :"common/header" %>
+<body id="Welcome Page"> 
+    <header>
+        <h1>E-Mentor</h1>
+    </header>
 
-    <body id="Welcome Page">
+    <main>
+        <p>Please fill in the fields below to complete registration</p>
 
-        
-        <header>
-            <h1>E-Mentor</h1>
-        </header>
-    
-        <main>
-            <p>Please fill in the fields below to complete registration</p>
+        <form method="post" action="/post-register">
+            <p><label>First Name:</label></p><p>
+                <input type="text" name="first_name" id="firstname"
+                maxlength="50" size="30" required>
+            </p>
 
-            <form method="post" action="/post-register">
-                <p><label>First Name:</label></p><p>
-                    <input type="text" name="first_name" id="firstname"
-                    maxlength="50" size="30" required>
-                </p>
+            <p><label>Last Name:</label></p><p>
+                <input type="text" name="surname" id="surname"
+                maxlength="50" size="30" required>
+            </p>
 
-                <p><label>Surname:</label></p><p>
-                    <input type="text" name="surname" id="surname"
-                    maxlength="50" size="30" required>
-                </p>
+            <p><label>Email:</label></p><p>
+                <input type="email" name="email" id="email"
+                maxlength="50" size="30" required>
+            </p>
 
-                <p><label>Email:</label></p><p>
-                    <input type="email" name="email" id="email"
-                    maxlength="50" size="30" required>
-                </p>
+            <p><label>Password:</label></p><p>
+                <input type="password" name="password" id="password"
+                maxlength="50" size="30" required>
+            </p>
 
-                <p><label>Password:</label></p><p>
-                    <input type="password" name="password" id="password"
-                    maxlength="50" size="30" required>
-                </p>
+            <p><label>Confirm Password:</label></p><p>
+                <input type="password" name="confirmpassword" id="confirmpassword"
+                maxlength="50" size="30" required>
+            </p>
 
-                <p><label>Confirm Password:</label></p><p>
-                    <input type="password" name="confirmpassword" id="confirmpassword"
-                    maxlength="50" size="30" required>
-                </p>
+            <% if @errorCorrect%>
+            <p id="error">
+                <b>The two password entries must be correct.</b>
+            </p>
+            <% end %>
 
-                <% if @errorCorrect%>
-                <p class = "error">
-                    The two password entries must be correct
-                </p>
-                <% end %>
+            <p>Would you like to be a mentor or a mentee?</p>
+            <input type="radio" id="mentee" name="privilege" value="Mentee">
+            <label for="mentee">Mentee</label>
+            <input type="radio" id="mentor" name="privilege" value="Mentor">
+            <label for="mentor">Mentor</label><br>
+            <input type="submit" value="Sign Up">
+        </form>
 
-                <p>Are you wanting to be a mentor or mentee?</p>
-                <input type="radio" id="mentee" name="privilege" value="Mentee">
-                <label for="mentee">Mentee</label>
-                <input type="radio" id="mentor" name="privilege" value="Mentor">
-                <label for="mentor">Mentor</label><br>
-
-                <input type="submit" value="Sign Up">
-            </form>
-
-
-
-            <p>If you already have an account, <a href="/login">Press here</a></p>
-
-
-        </main>
-    
-        <footer id="top"> 
-            <p> </p>
-        </footer>
-
-        <footer id="bottom"> 
-            <p> </p>
-        </footer>
-
-    </body>
-</html>
+        <p>If you already have an account, <a href="/login">press here.</a></p>
+    </main>
+</body>
+<%= erb :"common/footer" %>

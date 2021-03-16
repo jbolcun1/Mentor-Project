@@ -10,14 +10,13 @@ source "https://rubygems.org" do
   gem "sqlite3"
 
   # RSpec Testing
+  gem "capybara"
   gem "rack-test"
   gem "rspec"
-  gem "capybara"
   gem "simplecov"
-  
+
   # Rubocop
   gem 'rubocop', require: false
   gem 'rubocop-rspec', require: false
   gem 'rubocop-sequel'
-  
 end

@@ -1,0 +1,31 @@
+Things to do (deadline 22nd):
+
+FRONT END
+- centre table on mentee page *DONE*
+- error css class *DONE* (but check)
+- change headers + different common features into common folder (views of views) *DONE*
+- add extra info
+
+EVERYONE WHO CAN
+- RSpec tests (unit + features)
+
+OTHER TASKS
+- changing user credentials
+- log out button functionality
+- cookies clearing
+- add nav bar
+     (multiple buttons to pages)
+- mentee/mentor home page
+- rubocop testing
+
+BACKEND
+- view more mentor details + description
+    send invation to mentor
+    mentor accept invation    
+
+(potential) JOSH
+- Email sending via form
+
+
+Sunday (21st - 14:00) EVERYONE
+- make exemplar code + README file + Demo Codio Box

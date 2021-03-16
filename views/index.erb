@@ -1,34 +1,16 @@
+<!--HTML index page, displayed to everyone-->
+
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>Welcome to E-Mentor!</title>
-        <meta charset="utf-8">
-        <meta name="author" content="Team 2"/>
-        <link rel="stylesheet" href="styles/style.css">
-    </head>
+<%= erb :"common/header" %>
+<body id="Welcome Page">
+    <header>
+         <h1>E-Mentor</h1>
+    </header>
 
-    <body id="Welcome Page">
-
-        
-        <header>
-          <h1>E-Mentor</h1>
-        </header>
-      
-        <main>
-            <p>Welcome to E-Mentor</p>
-            <p><button onclick="window.location.href='login'">Log in</button>
-            <button onclick="window.location.href='register'">Register</button></p>
-        </main>
-      
-        <footer id="top"> 
-          <p> </p>
-        </footer>
-
-        <footer id="bottom"> 
-            <p> </p>
-          </footer>
-
-
-
-      </body>
-</html>
+    <main>
+        <p>Welcome to E-Mentor</p>
+        <p><button onclick="window.location.href='login'" name="login">Log in</button>
+        <button onclick="window.location.href='register'" name="register">Register</button></p>
+    </main>
+</body>
+<%= erb :"common/footer" %>

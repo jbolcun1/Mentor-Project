@@ -1,38 +1,21 @@
+<!--HTML registration page for mentees-->
+
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>Welcome to E-Mentor!</title>
-        <meta charset="utf-8">
-        <meta name="author" content="Team 2"/>
-        <link rel="stylesheet" href="styles/style.css">
-    </head>
+<%= erb :"common/header" %>
+<body id="Welcome Page">
+    <header>
+        <h1>E-Mentor</h1>
+    </header>
 
-    <body id="Welcome Page">
-
-        
-        <header>
-          <h1>E-Mentor</h1>
-        </header>
-      
-        <main>
-            <%= h @message %>
-
-            <form method="post" action="/post-mentee-register">
-                <p><label>Degree:</label></p><p>
-                    <input type="text" name="degree" id="degree"
-                    maxlength="50" size="30" required>
-                </p>
-                <input type="submit" value="Submit">
-            </form>
-        </main>
-      
-        <footer id="top"> 
-          <p> </p>
-        </footer>
-
-        <footer id="bottom"> 
-            <p> </p>
-          </footer>
-
-      </body>
-</html>
+    <main>
+        <%= h @message %>
+        <form method="post" action="/post-mentee-register">
+            <p><label>Degree:</label></p><p>
+                <input type="text" name="degree" id="degree"
+                maxlength="50" size="30" required>
+            </p>
+            <input type="submit" value="Submit">
+        </form>
+    </main>
+</body>
+<%= erb :"common/footer" %>
