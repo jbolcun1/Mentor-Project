@@ -783,3 +783,20 @@ I, [2021-03-16T10:17:06.254961 #1804]  INFO -- : (0.000043s) BEGIN
 I, [2021-03-16T10:17:06.255487 #1804]  INFO -- : (0.000223s) INSERT INTO `users` (`first_name`, `surname`, `email`, `password`, `privilege`, `has_mentee`, `has_mentor`) VALUES ('', '', '', '', '', 0, 0)
 I, [2021-03-16T10:17:06.255789 #1804]  INFO -- : (0.000140s) SELECT * FROM `users` WHERE `id` = 11
 I, [2021-03-16T10:17:06.356162 #1804]  INFO -- : (0.100276s) COMMIT
+I, [2021-03-16T11:41:01.512328 #166]  INFO -- : (0.000204s) PRAGMA foreign_keys = 1
+I, [2021-03-16T11:41:01.515168 #166]  INFO -- : (0.000037s) PRAGMA case_sensitive_like = 1
+I, [2021-03-16T11:41:01.524470 #166]  INFO -- : (0.000087s) SELECT sqlite_version()
+I, [2021-03-16T11:41:01.524801 #166]  INFO -- : (0.000163s) PRAGMA table_info('users')
+I, [2021-03-16T11:41:01.525677 #166]  INFO -- : (0.000085s) PRAGMA table_info('descriptions')
+I, [2021-03-16T11:41:13.693370 #166]  INFO -- : (0.000300s) SELECT * FROM `users` WHERE ((`email` = 'Mentee1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-16T11:41:14.070942 #166]  INFO -- : (0.000189s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-16T11:41:20.310681 #166]  INFO -- : (0.000476s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-16T11:41:20.311133 #166]  INFO -- : (0.000102s) SELECT 1 AS 'one' FROM `users` WHERE ((`job_Title` = '*') OR (`industry_Sector` = 'Charity and voluntary work')) LIMIT 1
+I, [2021-03-16T11:41:20.312892 #166]  INFO -- : (0.000090s) SELECT count(*) AS 'count' FROM `users` WHERE ((`job_Title` = '*') OR (`industry_Sector` = 'Charity and voluntary work')) LIMIT 1
+I, [2021-03-16T11:41:25.176262 #166]  INFO -- : (0.000234s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-16T11:41:25.176704 #166]  INFO -- : (0.000090s) SELECT 1 AS 'one' FROM `users` WHERE ((`job_Title` = 'A') OR (`industry_Sector` = 'Charity and voluntary work')) LIMIT 1
+I, [2021-03-16T11:41:25.178907 #166]  INFO -- : (0.000094s) SELECT count(*) AS 'count' FROM `users` WHERE ((`job_Title` = 'A') OR (`industry_Sector` = 'Charity and voluntary work')) LIMIT 1
+I, [2021-03-16T11:41:38.519310 #166]  INFO -- : (0.000247s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-16T11:41:38.519784 #166]  INFO -- : (0.000108s) SELECT 1 AS 'one' FROM `users` WHERE ((`job_Title` = '*') OR (`industry_Sector` = 'Media and internet')) LIMIT 1
+I, [2021-03-16T11:41:38.522362 #166]  INFO -- : (0.000134s) SELECT count(*) AS 'count' FROM `users` WHERE ((`job_Title` = '*') OR (`industry_Sector` = 'Media and internet')) LIMIT 1
+I, [2021-03-16T11:41:38.522745 #166]  INFO -- : (0.000224s) SELECT * FROM `users` WHERE ((`job_Title` = '*') OR (`industry_Sector` = 'Media and internet'))
