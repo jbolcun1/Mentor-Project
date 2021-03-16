@@ -38,6 +38,9 @@ end
 
 get "/view-mentor" do
   # TODO: Add description
+  @id =  params[:id]
+  @mentor = User.first(id: @id)
+  puts @mentor
   erb :view_mentor
 end
 
