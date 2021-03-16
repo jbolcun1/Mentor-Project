@@ -960,3 +960,8 @@ I, [2021-03-16T17:31:05.042526 #580]  INFO -- : (0.000171s) SELECT * FROM `users
 I, [2021-03-16T17:31:30.158412 #580]  INFO -- : (0.000181s) SELECT * FROM `users` WHERE ((`email` = 'Mentor1@gmail.com') AND (`password` = 'Password123')) LIMIT 1
 I, [2021-03-16T17:31:30.259141 #580]  INFO -- : (0.000201s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
 I, [2021-03-16T17:32:11.535614 #580]  INFO -- : (0.000163s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-16T17:41:10.037479 #621]  INFO -- : (0.000173s) PRAGMA foreign_keys = 1
+I, [2021-03-16T17:41:10.037598 #621]  INFO -- : (0.000015s) PRAGMA case_sensitive_like = 1
+I, [2021-03-16T17:41:10.049058 #621]  INFO -- : (0.000060s) SELECT sqlite_version()
+I, [2021-03-16T17:41:10.049361 #621]  INFO -- : (0.000153s) PRAGMA table_info('users')
+I, [2021-03-16T17:41:10.050161 #621]  INFO -- : (0.000080s) PRAGMA table_info('descriptions')

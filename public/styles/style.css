@@ -6,14 +6,10 @@ header {
     white-space :nowrap;
   }
 
-header h1 {
-  margin: 0;
-  padding: 0;
-  color: rgb(255, 255, 255);
-  font-family:'Times New Roman', Times, serif;
-  font-size: 1.7em;
-  line-height: 2.2;
-  text-align: left;
+ h1 {
+  text-align: center;
+    padding: 20px;
+  
 }
 
 body{ 
