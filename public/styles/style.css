@@ -70,10 +70,28 @@ margin-right:30px;
 text-align:right;
 }
 
+/* nav properties */
 nav a{
     text-decoration: none;
     color: white;
     
+}
+
+nav ul li a 
+{
+    display: inline;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 20px;
+    color:#f3f4e3; 
+
+}
+
+nav ul li a:hover 
+{
+     background-color: rgb(31, 30, 30);
+     color: #fff;
+     
 }
 
 .desktop-nav {

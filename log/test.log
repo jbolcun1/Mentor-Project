@@ -960,3 +960,23 @@ I, [2021-03-16T17:31:05.042526 #580]  INFO -- : (0.000171s) SELECT * FROM `users
 I, [2021-03-16T17:31:30.158412 #580]  INFO -- : (0.000181s) SELECT * FROM `users` WHERE ((`email` = 'Mentor1@gmail.com') AND (`password` = 'Password123')) LIMIT 1
 I, [2021-03-16T17:31:30.259141 #580]  INFO -- : (0.000201s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
 I, [2021-03-16T17:32:11.535614 #580]  INFO -- : (0.000163s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-16T18:35:06.169791 #193]  INFO -- : (0.000184s) PRAGMA foreign_keys = 1
+I, [2021-03-16T18:35:06.169909 #193]  INFO -- : (0.000039s) PRAGMA case_sensitive_like = 1
+I, [2021-03-16T18:35:06.179172 #193]  INFO -- : (0.000082s) SELECT sqlite_version()
+I, [2021-03-16T18:35:06.179474 #193]  INFO -- : (0.000156s) PRAGMA table_info('users')
+I, [2021-03-16T18:35:06.182038 #193]  INFO -- : (0.000945s) PRAGMA table_info('descriptions')
+I, [2021-03-16T18:36:09.884371 #239]  INFO -- : (0.000169s) PRAGMA foreign_keys = 1
+I, [2021-03-16T18:36:09.884464 #239]  INFO -- : (0.000014s) PRAGMA case_sensitive_like = 1
+I, [2021-03-16T18:36:09.893431 #239]  INFO -- : (0.000062s) SELECT sqlite_version()
+I, [2021-03-16T18:36:09.893706 #239]  INFO -- : (0.000142s) PRAGMA table_info('users')
+I, [2021-03-16T18:36:09.896080 #239]  INFO -- : (0.001643s) PRAGMA table_info('descriptions')
+I, [2021-03-16T18:39:03.467200 #239]  INFO -- : (0.000616s) SELECT * FROM `users` WHERE ((`email` = 'Mentee1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-16T18:39:03.755749 #239]  INFO -- : (0.000183s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-16T18:42:39.223132 #239]  INFO -- : (0.000747s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-16T18:43:29.642474 #239]  INFO -- : (0.000175s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-16T18:43:58.792596 #239]  INFO -- : (0.000174s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-16T18:45:19.951000 #239]  INFO -- : (0.000173s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-16T18:49:53.686627 #239]  INFO -- : (0.000170s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-16T18:50:34.119189 #239]  INFO -- : (0.000172s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-16T18:50:44.191398 #239]  INFO -- : (0.001518s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-16T18:50:54.386028 #239]  INFO -- : (0.000170s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
