@@ -4,7 +4,7 @@ FRONT END
 - centre table on mentee page /*DONE*/
 - error css class /*DONE* /
 - change headers + different common features into common folder (views of views) /*DONE*/
-- add extra info
+- add extra info /*DONE*/ /*CHECK*/ 
 
 EVERYONE WHO CAN
 - RSpec tests (unit + features)
@@ -13,8 +13,7 @@ OTHER TASKS
 - changing user credentials
 - log out button functionality
 - cookies clearing
-- add nav bar
-     (multiple buttons to pages)
+- add nav bar (multiple buttons to pages) /*DONE*/
 - mentee/mentor home page
 - rubocop testing
 

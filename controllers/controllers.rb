@@ -12,6 +12,11 @@ get "/index" do
   erb :index
 end
 
+get "/about" do
+  @errorCorrect = true if params.fetch("error", "0") == "1"
+  erb :about
+end
+
 get "/register" do
   @errorCorrect = true if params.fetch("error", "0") == "1"
   erb :register
