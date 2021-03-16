@@ -8,9 +8,15 @@
     <main>
         <%= h @message %>
         <form method="post" action="/post-mentee-register">
-            <p><label>Degree:</label></p><p>
+            <p><label>Degree:</label></p>
+            <p>
                 <input type="text" name="degree" id="degree"
                 maxlength="50" size="30" required>
+            </p>
+
+            <p><label>Description Of Yourself: </label> </p>
+            <p>
+                <textarea id="descriptionBox" name="description" rows="8" cols="100"> </textarea>
             </p>
             <input type="submit" value="Submit">
         </form>

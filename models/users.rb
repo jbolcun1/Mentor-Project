@@ -14,12 +14,13 @@ class User < Sequel::Model
 
     # Appends the description field from each record in the
     # dataset to the descriptions array
-    dataset.each do |record|
-      descriptions << record.description
-    end
+    # dataset.each do |record|
+    #   descriptions << record.description
+
+    return dataset.description
 
     # Returns an array of strings
-    descriptions
+    # descriptions
   end
 
   def load(params)
@@ -39,4 +40,9 @@ class User < Sequel::Model
 end
 
 class Description < Sequel::Model
+
+  def load(params)
+    puts params.fetch("description", "").strip
+    self.description = params.fetch("description", "").strip
+  end
 end

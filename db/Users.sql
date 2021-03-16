@@ -14,7 +14,3 @@ CREATE TABLE users (
     last_send TEXT
 );
 
-CREATE TABLE descriptions (
-    user_id INTEGER,
-    description TEXT
-);

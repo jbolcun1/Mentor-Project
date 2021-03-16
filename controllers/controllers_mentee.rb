@@ -4,6 +4,7 @@ get "/mentee" do
   redirect "/login" if @id == "0"
   # Find User
   @user = User.first(id: @id)
+  puts @user.description
   # Check if the params have been given or not
   job_TitleM = params.fetch("job_Title", "")
   industry_SectorM = params.fetch("industry_Sector", "")
@@ -32,7 +33,6 @@ get "/mentee-register" do
   @id = request.cookies.fetch("id")
   @user = User.first(id: @id)
   @message = "Hello prospective Mentee, #{@user.name}. Please input the details below!"
-  # TODO: Add description
   erb :mentee_register
 end
 
@@ -46,7 +46,11 @@ post "/post-mentee-register" do
   @user = User.first(id: @id)
   # Get the info and add them to the user db record
   @user.degree = params.fetch("degree", "")
-  puts @user.degree
+
+  @description = Description.new
+  @description.load(params)
+  @description.save_changes
+  @user.description = @description.user_Id
   @user.save_changes
   redirect "/mentee"
 end

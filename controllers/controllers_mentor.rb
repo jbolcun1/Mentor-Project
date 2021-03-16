@@ -14,7 +14,6 @@ get "/mentor-register" do
   @id = request.cookies.fetch("id")
   @user = User.first(id: @id)
   @message = "Hello prospective mentor, #{@user.name}. Please input the details below!"
-  # TODO: Add description
   erb :mentor_register
 end
 
@@ -24,8 +23,10 @@ post "/post-mentor-register" do
   # Get the info and add them to the user db record
   @user.job_Title = params.fetch("job_Title", "")
   @user.industry_Sector = params.fetch("industry_Sector", "")
-  puts @user.job_Title
-  puts @user.industry_Sector
+  @description = Description.new
+  @description.load(params)
+  @description.save_changes
+  @user.description = @description.user_Id
   @user.save_changes
   redirect "/mentor"
 end

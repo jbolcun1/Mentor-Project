@@ -8,6 +8,11 @@
         <%= h @message %>
         <form method="post" action="/post-mentor-register">
             <%= erb :"common/industrySector" %>
+            <p><label>Description Of Yourself: </label> </p>
+            <p>
+                <textarea id="descriptionBox" name="description" rows="8" cols="100"> </textarea>
+            </p>
+            <input type="submit" value="Submit">
         </form>
     </main>
 </body>
