@@ -1,0 +1,12 @@
+# IDE Specific
+.vscode
+.idea
+
+.DS_Store
+*.log
+temp.sqlite
+log/
+coverage/
+
+capybara/
+capybara-*.html

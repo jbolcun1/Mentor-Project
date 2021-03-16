@@ -14,6 +14,9 @@ require_relative "../app"
 # Configure Capybara
 require "capybara/rspec"
 Capybara.app = Sinatra::Application
+Capybara.configure do |config|
+  config.save_path = ("capybara/")
+end
 
 # Configure RSpec
 def app
