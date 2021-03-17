@@ -993,3 +993,8 @@ I, [2021-03-16T23:20:11.970407 #240]  INFO -- : (0.000026s) PRAGMA case_sensitiv
 I, [2021-03-16T23:20:12.003417 #240]  INFO -- : (0.000158s) SELECT sqlite_version()
 I, [2021-03-16T23:20:12.004287 #240]  INFO -- : (0.000560s) PRAGMA table_info('users')
 I, [2021-03-16T23:20:12.006095 #240]  INFO -- : (0.000173s) PRAGMA table_info('descriptions')
+I, [2021-03-17T18:08:42.558425 #288]  INFO -- : (0.000197s) PRAGMA foreign_keys = 1
+I, [2021-03-17T18:08:42.558524 #288]  INFO -- : (0.000017s) PRAGMA case_sensitive_like = 1
+I, [2021-03-17T18:08:42.572038 #288]  INFO -- : (0.000084s) SELECT sqlite_version()
+I, [2021-03-17T18:08:42.572390 #288]  INFO -- : (0.000189s) PRAGMA table_info('users')
+I, [2021-03-17T18:08:42.573240 #288]  INFO -- : (0.000096s) PRAGMA table_info('descriptions')
