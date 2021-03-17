@@ -16,8 +16,13 @@ RSpec.describe User do
     #end
   #end
   
-  #describe "#validPass"do
-  #end
+  describe "#validPass"do
+    it "returns true if password matches with confirm password" do
+      user = described_class.new
+      params = Hash["password"=>"Password1","confirmpassword"=>"Password1"]
+      expect(user.validPass(params)).to eq(true)
+    end
+  end
 
   #describe "#getDescription"do
   #end
