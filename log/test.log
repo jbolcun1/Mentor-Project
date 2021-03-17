@@ -998,3 +998,35 @@ I, [2021-03-17T18:08:42.558524 #288]  INFO -- : (0.000017s) PRAGMA case_sensitiv
 I, [2021-03-17T18:08:42.572038 #288]  INFO -- : (0.000084s) SELECT sqlite_version()
 I, [2021-03-17T18:08:42.572390 #288]  INFO -- : (0.000189s) PRAGMA table_info('users')
 I, [2021-03-17T18:08:42.573240 #288]  INFO -- : (0.000096s) PRAGMA table_info('descriptions')
+I, [2021-03-17T18:15:47.239336 #288]  INFO -- : (0.000276s) SELECT * FROM `users` WHERE ((`email` = 'Mentee1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-17T18:15:47.452606 #288]  INFO -- : (0.000186s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-17T18:16:12.338386 #288]  INFO -- : (0.000262s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-17T18:16:48.207935 #288]  INFO -- : (0.000176s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-17T18:17:19.985381 #288]  INFO -- : (0.000172s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-17T18:17:19.985834 #288]  INFO -- : (0.000087s) SELECT 1 AS 'one' FROM `users` WHERE ((`job_Title` = '*') OR (`industry_Sector` = 'Media and internet')) LIMIT 1
+I, [2021-03-17T18:17:19.988098 #288]  INFO -- : (0.000090s) SELECT count(*) AS 'count' FROM `users` WHERE ((`job_Title` = '*') OR (`industry_Sector` = 'Media and internet')) LIMIT 1
+I, [2021-03-17T18:17:19.988327 #288]  INFO -- : (0.000130s) SELECT * FROM `users` WHERE ((`job_Title` = '*') OR (`industry_Sector` = 'Media and internet'))
+I, [2021-03-17T18:17:39.484878 #288]  INFO -- : (0.000301s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-17T18:17:39.485495 #288]  INFO -- : (0.000129s) SELECT 1 AS 'one' FROM `users` WHERE ((`job_Title` = '*') OR (`industry_Sector` = 'Media and internet')) LIMIT 1
+I, [2021-03-17T18:17:39.487511 #288]  INFO -- : (0.000153s) SELECT count(*) AS 'count' FROM `users` WHERE ((`job_Title` = '*') OR (`industry_Sector` = 'Media and internet')) LIMIT 1
+I, [2021-03-17T18:17:39.487893 #288]  INFO -- : (0.000223s) SELECT * FROM `users` WHERE ((`job_Title` = '*') OR (`industry_Sector` = 'Media and internet'))
+I, [2021-03-17T18:17:45.356615 #288]  INFO -- : (0.000176s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-17T18:17:45.357048 #288]  INFO -- : (0.000095s) SELECT 1 AS 'one' FROM `users` WHERE ((`job_Title` = '*') OR (`industry_Sector` = 'Media and internet')) LIMIT 1
+I, [2021-03-17T18:17:45.358223 #288]  INFO -- : (0.000090s) SELECT count(*) AS 'count' FROM `users` WHERE ((`job_Title` = '*') OR (`industry_Sector` = 'Media and internet')) LIMIT 1
+I, [2021-03-17T18:17:45.358451 #288]  INFO -- : (0.000129s) SELECT * FROM `users` WHERE ((`job_Title` = '*') OR (`industry_Sector` = 'Media and internet'))
+I, [2021-03-17T18:18:20.742569 #288]  INFO -- : (0.000249s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-17T18:18:20.743109 #288]  INFO -- : (0.000118s) SELECT 1 AS 'one' FROM `users` WHERE ((`job_Title` = '*') OR (`industry_Sector` = 'Media and internet')) LIMIT 1
+I, [2021-03-17T18:18:20.744205 #288]  INFO -- : (0.000087s) SELECT count(*) AS 'count' FROM `users` WHERE ((`job_Title` = '*') OR (`industry_Sector` = 'Media and internet')) LIMIT 1
+I, [2021-03-17T18:18:20.744429 #288]  INFO -- : (0.000128s) SELECT * FROM `users` WHERE ((`job_Title` = '*') OR (`industry_Sector` = 'Media and internet'))
+I, [2021-03-17T18:18:30.434823 #288]  INFO -- : (0.000177s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-17T18:18:30.435244 #288]  INFO -- : (0.000088s) SELECT 1 AS 'one' FROM `users` WHERE ((`job_Title` = '*') OR (`industry_Sector` = 'Media and internet')) LIMIT 1
+I, [2021-03-17T18:18:30.436420 #288]  INFO -- : (0.000087s) SELECT count(*) AS 'count' FROM `users` WHERE ((`job_Title` = '*') OR (`industry_Sector` = 'Media and internet')) LIMIT 1
+I, [2021-03-17T18:18:30.436642 #288]  INFO -- : (0.000126s) SELECT * FROM `users` WHERE ((`job_Title` = '*') OR (`industry_Sector` = 'Media and internet'))
+I, [2021-03-17T18:19:07.179144 #288]  INFO -- : (0.000179s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-17T18:19:07.179591 #288]  INFO -- : (0.000101s) SELECT 1 AS 'one' FROM `users` WHERE ((`job_Title` = '*') OR (`industry_Sector` = 'Media and internet')) LIMIT 1
+I, [2021-03-17T18:19:07.180746 #288]  INFO -- : (0.000087s) SELECT count(*) AS 'count' FROM `users` WHERE ((`job_Title` = '*') OR (`industry_Sector` = 'Media and internet')) LIMIT 1
+I, [2021-03-17T18:19:07.180985 #288]  INFO -- : (0.000132s) SELECT * FROM `users` WHERE ((`job_Title` = '*') OR (`industry_Sector` = 'Media and internet'))
+I, [2021-03-17T18:19:15.554681 #288]  INFO -- : (0.000178s) SELECT * FROM `users` WHERE (`id` = '4') LIMIT 1
+I, [2021-03-17T18:25:02.841677 #288]  INFO -- : (0.000163s) SELECT * FROM `users` WHERE (`id` = '4') LIMIT 1
+I, [2021-03-17T18:25:38.834815 #288]  INFO -- : (0.000172s) SELECT * FROM `users` WHERE (`id` = '4') LIMIT 1
+I, [2021-03-17T18:26:07.655457 #288]  INFO -- : (0.000166s) SELECT * FROM `users` WHERE (`id` = '4') LIMIT 1

@@ -10,12 +10,11 @@
         <p>
             The mentor you have selected is <%= h @mentor.name %>
         </p>
-        <form name="contact" action="https://www.dcs.shef.ac.uk/cgi-intranet/public/FormMail.php" method="POST">
-            <input type="hidden" name="recipients" value="vmcranga1@sheffield.ac.uk"></input>
+        <form name="contact" action="mailto:<%= h @mentor.email %>?subject=Mentee Invitation&body=You have received a request from <% h @mentor.name %> to meet." method="POST">
             <label for="GET-email">Your email address: </label><input id="GET-email" type="email" name="email" maxlength="40" size="30" required>
             <br>
             <br>
-            <textarea name="comments" rows="5" cols="32" placeholder="Type your comments here..."></textarea>
+            <textarea name="comments" rows="5" cols="32" placeholder="Write your invitation email here..."></textarea>
             <br>
             <br>
             <input type="submit" value="Submit"><br>

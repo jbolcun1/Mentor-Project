@@ -6,7 +6,7 @@
 
 
     <main>
-        <p>Your Mentee Page</p>
+        <h2>Mentee Dashboard</h2>
         <%= h @s %>
         <p>
             Please input the Job Title and Industry Sector of the mentor you want to find!
@@ -15,21 +15,22 @@
             <%= erb :"common/industrySector" %>
             <input type="submit" value="Submit">
         </form>
-
+        <br>
         <% if @table_Show%>
             <% if @mentors.count > 0 %>
-                <table class = "centerTable">
+                <table class = "centerTable" border="1">
                     <tr  id = "mentorTable">
                         <th>Name</th>
                         <th>Job Title</th>
                         <th>Industry Sector</th>
+                        <th>Action</th>
                     </tr>
                     <% @mentors.each do |mentor| %>
                     <tr>
                         <td><%= h mentor.name %></td>
                         <td><%= h mentor.job_Title %></td>
                         <td><%= h mentor.industry_Sector %></td>
-                        <td><a href="/view-mentor?id=<%= h mentor.id %>">View More?</a></td>
+                        <td><a href="/view-mentor?id=<%= h mentor.id %>">View More</a></td>
                     </tr>
                     <% end %>
                 </table>
