@@ -6,7 +6,7 @@
     
 
     <main>
-        <p>Please fill in the fields below to complete registration</p>
+        <p>Please fill in the fields below to complete the registration process:</p>
 
         <form method="post" action="/post-register">
             <p><label1>First Name:</label1>
@@ -40,15 +40,16 @@
             </p>
             <% end %>
 
-            <p>Would you like to be a mentor or a mentee?</p>
+            <p>Would you like to be a mentee or a mentor?
             <input type="radio" id="mentee" name="privilege" value="Mentee">
             <label for="mentee">Mentee</label>
             <input type="radio" id="mentor" name="privilege" value="Mentor">
-            <label for="mentor">Mentor</label><br>
+            <label for="mentor">Mentor</label>
+            </p>
             <input type="submit" value="Sign Up">
         </form>
 
-        <p>If you already have an account, <a href="/login">press here.</a></p>
+        <p>If you already have an account, <a href="/login">click here.</a></p>
     </main>
 </body>
 <%= erb :"common/footer" %>
