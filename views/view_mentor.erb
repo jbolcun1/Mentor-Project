@@ -10,7 +10,14 @@
         <p>
             The mentor you have selected is <%= h @mentor.name %>
         </p>
-        <form name="contact" action="mailto:<%= h @mentor.email %>?subject=Mentee Invitation&body=You have received a request from <% h @mentor.name %> to meet." method="POST">
+        <p>
+            The description of your mentor 
+        </p>
+        <p>
+            <%= h @description %>
+        </p>
+        </p>
+        <form name="contact" action="mailto:<%= h @mentor.email %>?subject=Mentee Invitation&body=You have received a request from <% h @mentor.name %>to meet." method="POST">
             <label for="GET-email">Your email address: </label><input id="GET-email" type="email" name="email" maxlength="40" size="30" required>
             <br>
             <br>

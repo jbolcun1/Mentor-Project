@@ -7,20 +7,27 @@ class User < Sequel::Model
 
   # .getDescriptions returns a string array of all of the user's
   # descriptions
-  def getDescriptions(id)
+  def getDescriptions
+    puts self.description
     # Retrieves a dataset from the database
-    dataset = Description.where(id: id)
-    descriptions = []
+    dataset = Description.first(user_Id: self.description)
+    puts dataset.nil?
+    description = dataset.description
+    puts description
+    # if !@dataset.nil? 
+    #   description = dataset.description
+    #   puts "here1"
+    #   puts description
+    #   if description == ""
+    #     "here2"
+    #     description = "No description found"
+    #   end
+    # else 
+    #   puts "here3"
+    #   description = "No description found"
+    # end
 
-    # Appends the description field from each record in the
-    # dataset to the descriptions array
-    # dataset.each do |record|
-    #   descriptions << record.description
-
-    return dataset.description
-
-    # Returns an array of strings
-    # descriptions
+    return description
   end
 
   def load(params)
