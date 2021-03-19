@@ -1,6 +1,6 @@
 get "/mentor" do
   # Get the id cookie. If there is one, then continue. If not, then redirect to login.
-  @id = request.cookies.fetch("id", 0)
+  @id = request.cookies.fetch("id", "0")
   redirect "/login" if @id == "0"
   @user = User.first(id: @id)
   # Display a personalised message upon a successful mentor login

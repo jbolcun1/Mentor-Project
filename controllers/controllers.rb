@@ -1,10 +1,33 @@
 get "/" do
+  @id = request.cookies.fetch("id", "0")
+  redirect "/index" if @id == "0"
+  @user = User.first(id: @id)
+  # Check if a user is found. If not, we redirect back to login with an error
+  if @user.nil?
+    redirect "/index"
+  else
+    @privilege = @user.privilege
+    # Find out what type of user they are and then redirect them to the correct page
+    case @privilege
+    when "Mentee"
+      redirect "/mentee"
+    when "Mentor"
+      redirect "/mentor"
+    else
+      redirect "/admin"
+    end
+  end
   erb :index
 end
 
 get "/login" do
   @errorCorrect = true if params.fetch("error", "0") == "1"
   erb :login
+end
+
+get "/logout" do 
+  response.delete_cookie("id")
+  redirect "/index"
 end
 
 get "/index" do
@@ -69,4 +92,26 @@ post "/post-register" do
     redirect "/register?error=1"
   end
   erb :register
+end
+
+get "/dashboard" do
+  puts "dashboard"
+  @id = request.cookies.fetch("id", "0")
+  redirect "/index" if @id == "0"
+  @user = User.first(id: @id)
+  # Check if a user is found. If not, we redirect back to login with an error
+  if @user.nil?
+    redirect "/index"
+  else
+    @privilege = @user.privilege
+    # Find out what type of user they are and then redirect them to the correct page
+    case @privilege
+    when "Mentee"
+      redirect "/mentee"
+    when "Mentor"
+      redirect "/mentor"
+    else
+      redirect "/admin"
+    end
+  end
 end
