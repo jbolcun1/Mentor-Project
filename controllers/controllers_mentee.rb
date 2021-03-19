@@ -60,3 +60,25 @@ post "/post-mentee-register" do
   @user.save_changes
   redirect "/mentee"
 end
+
+post "/post-mentee-invite" do
+  @id = request.cookies.fetch("id")
+  @user = User.first(id: @id)
+  @last_Send = @user.last_send
+
+  
+  # Time class works in seconds. 86400 is one day in seconds. We store the time since they last sent an invite in seconds.
+  # We check that the time time in last_Send and current time is greater then one day. If so we can do the actual invite/etc
+  # If there is no last_Send we can assume they never sent an invite and then we do the invite process. 
+
+  if !@last_Send.nil?
+    time_Now = Time.new
+    time_Last_send = Time.at(@last_Send.to_i)
+    if time_Now - time_Last_send >= 86400
+      # Send email and change has_mentor
+    else 
+      # Error
+    end
+  else
+    # Send email and change has_mentor
+  end
