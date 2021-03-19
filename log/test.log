@@ -1266,3 +1266,8 @@ I, [2021-03-19T15:40:57.736622 #233]  INFO -- : (0.000166s) SELECT * FROM `users
 I, [2021-03-19T15:40:57.737105 #233]  INFO -- : (0.000106s) SELECT 1 AS 'one' FROM `users` WHERE ((`job_Title` = 'Twitch Streamer') OR (`industry_Sector` = 'Media and internet')) LIMIT 1
 I, [2021-03-19T15:40:57.737489 #233]  INFO -- : (0.000080s) SELECT count(*) AS 'count' FROM `users` WHERE ((`job_Title` = 'Twitch Streamer') OR (`industry_Sector` = 'Media and internet')) LIMIT 1
 I, [2021-03-19T15:40:57.737721 #233]  INFO -- : (0.000132s) SELECT * FROM `users` WHERE ((`job_Title` = 'Twitch Streamer') OR (`industry_Sector` = 'Media and internet'))
+I, [2021-03-19T16:19:43.191921 #349]  INFO -- : (0.000196s) PRAGMA foreign_keys = 1
+I, [2021-03-19T16:19:43.192023 #349]  INFO -- : (0.000015s) PRAGMA case_sensitive_like = 1
+I, [2021-03-19T16:19:43.205937 #349]  INFO -- : (0.000112s) SELECT sqlite_version()
+I, [2021-03-19T16:19:43.206292 #349]  INFO -- : (0.000170s) PRAGMA table_info('users')
+I, [2021-03-19T16:19:43.207161 #349]  INFO -- : (0.000086s) PRAGMA table_info('descriptions')
