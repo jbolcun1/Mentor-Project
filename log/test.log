@@ -1118,3 +1118,151 @@ I, [2021-03-17T21:04:47.485725 #278]  INFO -- : (0.000015s) PRAGMA case_sensitiv
 I, [2021-03-17T21:04:47.501268 #278]  INFO -- : (0.000071s) SELECT sqlite_version()
 I, [2021-03-17T21:04:47.501639 #278]  INFO -- : (0.000217s) PRAGMA table_info('users')
 I, [2021-03-17T21:04:47.502512 #278]  INFO -- : (0.000096s) PRAGMA table_info('descriptions')
+I, [2021-03-18T19:57:04.059066 #183]  INFO -- : (0.011407s) PRAGMA foreign_keys = 1
+I, [2021-03-18T19:57:04.059255 #183]  INFO -- : (0.000027s) PRAGMA case_sensitive_like = 1
+I, [2021-03-18T19:57:04.072722 #183]  INFO -- : (0.000080s) SELECT sqlite_version()
+I, [2021-03-18T19:57:04.073036 #183]  INFO -- : (0.000160s) PRAGMA table_info('users')
+I, [2021-03-18T19:57:04.073862 #183]  INFO -- : (0.000084s) PRAGMA table_info('descriptions')
+I, [2021-03-18T19:57:35.667303 #183]  INFO -- : (0.000198s) SELECT * FROM `users` WHERE ((`email` = 'Mentee1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-18T19:57:35.803278 #183]  INFO -- : (0.000177s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-18T19:57:41.581951 #183]  INFO -- : (0.000875s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-18T19:57:41.582472 #183]  INFO -- : (0.000132s) SELECT 1 AS 'one' FROM `users` WHERE ((`job_Title` = 'why no') OR (`industry_Sector` = 'Charity and voluntary work')) LIMIT 1
+I, [2021-03-18T19:57:41.584493 #183]  INFO -- : (0.000350s) SELECT count(*) AS 'count' FROM `users` WHERE ((`job_Title` = 'why no') OR (`industry_Sector` = 'Charity and voluntary work')) LIMIT 1
+I, [2021-03-18T19:57:41.584754 #183]  INFO -- : (0.000150s) SELECT * FROM `users` WHERE ((`job_Title` = 'why no') OR (`industry_Sector` = 'Charity and voluntary work'))
+I, [2021-03-18T19:57:42.907547 #183]  INFO -- : (0.000181s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-18T19:57:42.907993 #183]  INFO -- : (0.000104s) SELECT * FROM `descriptions` WHERE (`user_Id` IS NULL) LIMIT 1
+I, [2021-03-18T19:57:44.766268 #183]  INFO -- : (0.000167s) SELECT * FROM `users` WHERE (`id` = '21') LIMIT 1
+I, [2021-03-18T19:57:44.766635 #183]  INFO -- : (0.000095s) SELECT * FROM `descriptions` WHERE (`user_Id` = 3) LIMIT 1
+I, [2021-03-19T15:27:25.587161 #214]  INFO -- : (0.000198s) PRAGMA foreign_keys = 1
+I, [2021-03-19T15:27:25.587357 #214]  INFO -- : (0.000026s) PRAGMA case_sensitive_like = 1
+I, [2021-03-19T15:27:25.602107 #214]  INFO -- : (0.000121s) SELECT sqlite_version()
+I, [2021-03-19T15:27:25.602541 #214]  INFO -- : (0.000235s) PRAGMA table_info('users')
+I, [2021-03-19T15:27:25.603726 #214]  INFO -- : (0.000114s) PRAGMA table_info('descriptions')
+I, [2021-03-19T15:27:26.609378 #214]  INFO -- : (0.000287s) SELECT * FROM `users` WHERE ((`email` = 'Mentee1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-19T15:27:26.610938 #214]  INFO -- : (0.000209s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-19T15:27:26.644537 #214]  INFO -- : (0.000279s) SELECT * FROM `users` WHERE ((`email` = 'Mentee1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-19T15:27:26.646004 #214]  INFO -- : (0.000193s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-19T15:27:26.695620 #214]  INFO -- : (0.000216s) SELECT * FROM `users` WHERE ((`email` = 'Mentee1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-19T15:27:26.696646 #214]  INFO -- : (0.000189s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-19T15:27:26.711202 #214]  INFO -- : (0.000213s) SELECT * FROM `users` WHERE ((`email` = 'Mentor1@gmail.com') AND (`password` = 'Password123')) LIMIT 1
+I, [2021-03-19T15:27:26.712358 #214]  INFO -- : (0.000148s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-19T15:28:56.210131 #217]  INFO -- : (0.000135s) PRAGMA foreign_keys = 1
+I, [2021-03-19T15:28:56.210258 #217]  INFO -- : (0.000018s) PRAGMA case_sensitive_like = 1
+I, [2021-03-19T15:30:44.942900 #218]  INFO -- : (0.000174s) PRAGMA foreign_keys = 1
+I, [2021-03-19T15:30:44.943051 #218]  INFO -- : (0.000027s) PRAGMA case_sensitive_like = 1
+I, [2021-03-19T15:31:34.642256 #219]  INFO -- : (0.000136s) PRAGMA foreign_keys = 1
+I, [2021-03-19T15:31:34.642390 #219]  INFO -- : (0.000027s) PRAGMA case_sensitive_like = 1
+I, [2021-03-19T15:31:34.676897 #219]  INFO -- : (0.000112s) SELECT sqlite_version()
+I, [2021-03-19T15:31:34.677364 #219]  INFO -- : (0.000260s) PRAGMA table_info('users')
+I, [2021-03-19T15:31:34.678680 #219]  INFO -- : (0.000149s) PRAGMA table_info('descriptions')
+I, [2021-03-19T15:31:35.133541 #219]  INFO -- : (0.000227s) SELECT * FROM `users` WHERE ((`email` = 'Mentee1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-19T15:31:35.134736 #219]  INFO -- : (0.000154s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-19T15:31:35.148819 #219]  INFO -- : (0.000312s) SELECT * FROM `users` WHERE ((`email` = 'Mentee1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-19T15:31:35.149901 #219]  INFO -- : (0.000163s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-19T15:34:30.072749 #222]  INFO -- : (0.000131s) PRAGMA foreign_keys = 1
+I, [2021-03-19T15:34:30.072864 #222]  INFO -- : (0.000018s) PRAGMA case_sensitive_like = 1
+I, [2021-03-19T15:34:30.102303 #222]  INFO -- : (0.000110s) SELECT sqlite_version()
+I, [2021-03-19T15:34:30.102789 #222]  INFO -- : (0.000250s) PRAGMA table_info('users')
+I, [2021-03-19T15:34:30.103805 #222]  INFO -- : (0.000100s) PRAGMA table_info('descriptions')
+I, [2021-03-19T15:34:30.458073 #222]  INFO -- : (0.000232s) SELECT * FROM `users` WHERE ((`email` = 'Mentee1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-19T15:34:30.459255 #222]  INFO -- : (0.000158s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-19T15:34:30.466591 #222]  INFO -- : (0.000186s) SELECT * FROM `users` WHERE ((`email` = 'Mentee1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-19T15:34:30.467473 #222]  INFO -- : (0.000152s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-19T15:35:11.337013 #224]  INFO -- : (0.000128s) PRAGMA foreign_keys = 1
+I, [2021-03-19T15:35:11.337130 #224]  INFO -- : (0.000019s) PRAGMA case_sensitive_like = 1
+I, [2021-03-19T15:35:11.368900 #224]  INFO -- : (0.000115s) SELECT sqlite_version()
+I, [2021-03-19T15:35:11.369446 #224]  INFO -- : (0.000301s) PRAGMA table_info('users')
+I, [2021-03-19T15:35:11.370553 #224]  INFO -- : (0.000112s) PRAGMA table_info('descriptions')
+I, [2021-03-19T15:35:11.732241 #224]  INFO -- : (0.000229s) SELECT * FROM `users` WHERE ((`email` = 'Mentee1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-19T15:35:11.733332 #224]  INFO -- : (0.000141s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-19T15:35:11.745538 #224]  INFO -- : (0.000184s) SELECT * FROM `users` WHERE ((`email` = 'Mentee1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-19T15:35:11.746412 #224]  INFO -- : (0.000143s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-19T15:35:34.481430 #225]  INFO -- : (0.000214s) PRAGMA foreign_keys = 1
+I, [2021-03-19T15:35:34.481603 #225]  INFO -- : (0.000028s) PRAGMA case_sensitive_like = 1
+I, [2021-03-19T15:35:34.535336 #225]  INFO -- : (0.000171s) SELECT sqlite_version()
+I, [2021-03-19T15:35:34.536220 #225]  INFO -- : (0.000565s) PRAGMA table_info('users')
+I, [2021-03-19T15:35:34.538066 #225]  INFO -- : (0.000181s) PRAGMA table_info('descriptions')
+I, [2021-03-19T15:35:34.916559 #225]  INFO -- : (0.000226s) SELECT * FROM `users` WHERE ((`email` = 'Mentee1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-19T15:35:34.917678 #225]  INFO -- : (0.000150s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-19T15:35:34.930427 #225]  INFO -- : (0.000202s) SELECT * FROM `users` WHERE ((`email` = 'Mentee1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-19T15:35:34.931733 #225]  INFO -- : (0.000223s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-19T15:36:27.454976 #226]  INFO -- : (0.000163s) PRAGMA foreign_keys = 1
+I, [2021-03-19T15:36:27.455093 #226]  INFO -- : (0.000018s) PRAGMA case_sensitive_like = 1
+I, [2021-03-19T15:36:27.484687 #226]  INFO -- : (0.000110s) SELECT sqlite_version()
+I, [2021-03-19T15:36:27.485134 #226]  INFO -- : (0.000242s) PRAGMA table_info('users')
+I, [2021-03-19T15:36:27.486177 #226]  INFO -- : (0.000103s) PRAGMA table_info('descriptions')
+I, [2021-03-19T15:36:27.872156 #226]  INFO -- : (0.000234s) SELECT * FROM `users` WHERE ((`email` = 'Mentee1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-19T15:36:27.873265 #226]  INFO -- : (0.000154s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-19T15:36:27.885571 #226]  INFO -- : (0.000230s) SELECT * FROM `users` WHERE ((`email` = 'Mentee1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-19T15:36:27.886475 #226]  INFO -- : (0.000141s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-19T15:36:45.540406 #227]  INFO -- : (0.000136s) PRAGMA foreign_keys = 1
+I, [2021-03-19T15:36:45.540518 #227]  INFO -- : (0.000018s) PRAGMA case_sensitive_like = 1
+I, [2021-03-19T15:36:45.570030 #227]  INFO -- : (0.000106s) SELECT sqlite_version()
+I, [2021-03-19T15:36:45.570475 #227]  INFO -- : (0.000240s) PRAGMA table_info('users')
+I, [2021-03-19T15:36:45.571472 #227]  INFO -- : (0.000101s) PRAGMA table_info('descriptions')
+I, [2021-03-19T15:36:45.924020 #227]  INFO -- : (0.000332s) SELECT * FROM `users` WHERE ((`email` = 'Mentee1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-19T15:36:45.925215 #227]  INFO -- : (0.000187s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-19T15:36:45.937993 #227]  INFO -- : (0.000204s) SELECT * FROM `users` WHERE ((`email` = 'Mentee1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-19T15:36:45.938924 #227]  INFO -- : (0.000134s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-19T15:36:58.645987 #228]  INFO -- : (0.000158s) PRAGMA foreign_keys = 1
+I, [2021-03-19T15:36:58.646107 #228]  INFO -- : (0.000018s) PRAGMA case_sensitive_like = 1
+I, [2021-03-19T15:36:58.675661 #228]  INFO -- : (0.000105s) SELECT sqlite_version()
+I, [2021-03-19T15:36:58.676141 #228]  INFO -- : (0.000241s) PRAGMA table_info('users')
+I, [2021-03-19T15:36:58.677158 #228]  INFO -- : (0.000106s) PRAGMA table_info('descriptions')
+I, [2021-03-19T15:36:59.031996 #228]  INFO -- : (0.000261s) SELECT * FROM `users` WHERE ((`email` = 'Mentee1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-19T15:36:59.033192 #228]  INFO -- : (0.000161s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-19T15:36:59.046901 #228]  INFO -- : (0.000208s) SELECT * FROM `users` WHERE ((`email` = 'Mentee1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-19T15:36:59.047880 #228]  INFO -- : (0.000162s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-19T15:37:33.056988 #229]  INFO -- : (0.000136s) PRAGMA foreign_keys = 1
+I, [2021-03-19T15:37:33.057108 #229]  INFO -- : (0.000018s) PRAGMA case_sensitive_like = 1
+I, [2021-03-19T15:37:33.087150 #229]  INFO -- : (0.000104s) SELECT sqlite_version()
+I, [2021-03-19T15:37:33.087838 #229]  INFO -- : (0.000375s) PRAGMA table_info('users')
+I, [2021-03-19T15:37:33.088975 #229]  INFO -- : (0.000110s) PRAGMA table_info('descriptions')
+I, [2021-03-19T15:37:33.453450 #229]  INFO -- : (0.000222s) SELECT * FROM `users` WHERE ((`email` = 'Mentee1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-19T15:37:33.454543 #229]  INFO -- : (0.000146s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-19T15:37:33.467562 #229]  INFO -- : (0.000209s) SELECT * FROM `users` WHERE ((`email` = 'Mentee1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-19T15:37:33.468511 #229]  INFO -- : (0.000144s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-19T15:38:28.070511 #230]  INFO -- : (0.000134s) PRAGMA foreign_keys = 1
+I, [2021-03-19T15:38:28.070649 #230]  INFO -- : (0.000019s) PRAGMA case_sensitive_like = 1
+I, [2021-03-19T15:38:28.100225 #230]  INFO -- : (0.000109s) SELECT sqlite_version()
+I, [2021-03-19T15:38:28.100668 #230]  INFO -- : (0.000235s) PRAGMA table_info('users')
+I, [2021-03-19T15:38:28.101807 #230]  INFO -- : (0.000124s) PRAGMA table_info('descriptions')
+I, [2021-03-19T15:38:28.477502 #230]  INFO -- : (0.000230s) SELECT * FROM `users` WHERE ((`email` = 'Mentee1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-19T15:38:28.478660 #230]  INFO -- : (0.000170s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-19T15:38:28.491181 #230]  INFO -- : (0.000220s) SELECT * FROM `users` WHERE ((`email` = 'Mentee1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-19T15:38:28.492127 #230]  INFO -- : (0.000143s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-19T15:39:33.940008 #231]  INFO -- : (0.000137s) PRAGMA foreign_keys = 1
+I, [2021-03-19T15:39:33.940117 #231]  INFO -- : (0.000018s) PRAGMA case_sensitive_like = 1
+I, [2021-03-19T15:39:33.967808 #231]  INFO -- : (0.000106s) SELECT sqlite_version()
+I, [2021-03-19T15:39:33.968252 #231]  INFO -- : (0.000234s) PRAGMA table_info('users')
+I, [2021-03-19T15:39:33.969205 #231]  INFO -- : (0.000099s) PRAGMA table_info('descriptions')
+I, [2021-03-19T15:39:34.317589 #231]  INFO -- : (0.000215s) SELECT * FROM `users` WHERE ((`email` = 'Mentee1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-19T15:39:34.318649 #231]  INFO -- : (0.000143s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-19T15:39:34.329737 #231]  INFO -- : (0.000172s) SELECT * FROM `users` WHERE ((`email` = 'Mentee1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-19T15:39:34.330577 #231]  INFO -- : (0.000135s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-19T15:40:07.608333 #232]  INFO -- : (0.000131s) PRAGMA foreign_keys = 1
+I, [2021-03-19T15:40:07.608458 #232]  INFO -- : (0.000020s) PRAGMA case_sensitive_like = 1
+I, [2021-03-19T15:40:07.636122 #232]  INFO -- : (0.000099s) SELECT sqlite_version()
+I, [2021-03-19T15:40:07.636544 #232]  INFO -- : (0.000228s) PRAGMA table_info('users')
+I, [2021-03-19T15:40:07.637491 #232]  INFO -- : (0.000096s) PRAGMA table_info('descriptions')
+I, [2021-03-19T15:40:07.977328 #232]  INFO -- : (0.000213s) SELECT * FROM `users` WHERE ((`email` = 'Mentee1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-19T15:40:07.978395 #232]  INFO -- : (0.000161s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-19T15:40:07.989554 #232]  INFO -- : (0.000179s) SELECT * FROM `users` WHERE ((`email` = 'Mentee1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-19T15:40:07.990361 #232]  INFO -- : (0.000127s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-19T15:40:07.995538 #232]  INFO -- : (0.000126s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-19T15:40:07.995974 #232]  INFO -- : (0.000095s) SELECT 1 AS 'one' FROM `users` WHERE ((`job_Title` = 'Twitch Streamer') OR (`industry_Sector` = 'Media and internet')) LIMIT 1
+I, [2021-03-19T15:40:07.996351 #232]  INFO -- : (0.000079s) SELECT count(*) AS 'count' FROM `users` WHERE ((`job_Title` = 'Twitch Streamer') OR (`industry_Sector` = 'Media and internet')) LIMIT 1
+I, [2021-03-19T15:40:07.996612 #232]  INFO -- : (0.000138s) SELECT * FROM `users` WHERE ((`job_Title` = 'Twitch Streamer') OR (`industry_Sector` = 'Media and internet'))
+I, [2021-03-19T15:40:57.266685 #233]  INFO -- : (0.000133s) PRAGMA foreign_keys = 1
+I, [2021-03-19T15:40:57.266803 #233]  INFO -- : (0.000022s) PRAGMA case_sensitive_like = 1
+I, [2021-03-19T15:40:57.301570 #233]  INFO -- : (0.000102s) SELECT sqlite_version()
+I, [2021-03-19T15:40:57.302022 #233]  INFO -- : (0.000237s) PRAGMA table_info('users')
+I, [2021-03-19T15:40:57.303161 #233]  INFO -- : (0.000140s) PRAGMA table_info('descriptions')
+I, [2021-03-19T15:40:57.713573 #233]  INFO -- : (0.000321s) SELECT * FROM `users` WHERE ((`email` = 'Mentee1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-19T15:40:57.715195 #233]  INFO -- : (0.000225s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-19T15:40:57.729307 #233]  INFO -- : (0.000220s) SELECT * FROM `users` WHERE ((`email` = 'Mentee1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-19T15:40:57.730369 #233]  INFO -- : (0.000147s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-19T15:40:57.736622 #233]  INFO -- : (0.000166s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-19T15:40:57.737105 #233]  INFO -- : (0.000106s) SELECT 1 AS 'one' FROM `users` WHERE ((`job_Title` = 'Twitch Streamer') OR (`industry_Sector` = 'Media and internet')) LIMIT 1
+I, [2021-03-19T15:40:57.737489 #233]  INFO -- : (0.000080s) SELECT count(*) AS 'count' FROM `users` WHERE ((`job_Title` = 'Twitch Streamer') OR (`industry_Sector` = 'Media and internet')) LIMIT 1
+I, [2021-03-19T15:40:57.737721 #233]  INFO -- : (0.000132s) SELECT * FROM `users` WHERE ((`job_Title` = 'Twitch Streamer') OR (`industry_Sector` = 'Media and internet'))

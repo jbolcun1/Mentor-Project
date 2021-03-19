@@ -8,5 +8,5 @@ include ERB::Util
 
 require_relative "db/db"
 
-require_all "controllers"
-require_all "models"
+require_rel "controllers"
+require_rel "models"
