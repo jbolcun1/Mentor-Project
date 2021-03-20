@@ -11,9 +11,9 @@ RSpec.describe "App Test" do
   end
 
   describe "GET /" do
-    it "has a status code of 200 (OK)" do
+    it "has a status code of 302 (Redirect)" do
       get "/"
-      expect(last_response.status).to eq(200)
+      expect(last_response.status).to eq(302)
     end
   end
 end
