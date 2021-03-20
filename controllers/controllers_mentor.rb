@@ -10,7 +10,7 @@ get "/mentor" do
     @table_Show = true
   end
   puts !@user.has_mentor.nil?
-  if !@user.has_mentor.nil?
+  if @user.has_mentor != 0
     @table_show2 = true
     @table_Show = false
     @mentee = User.first(id: @user.has_mentee)

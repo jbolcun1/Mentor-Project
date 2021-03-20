@@ -17,7 +17,7 @@ get "/mentee" do
       @error = true
     end
   end
-  if !@user.has_mentee.nil?
+  if @user.has_mentee != 0
     @table_show2 = true
     @table_Show = false
     @mentee = User.first(id: @user.has_mentor)
