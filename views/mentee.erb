@@ -11,6 +11,20 @@
         <p>
             Please input the Job Title and Industry Sector of the mentor you want to find!
         </p>
+        <% if @table_show2%>
+            <p>You have been matched. Details to talk to them are below! </p>
+                           <table class = "centerTable" border="1">
+                    <tr  id = "mentorTable">
+                        <th>Name</th>
+                        <th>Email</th>
+                    </tr>
+                    <tr>
+                        <td><%= h @mentee.name %></td>
+                        <td><%= h @mentee.email %></td>
+                    </tr>
+                </table>
+            <br><br>
+        <% end %>
         <form method="post" action="/mentee">
             <%= erb :"common/industrySector" %>
             <input type="submit" value="Submit">

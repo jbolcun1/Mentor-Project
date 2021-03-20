@@ -17,6 +17,11 @@ get "/mentee" do
       @error = true
     end
   end
+  if !@user.has_mentee.nil?
+    @table_show2 = true
+    @table_Show = false
+    @mentee = User.first(id: @user.has_mentor)
+  end
   # Display a personalised message upon a successful mentee login
   @s = "Welcome, #{@user.name}. \n You have sucessfully logged in as a #{@user.privilege.downcase}."
   # TODO: Add mentee invitaion

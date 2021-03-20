@@ -20,8 +20,8 @@ OTHER TASKS
 
 BACKEND
 - view more mentor details + description
-    send invation to mentor
-    mentor accept invation    
+    send invation to mentor /*Done*/ /*CHECK*/
+    mentor accept invation  /*Done*/ /*CHECK*/ 
 
 (potential)
 - Email sending via form /*DONE*/

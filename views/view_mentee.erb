@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<%= erb :"common/header_loggedin" %>
+<body id="Mentee Details Page">
+
+
+    <main>
+        <p>Your potential Mentee's profile</p>
+        <p>
+            The mentee you have selected is <%= h @mentee.name %>
+        </p>
+        <p>
+            The description of your mentee
+        </p>
+        <p>
+            <%= h @description %>
+        </p>
+
+        <form name="contact" method="post" action="/post-mentor-accept?mentee_Id=<%= h @mentee.id %>" >
+            <label for="GET-comments">Click Submit if you wish to start a mentorship with the mentee</label> 
+            <br>
+            <br>
+            <input type="submit" value="Submit"><br>
+        </form>
+
+    </main>
+</body>
+<%= erb :"common/footer" %>

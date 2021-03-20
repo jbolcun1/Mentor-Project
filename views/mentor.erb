@@ -3,11 +3,40 @@
 <!DOCTYPE html>
 <%= erb :"common/header_loggedin" %>
 <body id="Welcome Page">
-
-
     <main>
         <h2>Mentor Dashboard</h2>
         <%= h @s %>
+
+        <% if @table_show2%>
+                           <table class = "centerTable" border="1">
+                    <tr  id = "mentorTable">
+                        <th>Name</th>
+                        <th>Email</th>
+                    </tr>
+                    <tr>
+                        <td><%= h @mentee.name %></td>
+                        <td><%= h @mentee.email %></td>
+                    </tr>
+                </table>
+        <% end %>
+
+        <% if @table_Show%>
+                           <table class = "centerTable" border="1">
+                    <tr  id = "mentorTable">
+                        <th>Name</th>
+                        <th>Degree</th>
+
+                    </tr>
+                    <% @mentees.each do |mentee| %>
+                    <tr>
+                        <td><%= h mentee.name %></td>
+                        <td><%= h mentee.degree %></td>
+                        <td><a href="/view-mentee?id=<%= h mentee.id %>">View More</a></td>
+                    </tr>
+                    <% end %>
+                </table>
+        <% end %>
     </main>
+
 </body>
 <%= erb :"common/footer" %>
