@@ -24,7 +24,7 @@ describe "the login page" do
   it "can get a mentor logged in successfully" do
       visit "/login"
       fill_in "email", with: "Mentor1@gmail.com"
-      fill_in "password", with: "Password123"
+      fill_in "password", with: "Password1"
       click_button "Submit"
       expect(page).to have_content "Mentor Dashboard"
   end

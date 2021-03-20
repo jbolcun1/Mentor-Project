@@ -87,7 +87,7 @@ post "/post-mentee-invite" do
 
       mentor = User.first(id: @mentor_Id)
       email = mentor.email
-      subject = "You have been invited to mentorship!"
+      subject = "You have been invited to a mentorship!"
       body = "This mentorship is by #{@user.name}. Below is the thier introductory message \n" + params[:comments] 
       puts "Sending email..."
       if send_mail(email, subject, body)
@@ -110,7 +110,7 @@ post "/post-mentee-invite" do
     @user.save_changes
     mentor = User.first(id: @mentor_Id)
     email = mentor.email
-    subject = "You have been invited to mentorship!"
+    subject = "You have been invited to a mentorship!"
     body = "This mentorship is by #{@user.name}. Below is the thier introductory message \n" + params[:comments]
     puts email
     puts subject

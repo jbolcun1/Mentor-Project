@@ -14,8 +14,8 @@ describe "the filter functionality" do
     fill_in "email", with: "Mentee1@gmail.com"
     fill_in "password", with: "Password1"
     click_button "Submit"
-    fill_in "job_Title", with: "Twitch Streamer"
-    select "Media and internet", from: "industry_Sector"
+    fill_in "job_Title", with: "System Admin"
+    select "Information technology", from: "industry_Sector"
     click_button "Submit"
     expect(page).to have_content "Mentor2 TestDudette"
   end
