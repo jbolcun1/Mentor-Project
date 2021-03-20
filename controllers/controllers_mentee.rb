@@ -19,7 +19,6 @@ get "/mentee" do
   end
   if @user.has_mentee != 0
     @table_show2 = true
-    @table_Show = false
     @mentee = User.first(id: @user.has_mentor)
   end
   # Display a personalised message upon a successful mentee login
@@ -70,7 +69,6 @@ post "/post-mentee-invite" do
   @id = request.cookies.fetch("id")
   @user = User.first(id: @id)
   @last_Send = @user.last_send
-
   
   # Time class works in seconds. 86400 is one day in seconds. We store the time since they last sent an invite in seconds.
   # We check that the time time in last_Send and current time is greater then one day. If so we can do the actual invite/etc
@@ -86,7 +84,17 @@ post "/post-mentee-invite" do
       @user.has_mentor = @mentor_Id
       @user.last_send = time_Now.to_i
       @user.save_changes
-      # TODO: Send email 
+
+      mentor = User.first(id: @mentor_Id)
+      email = mentor.email
+      subject = "You have been invited to mentorship!"
+      body = "This mentorship is by #{@user.name}. Below is the thier introductory message \n" + params[:comments] 
+      puts "Sending email..."
+      if send_mail(email, subject, body)
+        puts "Email Sent Ok."
+      else
+        puts "Sending failed."
+      end
       redirect "/mentee"
     else 
       redirect "/view-mentor?id=#{@mentor_Id}&error=1"
@@ -100,7 +108,19 @@ post "/post-mentee-invite" do
     @user.has_mentor = @mentor_Id
     @user.last_send = time_Now.to_i
     @user.save_changes
-    # Send email
+    mentor = User.first(id: @mentor_Id)
+    email = mentor.email
+    subject = "You have been invited to mentorship!"
+    body = "This mentorship is by #{@user.name}. Below is the thier introductory message \n" + params[:comments]
+    puts email
+    puts subject
+    puts body
+    puts "Sending email..."
+    if send_mail(email, subject, body)
+      puts "Email Sent Ok."
+    else
+      puts "Sending failed."
+    end
     redirect "/mentee"
   end
 end

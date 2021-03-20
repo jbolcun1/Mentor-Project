@@ -6,7 +6,7 @@ get "/mentor" do
   # Display a personalised message upon a successful mentor login
   @s = "Welcome, #{@user.name}. \n You have sucessfully logged in as a #{@user.privilege.downcase}."
   @mentees = User.where(has_mentor: @user.id)
-  if !@mentees.nil?
+  if !@mentees.empty?
     @table_Show = true
   end
   # puts !@user.has_mentor.nil?
@@ -62,5 +62,15 @@ post "/post-mentor-accept" do
 
   @mentee.has_mentee = 1
   @mentee.save_changes
+
+  email = mentee.email
+  subject = "Your mentorship by #{@user.name} has been accepted!"
+  body = "Please go back to the mentee dashbaord to see the communicative method of your mentor!"
+  puts "Sending email..."
+  if send_mail(email, subject, body)
+    puts "Email Sent Ok."
+  else
+    puts "Sending failed."
+  end
   redirect "/mentor"
 end

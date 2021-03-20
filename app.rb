@@ -10,3 +10,4 @@ require_relative "db/db"
 
 require_rel "controllers"
 require_rel "models"
+require_rel "helpers"

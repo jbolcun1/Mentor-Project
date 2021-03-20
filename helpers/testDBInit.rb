@@ -38,7 +38,6 @@ def init_db
     params = {"first_name" => "Mentor1","surname" => "TestDudette", "email" => "Mentor1@gmail.com", "password" => "Password1", "confirmpassword" => "Password1", "privilege" => "Mentor"}
     user = User.new
     user.load(params)
-    user.degree = "Computer Science"
     user.description = user_desc.user_Id
     user.job_Title = "Professor"
     user.industry_Sector = "Teacher training and education"
@@ -46,15 +45,26 @@ def init_db
 
     # Mentor2
     user_desc = Description.new
-    user_desc.description = "Hello I am System Admin  at UoS"
+    user_desc.description = "Hello I am System Admin at UoS"
     user_desc.save_changes
     params = {"first_name" => "Mentor2","surname" => "TestDudette", "email" => "Mentor2@gmail.com", "password" => "Password1", "confirmpassword" => "Password1", "privilege" => "Mentor"}
     user = User.new
     user.load(params)
-    user.degree = "Computer Science"
     user.description = user_desc.user_Id
     user.job_Title = "System Admin"
     user.industry_Sector = "Information technology"
+    user.save_changes
+
+    # AH ONLY FOR EMAIL TESTING
+    user_desc = Description.new
+    user_desc.description = "I am just a guy"
+    user_desc.save_changes
+    params = {"first_name" => "Ariful","surname" => "Haque", "email" => "ahaque3@sheffield.ac.uk", "password" => "Password1", "confirmpassword" => "Password1", "privilege" => "Mentor"}
+    user = User.new
+    user.load(params)
+    user.description = user_desc.user_Id
+    user.job_Title = "Streamer"
+    user.industry_Sector = "Media and internet"
     user.save_changes
 end
 
