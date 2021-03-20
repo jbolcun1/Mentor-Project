@@ -16,12 +16,16 @@
         <p>
             <%= h @description %>
         </p>
-        </p>
-        <form name="contact" action="mailto:<%= h @mentor.email %>?subject=Mentee Invitation&body=You have received a request from <% h @mentor.name %>to meet." method="POST">
-            <label for="GET-email">Your email address: </label><input id="GET-email" type="email" name="email" maxlength="40" size="30" required>
+        <% if @errorCorrect%>
+            <p  id="error" >
+                <b>You can't send more then one invitation in less then 24 hours</b>
+            </p>
+        <% end %>
+
+        <form name="contact" method="post" action="/post-mentee-invite?mentor_Id=<%= h @mentor.id %>" >
+            <label for="GET-comments">Add your introduction here!</label> 
             <br>
-            <br>
-            <textarea name="comments" rows="5" cols="32" placeholder="Write your invitation email here..."></textarea>
+            <textarea name="comments" rows="5" cols="32" placeholder="Write your introduction email here..."></textarea>
             <br>
             <br>
             <input type="submit" value="Submit"><br>

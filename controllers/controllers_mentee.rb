@@ -37,9 +37,9 @@ get "/mentee-register" do
 end
 
 get "/view-mentor" do
-  # TODO: Add description
-  @id =  params[:id]
-  @mentor = User.first(id: @id)
+  @errorCorrect = true if params.fetch("error", "0") == "1"
+  @mentor_Id =  params[:id]
+  @mentor = User.first(id: @mentor_Id)
   # puts @mentor.description
   @description = @mentor.getDescriptions
   puts @description
@@ -74,11 +74,28 @@ post "/post-mentee-invite" do
   if !@last_Send.nil?
     time_Now = Time.new
     time_Last_send = Time.at(@last_Send.to_i)
+    @mentor_Id = params.fetch("mentor_Id")
     if time_Now - time_Last_send >= 86400
-      # Send email and change has_mentor
+      @id = request.cookies.fetch("id")
+      @user = User.first(id: @id)
+      @user.has_mentor = @mentor_Id
+      @user.last_send = time_Now.to_i
+      @user.save_changes
+      # TODO: Send email 
+      redirect "/mentee"
     else 
-      # Error
+      redirect "/view-mentor?id=#{@mentor_Id}&error=1"
     end
   else
-    # Send email and change has_mentor
+    time_Now = Time.new
+    time_Last_send = Time.at(@last_Send.to_i)
+    @mentor_Id = params.fetch("mentor_Id")
+    @id = request.cookies.fetch("id")
+    @user = User.first(id: @id)
+    @user.has_mentor = @mentor_Id
+    @user.last_send = time_Now.to_i
+    @user.save_changes
+    # Send email
+    redirect "/mentee"
   end
+end
