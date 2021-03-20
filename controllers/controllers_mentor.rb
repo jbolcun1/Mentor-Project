@@ -63,7 +63,7 @@ post "/post-mentor-accept" do
   @mentee.has_mentee = 1
   @mentee.save_changes
 
-  email = mentee.email
+  email = @mentee.email
   subject = "Your mentorship by #{@user.name} has been accepted!"
   body = "Please go back to the mentee dashbaord to see the communicative method of your mentor!"
   puts "Sending email..."

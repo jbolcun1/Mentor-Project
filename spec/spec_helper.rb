@@ -11,6 +11,9 @@ ENV["APP_ENV"] = "test"
 # load the app
 require_relative "../app"
 
+# load the test db
+init_db
+
 # Configure Capybara
 require "capybara/rspec"
 Capybara.app = Sinatra::Application
