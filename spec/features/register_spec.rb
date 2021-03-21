@@ -14,4 +14,9 @@ describe "the register page" do
     expect(page).to have_content "Password:"
   end
     
+  it "can lead registered users to the login page" do
+    visit "/register"
+    expect(page).to have_content "If you already have an account, click here."
+  end    
+    
 end
