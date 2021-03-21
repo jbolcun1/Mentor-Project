@@ -3154,3 +3154,41 @@ I, [2021-03-21T13:03:50.960576 #3616]  INFO -- : (0.000132s) SELECT * FROM `user
 I, [2021-03-21T13:03:51.077656 #3616]  INFO -- : (0.000134s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
 I, [2021-03-21T13:03:51.078041 #3616]  INFO -- : (0.000080s) SELECT 1 AS 'one' FROM `users` WHERE (`has_mentor` = 3) LIMIT 1
 I, [2021-03-21T13:03:52.413914 #3616]  INFO -- : (0.000157s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T14:25:10.067867 #317]  INFO -- : (0.000210s) PRAGMA foreign_keys = 1
+I, [2021-03-21T14:25:10.067959 #317]  INFO -- : (0.000015s) PRAGMA case_sensitive_like = 1
+I, [2021-03-21T14:25:10.086410 #317]  INFO -- : (0.000062s) SELECT sqlite_version()
+I, [2021-03-21T14:25:10.086693 #317]  INFO -- : (0.000150s) PRAGMA table_info('users')
+I, [2021-03-21T14:25:10.087443 #317]  INFO -- : (0.000079s) PRAGMA table_info('descriptions')
+I, [2021-03-21T14:25:13.032396 #317]  INFO -- : (0.000243s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-21T14:25:13.032893 #317]  INFO -- : (0.000103s) SELECT 1 AS 'one' FROM `users` WHERE ((`job_Title` = 'g') OR (`industry_Sector` = 'Information technology')) LIMIT 1
+I, [2021-03-21T14:25:13.039020 #317]  INFO -- : (0.000106s) SELECT count(*) AS 'count' FROM `users` WHERE ((`job_Title` = 'g') OR (`industry_Sector` = 'Information technology')) LIMIT 1
+I, [2021-03-21T14:25:13.039285 #317]  INFO -- : (0.000159s) SELECT * FROM `users` WHERE ((`job_Title` = 'g') OR (`industry_Sector` = 'Information technology'))
+I, [2021-03-21T14:25:24.991069 #317]  INFO -- : (0.000175s) SELECT * FROM `users` WHERE ((`email` = 'Mentee1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-21T14:25:25.209079 #317]  INFO -- : (0.000170s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-21T14:25:29.368260 #317]  INFO -- : (0.000180s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-21T14:25:29.368690 #317]  INFO -- : (0.000094s) SELECT 1 AS 'one' FROM `users` WHERE ((`job_Title` = 'Media manager') OR (`industry_Sector` = 'Accountancy, banking and finance')) LIMIT 1
+I, [2021-03-21T14:25:29.369915 #317]  INFO -- : (0.000086s) SELECT count(*) AS 'count' FROM `users` WHERE ((`job_Title` = 'Media manager') OR (`industry_Sector` = 'Accountancy, banking and finance')) LIMIT 1
+I, [2021-03-21T14:25:37.689236 #317]  INFO -- : (0.000165s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-21T14:25:37.689666 #317]  INFO -- : (0.000101s) SELECT 1 AS 'one' FROM `users` WHERE ((`job_Title` = 'Media manager') OR (`industry_Sector` = 'Media and internet')) LIMIT 1
+I, [2021-03-21T14:25:37.690917 #317]  INFO -- : (0.000088s) SELECT count(*) AS 'count' FROM `users` WHERE ((`job_Title` = 'Media manager') OR (`industry_Sector` = 'Media and internet')) LIMIT 1
+I, [2021-03-21T14:25:37.691186 #317]  INFO -- : (0.000147s) SELECT * FROM `users` WHERE ((`job_Title` = 'Media manager') OR (`industry_Sector` = 'Media and internet'))
+I, [2021-03-21T14:25:39.161302 #317]  INFO -- : (0.000336s) SELECT * FROM `users` WHERE (`id` = '5') LIMIT 1
+I, [2021-03-21T14:25:39.161830 #317]  INFO -- : (0.000129s) SELECT * FROM `descriptions` WHERE (`user_Id` = 5) LIMIT 1
+I, [2021-03-21T14:25:46.862183 #317]  INFO -- : (0.001677s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-21T14:25:46.994788 #317]  INFO -- : (0.000162s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-21T14:25:48.334602 #317]  INFO -- : (0.000269s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-21T14:25:49.105690 #317]  INFO -- : (0.000177s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-21T14:25:49.235574 #317]  INFO -- : (0.000171s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-21T14:26:07.645416 #317]  INFO -- : (0.000172s) SELECT * FROM `users` WHERE ((`email` = 'Mentor1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-21T14:26:07.780999 #317]  INFO -- : (0.000267s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T14:26:07.781535 #317]  INFO -- : (0.000112s) SELECT 1 AS 'one' FROM `users` WHERE (`has_mentor` = 3) LIMIT 1
+I, [2021-03-21T15:04:43.346734 #317]  INFO -- : (0.000303s) SELECT * FROM `users` WHERE ((`email` = 'Mentee1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-21T15:04:43.464595 #317]  INFO -- : (0.000257s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-21T15:04:45.481293 #317]  INFO -- : (0.000196s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-21T15:04:55.262507 #317]  INFO -- : (0.000168s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-21T15:04:55.382959 #317]  INFO -- : (0.000261s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-21T15:04:55.498700 #317]  INFO -- : (0.000162s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-21T15:06:11.820564 #317]  INFO -- : (0.000206s) SELECT * FROM `users` WHERE ((`email` = 'Mentor1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-21T15:06:11.969725 #317]  INFO -- : (0.000166s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T15:06:11.970048 #317]  INFO -- : (0.000070s) SELECT 1 AS 'one' FROM `users` WHERE (`has_mentor` = 3) LIMIT 1
+I, [2021-03-21T15:06:13.525493 #317]  INFO -- : (0.000172s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
