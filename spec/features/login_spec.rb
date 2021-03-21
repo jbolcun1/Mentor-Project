@@ -18,7 +18,9 @@ describe "the login page" do
       fill_in "email", with: "Mentee1@gmail.com"
       fill_in "password", with: "Password1"
       click_button "Submit"
+      expect(page).to have_content "Profile"
       expect(page).to have_content "Mentee Dashboard"
+      expect(page).to have_content "Logout"
   end
 
   it "can get a mentor logged in successfully" do
@@ -26,7 +28,9 @@ describe "the login page" do
       fill_in "email", with: "Mentor1@gmail.com"
       fill_in "password", with: "Password1"
       click_button "Submit"
+      expect(page).to have_content "Profile"
       expect(page).to have_content "Mentor Dashboard"
+      expect(page).to have_content "Logout"
   end
     
 end
