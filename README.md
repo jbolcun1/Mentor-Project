@@ -6,10 +6,20 @@ A web application written in Ruby which allows mentors and mentees to contact ea
 Use **Register** and enter your details to make an account. Select your role based on what you would like to be.
 
 ### Contact a mentor
-Use the search and filter functions to look for a suitable mentor. You will then receive their email address.
-As a mentee-driven scheme, it is your responsibility to initiate and maintain contact with your mentor.
+Use the search and filter functions to look for a suitable mentor. You can enter an introductory email that will be
+sent to the mentor. As a mentee-driven scheme, it is your responsibility to initiate and maintain contact with 
+your mentor. 
+
+### Mentor Acceptance
+As a mentor you can go to your dashboard and you can view the mentees who have expressed their interest in a 
+mentorship. You can click view more to see a description of the mentee and accept the invitiaion.
+
+### Mentorship
+Once the mentee and mentor have started the mentorship, they will be able to see each others' emails to start 
+correspondence.
 
 ### Change account credential
-Use the **Account -> Details ** menu on the top tool bar to change your credentials.
+Use the **Profile** menu on the top tool bar to change your credentials.
 
-Simply enter your new credentials and the old ones for verification purposes and your details will be updated.
+Simply enter your new credentials and the old ones for verification purposes and your details will be updated
+when you click Change Details.
