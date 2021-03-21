@@ -21,15 +21,32 @@
                 <input type="email" name="email" id="email" value = "<%= @user.email %>"
                 maxlength="50" size="30" required>
             </p>
+          
+            <% if @error_correct2%>
+            <p id="error">
+                <b>Enter old password to change it to the new one</b>
+            </p>
+            <% end %>
 
-            <p><label1>Password:</label1>
-                <input type="password" id="password" name="password" value = "<%= @user.password %>"
-                maxlength="50" size="30" required>
+            <p><label1>Old Password:</label1>
+                <input type="password" id="password" name="password"
+                maxlength="50" size="30" >
+            </p>
+          
+            <% if @error_correct3%>
+            <p id="error">
+                <b>Please enter values for New Password and Confirm New Password</b>
+            </p>
+            <% end %>
+          
+            <p><label1>New Password:</label1>
+                <input type="password" id="password" name="newpassword"
+                maxlength="50" size="30" >
             </p>
 
-            <p><label1>Confirm Password:</label1>
-                <input type="password" name="confirmpassword" id="confirmpassword" value = "<%= @user.password %>"
-                maxlength="50" size="30" required>
+            <p><label1>Confirm New Password:</label1>
+                <input type="password" id="newconfirmpassword" name="newconfirmpassword"
+                maxlength="50" size="30" >
             </p>
 
             <% if @error_correct%>

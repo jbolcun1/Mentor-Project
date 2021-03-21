@@ -119,16 +119,18 @@ get "/profile" do
   @id = request.cookies.fetch("id", "0")
   @user = User.first(id: @id)
   @privilege = @user.privilege
-  @error_correct = true if params.fetch("error", "0") == "1"
-    # Find out what type of user they are and then redirect them to the correct page
-    case @privilege
-    when "Mentee"
-      @mentee_profile = true
-    when "Mentor"
-      @mentor_profile = true
-    else
-      @admin_profile = true
-    end
+  @error_correct = true if params.fetch("error1", "0") == "1"
+  @error_correct2 = true if params.fetch("error2", "0") == "1"
+  @error_correct3 = true if params.fetch("error3", "0") == "1"
+  # Find out what type of user they are and then redirect them to the correct page
+  case @privilege
+  when "Mentee"
+    @mentee_profile = true
+  when "Mentor"
+    @mentor_profile = true
+  else
+    @admin_profile = true
+  end
   erb :profile
 end
 
@@ -137,20 +139,34 @@ post "/post-profile" do
   @user = User.first(id: @id)
   @user.loadProfile(params)
   
-  if @user.validPass(params)
-    @user.save_changes
-    @privilege = @user.privilege
-    case @privilege
-    when "Mentee"
-      @user.degree = params.fetch("degree", "")
-      @user.save_changes
-    when "Mentor"
-      @user.job_Title = params.fetch("job_Title", "")
-      @user.industry_Sector = params.fetch("industry_Sector", "")
-      @user.save_changes
+  if params.fetch("password") != "newpassword"
+    if params.fetch("password") != @user.password
+     redirect "/profile?error2=1"
     end
-    redirect "/dashboard"
+    if params.fetch("newpassword") != "" && params.fetch("newconfirmpassword") != ""
+      
+      if @user.validPassProfile(params)
+        @user.password = params.fetch("newpassword")
+        @user.save_changes
+        @privilege = @user.privilege
+        case @privilege
+        when "Mentee"
+          @user.degree = params.fetch("degree", "")
+          @user.save_changes
+        when "Mentor"
+          @user.job_Title = params.fetch("job_Title", "")
+          @user.industry_Sector = params.fetch("industry_Sector", "")
+          @user.save_changes
+        end
+        redirect "/dashboard"
+      else
+        redirect "/profile?error1=1"
+      end
+    else
+      redirect "/profile?error3=1"
+    end
   else
-    redirect "/profile?error=1"
+    @user.save_changes
+    redirect "/dashboard"
   end
 end

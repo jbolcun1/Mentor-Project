@@ -44,11 +44,14 @@ class User < Sequel::Model
     self.first_name = params.fetch("first_name", "").strip
     self.surname = params.fetch("surname", "").strip
     self.email = params.fetch("email", "").strip
-    self.password = params.fetch("password", "").strip
   end
 
   def validPass(params)
     params.fetch("password") == params.fetch("confirmpassword")
+  end
+  
+  def validPassProfile(params)
+    params.fetch("newpassword", "") == params.fetch("newconfirmpassword", "")
   end
 end
 
