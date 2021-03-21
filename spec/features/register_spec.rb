@@ -18,5 +18,42 @@ describe "the register page" do
     visit "/register"
     expect(page).to have_content "If you already have an account, click here."
   end    
+  
+  it "prints response to different password and confirm password" do
+    visit "/register"
+    fill_in "first_name", with: "Text"
+    fill_in "surname", with: "Text"
+    fill_in "email", with: "Text"
+    fill_in "password", with: "ABCDE"
+    fill_in "confirmpassword", with: "AECDB"
+    choose("mentee")
+    click_button "Sign Up"
+    expect(page).to have_content "The two password entries must be correct."
+  end
+  
+  it "Will direct to the mentee description page after registering details." do
+    visit "/register"
+    fill_in "first_name", with: "John"
+    fill_in "surname", with: "Calvert"
+    fill_in "email", with: "Mentee@gmail.com"
+    fill_in "password", with: "Password1"
+    fill_in "confirmpassword", with: "Password1"
+    choose("mentee")
+    click_button "Sign Up"
+    expect(page).to have_content "Hello prospective Mentee, John Calvert. Please input the details below!"
+  end
+  
+  it "Will direct to the mentor description page after registering details." do
+    visit "/register"
+    fill_in "first_name", with: "John"
+    fill_in "surname", with: "Calvert"
+    fill_in "email", with: "Mentor@gmail.com"
+    fill_in "password", with: "Password1"
+    fill_in "confirmpassword", with: "Password1"
+    choose("mentor")
+    click_button "Sign Up"
+    expect(page).to have_content "Hello prospective mentor, John Calvert. Please input the details below!"
+  end
+
     
 end
