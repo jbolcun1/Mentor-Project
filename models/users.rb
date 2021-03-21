@@ -8,12 +8,12 @@ class User < Sequel::Model
   # .getDescriptions returns a string array of all of the user's
   # descriptions
   def getDescriptions
-    puts self.description
+#     puts self.description
     # Retrieves a dataset from the database
     dataset = Description.first(user_Id: self.description)
-    puts dataset.nil?
+#     puts dataset.nil?
     description = dataset.description
-    puts description
+#     puts description
     # if !@dataset.nil? 
     #   description = dataset.description
     #   puts "here1"
