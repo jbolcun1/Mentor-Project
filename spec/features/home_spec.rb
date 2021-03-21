@@ -24,4 +24,9 @@ describe "the home page" do
       expect(page).to have_content "&copy COM1001 Team 2"
   end
     
+  it "can display the logo" do
+      visit "/"
+      expect(page.find('#logo')['src']).to match 'images/E-mentor.PNG'
+  end
+    
 end
