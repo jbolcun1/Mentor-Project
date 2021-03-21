@@ -3,9 +3,12 @@
 A web application written in Ruby which allows mentors and mentees to contact each other and exchange information.
 
 ## To Start The Web App
-``cd project``
-``bundle install``
-``ruby app.rb``
+Open the terinmal  
+``cd project``  
+``bundle install``  
+``ruby app.rb``  
+Then go to **image-karma-4567.codio.io** in a new tab
+If you wish to stop the web app press ``Control + C`` in the ternimal  
 
 ## Example user accounts you can use
 
