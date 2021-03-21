@@ -53,3 +53,34 @@ I, [2021-03-21T14:53:34.263101 #350]  INFO -- : (0.000016s) BEGIN
 I, [2021-03-21T14:53:34.263319 #350]  INFO -- : (0.000117s) INSERT INTO `users` (`first_name`, `surname`, `email`, `password`, `privilege`, `has_mentee`, `has_mentor`, `description`, `job_Title`, `industry_Sector`) VALUES ('Ariful', 'Haque', 'ahaque3@sheffield.ac.uk', 'Password1', 'Mentor', 0, 0, 5, 'Streamer', 'Media and internet')
 I, [2021-03-21T14:53:34.263479 #350]  INFO -- : (0.000084s) SELECT * FROM `users` WHERE `id` = 5
 I, [2021-03-21T14:53:34.354927 #350]  INFO -- : (0.091387s) COMMIT
+I, [2021-03-21T14:58:38.349373 #245]  INFO -- : (0.001435s) PRAGMA foreign_keys = 1
+I, [2021-03-21T14:58:38.349476 #245]  INFO -- : (0.000016s) PRAGMA case_sensitive_like = 1
+I, [2021-03-21T14:58:38.366564 #245]  INFO -- : (0.000076s) SELECT sqlite_version()
+I, [2021-03-21T14:58:38.366862 #245]  INFO -- : (0.000149s) PRAGMA table_info('users')
+I, [2021-03-21T14:58:38.367611 #245]  INFO -- : (0.000079s) PRAGMA table_info('descriptions')
+I, [2021-03-21T14:58:51.694210 #245]  INFO -- : (0.000348s) SELECT * FROM `users` WHERE ((`email` = 'Mentor1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-21T14:58:51.904221 #245]  INFO -- : (0.000172s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T14:58:51.904612 #245]  INFO -- : (0.000080s) SELECT 1 AS 'one' FROM `users` WHERE (`has_mentor` = 3) LIMIT 1
+I, [2021-03-21T14:58:53.798754 #245]  INFO -- : (0.000331s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T15:03:54.089915 #245]  INFO -- : (0.000206s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T15:03:54.341473 #245]  INFO -- : (0.000177s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T15:03:54.341825 #245]  INFO -- : (0.000075s) SELECT 1 AS 'one' FROM `users` WHERE (`has_mentor` = 3) LIMIT 1
+I, [2021-03-21T15:03:57.224534 #245]  INFO -- : (0.000225s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:25:50.471035 #176]  INFO -- : (0.000258s) PRAGMA foreign_keys = 1
+I, [2021-03-21T19:25:50.471293 #176]  INFO -- : (0.000038s) PRAGMA case_sensitive_like = 1
+I, [2021-03-21T19:25:50.493794 #176]  INFO -- : (0.000090s) SELECT sqlite_version()
+I, [2021-03-21T19:25:50.494231 #176]  INFO -- : (0.000215s) PRAGMA table_info('users')
+I, [2021-03-21T19:25:50.495194 #176]  INFO -- : (0.000107s) PRAGMA table_info('descriptions')
+I, [2021-03-21T19:25:53.288824 #176]  INFO -- : (0.000263s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:25:53.682797 #176]  INFO -- : (0.000229s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:25:53.683266 #176]  INFO -- : (0.000101s) SELECT 1 AS 'one' FROM `users` WHERE (`has_mentor` = 3) LIMIT 1
+I, [2021-03-21T19:25:55.631303 #176]  INFO -- : (0.000225s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:25:59.808681 #176]  INFO -- : (0.000267s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:30:02.125042 #176]  INFO -- : (0.000162s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:30:02.432768 #176]  INFO -- : (0.000166s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:32:26.496707 #176]  INFO -- : (0.001046s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:32:26.787036 #176]  INFO -- : (0.000256s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:32:36.127204 #176]  INFO -- : (0.000168s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:32:36.358361 #176]  INFO -- : (0.000237s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:32:46.474573 #176]  INFO -- : (0.000211s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:32:46.686296 #176]  INFO -- : (0.000167s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1

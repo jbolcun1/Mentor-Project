@@ -31,7 +31,7 @@ describe "the register page" do
     expect(page).to have_content "The two password entries must be correct."
   end
   
-  it "Will direct to the mentee description page after registering details." do
+  it "will direct to the mentee description page after registering details." do
     visit "/register"
     fill_in "first_name", with: "John"
     fill_in "surname", with: "Calvert"
@@ -43,7 +43,7 @@ describe "the register page" do
     expect(page).to have_content "Hello prospective Mentee, John Calvert. Please input the details below!"
   end
   
-  it "Will direct to the mentor description page after registering details." do
+  it "will direct to the mentor description page after registering details." do
     visit "/register"
     fill_in "first_name", with: "John"
     fill_in "surname", with: "Calvert"

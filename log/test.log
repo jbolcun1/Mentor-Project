@@ -3154,3 +3154,668 @@ I, [2021-03-21T13:03:50.960576 #3616]  INFO -- : (0.000132s) SELECT * FROM `user
 I, [2021-03-21T13:03:51.077656 #3616]  INFO -- : (0.000134s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
 I, [2021-03-21T13:03:51.078041 #3616]  INFO -- : (0.000080s) SELECT 1 AS 'one' FROM `users` WHERE (`has_mentor` = 3) LIMIT 1
 I, [2021-03-21T13:03:52.413914 #3616]  INFO -- : (0.000157s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:28:18.007817 #234]  INFO -- : (0.000257s) PRAGMA foreign_keys = 1
+I, [2021-03-21T19:28:18.011395 #234]  INFO -- : (0.000027s) PRAGMA case_sensitive_like = 1
+I, [2021-03-21T19:28:18.047393 #234]  INFO -- : (0.000105s) SELECT sqlite_version()
+I, [2021-03-21T19:28:18.047951 #234]  INFO -- : (0.000327s) PRAGMA table_info('users')
+I, [2021-03-21T19:28:18.049235 #234]  INFO -- : (0.000121s) PRAGMA table_info('descriptions')
+I, [2021-03-21T19:28:18.172942 #234]  INFO -- : (0.109595s) DELETE FROM `users` WHERE (1 = 1)
+I, [2021-03-21T19:28:18.263496 #234]  INFO -- : (0.090213s) DELETE FROM `descriptions` WHERE (1 = 1)
+I, [2021-03-21T19:28:18.263856 #234]  INFO -- : (0.000047s) BEGIN
+I, [2021-03-21T19:28:18.264303 #234]  INFO -- : (0.000200s) INSERT INTO `descriptions` (`description`) VALUES ('Hello I do Computer Science')
+I, [2021-03-21T19:28:18.264627 #234]  INFO -- : (0.000139s) SELECT * FROM `descriptions` WHERE `user_Id` = 1
+I, [2021-03-21T19:28:18.371426 #234]  INFO -- : (0.106672s) COMMIT
+I, [2021-03-21T19:28:18.371784 #234]  INFO -- : (0.000035s) BEGIN
+I, [2021-03-21T19:28:18.372213 #234]  INFO -- : (0.000167s) INSERT INTO `users` (`first_name`, `surname`, `email`, `password`, `privilege`, `has_mentee`, `has_mentor`, `degree`, `description`) VALUES ('Mentee1', 'TestDude', 'Mentee1@gmail.com', 'Password1', 'Mentee', 0, 0, 'Computer Science', 1)
+I, [2021-03-21T19:28:18.372505 #234]  INFO -- : (0.000148s) SELECT * FROM `users` WHERE `id` = 1
+I, [2021-03-21T19:28:18.469941 #234]  INFO -- : (0.097336s) COMMIT
+I, [2021-03-21T19:28:18.470227 #234]  INFO -- : (0.000034s) BEGIN
+I, [2021-03-21T19:28:18.470541 #234]  INFO -- : (0.000143s) INSERT INTO `descriptions` (`description`) VALUES ('Hello I do AI')
+I, [2021-03-21T19:28:18.470769 #234]  INFO -- : (0.000087s) SELECT * FROM `descriptions` WHERE `user_Id` = 2
+I, [2021-03-21T19:28:18.566480 #234]  INFO -- : (0.095610s) COMMIT
+I, [2021-03-21T19:28:18.566795 #234]  INFO -- : (0.000033s) BEGIN
+I, [2021-03-21T19:28:18.567164 #234]  INFO -- : (0.000177s) INSERT INTO `users` (`first_name`, `surname`, `email`, `password`, `privilege`, `has_mentee`, `has_mentor`, `degree`, `description`) VALUES ('Mentee2', 'TestDude', 'Mentee2@gmail.com', 'Password1', 'Mentee', 0, 0, 'Computer Science', 2)
+I, [2021-03-21T19:28:18.567448 #234]  INFO -- : (0.000142s) SELECT * FROM `users` WHERE `id` = 2
+I, [2021-03-21T19:28:18.674865 #234]  INFO -- : (0.107319s) COMMIT
+I, [2021-03-21T19:28:18.675231 #234]  INFO -- : (0.000065s) BEGIN
+I, [2021-03-21T19:28:18.675646 #234]  INFO -- : (0.000191s) INSERT INTO `descriptions` (`description`) VALUES ('Hello I am Professor at UoS')
+I, [2021-03-21T19:28:18.675936 #234]  INFO -- : (0.000118s) SELECT * FROM `descriptions` WHERE `user_Id` = 3
+I, [2021-03-21T19:28:18.802722 #234]  INFO -- : (0.126677s) COMMIT
+I, [2021-03-21T19:28:18.803165 #234]  INFO -- : (0.000045s) BEGIN
+I, [2021-03-21T19:28:18.803675 #234]  INFO -- : (0.000208s) INSERT INTO `users` (`first_name`, `surname`, `email`, `password`, `privilege`, `has_mentee`, `has_mentor`, `description`, `job_Title`, `industry_Sector`) VALUES ('Mentor1', 'TestDudette', 'Mentor1@gmail.com', 'Password1', 'Mentor', 0, 0, 3, 'Professor', 'Teacher training and education')
+I, [2021-03-21T19:28:18.804110 #234]  INFO -- : (0.000210s) SELECT * FROM `users` WHERE `id` = 3
+I, [2021-03-21T19:28:18.895974 #234]  INFO -- : (0.091724s) COMMIT
+I, [2021-03-21T19:28:18.896369 #234]  INFO -- : (0.000051s) BEGIN
+I, [2021-03-21T19:28:18.896830 #234]  INFO -- : (0.000207s) INSERT INTO `descriptions` (`description`) VALUES ('Hello I am System Admin at UoS')
+I, [2021-03-21T19:28:18.897141 #234]  INFO -- : (0.000115s) SELECT * FROM `descriptions` WHERE `user_Id` = 4
+I, [2021-03-21T19:28:18.991430 #234]  INFO -- : (0.094187s) COMMIT
+I, [2021-03-21T19:28:18.991914 #234]  INFO -- : (0.000047s) BEGIN
+I, [2021-03-21T19:28:18.992417 #234]  INFO -- : (0.000207s) INSERT INTO `users` (`first_name`, `surname`, `email`, `password`, `privilege`, `has_mentee`, `has_mentor`, `description`, `job_Title`, `industry_Sector`) VALUES ('Mentor2', 'TestDudette', 'Mentor2@gmail.com', 'Password1', 'Mentor', 0, 0, 4, 'System Admin', 'Information technology')
+I, [2021-03-21T19:28:18.992775 #234]  INFO -- : (0.000190s) SELECT * FROM `users` WHERE `id` = 4
+I, [2021-03-21T19:28:19.084609 #234]  INFO -- : (0.091731s) COMMIT
+I, [2021-03-21T19:28:19.084915 #234]  INFO -- : (0.000046s) BEGIN
+I, [2021-03-21T19:28:19.085304 #234]  INFO -- : (0.000186s) INSERT INTO `descriptions` (`description`) VALUES ('I am just a guy')
+I, [2021-03-21T19:28:19.085553 #234]  INFO -- : (0.000089s) SELECT * FROM `descriptions` WHERE `user_Id` = 5
+I, [2021-03-21T19:28:19.175711 #234]  INFO -- : (0.090050s) COMMIT
+I, [2021-03-21T19:28:19.176175 #234]  INFO -- : (0.000041s) BEGIN
+I, [2021-03-21T19:28:19.176674 #234]  INFO -- : (0.000238s) INSERT INTO `users` (`first_name`, `surname`, `email`, `password`, `privilege`, `has_mentee`, `has_mentor`, `description`, `job_Title`, `industry_Sector`) VALUES ('Ariful', 'Haque', 'ahaque3@sheffield.ac.uk', 'Password1', 'Mentor', 0, 0, 5, 'Streamer', 'Media and internet')
+I, [2021-03-21T19:28:19.177056 #234]  INFO -- : (0.000179s) SELECT * FROM `users` WHERE `id` = 5
+I, [2021-03-21T19:28:19.288946 #234]  INFO -- : (0.111780s) COMMIT
+I, [2021-03-21T19:28:20.046418 #234]  INFO -- : (0.000310s) SELECT * FROM `users` WHERE ((`email` = 'Mentee1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-21T19:28:20.047936 #234]  INFO -- : (0.000209s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-21T19:28:20.052435 #234]  INFO -- : (0.000202s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-21T19:29:08.564147 #235]  INFO -- : (0.000190s) PRAGMA foreign_keys = 1
+I, [2021-03-21T19:29:08.564294 #235]  INFO -- : (0.000028s) PRAGMA case_sensitive_like = 1
+I, [2021-03-21T19:29:08.610861 #235]  INFO -- : (0.000093s) SELECT sqlite_version()
+I, [2021-03-21T19:29:08.611390 #235]  INFO -- : (0.000304s) PRAGMA table_info('users')
+I, [2021-03-21T19:29:08.612526 #235]  INFO -- : (0.000098s) PRAGMA table_info('descriptions')
+I, [2021-03-21T19:29:08.742455 #235]  INFO -- : (0.114306s) DELETE FROM `users` WHERE (1 = 1)
+I, [2021-03-21T19:29:08.844375 #235]  INFO -- : (0.101567s) DELETE FROM `descriptions` WHERE (1 = 1)
+I, [2021-03-21T19:29:08.844766 #235]  INFO -- : (0.000064s) BEGIN
+I, [2021-03-21T19:29:08.845319 #235]  INFO -- : (0.000230s) INSERT INTO `descriptions` (`description`) VALUES ('Hello I do Computer Science')
+I, [2021-03-21T19:29:08.845666 #235]  INFO -- : (0.000143s) SELECT * FROM `descriptions` WHERE `user_Id` = 1
+I, [2021-03-21T19:29:08.949746 #235]  INFO -- : (0.103968s) COMMIT
+I, [2021-03-21T19:29:08.950289 #235]  INFO -- : (0.000048s) BEGIN
+I, [2021-03-21T19:29:08.950875 #235]  INFO -- : (0.000209s) INSERT INTO `users` (`first_name`, `surname`, `email`, `password`, `privilege`, `has_mentee`, `has_mentor`, `degree`, `description`) VALUES ('Mentee1', 'TestDude', 'Mentee1@gmail.com', 'Password1', 'Mentee', 0, 0, 'Computer Science', 1)
+I, [2021-03-21T19:29:08.951179 #235]  INFO -- : (0.000127s) SELECT * FROM `users` WHERE `id` = 1
+I, [2021-03-21T19:29:09.057227 #235]  INFO -- : (0.105944s) COMMIT
+I, [2021-03-21T19:29:09.057585 #235]  INFO -- : (0.000049s) BEGIN
+I, [2021-03-21T19:29:09.058326 #235]  INFO -- : (0.000494s) INSERT INTO `descriptions` (`description`) VALUES ('Hello I do AI')
+I, [2021-03-21T19:29:09.058678 #235]  INFO -- : (0.000126s) SELECT * FROM `descriptions` WHERE `user_Id` = 2
+I, [2021-03-21T19:29:09.175920 #235]  INFO -- : (0.117130s) COMMIT
+I, [2021-03-21T19:29:09.176409 #235]  INFO -- : (0.000053s) BEGIN
+I, [2021-03-21T19:29:09.177080 #235]  INFO -- : (0.000287s) INSERT INTO `users` (`first_name`, `surname`, `email`, `password`, `privilege`, `has_mentee`, `has_mentor`, `degree`, `description`) VALUES ('Mentee2', 'TestDude', 'Mentee2@gmail.com', 'Password1', 'Mentee', 0, 0, 'Computer Science', 2)
+I, [2021-03-21T19:29:09.177465 #235]  INFO -- : (0.000189s) SELECT * FROM `users` WHERE `id` = 2
+I, [2021-03-21T19:29:09.278381 #235]  INFO -- : (0.100802s) COMMIT
+I, [2021-03-21T19:29:09.278669 #235]  INFO -- : (0.000037s) BEGIN
+I, [2021-03-21T19:29:09.279027 #235]  INFO -- : (0.000169s) INSERT INTO `descriptions` (`description`) VALUES ('Hello I am Professor at UoS')
+I, [2021-03-21T19:29:09.279277 #235]  INFO -- : (0.000095s) SELECT * FROM `descriptions` WHERE `user_Id` = 3
+I, [2021-03-21T19:29:09.379431 #235]  INFO -- : (0.100056s) COMMIT
+I, [2021-03-21T19:29:09.379894 #235]  INFO -- : (0.000046s) BEGIN
+I, [2021-03-21T19:29:09.380652 #235]  INFO -- : (0.000411s) INSERT INTO `users` (`first_name`, `surname`, `email`, `password`, `privilege`, `has_mentee`, `has_mentor`, `description`, `job_Title`, `industry_Sector`) VALUES ('Mentor1', 'TestDudette', 'Mentor1@gmail.com', 'Password1', 'Mentor', 0, 0, 3, 'Professor', 'Teacher training and education')
+I, [2021-03-21T19:29:09.381163 #235]  INFO -- : (0.000242s) SELECT * FROM `users` WHERE `id` = 3
+I, [2021-03-21T19:29:09.480736 #235]  INFO -- : (0.099402s) COMMIT
+I, [2021-03-21T19:29:09.481094 #235]  INFO -- : (0.000049s) BEGIN
+I, [2021-03-21T19:29:09.481534 #235]  INFO -- : (0.000200s) INSERT INTO `descriptions` (`description`) VALUES ('Hello I am System Admin at UoS')
+I, [2021-03-21T19:29:09.481907 #235]  INFO -- : (0.000129s) SELECT * FROM `descriptions` WHERE `user_Id` = 4
+I, [2021-03-21T19:29:09.576349 #235]  INFO -- : (0.094333s) COMMIT
+I, [2021-03-21T19:29:09.576674 #235]  INFO -- : (0.000034s) BEGIN
+I, [2021-03-21T19:29:09.577100 #235]  INFO -- : (0.000196s) INSERT INTO `users` (`first_name`, `surname`, `email`, `password`, `privilege`, `has_mentee`, `has_mentor`, `description`, `job_Title`, `industry_Sector`) VALUES ('Mentor2', 'TestDudette', 'Mentor2@gmail.com', 'Password1', 'Mentor', 0, 0, 4, 'System Admin', 'Information technology')
+I, [2021-03-21T19:29:09.577429 #235]  INFO -- : (0.000144s) SELECT * FROM `users` WHERE `id` = 4
+I, [2021-03-21T19:29:09.679421 #235]  INFO -- : (0.101897s) COMMIT
+I, [2021-03-21T19:29:09.679680 #235]  INFO -- : (0.000035s) BEGIN
+I, [2021-03-21T19:29:09.680024 #235]  INFO -- : (0.000164s) INSERT INTO `descriptions` (`description`) VALUES ('I am just a guy')
+I, [2021-03-21T19:29:09.680297 #235]  INFO -- : (0.000092s) SELECT * FROM `descriptions` WHERE `user_Id` = 5
+I, [2021-03-21T19:29:09.775873 #235]  INFO -- : (0.095479s) COMMIT
+I, [2021-03-21T19:29:09.776423 #235]  INFO -- : (0.000054s) BEGIN
+I, [2021-03-21T19:29:09.776985 #235]  INFO -- : (0.000237s) INSERT INTO `users` (`first_name`, `surname`, `email`, `password`, `privilege`, `has_mentee`, `has_mentor`, `description`, `job_Title`, `industry_Sector`) VALUES ('Ariful', 'Haque', 'ahaque3@sheffield.ac.uk', 'Password1', 'Mentor', 0, 0, 5, 'Streamer', 'Media and internet')
+I, [2021-03-21T19:29:09.777375 #235]  INFO -- : (0.000183s) SELECT * FROM `users` WHERE `id` = 5
+I, [2021-03-21T19:29:09.879147 #235]  INFO -- : (0.101664s) COMMIT
+I, [2021-03-21T19:29:10.376085 #235]  INFO -- : (0.000320s) SELECT * FROM `users` WHERE ((`email` = 'Mentee1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-21T19:29:10.377565 #235]  INFO -- : (0.000195s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-21T19:29:10.382339 #235]  INFO -- : (0.000194s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-21T19:29:10.393607 #235]  INFO -- : (0.000234s) SELECT * FROM `users` WHERE ((`email` = 'Mentor1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-21T19:29:10.394649 #235]  INFO -- : (0.000180s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:29:10.395060 #235]  INFO -- : (0.000086s) SELECT 1 AS 'one' FROM `users` WHERE (`has_mentor` = 3) LIMIT 1
+I, [2021-03-21T19:29:10.398197 #235]  INFO -- : (0.000208s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:31:11.689204 #236]  INFO -- : (0.000204s) PRAGMA foreign_keys = 1
+I, [2021-03-21T19:31:11.689310 #236]  INFO -- : (0.000017s) PRAGMA case_sensitive_like = 1
+I, [2021-03-21T19:31:11.729927 #236]  INFO -- : (0.000164s) SELECT sqlite_version()
+I, [2021-03-21T19:31:11.730434 #236]  INFO -- : (0.000244s) PRAGMA table_info('users')
+I, [2021-03-21T19:31:11.731604 #236]  INFO -- : (0.000100s) PRAGMA table_info('descriptions')
+I, [2021-03-21T19:31:11.848462 #236]  INFO -- : (0.103751s) DELETE FROM `users` WHERE (1 = 1)
+I, [2021-03-21T19:31:11.960005 #236]  INFO -- : (0.111256s) DELETE FROM `descriptions` WHERE (1 = 1)
+I, [2021-03-21T19:31:11.960348 #236]  INFO -- : (0.000049s) BEGIN
+I, [2021-03-21T19:31:11.960798 #236]  INFO -- : (0.000195s) INSERT INTO `descriptions` (`description`) VALUES ('Hello I do Computer Science')
+I, [2021-03-21T19:31:11.961107 #236]  INFO -- : (0.000134s) SELECT * FROM `descriptions` WHERE `user_Id` = 1
+I, [2021-03-21T19:31:12.053687 #236]  INFO -- : (0.092473s) COMMIT
+I, [2021-03-21T19:31:12.054109 #236]  INFO -- : (0.000040s) BEGIN
+I, [2021-03-21T19:31:12.054576 #236]  INFO -- : (0.000191s) INSERT INTO `users` (`first_name`, `surname`, `email`, `password`, `privilege`, `has_mentee`, `has_mentor`, `degree`, `description`) VALUES ('Mentee1', 'TestDude', 'Mentee1@gmail.com', 'Password1', 'Mentee', 0, 0, 'Computer Science', 1)
+I, [2021-03-21T19:31:12.054987 #236]  INFO -- : (0.000208s) SELECT * FROM `users` WHERE `id` = 1
+I, [2021-03-21T19:31:12.156929 #236]  INFO -- : (0.101802s) COMMIT
+I, [2021-03-21T19:31:12.157280 #236]  INFO -- : (0.000045s) BEGIN
+I, [2021-03-21T19:31:12.157765 #236]  INFO -- : (0.000224s) INSERT INTO `descriptions` (`description`) VALUES ('Hello I do AI')
+I, [2021-03-21T19:31:12.158180 #236]  INFO -- : (0.000131s) SELECT * FROM `descriptions` WHERE `user_Id` = 2
+I, [2021-03-21T19:31:12.260533 #236]  INFO -- : (0.102230s) COMMIT
+I, [2021-03-21T19:31:12.260931 #236]  INFO -- : (0.000043s) BEGIN
+I, [2021-03-21T19:31:12.261371 #236]  INFO -- : (0.000190s) INSERT INTO `users` (`first_name`, `surname`, `email`, `password`, `privilege`, `has_mentee`, `has_mentor`, `degree`, `description`) VALUES ('Mentee2', 'TestDude', 'Mentee2@gmail.com', 'Password1', 'Mentee', 0, 0, 'Computer Science', 2)
+I, [2021-03-21T19:31:12.261709 #236]  INFO -- : (0.000164s) SELECT * FROM `users` WHERE `id` = 2
+I, [2021-03-21T19:31:12.366630 #236]  INFO -- : (0.104801s) COMMIT
+I, [2021-03-21T19:31:12.367024 #236]  INFO -- : (0.000051s) BEGIN
+I, [2021-03-21T19:31:12.367506 #236]  INFO -- : (0.000206s) INSERT INTO `descriptions` (`description`) VALUES ('Hello I am Professor at UoS')
+I, [2021-03-21T19:31:12.367832 #236]  INFO -- : (0.000128s) SELECT * FROM `descriptions` WHERE `user_Id` = 3
+I, [2021-03-21T19:31:12.468913 #236]  INFO -- : (0.100959s) COMMIT
+I, [2021-03-21T19:31:12.469458 #236]  INFO -- : (0.000051s) BEGIN
+I, [2021-03-21T19:31:12.470365 #236]  INFO -- : (0.000437s) INSERT INTO `users` (`first_name`, `surname`, `email`, `password`, `privilege`, `has_mentee`, `has_mentor`, `description`, `job_Title`, `industry_Sector`) VALUES ('Mentor1', 'TestDudette', 'Mentor1@gmail.com', 'Password1', 'Mentor', 0, 0, 3, 'Professor', 'Teacher training and education')
+I, [2021-03-21T19:31:12.470886 #236]  INFO -- : (0.000254s) SELECT * FROM `users` WHERE `id` = 3
+I, [2021-03-21T19:31:12.571249 #236]  INFO -- : (0.100153s) COMMIT
+I, [2021-03-21T19:31:12.571661 #236]  INFO -- : (0.000045s) BEGIN
+I, [2021-03-21T19:31:12.572135 #236]  INFO -- : (0.000217s) INSERT INTO `descriptions` (`description`) VALUES ('Hello I am System Admin at UoS')
+I, [2021-03-21T19:31:12.572487 #236]  INFO -- : (0.000123s) SELECT * FROM `descriptions` WHERE `user_Id` = 4
+I, [2021-03-21T19:31:12.672023 #236]  INFO -- : (0.099435s) COMMIT
+I, [2021-03-21T19:31:12.672361 #236]  INFO -- : (0.000035s) BEGIN
+I, [2021-03-21T19:31:12.672737 #236]  INFO -- : (0.000166s) INSERT INTO `users` (`first_name`, `surname`, `email`, `password`, `privilege`, `has_mentee`, `has_mentor`, `description`, `job_Title`, `industry_Sector`) VALUES ('Mentor2', 'TestDudette', 'Mentor2@gmail.com', 'Password1', 'Mentor', 0, 0, 4, 'System Admin', 'Information technology')
+I, [2021-03-21T19:31:12.673012 #236]  INFO -- : (0.000127s) SELECT * FROM `users` WHERE `id` = 4
+I, [2021-03-21T19:31:12.767516 #236]  INFO -- : (0.094403s) COMMIT
+I, [2021-03-21T19:31:12.767865 #236]  INFO -- : (0.000048s) BEGIN
+I, [2021-03-21T19:31:12.768313 #236]  INFO -- : (0.000200s) INSERT INTO `descriptions` (`description`) VALUES ('I am just a guy')
+I, [2021-03-21T19:31:12.768634 #236]  INFO -- : (0.000124s) SELECT * FROM `descriptions` WHERE `user_Id` = 5
+I, [2021-03-21T19:31:12.860853 #236]  INFO -- : (0.092123s) COMMIT
+I, [2021-03-21T19:31:12.861198 #236]  INFO -- : (0.000036s) BEGIN
+I, [2021-03-21T19:31:12.861611 #236]  INFO -- : (0.000207s) INSERT INTO `users` (`first_name`, `surname`, `email`, `password`, `privilege`, `has_mentee`, `has_mentor`, `description`, `job_Title`, `industry_Sector`) VALUES ('Ariful', 'Haque', 'ahaque3@sheffield.ac.uk', 'Password1', 'Mentor', 0, 0, 5, 'Streamer', 'Media and internet')
+I, [2021-03-21T19:31:12.861983 #236]  INFO -- : (0.000182s) SELECT * FROM `users` WHERE `id` = 5
+I, [2021-03-21T19:31:12.960095 #236]  INFO -- : (0.098007s) COMMIT
+I, [2021-03-21T19:31:13.448041 #236]  INFO -- : (0.000311s) SELECT * FROM `users` WHERE ((`email` = 'Mentee1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-21T19:31:13.449652 #236]  INFO -- : (0.000207s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-21T19:31:13.454481 #236]  INFO -- : (0.000207s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-21T19:31:13.469596 #236]  INFO -- : (0.000260s) SELECT * FROM `users` WHERE ((`email` = 'Mentor1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-21T19:31:13.471053 #236]  INFO -- : (0.000200s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:31:13.471518 #236]  INFO -- : (0.000098s) SELECT 1 AS 'one' FROM `users` WHERE (`has_mentor` = 3) LIMIT 1
+I, [2021-03-21T19:31:13.474938 #236]  INFO -- : (0.000183s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:31:13.483647 #236]  INFO -- : (0.000213s) SELECT * FROM `users` WHERE ((`email` = 'Mentee1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-21T19:31:13.484713 #236]  INFO -- : (0.000177s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-21T19:31:13.488130 #236]  INFO -- : (0.000183s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-21T19:31:13.516718 #236]  INFO -- : (0.000279s) SELECT * FROM `users` WHERE ((`email` = 'Mentor1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-21T19:31:13.518003 #236]  INFO -- : (0.000230s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:31:13.518454 #236]  INFO -- : (0.000098s) SELECT 1 AS 'one' FROM `users` WHERE (`has_mentor` = 3) LIMIT 1
+I, [2021-03-21T19:31:13.520936 #236]  INFO -- : (0.000188s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:32:14.797907 #237]  INFO -- : (0.000229s) PRAGMA foreign_keys = 1
+I, [2021-03-21T19:32:14.798042 #237]  INFO -- : (0.000026s) PRAGMA case_sensitive_like = 1
+I, [2021-03-21T19:32:14.845549 #237]  INFO -- : (0.000129s) SELECT sqlite_version()
+I, [2021-03-21T19:32:14.846161 #237]  INFO -- : (0.000355s) PRAGMA table_info('users')
+I, [2021-03-21T19:32:14.847302 #237]  INFO -- : (0.000133s) PRAGMA table_info('descriptions')
+I, [2021-03-21T19:32:14.978144 #237]  INFO -- : (0.116620s) DELETE FROM `users` WHERE (1 = 1)
+I, [2021-03-21T19:32:15.074060 #237]  INFO -- : (0.095622s) DELETE FROM `descriptions` WHERE (1 = 1)
+I, [2021-03-21T19:32:15.074477 #237]  INFO -- : (0.000052s) BEGIN
+I, [2021-03-21T19:32:15.075496 #237]  INFO -- : (0.000611s) INSERT INTO `descriptions` (`description`) VALUES ('Hello I do Computer Science')
+I, [2021-03-21T19:32:15.075934 #237]  INFO -- : (0.000152s) SELECT * FROM `descriptions` WHERE `user_Id` = 1
+I, [2021-03-21T19:32:15.171962 #237]  INFO -- : (0.095875s) COMMIT
+I, [2021-03-21T19:32:15.172530 #237]  INFO -- : (0.000039s) BEGIN
+I, [2021-03-21T19:32:15.173115 #237]  INFO -- : (0.000278s) INSERT INTO `users` (`first_name`, `surname`, `email`, `password`, `privilege`, `has_mentee`, `has_mentor`, `degree`, `description`) VALUES ('Mentee1', 'TestDude', 'Mentee1@gmail.com', 'Password1', 'Mentee', 0, 0, 'Computer Science', 1)
+I, [2021-03-21T19:32:15.173503 #237]  INFO -- : (0.000191s) SELECT * FROM `users` WHERE `id` = 1
+I, [2021-03-21T19:32:15.271771 #237]  INFO -- : (0.098147s) COMMIT
+I, [2021-03-21T19:32:15.272083 #237]  INFO -- : (0.000038s) BEGIN
+I, [2021-03-21T19:32:15.272495 #237]  INFO -- : (0.000217s) INSERT INTO `descriptions` (`description`) VALUES ('Hello I do AI')
+I, [2021-03-21T19:32:15.272761 #237]  INFO -- : (0.000090s) SELECT * FROM `descriptions` WHERE `user_Id` = 2
+I, [2021-03-21T19:32:15.367685 #237]  INFO -- : (0.094835s) COMMIT
+I, [2021-03-21T19:32:15.368007 #237]  INFO -- : (0.000036s) BEGIN
+I, [2021-03-21T19:32:15.368609 #237]  INFO -- : (0.000188s) INSERT INTO `users` (`first_name`, `surname`, `email`, `password`, `privilege`, `has_mentee`, `has_mentor`, `degree`, `description`) VALUES ('Mentee2', 'TestDude', 'Mentee2@gmail.com', 'Password1', 'Mentee', 0, 0, 'Computer Science', 2)
+I, [2021-03-21T19:32:15.368929 #237]  INFO -- : (0.000149s) SELECT * FROM `users` WHERE `id` = 2
+I, [2021-03-21T19:32:15.471701 #237]  INFO -- : (0.102666s) COMMIT
+I, [2021-03-21T19:32:15.472056 #237]  INFO -- : (0.000050s) BEGIN
+I, [2021-03-21T19:32:15.472525 #237]  INFO -- : (0.000216s) INSERT INTO `descriptions` (`description`) VALUES ('Hello I am Professor at UoS')
+I, [2021-03-21T19:32:15.472857 #237]  INFO -- : (0.000127s) SELECT * FROM `descriptions` WHERE `user_Id` = 3
+I, [2021-03-21T19:32:15.607393 #237]  INFO -- : (0.134412s) COMMIT
+I, [2021-03-21T19:32:15.607850 #237]  INFO -- : (0.000046s) BEGIN
+I, [2021-03-21T19:32:15.608370 #237]  INFO -- : (0.000214s) INSERT INTO `users` (`first_name`, `surname`, `email`, `password`, `privilege`, `has_mentee`, `has_mentor`, `description`, `job_Title`, `industry_Sector`) VALUES ('Mentor1', 'TestDudette', 'Mentor1@gmail.com', 'Password1', 'Mentor', 0, 0, 3, 'Professor', 'Teacher training and education')
+I, [2021-03-21T19:32:15.608759 #237]  INFO -- : (0.000187s) SELECT * FROM `users` WHERE `id` = 3
+I, [2021-03-21T19:32:15.699844 #237]  INFO -- : (0.090939s) COMMIT
+I, [2021-03-21T19:32:15.700281 #237]  INFO -- : (0.000056s) BEGIN
+I, [2021-03-21T19:32:15.700783 #237]  INFO -- : (0.000236s) INSERT INTO `descriptions` (`description`) VALUES ('Hello I am System Admin at UoS')
+I, [2021-03-21T19:32:15.701149 #237]  INFO -- : (0.000148s) SELECT * FROM `descriptions` WHERE `user_Id` = 4
+I, [2021-03-21T19:32:15.798932 #237]  INFO -- : (0.097663s) COMMIT
+I, [2021-03-21T19:32:15.799405 #237]  INFO -- : (0.000077s) BEGIN
+I, [2021-03-21T19:32:15.799894 #237]  INFO -- : (0.000205s) INSERT INTO `users` (`first_name`, `surname`, `email`, `password`, `privilege`, `has_mentee`, `has_mentor`, `description`, `job_Title`, `industry_Sector`) VALUES ('Mentor2', 'TestDudette', 'Mentor2@gmail.com', 'Password1', 'Mentor', 0, 0, 4, 'System Admin', 'Information technology')
+I, [2021-03-21T19:32:15.800255 #237]  INFO -- : (0.000186s) SELECT * FROM `users` WHERE `id` = 4
+I, [2021-03-21T19:32:15.906518 #237]  INFO -- : (0.106159s) COMMIT
+I, [2021-03-21T19:32:15.906858 #237]  INFO -- : (0.000050s) BEGIN
+I, [2021-03-21T19:32:15.907248 #237]  INFO -- : (0.000173s) INSERT INTO `descriptions` (`description`) VALUES ('I am just a guy')
+I, [2021-03-21T19:32:15.907480 #237]  INFO -- : (0.000091s) SELECT * FROM `descriptions` WHERE `user_Id` = 5
+I, [2021-03-21T19:32:15.998529 #237]  INFO -- : (0.090965s) COMMIT
+I, [2021-03-21T19:32:15.998993 #237]  INFO -- : (0.000051s) BEGIN
+I, [2021-03-21T19:32:15.999612 #237]  INFO -- : (0.000324s) INSERT INTO `users` (`first_name`, `surname`, `email`, `password`, `privilege`, `has_mentee`, `has_mentor`, `description`, `job_Title`, `industry_Sector`) VALUES ('Ariful', 'Haque', 'ahaque3@sheffield.ac.uk', 'Password1', 'Mentor', 0, 0, 5, 'Streamer', 'Media and internet')
+I, [2021-03-21T19:32:16.000014 #237]  INFO -- : (0.000200s) SELECT * FROM `users` WHERE `id` = 5
+I, [2021-03-21T19:32:16.093199 #237]  INFO -- : (0.093063s) COMMIT
+I, [2021-03-21T19:32:16.491783 #237]  INFO -- : (0.000222s) SELECT * FROM `users` WHERE ((`email` = 'Mentee1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-21T19:32:16.492854 #237]  INFO -- : (0.000156s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-21T19:32:16.496020 #237]  INFO -- : (0.000129s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-21T19:32:16.505533 #237]  INFO -- : (0.000201s) SELECT * FROM `users` WHERE ((`email` = 'Mentor1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-21T19:32:16.506580 #237]  INFO -- : (0.000155s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:32:16.506913 #237]  INFO -- : (0.000068s) SELECT 1 AS 'one' FROM `users` WHERE (`has_mentor` = 3) LIMIT 1
+I, [2021-03-21T19:32:16.509112 #237]  INFO -- : (0.000121s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:32:16.516960 #237]  INFO -- : (0.000214s) SELECT * FROM `users` WHERE ((`email` = 'Mentee1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-21T19:32:16.517832 #237]  INFO -- : (0.000159s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-21T19:32:16.520108 #237]  INFO -- : (0.000131s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-21T19:32:16.539758 #237]  INFO -- : (0.000191s) SELECT * FROM `users` WHERE ((`email` = 'Mentor1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-21T19:32:16.540993 #237]  INFO -- : (0.000207s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:32:16.541486 #237]  INFO -- : (0.000107s) SELECT 1 AS 'one' FROM `users` WHERE (`has_mentor` = 3) LIMIT 1
+I, [2021-03-21T19:32:16.543868 #237]  INFO -- : (0.000187s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:32:16.555077 #237]  INFO -- : (0.000267s) SELECT * FROM `users` WHERE ((`email` = 'Mentor1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-21T19:32:16.555943 #237]  INFO -- : (0.000131s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:32:16.556248 #237]  INFO -- : (0.000064s) SELECT 1 AS 'one' FROM `users` WHERE (`has_mentor` = 3) LIMIT 1
+I, [2021-03-21T19:32:16.558233 #237]  INFO -- : (0.000175s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:32:16.563127 #237]  INFO -- : (0.000195s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:32:16.564199 #237]  INFO -- : (0.000189s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:35:02.163273 #239]  INFO -- : (0.000238s) PRAGMA foreign_keys = 1
+I, [2021-03-21T19:35:02.163401 #239]  INFO -- : (0.000022s) PRAGMA case_sensitive_like = 1
+I, [2021-03-21T19:35:02.225612 #239]  INFO -- : (0.000165s) SELECT sqlite_version()
+I, [2021-03-21T19:35:02.226413 #239]  INFO -- : (0.000453s) PRAGMA table_info('users')
+I, [2021-03-21T19:35:02.228199 #239]  INFO -- : (0.000174s) PRAGMA table_info('descriptions')
+I, [2021-03-21T19:35:02.362852 #239]  INFO -- : (0.111049s) DELETE FROM `users` WHERE (1 = 1)
+I, [2021-03-21T19:35:02.466114 #239]  INFO -- : (0.102991s) DELETE FROM `descriptions` WHERE (1 = 1)
+I, [2021-03-21T19:35:02.466411 #239]  INFO -- : (0.000042s) BEGIN
+I, [2021-03-21T19:35:02.466841 #239]  INFO -- : (0.000165s) INSERT INTO `descriptions` (`description`) VALUES ('Hello I do Computer Science')
+I, [2021-03-21T19:35:02.467123 #239]  INFO -- : (0.000102s) SELECT * FROM `descriptions` WHERE `user_Id` = 1
+I, [2021-03-21T19:35:02.558379 #239]  INFO -- : (0.091106s) COMMIT
+I, [2021-03-21T19:35:02.558942 #239]  INFO -- : (0.000057s) BEGIN
+I, [2021-03-21T19:35:02.559693 #239]  INFO -- : (0.000307s) INSERT INTO `users` (`first_name`, `surname`, `email`, `password`, `privilege`, `has_mentee`, `has_mentor`, `degree`, `description`) VALUES ('Mentee1', 'TestDude', 'Mentee1@gmail.com', 'Password1', 'Mentee', 0, 0, 'Computer Science', 1)
+I, [2021-03-21T19:35:02.560187 #239]  INFO -- : (0.000252s) SELECT * FROM `users` WHERE `id` = 1
+I, [2021-03-21T19:35:02.649744 #239]  INFO -- : (0.089429s) COMMIT
+I, [2021-03-21T19:35:02.650213 #239]  INFO -- : (0.000078s) BEGIN
+I, [2021-03-21T19:35:02.650680 #239]  INFO -- : (0.000214s) INSERT INTO `descriptions` (`description`) VALUES ('Hello I do AI')
+I, [2021-03-21T19:35:02.650970 #239]  INFO -- : (0.000116s) SELECT * FROM `descriptions` WHERE `user_Id` = 2
+I, [2021-03-21T19:35:02.737116 #239]  INFO -- : (0.086050s) COMMIT
+I, [2021-03-21T19:35:02.737466 #239]  INFO -- : (0.000035s) BEGIN
+I, [2021-03-21T19:35:02.737819 #239]  INFO -- : (0.000158s) INSERT INTO `users` (`first_name`, `surname`, `email`, `password`, `privilege`, `has_mentee`, `has_mentor`, `degree`, `description`) VALUES ('Mentee2', 'TestDude', 'Mentee2@gmail.com', 'Password1', 'Mentee', 0, 0, 'Computer Science', 2)
+I, [2021-03-21T19:35:02.738155 #239]  INFO -- : (0.000141s) SELECT * FROM `users` WHERE `id` = 2
+I, [2021-03-21T19:35:02.827422 #239]  INFO -- : (0.089181s) COMMIT
+I, [2021-03-21T19:35:02.827676 #239]  INFO -- : (0.000034s) BEGIN
+I, [2021-03-21T19:35:02.827975 #239]  INFO -- : (0.000143s) INSERT INTO `descriptions` (`description`) VALUES ('Hello I am Professor at UoS')
+I, [2021-03-21T19:35:02.828221 #239]  INFO -- : (0.000115s) SELECT * FROM `descriptions` WHERE `user_Id` = 3
+I, [2021-03-21T19:35:02.917263 #239]  INFO -- : (0.088954s) COMMIT
+I, [2021-03-21T19:35:02.917780 #239]  INFO -- : (0.000058s) BEGIN
+I, [2021-03-21T19:35:02.918364 #239]  INFO -- : (0.000237s) INSERT INTO `users` (`first_name`, `surname`, `email`, `password`, `privilege`, `has_mentee`, `has_mentor`, `description`, `job_Title`, `industry_Sector`) VALUES ('Mentor1', 'TestDudette', 'Mentor1@gmail.com', 'Password1', 'Mentor', 0, 0, 3, 'Professor', 'Teacher training and education')
+I, [2021-03-21T19:35:02.918748 #239]  INFO -- : (0.000188s) SELECT * FROM `users` WHERE `id` = 3
+I, [2021-03-21T19:35:03.031603 #239]  INFO -- : (0.112751s) COMMIT
+I, [2021-03-21T19:35:03.031920 #239]  INFO -- : (0.000043s) BEGIN
+I, [2021-03-21T19:35:03.032307 #239]  INFO -- : (0.000180s) INSERT INTO `descriptions` (`description`) VALUES ('Hello I am System Admin at UoS')
+I, [2021-03-21T19:35:03.032588 #239]  INFO -- : (0.000110s) SELECT * FROM `descriptions` WHERE `user_Id` = 4
+I, [2021-03-21T19:35:03.134613 #239]  INFO -- : (0.101923s) COMMIT
+I, [2021-03-21T19:35:03.135006 #239]  INFO -- : (0.000044s) BEGIN
+I, [2021-03-21T19:35:03.135431 #239]  INFO -- : (0.000161s) INSERT INTO `users` (`first_name`, `surname`, `email`, `password`, `privilege`, `has_mentee`, `has_mentor`, `description`, `job_Title`, `industry_Sector`) VALUES ('Mentor2', 'TestDudette', 'Mentor2@gmail.com', 'Password1', 'Mentor', 0, 0, 4, 'System Admin', 'Information technology')
+I, [2021-03-21T19:35:03.135722 #239]  INFO -- : (0.000145s) SELECT * FROM `users` WHERE `id` = 4
+I, [2021-03-21T19:35:03.230178 #239]  INFO -- : (0.094370s) COMMIT
+I, [2021-03-21T19:35:03.230460 #239]  INFO -- : (0.000038s) BEGIN
+I, [2021-03-21T19:35:03.230811 #239]  INFO -- : (0.000160s) INSERT INTO `descriptions` (`description`) VALUES ('I am just a guy')
+I, [2021-03-21T19:35:03.231096 #239]  INFO -- : (0.000095s) SELECT * FROM `descriptions` WHERE `user_Id` = 5
+I, [2021-03-21T19:35:03.335179 #239]  INFO -- : (0.103962s) COMMIT
+I, [2021-03-21T19:35:03.335495 #239]  INFO -- : (0.000033s) BEGIN
+I, [2021-03-21T19:35:03.335842 #239]  INFO -- : (0.000159s) INSERT INTO `users` (`first_name`, `surname`, `email`, `password`, `privilege`, `has_mentee`, `has_mentor`, `description`, `job_Title`, `industry_Sector`) VALUES ('Ariful', 'Haque', 'ahaque3@sheffield.ac.uk', 'Password1', 'Mentor', 0, 0, 5, 'Streamer', 'Media and internet')
+I, [2021-03-21T19:35:03.336192 #239]  INFO -- : (0.000131s) SELECT * FROM `users` WHERE `id` = 5
+I, [2021-03-21T19:35:03.422994 #239]  INFO -- : (0.086704s) COMMIT
+I, [2021-03-21T19:35:03.909397 #239]  INFO -- : (0.000203s) SELECT * FROM `users` WHERE ((`email` = 'Mentee1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-21T19:35:03.910443 #239]  INFO -- : (0.000140s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-21T19:35:03.913284 #239]  INFO -- : (0.000130s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-21T19:35:03.920614 #239]  INFO -- : (0.000136s) SELECT * FROM `users` WHERE ((`email` = 'Mentor1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-21T19:35:03.921319 #239]  INFO -- : (0.000116s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:35:03.921618 #239]  INFO -- : (0.000067s) SELECT 1 AS 'one' FROM `users` WHERE (`has_mentor` = 3) LIMIT 1
+I, [2021-03-21T19:35:03.923507 #239]  INFO -- : (0.000119s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:35:03.929306 #239]  INFO -- : (0.000135s) SELECT * FROM `users` WHERE ((`email` = 'Mentee1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-21T19:35:03.930037 #239]  INFO -- : (0.000167s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-21T19:35:03.931769 #239]  INFO -- : (0.000119s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-21T19:35:03.947187 #239]  INFO -- : (0.000148s) SELECT * FROM `users` WHERE ((`email` = 'Mentor1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-21T19:35:03.947902 #239]  INFO -- : (0.000132s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:35:03.948285 #239]  INFO -- : (0.000071s) SELECT 1 AS 'one' FROM `users` WHERE (`has_mentor` = 3) LIMIT 1
+I, [2021-03-21T19:35:03.949823 #239]  INFO -- : (0.000122s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:35:03.957813 #239]  INFO -- : (0.000131s) SELECT * FROM `users` WHERE ((`email` = 'Mentor1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-21T19:35:03.958554 #239]  INFO -- : (0.000118s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:35:03.958836 #239]  INFO -- : (0.000061s) SELECT 1 AS 'one' FROM `users` WHERE (`has_mentor` = 3) LIMIT 1
+I, [2021-03-21T19:35:03.960355 #239]  INFO -- : (0.000134s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:35:03.963680 #239]  INFO -- : (0.000149s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:35:03.964369 #239]  INFO -- : (0.000118s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:35:03.972630 #239]  INFO -- : (0.000146s) SELECT * FROM `users` WHERE ((`email` = 'Mentor1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-21T19:35:03.973310 #239]  INFO -- : (0.000115s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:35:03.973626 #239]  INFO -- : (0.000066s) SELECT 1 AS 'one' FROM `users` WHERE (`has_mentor` = 3) LIMIT 1
+I, [2021-03-21T19:35:03.975238 #239]  INFO -- : (0.000120s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:36:21.421846 #240]  INFO -- : (0.000208s) PRAGMA foreign_keys = 1
+I, [2021-03-21T19:36:21.421969 #240]  INFO -- : (0.000018s) PRAGMA case_sensitive_like = 1
+I, [2021-03-21T19:36:21.458367 #240]  INFO -- : (0.000087s) SELECT sqlite_version()
+I, [2021-03-21T19:36:21.458881 #240]  INFO -- : (0.000332s) PRAGMA table_info('users')
+I, [2021-03-21T19:36:21.459973 #240]  INFO -- : (0.000123s) PRAGMA table_info('descriptions')
+I, [2021-03-21T19:36:21.584692 #240]  INFO -- : (0.111202s) DELETE FROM `users` WHERE (1 = 1)
+I, [2021-03-21T19:36:21.683042 #240]  INFO -- : (0.098080s) DELETE FROM `descriptions` WHERE (1 = 1)
+I, [2021-03-21T19:36:21.683335 #240]  INFO -- : (0.000042s) BEGIN
+I, [2021-03-21T19:36:21.683736 #240]  INFO -- : (0.000174s) INSERT INTO `descriptions` (`description`) VALUES ('Hello I do Computer Science')
+I, [2021-03-21T19:36:21.684010 #240]  INFO -- : (0.000124s) SELECT * FROM `descriptions` WHERE `user_Id` = 1
+I, [2021-03-21T19:36:21.982302 #240]  INFO -- : (0.298189s) COMMIT
+I, [2021-03-21T19:36:21.982787 #240]  INFO -- : (0.000060s) BEGIN
+I, [2021-03-21T19:36:21.983400 #240]  INFO -- : (0.000237s) INSERT INTO `users` (`first_name`, `surname`, `email`, `password`, `privilege`, `has_mentee`, `has_mentor`, `degree`, `description`) VALUES ('Mentee1', 'TestDude', 'Mentee1@gmail.com', 'Password1', 'Mentee', 0, 0, 'Computer Science', 1)
+I, [2021-03-21T19:36:21.983795 #240]  INFO -- : (0.000193s) SELECT * FROM `users` WHERE `id` = 1
+I, [2021-03-21T19:36:22.135669 #240]  INFO -- : (0.151754s) COMMIT
+I, [2021-03-21T19:36:22.136072 #240]  INFO -- : (0.000052s) BEGIN
+I, [2021-03-21T19:36:22.136591 #240]  INFO -- : (0.000237s) INSERT INTO `descriptions` (`description`) VALUES ('Hello I do AI')
+I, [2021-03-21T19:36:22.136919 #240]  INFO -- : (0.000123s) SELECT * FROM `descriptions` WHERE `user_Id` = 2
+I, [2021-03-21T19:36:22.275624 #240]  INFO -- : (0.138594s) COMMIT
+I, [2021-03-21T19:36:22.276096 #240]  INFO -- : (0.000054s) BEGIN
+I, [2021-03-21T19:36:22.276635 #240]  INFO -- : (0.000225s) INSERT INTO `users` (`first_name`, `surname`, `email`, `password`, `privilege`, `has_mentee`, `has_mentor`, `degree`, `description`) VALUES ('Mentee2', 'TestDude', 'Mentee2@gmail.com', 'Password1', 'Mentee', 0, 0, 'Computer Science', 2)
+I, [2021-03-21T19:36:22.277029 #240]  INFO -- : (0.000199s) SELECT * FROM `users` WHERE `id` = 2
+I, [2021-03-21T19:36:22.389325 #240]  INFO -- : (0.112199s) COMMIT
+I, [2021-03-21T19:36:22.389596 #240]  INFO -- : (0.000037s) BEGIN
+I, [2021-03-21T19:36:22.389956 #240]  INFO -- : (0.000186s) INSERT INTO `descriptions` (`description`) VALUES ('Hello I am Professor at UoS')
+I, [2021-03-21T19:36:22.390201 #240]  INFO -- : (0.000097s) SELECT * FROM `descriptions` WHERE `user_Id` = 3
+I, [2021-03-21T19:36:22.491486 #240]  INFO -- : (0.101185s) COMMIT
+I, [2021-03-21T19:36:22.491959 #240]  INFO -- : (0.000048s) BEGIN
+I, [2021-03-21T19:36:22.492521 #240]  INFO -- : (0.000235s) INSERT INTO `users` (`first_name`, `surname`, `email`, `password`, `privilege`, `has_mentee`, `has_mentor`, `description`, `job_Title`, `industry_Sector`) VALUES ('Mentor1', 'TestDudette', 'Mentor1@gmail.com', 'Password1', 'Mentor', 0, 0, 3, 'Professor', 'Teacher training and education')
+I, [2021-03-21T19:36:22.492915 #240]  INFO -- : (0.000213s) SELECT * FROM `users` WHERE `id` = 3
+I, [2021-03-21T19:36:22.593254 #240]  INFO -- : (0.100238s) COMMIT
+I, [2021-03-21T19:36:22.593514 #240]  INFO -- : (0.000035s) BEGIN
+I, [2021-03-21T19:36:22.593807 #240]  INFO -- : (0.000136s) INSERT INTO `descriptions` (`description`) VALUES ('Hello I am System Admin at UoS')
+I, [2021-03-21T19:36:22.594095 #240]  INFO -- : (0.000094s) SELECT * FROM `descriptions` WHERE `user_Id` = 4
+I, [2021-03-21T19:36:22.688883 #240]  INFO -- : (0.094693s) COMMIT
+I, [2021-03-21T19:36:22.689352 #240]  INFO -- : (0.000052s) BEGIN
+I, [2021-03-21T19:36:22.689960 #240]  INFO -- : (0.000282s) INSERT INTO `users` (`first_name`, `surname`, `email`, `password`, `privilege`, `has_mentee`, `has_mentor`, `description`, `job_Title`, `industry_Sector`) VALUES ('Mentor2', 'TestDudette', 'Mentor2@gmail.com', 'Password1', 'Mentor', 0, 0, 4, 'System Admin', 'Information technology')
+I, [2021-03-21T19:36:22.690364 #240]  INFO -- : (0.000200s) SELECT * FROM `users` WHERE `id` = 4
+I, [2021-03-21T19:36:22.780394 #240]  INFO -- : (0.089924s) COMMIT
+I, [2021-03-21T19:36:22.780767 #240]  INFO -- : (0.000049s) BEGIN
+I, [2021-03-21T19:36:22.781248 #240]  INFO -- : (0.000220s) INSERT INTO `descriptions` (`description`) VALUES ('I am just a guy')
+I, [2021-03-21T19:36:22.781606 #240]  INFO -- : (0.000150s) SELECT * FROM `descriptions` WHERE `user_Id` = 5
+I, [2021-03-21T19:36:22.874061 #240]  INFO -- : (0.092344s) COMMIT
+I, [2021-03-21T19:36:22.874480 #240]  INFO -- : (0.000042s) BEGIN
+I, [2021-03-21T19:36:22.874967 #240]  INFO -- : (0.000222s) INSERT INTO `users` (`first_name`, `surname`, `email`, `password`, `privilege`, `has_mentee`, `has_mentor`, `description`, `job_Title`, `industry_Sector`) VALUES ('Ariful', 'Haque', 'ahaque3@sheffield.ac.uk', 'Password1', 'Mentor', 0, 0, 5, 'Streamer', 'Media and internet')
+I, [2021-03-21T19:36:22.875336 #240]  INFO -- : (0.000191s) SELECT * FROM `users` WHERE `id` = 5
+I, [2021-03-21T19:36:22.970577 #240]  INFO -- : (0.095134s) COMMIT
+I, [2021-03-21T19:36:23.387545 #240]  INFO -- : (0.000286s) SELECT * FROM `users` WHERE ((`email` = 'Mentee1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-21T19:36:23.389108 #240]  INFO -- : (0.000214s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-21T19:36:23.393650 #240]  INFO -- : (0.000205s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-21T19:36:23.404851 #240]  INFO -- : (0.000245s) SELECT * FROM `users` WHERE ((`email` = 'Mentor1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-21T19:36:23.406138 #240]  INFO -- : (0.000262s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:36:23.406599 #240]  INFO -- : (0.000089s) SELECT 1 AS 'one' FROM `users` WHERE (`has_mentor` = 3) LIMIT 1
+I, [2021-03-21T19:36:23.409736 #240]  INFO -- : (0.000203s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:36:23.418482 #240]  INFO -- : (0.000209s) SELECT * FROM `users` WHERE ((`email` = 'Mentee1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-21T19:36:23.419620 #240]  INFO -- : (0.000205s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-21T19:36:23.422303 #240]  INFO -- : (0.000184s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-21T19:36:23.440286 #240]  INFO -- : (0.000262s) SELECT * FROM `users` WHERE ((`email` = 'Mentor1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-21T19:36:23.441476 #240]  INFO -- : (0.000203s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:36:23.441946 #240]  INFO -- : (0.000112s) SELECT 1 AS 'one' FROM `users` WHERE (`has_mentor` = 3) LIMIT 1
+I, [2021-03-21T19:36:23.444330 #240]  INFO -- : (0.000193s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:36:23.456275 #240]  INFO -- : (0.000224s) SELECT * FROM `users` WHERE ((`email` = 'Mentor1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-21T19:36:23.457453 #240]  INFO -- : (0.000189s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:36:23.457912 #240]  INFO -- : (0.000130s) SELECT 1 AS 'one' FROM `users` WHERE (`has_mentor` = 3) LIMIT 1
+I, [2021-03-21T19:36:23.460139 #240]  INFO -- : (0.000182s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:36:23.463986 #240]  INFO -- : (0.000153s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:36:23.465083 #240]  INFO -- : (0.000191s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:36:23.475872 #240]  INFO -- : (0.000205s) SELECT * FROM `users` WHERE ((`email` = 'Mentor1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-21T19:36:23.477007 #240]  INFO -- : (0.000177s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:36:23.477497 #240]  INFO -- : (0.000097s) SELECT 1 AS 'one' FROM `users` WHERE (`has_mentor` = 3) LIMIT 1
+I, [2021-03-21T19:36:23.479828 #240]  INFO -- : (0.000181s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:36:23.495330 #240]  INFO -- : (0.000230s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:36:23.496563 #240]  INFO -- : (0.000195s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:37:23.379548 #241]  INFO -- : (0.000195s) PRAGMA foreign_keys = 1
+I, [2021-03-21T19:37:23.379654 #241]  INFO -- : (0.000018s) PRAGMA case_sensitive_like = 1
+I, [2021-03-21T19:37:23.420907 #241]  INFO -- : (0.000102s) SELECT sqlite_version()
+I, [2021-03-21T19:37:23.421366 #241]  INFO -- : (0.000237s) PRAGMA table_info('users')
+I, [2021-03-21T19:37:23.422413 #241]  INFO -- : (0.000104s) PRAGMA table_info('descriptions')
+I, [2021-03-21T19:37:23.535993 #241]  INFO -- : (0.099941s) DELETE FROM `users` WHERE (1 = 1)
+I, [2021-03-21T19:37:23.641724 #241]  INFO -- : (0.105376s) DELETE FROM `descriptions` WHERE (1 = 1)
+I, [2021-03-21T19:37:23.642161 #241]  INFO -- : (0.000053s) BEGIN
+I, [2021-03-21T19:37:23.642647 #241]  INFO -- : (0.000204s) INSERT INTO `descriptions` (`description`) VALUES ('Hello I do Computer Science')
+I, [2021-03-21T19:37:23.643009 #241]  INFO -- : (0.000151s) SELECT * FROM `descriptions` WHERE `user_Id` = 1
+I, [2021-03-21T19:37:23.742790 #241]  INFO -- : (0.099646s) COMMIT
+I, [2021-03-21T19:37:23.743133 #241]  INFO -- : (0.000035s) BEGIN
+I, [2021-03-21T19:37:23.743673 #241]  INFO -- : (0.000220s) INSERT INTO `users` (`first_name`, `surname`, `email`, `password`, `privilege`, `has_mentee`, `has_mentor`, `degree`, `description`) VALUES ('Mentee1', 'TestDude', 'Mentee1@gmail.com', 'Password1', 'Mentee', 0, 0, 'Computer Science', 1)
+I, [2021-03-21T19:37:23.744060 #241]  INFO -- : (0.000191s) SELECT * FROM `users` WHERE `id` = 1
+I, [2021-03-21T19:37:23.844493 #241]  INFO -- : (0.100299s) COMMIT
+I, [2021-03-21T19:37:23.844892 #241]  INFO -- : (0.000057s) BEGIN
+I, [2021-03-21T19:37:23.845328 #241]  INFO -- : (0.000201s) INSERT INTO `descriptions` (`description`) VALUES ('Hello I do AI')
+I, [2021-03-21T19:37:23.845660 #241]  INFO -- : (0.000130s) SELECT * FROM `descriptions` WHERE `user_Id` = 2
+I, [2021-03-21T19:37:23.944897 #241]  INFO -- : (0.099095s) COMMIT
+I, [2021-03-21T19:37:23.945381 #241]  INFO -- : (0.000048s) BEGIN
+I, [2021-03-21T19:37:23.945933 #241]  INFO -- : (0.000259s) INSERT INTO `users` (`first_name`, `surname`, `email`, `password`, `privilege`, `has_mentee`, `has_mentor`, `degree`, `description`) VALUES ('Mentee2', 'TestDude', 'Mentee2@gmail.com', 'Password1', 'Mentee', 0, 0, 'Computer Science', 2)
+I, [2021-03-21T19:37:23.946263 #241]  INFO -- : (0.000152s) SELECT * FROM `users` WHERE `id` = 2
+I, [2021-03-21T19:37:24.039382 #241]  INFO -- : (0.092967s) COMMIT
+I, [2021-03-21T19:37:24.039858 #241]  INFO -- : (0.000053s) BEGIN
+I, [2021-03-21T19:37:24.040351 #241]  INFO -- : (0.000209s) INSERT INTO `descriptions` (`description`) VALUES ('Hello I am Professor at UoS')
+I, [2021-03-21T19:37:24.040688 #241]  INFO -- : (0.000137s) SELECT * FROM `descriptions` WHERE `user_Id` = 3
+I, [2021-03-21T19:37:24.135115 #241]  INFO -- : (0.094308s) COMMIT
+I, [2021-03-21T19:37:24.135485 #241]  INFO -- : (0.000038s) BEGIN
+I, [2021-03-21T19:37:24.136002 #241]  INFO -- : (0.000223s) INSERT INTO `users` (`first_name`, `surname`, `email`, `password`, `privilege`, `has_mentee`, `has_mentor`, `description`, `job_Title`, `industry_Sector`) VALUES ('Mentor1', 'TestDudette', 'Mentor1@gmail.com', 'Password1', 'Mentor', 0, 0, 3, 'Professor', 'Teacher training and education')
+I, [2021-03-21T19:37:24.136323 #241]  INFO -- : (0.000155s) SELECT * FROM `users` WHERE `id` = 3
+I, [2021-03-21T19:37:24.235725 #241]  INFO -- : (0.099287s) COMMIT
+I, [2021-03-21T19:37:24.236074 #241]  INFO -- : (0.000045s) BEGIN
+I, [2021-03-21T19:37:24.236535 #241]  INFO -- : (0.000227s) INSERT INTO `descriptions` (`description`) VALUES ('Hello I am System Admin at UoS')
+I, [2021-03-21T19:37:24.236914 #241]  INFO -- : (0.000137s) SELECT * FROM `descriptions` WHERE `user_Id` = 4
+I, [2021-03-21T19:37:24.364494 #241]  INFO -- : (0.127459s) COMMIT
+I, [2021-03-21T19:37:24.364846 #241]  INFO -- : (0.000037s) BEGIN
+I, [2021-03-21T19:37:24.365216 #241]  INFO -- : (0.000163s) INSERT INTO `users` (`first_name`, `surname`, `email`, `password`, `privilege`, `has_mentee`, `has_mentor`, `description`, `job_Title`, `industry_Sector`) VALUES ('Mentor2', 'TestDudette', 'Mentor2@gmail.com', 'Password1', 'Mentor', 0, 0, 4, 'System Admin', 'Information technology')
+I, [2021-03-21T19:37:24.365545 #241]  INFO -- : (0.000143s) SELECT * FROM `users` WHERE `id` = 4
+I, [2021-03-21T19:37:24.454467 #241]  INFO -- : (0.088817s) COMMIT
+I, [2021-03-21T19:37:24.454770 #241]  INFO -- : (0.000041s) BEGIN
+I, [2021-03-21T19:37:24.455140 #241]  INFO -- : (0.000162s) INSERT INTO `descriptions` (`description`) VALUES ('I am just a guy')
+I, [2021-03-21T19:37:24.455389 #241]  INFO -- : (0.000098s) SELECT * FROM `descriptions` WHERE `user_Id` = 5
+I, [2021-03-21T19:37:24.554688 #241]  INFO -- : (0.099184s) COMMIT
+I, [2021-03-21T19:37:24.555049 #241]  INFO -- : (0.000036s) BEGIN
+I, [2021-03-21T19:37:24.555526 #241]  INFO -- : (0.000215s) INSERT INTO `users` (`first_name`, `surname`, `email`, `password`, `privilege`, `has_mentee`, `has_mentor`, `description`, `job_Title`, `industry_Sector`) VALUES ('Ariful', 'Haque', 'ahaque3@sheffield.ac.uk', 'Password1', 'Mentor', 0, 0, 5, 'Streamer', 'Media and internet')
+I, [2021-03-21T19:37:24.555885 #241]  INFO -- : (0.000167s) SELECT * FROM `users` WHERE `id` = 5
+I, [2021-03-21T19:37:24.640737 #241]  INFO -- : (0.084756s) COMMIT
+I, [2021-03-21T19:37:25.044128 #241]  INFO -- : (0.000279s) SELECT * FROM `users` WHERE ((`email` = 'Mentee1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-21T19:37:25.045591 #241]  INFO -- : (0.000205s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-21T19:37:25.050131 #241]  INFO -- : (0.000307s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-21T19:37:25.061421 #241]  INFO -- : (0.000254s) SELECT * FROM `users` WHERE ((`email` = 'Mentor1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-21T19:37:25.062770 #241]  INFO -- : (0.000202s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:37:25.063340 #241]  INFO -- : (0.000094s) SELECT 1 AS 'one' FROM `users` WHERE (`has_mentor` = 3) LIMIT 1
+I, [2021-03-21T19:37:25.066455 #241]  INFO -- : (0.000177s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:37:25.074636 #241]  INFO -- : (0.000242s) SELECT * FROM `users` WHERE ((`email` = 'Mentee1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-21T19:37:25.075872 #241]  INFO -- : (0.000184s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-21T19:37:25.078655 #241]  INFO -- : (0.000199s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-21T19:37:25.101097 #241]  INFO -- : (0.000277s) SELECT * FROM `users` WHERE ((`email` = 'Mentor1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-21T19:37:25.102545 #241]  INFO -- : (0.000209s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:37:25.103062 #241]  INFO -- : (0.000101s) SELECT 1 AS 'one' FROM `users` WHERE (`has_mentor` = 3) LIMIT 1
+I, [2021-03-21T19:37:25.105516 #241]  INFO -- : (0.000193s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:37:25.147985 #241]  INFO -- : (0.000305s) SELECT * FROM `users` WHERE ((`email` = 'Mentor1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-21T19:37:25.149414 #241]  INFO -- : (0.000237s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:37:25.150740 #241]  INFO -- : (0.000907s) SELECT 1 AS 'one' FROM `users` WHERE (`has_mentor` = 3) LIMIT 1
+I, [2021-03-21T19:37:25.153671 #241]  INFO -- : (0.000201s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:37:25.161176 #241]  INFO -- : (0.000281s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:37:25.162638 #241]  INFO -- : (0.000206s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:37:25.185276 #241]  INFO -- : (0.000322s) SELECT * FROM `users` WHERE ((`email` = 'Mentor1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-21T19:37:25.186977 #241]  INFO -- : (0.000253s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:37:25.188182 #241]  INFO -- : (0.000115s) SELECT 1 AS 'one' FROM `users` WHERE (`has_mentor` = 3) LIMIT 1
+I, [2021-03-21T19:37:25.191041 #241]  INFO -- : (0.000243s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:37:25.202583 #241]  INFO -- : (0.000260s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:37:25.204126 #241]  INFO -- : (0.000215s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:37:54.674213 #242]  INFO -- : (0.000268s) PRAGMA foreign_keys = 1
+I, [2021-03-21T19:37:54.674366 #242]  INFO -- : (0.000030s) PRAGMA case_sensitive_like = 1
+I, [2021-03-21T19:37:54.735665 #242]  INFO -- : (0.000140s) SELECT sqlite_version()
+I, [2021-03-21T19:37:54.736337 #242]  INFO -- : (0.000393s) PRAGMA table_info('users')
+I, [2021-03-21T19:37:54.737949 #242]  INFO -- : (0.000165s) PRAGMA table_info('descriptions')
+I, [2021-03-21T19:37:54.853732 #242]  INFO -- : (0.095548s) DELETE FROM `users` WHERE (1 = 1)
+I, [2021-03-21T19:37:54.956700 #242]  INFO -- : (0.102650s) DELETE FROM `descriptions` WHERE (1 = 1)
+I, [2021-03-21T19:37:54.957114 #242]  INFO -- : (0.000052s) BEGIN
+I, [2021-03-21T19:37:54.957559 #242]  INFO -- : (0.000196s) INSERT INTO `descriptions` (`description`) VALUES ('Hello I do Computer Science')
+I, [2021-03-21T19:37:54.957971 #242]  INFO -- : (0.000184s) SELECT * FROM `descriptions` WHERE `user_Id` = 1
+I, [2021-03-21T19:37:55.059245 #242]  INFO -- : (0.101152s) COMMIT
+I, [2021-03-21T19:37:55.059810 #242]  INFO -- : (0.000048s) BEGIN
+I, [2021-03-21T19:37:55.060299 #242]  INFO -- : (0.000187s) INSERT INTO `users` (`first_name`, `surname`, `email`, `password`, `privilege`, `has_mentee`, `has_mentor`, `degree`, `description`) VALUES ('Mentee1', 'TestDude', 'Mentee1@gmail.com', 'Password1', 'Mentee', 0, 0, 'Computer Science', 1)
+I, [2021-03-21T19:37:55.060570 #242]  INFO -- : (0.000125s) SELECT * FROM `users` WHERE `id` = 1
+I, [2021-03-21T19:37:55.173440 #242]  INFO -- : (0.112778s) COMMIT
+I, [2021-03-21T19:37:55.173785 #242]  INFO -- : (0.000049s) BEGIN
+I, [2021-03-21T19:37:55.174292 #242]  INFO -- : (0.000211s) INSERT INTO `descriptions` (`description`) VALUES ('Hello I do AI')
+I, [2021-03-21T19:37:55.174599 #242]  INFO -- : (0.000117s) SELECT * FROM `descriptions` WHERE `user_Id` = 2
+I, [2021-03-21T19:37:55.276533 #242]  INFO -- : (0.101831s) COMMIT
+I, [2021-03-21T19:37:55.276882 #242]  INFO -- : (0.000041s) BEGIN
+I, [2021-03-21T19:37:55.277228 #242]  INFO -- : (0.000152s) INSERT INTO `users` (`first_name`, `surname`, `email`, `password`, `privilege`, `has_mentee`, `has_mentor`, `degree`, `description`) VALUES ('Mentee2', 'TestDude', 'Mentee2@gmail.com', 'Password1', 'Mentee', 0, 0, 'Computer Science', 2)
+I, [2021-03-21T19:37:55.277521 #242]  INFO -- : (0.000145s) SELECT * FROM `users` WHERE `id` = 2
+I, [2021-03-21T19:37:55.385654 #242]  INFO -- : (0.108021s) COMMIT
+I, [2021-03-21T19:37:55.386030 #242]  INFO -- : (0.000050s) BEGIN
+I, [2021-03-21T19:37:55.386424 #242]  INFO -- : (0.000182s) INSERT INTO `descriptions` (`description`) VALUES ('Hello I am Professor at UoS')
+I, [2021-03-21T19:37:55.386674 #242]  INFO -- : (0.000093s) SELECT * FROM `descriptions` WHERE `user_Id` = 3
+I, [2021-03-21T19:37:55.479588 #242]  INFO -- : (0.092811s) COMMIT
+I, [2021-03-21T19:37:55.479957 #242]  INFO -- : (0.000040s) BEGIN
+I, [2021-03-21T19:37:55.480347 #242]  INFO -- : (0.000161s) INSERT INTO `users` (`first_name`, `surname`, `email`, `password`, `privilege`, `has_mentee`, `has_mentor`, `description`, `job_Title`, `industry_Sector`) VALUES ('Mentor1', 'TestDudette', 'Mentor1@gmail.com', 'Password1', 'Mentor', 0, 0, 3, 'Professor', 'Teacher training and education')
+I, [2021-03-21T19:37:55.480744 #242]  INFO -- : (0.000181s) SELECT * FROM `users` WHERE `id` = 3
+I, [2021-03-21T19:37:55.584199 #242]  INFO -- : (0.103351s) COMMIT
+I, [2021-03-21T19:37:55.584502 #242]  INFO -- : (0.000048s) BEGIN
+I, [2021-03-21T19:37:55.584941 #242]  INFO -- : (0.000192s) INSERT INTO `descriptions` (`description`) VALUES ('Hello I am System Admin at UoS')
+I, [2021-03-21T19:37:55.585234 #242]  INFO -- : (0.000123s) SELECT * FROM `descriptions` WHERE `user_Id` = 4
+I, [2021-03-21T19:37:55.678223 #242]  INFO -- : (0.092889s) COMMIT
+I, [2021-03-21T19:37:55.678724 #242]  INFO -- : (0.000048s) BEGIN
+I, [2021-03-21T19:37:55.679333 #242]  INFO -- : (0.000237s) INSERT INTO `users` (`first_name`, `surname`, `email`, `password`, `privilege`, `has_mentee`, `has_mentor`, `description`, `job_Title`, `industry_Sector`) VALUES ('Mentor2', 'TestDudette', 'Mentor2@gmail.com', 'Password1', 'Mentor', 0, 0, 4, 'System Admin', 'Information technology')
+I, [2021-03-21T19:37:55.679730 #242]  INFO -- : (0.000196s) SELECT * FROM `users` WHERE `id` = 4
+I, [2021-03-21T19:37:55.797926 #242]  INFO -- : (0.118045s) COMMIT
+I, [2021-03-21T19:37:55.798219 #242]  INFO -- : (0.000038s) BEGIN
+I, [2021-03-21T19:37:55.798581 #242]  INFO -- : (0.000175s) INSERT INTO `descriptions` (`description`) VALUES ('I am just a guy')
+I, [2021-03-21T19:37:55.798815 #242]  INFO -- : (0.000091s) SELECT * FROM `descriptions` WHERE `user_Id` = 5
+I, [2021-03-21T19:37:55.890828 #242]  INFO -- : (0.091913s) COMMIT
+I, [2021-03-21T19:37:55.891319 #242]  INFO -- : (0.000049s) BEGIN
+I, [2021-03-21T19:37:55.891820 #242]  INFO -- : (0.000215s) INSERT INTO `users` (`first_name`, `surname`, `email`, `password`, `privilege`, `has_mentee`, `has_mentor`, `description`, `job_Title`, `industry_Sector`) VALUES ('Ariful', 'Haque', 'ahaque3@sheffield.ac.uk', 'Password1', 'Mentor', 0, 0, 5, 'Streamer', 'Media and internet')
+I, [2021-03-21T19:37:55.892234 #242]  INFO -- : (0.000224s) SELECT * FROM `users` WHERE `id` = 5
+I, [2021-03-21T19:37:55.992581 #242]  INFO -- : (0.100224s) COMMIT
+I, [2021-03-21T19:37:56.429660 #242]  INFO -- : (0.000308s) SELECT * FROM `users` WHERE ((`email` = 'Mentee1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-21T19:37:56.431331 #242]  INFO -- : (0.000215s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-21T19:37:56.435993 #242]  INFO -- : (0.000198s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-21T19:37:56.447616 #242]  INFO -- : (0.000255s) SELECT * FROM `users` WHERE ((`email` = 'Mentor1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-21T19:37:56.448798 #242]  INFO -- : (0.000140s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:37:56.449220 #242]  INFO -- : (0.000085s) SELECT 1 AS 'one' FROM `users` WHERE (`has_mentor` = 3) LIMIT 1
+I, [2021-03-21T19:37:56.451452 #242]  INFO -- : (0.000144s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:37:56.458966 #242]  INFO -- : (0.000205s) SELECT * FROM `users` WHERE ((`email` = 'Mentee1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-21T19:37:56.460027 #242]  INFO -- : (0.000174s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-21T19:37:56.462718 #242]  INFO -- : (0.000179s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-21T19:37:56.481661 #242]  INFO -- : (0.000248s) SELECT * FROM `users` WHERE ((`email` = 'Mentor1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-21T19:37:56.482809 #242]  INFO -- : (0.000149s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:37:56.483213 #242]  INFO -- : (0.000083s) SELECT 1 AS 'one' FROM `users` WHERE (`has_mentor` = 3) LIMIT 1
+I, [2021-03-21T19:37:56.485696 #242]  INFO -- : (0.000189s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:37:56.496150 #242]  INFO -- : (0.000182s) SELECT * FROM `users` WHERE ((`email` = 'Mentor1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-21T19:37:56.496949 #242]  INFO -- : (0.000129s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:37:56.497266 #242]  INFO -- : (0.000066s) SELECT 1 AS 'one' FROM `users` WHERE (`has_mentor` = 3) LIMIT 1
+I, [2021-03-21T19:37:56.499427 #242]  INFO -- : (0.000162s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:37:56.503811 #242]  INFO -- : (0.000168s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:37:56.504586 #242]  INFO -- : (0.000135s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:37:56.514745 #242]  INFO -- : (0.000180s) SELECT * FROM `users` WHERE ((`email` = 'Mentor1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-21T19:37:56.515537 #242]  INFO -- : (0.000123s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:37:56.515856 #242]  INFO -- : (0.000066s) SELECT 1 AS 'one' FROM `users` WHERE (`has_mentor` = 3) LIMIT 1
+I, [2021-03-21T19:37:56.517561 #242]  INFO -- : (0.000162s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:37:56.528985 #242]  INFO -- : (0.000156s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:37:56.529835 #242]  INFO -- : (0.000129s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:38:04.373585 #243]  INFO -- : (0.000225s) PRAGMA foreign_keys = 1
+I, [2021-03-21T19:38:04.373717 #243]  INFO -- : (0.000024s) PRAGMA case_sensitive_like = 1
+I, [2021-03-21T19:38:04.427982 #243]  INFO -- : (0.000139s) SELECT sqlite_version()
+I, [2021-03-21T19:38:04.428723 #243]  INFO -- : (0.000455s) PRAGMA table_info('users')
+I, [2021-03-21T19:38:04.430543 #243]  INFO -- : (0.000152s) PRAGMA table_info('descriptions')
+I, [2021-03-21T19:38:04.572151 #243]  INFO -- : (0.120112s) DELETE FROM `users` WHERE (1 = 1)
+I, [2021-03-21T19:38:04.675500 #243]  INFO -- : (0.102983s) DELETE FROM `descriptions` WHERE (1 = 1)
+I, [2021-03-21T19:38:04.675788 #243]  INFO -- : (0.000040s) BEGIN
+I, [2021-03-21T19:38:04.676159 #243]  INFO -- : (0.000165s) INSERT INTO `descriptions` (`description`) VALUES ('Hello I do Computer Science')
+I, [2021-03-21T19:38:04.676420 #243]  INFO -- : (0.000113s) SELECT * FROM `descriptions` WHERE `user_Id` = 1
+I, [2021-03-21T19:38:04.814417 #243]  INFO -- : (0.137894s) COMMIT
+I, [2021-03-21T19:38:04.814929 #243]  INFO -- : (0.000049s) BEGIN
+I, [2021-03-21T19:38:04.815575 #243]  INFO -- : (0.000253s) INSERT INTO `users` (`first_name`, `surname`, `email`, `password`, `privilege`, `has_mentee`, `has_mentor`, `degree`, `description`) VALUES ('Mentee1', 'TestDude', 'Mentee1@gmail.com', 'Password1', 'Mentee', 0, 0, 'Computer Science', 1)
+I, [2021-03-21T19:38:04.815986 #243]  INFO -- : (0.000194s) SELECT * FROM `users` WHERE `id` = 1
+I, [2021-03-21T19:38:04.930980 #243]  INFO -- : (0.114872s) COMMIT
+I, [2021-03-21T19:38:04.931467 #243]  INFO -- : (0.000052s) BEGIN
+I, [2021-03-21T19:38:04.932823 #243]  INFO -- : (0.001011s) INSERT INTO `descriptions` (`description`) VALUES ('Hello I do AI')
+I, [2021-03-21T19:38:04.933200 #243]  INFO -- : (0.000133s) SELECT * FROM `descriptions` WHERE `user_Id` = 2
+I, [2021-03-21T19:38:05.052797 #243]  INFO -- : (0.118651s) COMMIT
+I, [2021-03-21T19:38:05.053210 #243]  INFO -- : (0.000043s) BEGIN
+I, [2021-03-21T19:38:05.053680 #243]  INFO -- : (0.000194s) INSERT INTO `users` (`first_name`, `surname`, `email`, `password`, `privilege`, `has_mentee`, `has_mentor`, `degree`, `description`) VALUES ('Mentee2', 'TestDude', 'Mentee2@gmail.com', 'Password1', 'Mentee', 0, 0, 'Computer Science', 2)
+I, [2021-03-21T19:38:05.054111 #243]  INFO -- : (0.000249s) SELECT * FROM `users` WHERE `id` = 2
+I, [2021-03-21T19:38:05.156087 #243]  INFO -- : (0.101868s) COMMIT
+I, [2021-03-21T19:38:05.156434 #243]  INFO -- : (0.000046s) BEGIN
+I, [2021-03-21T19:38:05.156871 #243]  INFO -- : (0.000200s) INSERT INTO `descriptions` (`description`) VALUES ('Hello I am Professor at UoS')
+I, [2021-03-21T19:38:05.157187 #243]  INFO -- : (0.000127s) SELECT * FROM `descriptions` WHERE `user_Id` = 3
+I, [2021-03-21T19:38:05.259821 #243]  INFO -- : (0.102516s) COMMIT
+I, [2021-03-21T19:38:05.260284 #243]  INFO -- : (0.000048s) BEGIN
+I, [2021-03-21T19:38:05.260889 #243]  INFO -- : (0.000273s) INSERT INTO `users` (`first_name`, `surname`, `email`, `password`, `privilege`, `has_mentee`, `has_mentor`, `description`, `job_Title`, `industry_Sector`) VALUES ('Mentor1', 'TestDudette', 'Mentor1@gmail.com', 'Password1', 'Mentor', 0, 0, 3, 'Professor', 'Teacher training and education')
+I, [2021-03-21T19:38:05.261286 #243]  INFO -- : (0.000197s) SELECT * FROM `users` WHERE `id` = 3
+I, [2021-03-21T19:38:05.358478 #243]  INFO -- : (0.097074s) COMMIT
+I, [2021-03-21T19:38:05.358840 #243]  INFO -- : (0.000049s) BEGIN
+I, [2021-03-21T19:38:05.359305 #243]  INFO -- : (0.000223s) INSERT INTO `descriptions` (`description`) VALUES ('Hello I am System Admin at UoS')
+I, [2021-03-21T19:38:05.359647 #243]  INFO -- : (0.000130s) SELECT * FROM `descriptions` WHERE `user_Id` = 4
+I, [2021-03-21T19:38:05.456559 #243]  INFO -- : (0.096789s) COMMIT
+I, [2021-03-21T19:38:05.457045 #243]  INFO -- : (0.000049s) BEGIN
+I, [2021-03-21T19:38:05.457588 #243]  INFO -- : (0.000230s) INSERT INTO `users` (`first_name`, `surname`, `email`, `password`, `privilege`, `has_mentee`, `has_mentor`, `description`, `job_Title`, `industry_Sector`) VALUES ('Mentor2', 'TestDudette', 'Mentor2@gmail.com', 'Password1', 'Mentor', 0, 0, 4, 'System Admin', 'Information technology')
+I, [2021-03-21T19:38:05.458033 #243]  INFO -- : (0.000233s) SELECT * FROM `users` WHERE `id` = 4
+I, [2021-03-21T19:38:05.563510 #243]  INFO -- : (0.105365s) COMMIT
+I, [2021-03-21T19:38:05.563766 #243]  INFO -- : (0.000033s) BEGIN
+I, [2021-03-21T19:38:05.564083 #243]  INFO -- : (0.000149s) INSERT INTO `descriptions` (`description`) VALUES ('I am just a guy')
+I, [2021-03-21T19:38:05.564324 #243]  INFO -- : (0.000087s) SELECT * FROM `descriptions` WHERE `user_Id` = 5
+I, [2021-03-21T19:38:05.655085 #243]  INFO -- : (0.090670s) COMMIT
+I, [2021-03-21T19:38:05.655547 #243]  INFO -- : (0.000048s) BEGIN
+I, [2021-03-21T19:38:05.656098 #243]  INFO -- : (0.000244s) INSERT INTO `users` (`first_name`, `surname`, `email`, `password`, `privilege`, `has_mentee`, `has_mentor`, `description`, `job_Title`, `industry_Sector`) VALUES ('Ariful', 'Haque', 'ahaque3@sheffield.ac.uk', 'Password1', 'Mentor', 0, 0, 5, 'Streamer', 'Media and internet')
+I, [2021-03-21T19:38:05.656509 #243]  INFO -- : (0.000203s) SELECT * FROM `users` WHERE `id` = 5
+I, [2021-03-21T19:38:05.756411 #243]  INFO -- : (0.099776s) COMMIT
+I, [2021-03-21T19:38:06.180981 #243]  INFO -- : (0.000212s) SELECT * FROM `users` WHERE ((`email` = 'Mentee1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-21T19:38:06.182130 #243]  INFO -- : (0.000209s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-21T19:38:06.197098 #243]  INFO -- : (0.000193s) SELECT * FROM `users` WHERE ((`email` = 'Mentee1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-21T19:38:06.198276 #243]  INFO -- : (0.000210s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-21T19:38:06.206841 #243]  INFO -- : (0.000224s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-21T19:38:06.207433 #243]  INFO -- : (0.000133s) SELECT 1 AS 'one' FROM `users` WHERE ((`job_Title` = 'System Admin') OR (`industry_Sector` = 'Information technology')) LIMIT 1
+I, [2021-03-21T19:38:06.208027 #243]  INFO -- : (0.000119s) SELECT count(*) AS 'count' FROM `users` WHERE ((`job_Title` = 'System Admin') OR (`industry_Sector` = 'Information technology')) LIMIT 1
+I, [2021-03-21T19:38:06.208413 #243]  INFO -- : (0.000227s) SELECT * FROM `users` WHERE ((`job_Title` = 'System Admin') OR (`industry_Sector` = 'Information technology'))
+I, [2021-03-21T19:38:06.218424 #243]  INFO -- : (0.000157s) SELECT * FROM `users` WHERE ((`email` = 'Mentee1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-21T19:38:06.219361 #243]  INFO -- : (0.000141s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-21T19:38:06.224986 #243]  INFO -- : (0.000133s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-21T19:38:06.225384 #243]  INFO -- : (0.000086s) SELECT 1 AS 'one' FROM `users` WHERE ((`job_Title` = 'System Admin') OR (`industry_Sector` = 'Information technology')) LIMIT 1
+I, [2021-03-21T19:38:06.225762 #243]  INFO -- : (0.000081s) SELECT count(*) AS 'count' FROM `users` WHERE ((`job_Title` = 'System Admin') OR (`industry_Sector` = 'Information technology')) LIMIT 1
+I, [2021-03-21T19:38:06.226028 #243]  INFO -- : (0.000141s) SELECT * FROM `users` WHERE ((`job_Title` = 'System Admin') OR (`industry_Sector` = 'Information technology'))
+I, [2021-03-21T19:38:06.227937 #243]  INFO -- : (0.000120s) SELECT * FROM `users` WHERE (`id` = '4') LIMIT 1
+I, [2021-03-21T19:38:06.228245 #243]  INFO -- : (0.000086s) SELECT * FROM `descriptions` WHERE (`user_Id` = 4) LIMIT 1
+I, [2021-03-21T19:38:06.244841 #243]  INFO -- : (0.000215s) SELECT * FROM `users` WHERE ((`email` = 'Mentee1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-21T19:38:06.245794 #243]  INFO -- : (0.000155s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-21T19:38:06.251423 #243]  INFO -- : (0.000153s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-21T19:38:06.251862 #243]  INFO -- : (0.000109s) SELECT 1 AS 'one' FROM `users` WHERE ((`job_Title` = 'System Admin') OR (`industry_Sector` = 'Information technology')) LIMIT 1
+I, [2021-03-21T19:38:06.252280 #243]  INFO -- : (0.000086s) SELECT count(*) AS 'count' FROM `users` WHERE ((`job_Title` = 'System Admin') OR (`industry_Sector` = 'Information technology')) LIMIT 1
+I, [2021-03-21T19:38:06.252603 #243]  INFO -- : (0.000203s) SELECT * FROM `users` WHERE ((`job_Title` = 'System Admin') OR (`industry_Sector` = 'Information technology'))
+I, [2021-03-21T19:38:06.254713 #243]  INFO -- : (0.000168s) SELECT * FROM `users` WHERE (`id` = '4') LIMIT 1
+I, [2021-03-21T19:38:06.255059 #243]  INFO -- : (0.000104s) SELECT * FROM `descriptions` WHERE (`user_Id` = 4) LIMIT 1
+I, [2021-03-21T19:38:06.261679 #243]  INFO -- : (0.000239s) SELECT * FROM `users` WHERE ((`email` = 'Mentee1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-21T19:38:06.262836 #243]  INFO -- : (0.000200s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-21T19:38:06.268921 #243]  INFO -- : (0.000165s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-21T19:38:06.269319 #243]  INFO -- : (0.000088s) SELECT 1 AS 'one' FROM `users` WHERE ((`job_Title` = 'System Admin') OR (`industry_Sector` = 'Information technology')) LIMIT 1
+I, [2021-03-21T19:38:06.269696 #243]  INFO -- : (0.000081s) SELECT count(*) AS 'count' FROM `users` WHERE ((`job_Title` = 'System Admin') OR (`industry_Sector` = 'Information technology')) LIMIT 1
+I, [2021-03-21T19:38:06.269968 #243]  INFO -- : (0.000157s) SELECT * FROM `users` WHERE ((`job_Title` = 'System Admin') OR (`industry_Sector` = 'Information technology'))
+I, [2021-03-21T19:38:06.272600 #243]  INFO -- : (0.000189s) SELECT * FROM `users` WHERE (`id` = '4') LIMIT 1
+I, [2021-03-21T19:38:06.273049 #243]  INFO -- : (0.000119s) SELECT * FROM `descriptions` WHERE (`user_Id` = 4) LIMIT 1
+I, [2021-03-21T19:38:06.276680 #243]  INFO -- : (0.000125s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-21T19:38:06.276920 #243]  INFO -- : (0.000106s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-21T19:38:06.277098 #243]  INFO -- : (0.000020s) BEGIN
+I, [2021-03-21T19:38:06.277581 #243]  INFO -- : (0.000255s) UPDATE `users` SET `has_mentor` = 4, `last_send` = '1616355486' WHERE (`id` = 1)
+I, [2021-03-21T19:38:06.373728 #243]  INFO -- : (0.096043s) COMMIT
+I, [2021-03-21T19:38:06.374221 #243]  INFO -- : (0.000196s) SELECT * FROM `users` WHERE (`id` = '4') LIMIT 1
+I, [2021-03-21T19:38:06.699064 #243]  INFO -- : (0.000317s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-21T19:38:06.717929 #243]  INFO -- : (0.000289s) SELECT * FROM `users` WHERE ((`email` = 'Mentee1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-21T19:38:06.719301 #243]  INFO -- : (0.000228s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-21T19:38:06.726649 #243]  INFO -- : (0.000211s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-21T19:38:06.727214 #243]  INFO -- : (0.000111s) SELECT 1 AS 'one' FROM `users` WHERE ((`job_Title` = 'no job') OR (`industry_Sector` = 'Accountancy, banking and finance')) LIMIT 1
+I, [2021-03-21T19:38:06.727913 #243]  INFO -- : (0.000133s) SELECT count(*) AS 'count' FROM `users` WHERE ((`job_Title` = 'no job') OR (`industry_Sector` = 'Accountancy, banking and finance')) LIMIT 1
+I, [2021-03-21T19:38:06.777853 #243]  INFO -- : (0.000169s) SELECT * FROM `users` WHERE ((`email` = 'blahblah@gmail.com') AND (`password` = 'ofoyfoeyfoeiyf')) LIMIT 1
+I, [2021-03-21T19:38:06.786339 #243]  INFO -- : (0.000207s) SELECT * FROM `users` WHERE ((`email` = 'Mentee1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-21T19:38:06.787144 #243]  INFO -- : (0.000138s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-21T19:38:06.797839 #243]  INFO -- : (0.000163s) SELECT * FROM `users` WHERE ((`email` = 'Mentor1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-21T19:38:06.798854 #243]  INFO -- : (0.000160s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:38:06.799227 #243]  INFO -- : (0.000073s) SELECT 1 AS 'one' FROM `users` WHERE (`has_mentor` = 3) LIMIT 1
+I, [2021-03-21T19:38:06.807709 #243]  INFO -- : (0.000141s) SELECT * FROM `users` WHERE ((`email` = 'Mentee1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-21T19:38:06.808529 #243]  INFO -- : (0.000150s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-21T19:38:06.821981 #243]  INFO -- : (0.000222s) SELECT * FROM `users` WHERE ((`email` = 'Mentee1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-21T19:38:06.822876 #243]  INFO -- : (0.000153s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-21T19:38:06.831448 #243]  INFO -- : (0.000158s) SELECT * FROM `users` WHERE ((`email` = 'Mentor1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-21T19:38:06.832260 #243]  INFO -- : (0.000139s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:38:06.832633 #243]  INFO -- : (0.000077s) SELECT 1 AS 'one' FROM `users` WHERE (`has_mentor` = 3) LIMIT 1
+I, [2021-03-21T19:38:06.838629 #243]  INFO -- : (0.000138s) SELECT * FROM `users` WHERE ((`email` = 'Mentor1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-21T19:38:06.839365 #243]  INFO -- : (0.000122s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:38:06.839657 #243]  INFO -- : (0.000062s) SELECT 1 AS 'one' FROM `users` WHERE (`has_mentor` = 3) LIMIT 1
+I, [2021-03-21T19:38:06.847567 #243]  INFO -- : (0.000150s) SELECT * FROM `users` WHERE ((`email` = 'Mentee1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-21T19:38:06.848446 #243]  INFO -- : (0.000188s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-21T19:38:06.856641 #243]  INFO -- : (0.000202s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-21T19:38:06.865430 #243]  INFO -- : (0.000220s) SELECT * FROM `users` WHERE ((`email` = 'Mentor1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-21T19:38:06.866573 #243]  INFO -- : (0.000185s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:38:06.867016 #243]  INFO -- : (0.000096s) SELECT 1 AS 'one' FROM `users` WHERE (`has_mentor` = 3) LIMIT 1
+I, [2021-03-21T19:38:06.869264 #243]  INFO -- : (0.000186s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:38:06.877622 #243]  INFO -- : (0.000211s) SELECT * FROM `users` WHERE ((`email` = 'Mentee1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-21T19:38:06.878692 #243]  INFO -- : (0.000191s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-21T19:38:06.881406 #243]  INFO -- : (0.000186s) SELECT * FROM `users` WHERE (`id` = '1') LIMIT 1
+I, [2021-03-21T19:38:06.906858 #243]  INFO -- : (0.000308s) SELECT * FROM `users` WHERE ((`email` = 'Mentor1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-21T19:38:06.909016 #243]  INFO -- : (0.000212s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:38:06.910366 #243]  INFO -- : (0.000124s) SELECT 1 AS 'one' FROM `users` WHERE (`has_mentor` = 3) LIMIT 1
+I, [2021-03-21T19:38:06.914981 #243]  INFO -- : (0.000231s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:38:06.951205 #243]  INFO -- : (0.000291s) SELECT * FROM `users` WHERE ((`email` = 'Mentor1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-21T19:38:06.952441 #243]  INFO -- : (0.000224s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:38:06.952904 #243]  INFO -- : (0.000099s) SELECT 1 AS 'one' FROM `users` WHERE (`has_mentor` = 3) LIMIT 1
+I, [2021-03-21T19:38:06.956190 #243]  INFO -- : (0.000180s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:38:06.962555 #243]  INFO -- : (0.000190s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:38:06.963626 #243]  INFO -- : (0.000211s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:38:06.976699 #243]  INFO -- : (0.000238s) SELECT * FROM `users` WHERE ((`email` = 'Mentor1@gmail.com') AND (`password` = 'Password1')) LIMIT 1
+I, [2021-03-21T19:38:06.977930 #243]  INFO -- : (0.000249s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:38:06.978416 #243]  INFO -- : (0.000102s) SELECT 1 AS 'one' FROM `users` WHERE (`has_mentor` = 3) LIMIT 1
+I, [2021-03-21T19:38:06.980798 #243]  INFO -- : (0.000185s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:38:06.990485 #243]  INFO -- : (0.000213s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:38:06.991542 #243]  INFO -- : (0.000178s) SELECT * FROM `users` WHERE (`id` = '3') LIMIT 1
+I, [2021-03-21T19:38:07.035549 #243]  INFO -- : (0.000041s) BEGIN
+I, [2021-03-21T19:38:07.036001 #243]  INFO -- : (0.000192s) INSERT INTO `users` (`first_name`, `surname`, `email`, `password`, `privilege`, `has_mentee`, `has_mentor`) VALUES ('John', 'Calvert', 'Mentee@gmail.com', 'Password1', 'Mentee', 0, 0)
+I, [2021-03-21T19:38:07.036293 #243]  INFO -- : (0.000133s) SELECT * FROM `users` WHERE `id` = 6
+I, [2021-03-21T19:38:07.141728 #243]  INFO -- : (0.105339s) COMMIT
+I, [2021-03-21T19:38:07.143520 #243]  INFO -- : (0.000262s) SELECT * FROM `users` WHERE (`id` = '6') LIMIT 1
+I, [2021-03-21T19:38:07.167197 #243]  INFO -- : (0.000050s) BEGIN
+I, [2021-03-21T19:38:07.167722 #243]  INFO -- : (0.000217s) INSERT INTO `users` (`first_name`, `surname`, `email`, `password`, `privilege`, `has_mentee`, `has_mentor`) VALUES ('John', 'Calvert', 'Mentor@gmail.com', 'Password1', 'Mentor', 0, 0)
+I, [2021-03-21T19:38:07.168163 #243]  INFO -- : (0.000216s) SELECT * FROM `users` WHERE `id` = 7
+I, [2021-03-21T19:38:07.264877 #243]  INFO -- : (0.096593s) COMMIT
+I, [2021-03-21T19:38:07.266338 #243]  INFO -- : (0.000201s) SELECT * FROM `users` WHERE (`id` = '7') LIMIT 1
