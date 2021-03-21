@@ -1,12 +1,13 @@
 <!--HTML job title & industry sector page-->
 
 <label>Job Title </label>
-<input type="text" name="job_Title" id="job_Title" maxlength="50" size="30" required><br><br>
+<input type="text" name="job_Title" id="job_Title" value = "<%= @user.job_Title %>" maxlength="50" size="30" required><br><br>
 <label>Industry Sector:</label> 
-<select name="industry_Sector" required>
-    <option value="Accountancy, banking and finance">Accountancy, banking and finance</option>
+<select name="industry_Sector" value = "<%= @user.industry_Sector %>" required>
+    <option value = "<%= @user.industry_Sector %>" selected> <%= @user.industry_Sector %> </option>
+    <option value="Accountancy, banking and finance" >Accountancy, banking and finance</option>
     <option value="Business, consulting and management">Business, consulting and management</option>
-    <option value="Charity and voluntary work">Charity and voluntary work</option>
+    <option value="Charity and voluntary work" >Charity and voluntary work</option>
     <option value="Creative arts and design">Creative arts and design</option>
     <option value="Energy and utilities">Energy and utilities</option>
     <option value="Engineering and manufacturing">Engineering and manufacturing</option>

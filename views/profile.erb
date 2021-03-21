@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<%= erb :"common/header_loggedin" %>
+<body id="Welcome Page"> 
+    
+
+    <main>
+        <p>Please fill in the fields you wish to change:</p>
+
+        <form method="post" action="/post-profile">
+            <p><label1>First Name:</label1>
+                <input type="text" name="first_name" id="firstname" value = "<%= @user.first_name %>"
+                maxlength="50" size="30" required>
+            </p>
+
+            <p><label1>Last Name:</label1>
+                <input type="text" name="surname" id="surname" value = "<%= @user.surname %>"
+                maxlength="50" size="30" required>
+            </p>
+
+            <p><label1>Email:</label1>
+                <input type="email" name="email" id="email" value = "<%= @user.email %>"
+                maxlength="50" size="30" required>
+            </p>
+
+            <p><label1>Password:</label1>
+                <input type="password" name="password" id="password" value = "<%= @user.password %>"
+                maxlength="50" size="30" required>
+            </p>
+
+            <p><label1>Confirm Password:</label1>
+                <input type="password" name="confirmpassword" id="confirmpassword" value = "<%= @user.password %>"
+                maxlength="50" size="30" required>
+            </p>
+
+            <% if @errorCorrect%>
+            <p id="error">
+                <b>The two password entries must be correct.</b>
+            </p>
+            <% end %>
+
+            <% if @mentee_profile %>
+            <p><label1>Dgeree:</label1>
+                <input type="text" name="degree" id="degree" value = "<%= @user.degree %>"
+                maxlength="50" size="30" required>
+            </p>
+            <% elsif @mentor_profile %>
+                <%= erb :"common/industrySectorProfile" %>
+            <% end %>
+
+            </p>
+            <input type="submit" value="Change Details">
+        </form>
+    </main>
+</body>
+<%= erb :"common/footer" %>

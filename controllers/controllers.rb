@@ -115,3 +115,27 @@ get "/dashboard" do
     end
   end
 end
+
+get "/profile" do
+  @id = request.cookies.fetch("id", "0")
+  @user = User.first(id: @id)
+  @privilege = @user.privilege
+    # Find out what type of user they are and then redirect them to the correct page
+    case @privilege
+    when "Mentee"
+      puts "Mentee Profile"
+      @mentee_profile = true
+    when "Mentor"
+      puts "Mentor Profile"
+      @mentor_profile = true
+    else
+      puts "Admin Profile "
+      @admin_profile = true
+    end
+  erb :profile
+end
+
+post "post-profile" do
+  puts params
+  redirect "/dashboard"
+end
