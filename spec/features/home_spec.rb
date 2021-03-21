@@ -19,4 +19,9 @@ describe "the home page" do
       expect(page).to have_content "Login"
   end
     
+  it "can display the copyright" do
+      visit "/"
+      expect(page).to have_content "&copy COM1001 Team 2"
+  end
+    
 end
