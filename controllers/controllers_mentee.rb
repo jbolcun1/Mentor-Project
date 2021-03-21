@@ -4,7 +4,6 @@ get "/mentee" do
   redirect "/login" if @id == "0"
   # Find User
   @user = User.first(id: @id)
-  puts @user.description
   # Check if the params have been given or not
   job_TitleM = params.fetch("job_Title", "")
   industry_SectorM = params.fetch("industry_Sector", "")
@@ -44,10 +43,7 @@ get "/view-mentor" do
   @errorCorrect = true if params.fetch("error", "0") == "1"
   @mentor_Id =  params[:id]
   @mentor = User.first(id: @mentor_Id)
-  # puts @mentor.description
   @description = @mentor.getDescriptions
-  puts @description
-  puts "here11111"
   erb :view_mentor
 end
 
@@ -112,9 +108,6 @@ post "/post-mentee-invite" do
     email = mentor.email
     subject = "You have been invited to a mentorship!"
     body = "This mentorship is by #{@user.name}. Below is the thier introductory message \n" + params[:comments]
-    puts email
-    puts subject
-    puts body
     puts "Sending email..."
     if send_mail(email, subject, body)
       puts "Email Sent Ok."

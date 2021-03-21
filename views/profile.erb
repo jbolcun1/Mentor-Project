@@ -32,14 +32,14 @@
                 maxlength="50" size="30" required>
             </p>
 
-            <% if @errorCorrect%>
+            <% if @error_correct%>
             <p id="error">
                 <b>The two password entries must be correct.</b>
             </p>
             <% end %>
 
             <% if @mentee_profile %>
-            <p><label1>Dgeree:</label1>
+            <p><label1>Degree:</label1>
                 <input type="text" name="degree" id="degree" value = "<%= @user.degree %>"
                 maxlength="50" size="30" required>
             </p>

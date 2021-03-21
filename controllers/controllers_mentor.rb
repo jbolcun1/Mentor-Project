@@ -9,7 +9,6 @@ get "/mentor" do
   if !@mentees.empty?
     @table_Show = true
   end
-  # puts !@user.has_mentor.nil?
   if @user.has_mentor != 0
     @table_show2 = true
     @table_Show = false
@@ -44,7 +43,6 @@ end
 get "/view-mentee" do
   @mentee_Id = params[:id]
   @mentee = User.first(id: @mentee_Id)
-  # puts @mentor.description
   @description = @mentee.getDescriptions
   erb :view_mentee
 end
@@ -56,7 +54,6 @@ post "/post-mentor-accept" do
   @mentee_id = params.fetch("mentee_Id")
   @mentee = User.first(id: @mentee_id)
   @user.has_mentee = @mentee_id
-  puts @user.has_mentee
   @user.has_mentor = 1
   @user.save_changes
 

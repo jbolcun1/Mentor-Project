@@ -95,7 +95,6 @@ post "/post-register" do
 end
 
 get "/dashboard" do
-  puts "dashboard"
   @id = request.cookies.fetch("id", "0")
   redirect "/index" if @id == "0"
   @user = User.first(id: @id)
@@ -120,22 +119,38 @@ get "/profile" do
   @id = request.cookies.fetch("id", "0")
   @user = User.first(id: @id)
   @privilege = @user.privilege
+  @error_correct = true if params.fetch("error", "0") == "1"
     # Find out what type of user they are and then redirect them to the correct page
     case @privilege
     when "Mentee"
-      puts "Mentee Profile"
       @mentee_profile = true
     when "Mentor"
-      puts "Mentor Profile"
       @mentor_profile = true
     else
-      puts "Admin Profile "
       @admin_profile = true
     end
   erb :profile
 end
 
-post "post-profile" do
-  puts params
-  redirect "/dashboard"
+post "/post-profile" do
+  @id = request.cookies.fetch("id", "0")
+  @user = User.first(id: @id)
+  @user.loadProfile(params)
+  
+  if @user.validPass(params)
+    @user.save_changes
+    @privilege = @user.privilege
+    case @privilege
+    when "Mentee"
+      @user.degree = params.fetch("degree", "")
+      @user.save_changes
+    when "Mentor"
+      @user.job_Title = params.fetch("job_Title", "")
+      @user.industry_Sector = params.fetch("industry_Sector", "")
+      @user.save_changes
+    end
+    redirect "/dashboard"
+  else
+    redirect "/profile?error=1"
+  end
 end

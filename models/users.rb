@@ -31,7 +31,6 @@ class User < Sequel::Model
   end
 
   def load(params)
-    puts params
     self.first_name = params.fetch("first_name", "").strip
     self.surname = params.fetch("surname", "").strip
     self.email = params.fetch("email", "").strip
@@ -39,6 +38,13 @@ class User < Sequel::Model
     self.privilege = params.fetch("privilege", "").strip
     self.has_mentee = 0
     self.has_mentor = 0
+  end
+
+  def loadProfile(params)
+    self.first_name = params.fetch("first_name", "").strip
+    self.surname = params.fetch("surname", "").strip
+    self.email = params.fetch("email", "").strip
+    self.password = params.fetch("password", "").strip
   end
 
   def validPass(params)
@@ -49,7 +55,6 @@ end
 class Description < Sequel::Model
 
   def load(params)
-    puts params.fetch("description", "").strip
     self.description = params.fetch("description", "").strip
   end
 end
