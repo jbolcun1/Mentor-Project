@@ -84,7 +84,7 @@ post "/post-mentee-invite" do
       mentor = User.first(id: @mentor_Id)
       email = mentor.email
       subject = "You have been invited to a mentorship!"
-      body = "This mentorship is by #{@user.name}. Below is the thier introductory message \n" + params[:comments] 
+      body = "This mentorship is by #{@user.name}. Below is the their introductory message \n" + params[:comments] 
       puts "Sending email..."
       if send_mail(email, subject, body)
         puts "Email Sent Ok."
