@@ -139,7 +139,7 @@ post "/post-profile" do
   @user = User.first(id: @id)
   @user.loadProfile(params)
   
-  if params.fetch("password") != "newpassword"
+  if params.fetch("password") != ""
     if params.fetch("password") != @user.password
      redirect "/profile?error2=1"
     end
