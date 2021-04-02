@@ -22,7 +22,6 @@ get "/mentee" do
   end
   # Display a personalised message upon a successful mentee login
   @s = "Welcome, #{@user.name}. \n You have sucessfully logged in as a #{@user.privilege.downcase}."
-  # TODO: Add mentee invitaion
   erb :mentee
 end
 
@@ -51,7 +50,9 @@ post "/post-mentee-register" do
   @id = request.cookies.fetch("id")
   @user = User.first(id: @id)
   # Get the info and add them to the user db record
+  @user.university = params.fetch("university", "")
   @user.degree = params.fetch("degree", "")
+  @user.telephone = params.fetch("telephone", "")
 
   @description = Description.new
   @description.load(params)

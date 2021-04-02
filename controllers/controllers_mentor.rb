@@ -14,7 +14,6 @@ get "/mentor" do
     @table_Show = false
     @mentee = User.first(id: @user.has_mentee)
   end
-  # TODO: Add Mentor accept
   erb :mentor
 end
 
@@ -30,6 +29,7 @@ post "/post-mentor-register" do
   @id = request.cookies.fetch("id")
   @user = User.first(id: @id)
   # Get the info and add them to the user db record
+  @user.title = params.fetch("title", "")
   @user.job_Title = params.fetch("job_Title", "")
   @user.industry_Sector = params.fetch("industry_Sector", "")
   @description = Description.new
