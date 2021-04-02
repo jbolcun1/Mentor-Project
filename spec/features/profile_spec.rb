@@ -3,7 +3,7 @@ require_relative "../spec_helper"
 describe "the profile page" do
   it "is accessible by logged in mentees from the dashboard" do
     visit "/login"
-    fill_in "email", with: "Mentee1@gmail.com"
+    fill_in "email", with: "Mentee1@gmail.ac.uk"
     fill_in "password", with: "Password1"
     click_button "Submit"
     click_link "Profile"
@@ -21,7 +21,7 @@ describe "the profile page" do
     
   it "displays information about the page to a logged in mentee" do
     visit "/login"
-    fill_in "email", with: "Mentee1@gmail.com"
+    fill_in "email", with: "Mentee1@gmail.ac.uk"
     fill_in "password", with: "Password1"
     click_button "Submit"
     click_link "Profile"

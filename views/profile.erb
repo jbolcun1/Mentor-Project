@@ -56,11 +56,20 @@
             <% end %>
 
             <% if @mentee_profile %>
+            <p><label1>University:</label1>
+                <input type="text" name="university" id="university" value = "<%= @user.university %>"
+                     maxlength="50" size="30" required>
+            </p>
             <p><label1>Degree:</label1>
                 <input type="text" name="degree" id="degree" value = "<%= @user.degree %>"
                 maxlength="50" size="30" required>
             </p>
+            <p><label1>Telephone:</label1>
+                <input type="text" name="telephone" id="telephone" value = "<%= @user.telephone %>"
+                maxlength="50" size="30" required>
+            </p>
             <% elsif @mentor_profile %>
+                <%= erb :"common/titleProfile" %> <br>
                 <%= erb :"common/industrySectorProfile" %>
             <% end %>
 

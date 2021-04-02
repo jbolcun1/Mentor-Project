@@ -29,7 +29,7 @@ describe "the login page" do
   
   it "can get a mentee logged in successfully" do
       visit "/login"
-      fill_in "email", with: "Mentee1@gmail.com"
+      fill_in "email", with: "Mentee1@gmail.ac.uk"
       fill_in "password", with: "Password1"
       click_button "Submit"
       expect(page).to have_content "Profile"

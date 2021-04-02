@@ -116,6 +116,7 @@ get "/dashboard" do
 end
 
 get "/profile" do
+  # TODO: Add descriptions
   @id = request.cookies.fetch("id", "0")
   @user = User.first(id: @id)
   @privilege = @user.privilege
@@ -138,7 +139,19 @@ post "/post-profile" do
   @id = request.cookies.fetch("id", "0")
   @user = User.first(id: @id)
   @user.loadProfile(params)
-  
+
+  case @user.privilege
+  when "Mentee"
+    @user.university = params.fetch("university", "")
+    @user.degree = params.fetch("degree", "")
+    @user.telephone = params.fetch("telephone", "")
+    @user.save_changes
+  when "Mentor"
+    @user.title = params.fetch("title", "")
+    @user.job_Title = params.fetch("job_Title", "")
+    @user.industry_Sector = params.fetch("industry_Sector", "")
+    @user.save_changes
+  end
   if params.fetch("password") != ""
     if params.fetch("password") != @user.password
       redirect "/profile?error2=1"
@@ -148,16 +161,6 @@ post "/post-profile" do
       if @user.validPassProfile(params)
         @user.password = params.fetch("newpassword")
         @user.save_changes
-        @privilege = @user.privilege
-        case @privilege
-        when "Mentee"
-          @user.degree = params.fetch("degree", "")
-          @user.save_changes
-        when "Mentor"
-          @user.job_Title = params.fetch("job_Title", "")
-          @user.industry_Sector = params.fetch("industry_Sector", "")
-          @user.save_changes
-        end
         redirect "/dashboard"
       else
         redirect "/profile?error1=1"
