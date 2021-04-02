@@ -12,12 +12,12 @@ If you wish to stop the web app press ``Control + C`` in the ternimal
 
 ## Example user accounts you can use
 
-| Email             | Password  | Name              | User Account Type | Job Title    | Industry Sector                | Degree          |
-| ----------------- | ----------| ----------------- | ----------------- | ------------ | ------------------------------ | --------------- |
-| Mentee1@gmail.com | Password1 |Mentee1 TestDude   | Mentee            |              |                                | Computer Science|
-| Mentee2@gmail.com | Password1 |Mentee2 TestDude   | Mentee            |              |                                | Computer Science|
-| Mentor1@gmail.com | Password1 |Mentor1 TestDudette| Mentor            | Professor    | Teacher training and education |                 |
-| Mentor2@gmail.com | Password1 |Mentor2 TestDudette| Mentor            | System Admin | Infomation technology          |                 |
+| Email             | Password  | Name                | User Account Type | Title | Job Title    | Industry Sector                | University       | Degree           | Telephone     |
+| ----------------- | ----------| ------------------- | ----------------- | ----- | ------------ | ------------------------------ | ---------------- | ---------------- | --------------|
+| Mentee1@gmail.com | Password1 | Mentee1 TestDude    | Mentee            |       |              |                                | Uni of Sheffield | Computer Science | 0114 222 9134 |
+| Mentee2@gmail.com | Password1 | Mentee2 TestDude    | Mentee            |       |              |                                | Uni of Sheffield | Computer Science | 0114 222 9134 |
+| Mentor1@gmail.com | Password1 | Mentor1 TestDudette | Mentor            | Mrs   | Professor    | Teacher training and education |                  |                  |               |
+| Mentor2@gmail.com | Password1 | Mentor2 TestDudette | Mentor            | Dr    | System Admin | Infomation technology          |                  |                  |               |
 
 ## Make an account
 Use **Register** and enter your details to make an account. Select your role based on what you would like to be.
