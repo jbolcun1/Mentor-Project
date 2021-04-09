@@ -19,6 +19,12 @@
                 maxlength="50" size="30" required>
             </p>
 
+          <% if @error_correct2%>
+            <p id="error">
+              <b>Mentee email must be a university email.</b>
+            </p>
+          <% end %>
+
             <p><label1>Email:</label1>
                 <input type="email" name="email" id="email"
                 maxlength="50" size="30" required>

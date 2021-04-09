@@ -25,7 +25,7 @@ get "/login" do
   erb :login
 end
 
-get "/logout" do 
+get "/logout" do
   response.delete_cookie("id")
   redirect "/index"
 end
@@ -42,6 +42,7 @@ end
 
 get "/register" do
   @errorCorrect = true if params.fetch("error", "0") == "1"
+  @error_correct2 = true if params.fetch("error", "0") == "2"
   erb :register
 end
 
@@ -75,7 +76,10 @@ post "/post-register" do
   # Load given info into a new user object
   @user.load(params)
   # Check that the given info is valid.
-  # If valid, redirect associated page to register more infomation
+  # If valid, redirect associated page to register more information
+  if @user.privilege == "Mentee"
+  redirect "/register?error=2" unless @user.email.end_with? (".ac.uk")
+  end
   # If not, redirect to register page with error
   if @user.validPass(params)
     @user.save_changes
@@ -152,12 +156,12 @@ post "/post-profile" do
     @user.industry_Sector = params.fetch("industry_Sector", "")
     @user.save_changes
   end
-  if params.fetch("password") != ""
-    if params.fetch("password") != @user.password
-      redirect "/profile?error2=1"
-    end
+  if params.fetch("password") == ""
+    @user.save_changes
+    redirect "/dashboard"
+  else
+    redirect "/profile?error2=1" if params.fetch("password") != @user.password
     if params.fetch("newpassword") != "" && params.fetch("newconfirmpassword") != ""
-      
       if @user.validPassProfile(params)
         @user.password = params.fetch("newpassword")
         @user.save_changes
@@ -168,8 +172,5 @@ post "/post-profile" do
     else
       redirect "/profile?error3=1"
     end
-  else
-    @user.save_changes
-    redirect "/dashboard"
   end
 end
