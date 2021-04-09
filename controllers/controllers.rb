@@ -165,6 +165,16 @@ post "/post-profile" do
       if @user.validPassProfile(params)
         @user.password = params.fetch("newpassword")
         @user.save_changes
+        date_time = Time.new
+        email = @user.email
+        subject = "Your password changed on the eMentoring website"
+        body = "Your password was changed at #{date_time.strftime("%R")} on #{date_time.strftime("%A %D")}"
+        puts "Sending email..."
+        if send_mail(email, subject, body)
+          puts "Email Sent Ok."
+        else
+          puts "Sending failed."
+        end
         redirect "/dashboard"
       else
         redirect "/profile?error1=1"
