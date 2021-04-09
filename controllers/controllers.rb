@@ -77,9 +77,7 @@ post "/post-register" do
   @user.load(params)
   # Check that the given info is valid.
   # If valid, redirect associated page to register more information
-  if @user.privilege == "Mentee"
-  redirect "/register?error=2" unless @user.email.end_with? (".ac.uk")
-  end
+  redirect "/register?error=2" if @user.privilege == ("Mentee") && !@user.email.end_with?(".ac.uk")
   # If not, redirect to register page with error
   if @user.validPass(params)
     @user.save_changes
@@ -165,6 +163,16 @@ post "/post-profile" do
       if @user.validPassProfile(params)
         @user.password = params.fetch("newpassword")
         @user.save_changes
+        date_time = Time.new
+        email = @user.email
+        subject = "Your password changed on the eMentoring website"
+        body = "Your password was changed at #{date_time.strftime("%R")} on #{date_time.strftime("%A %D")}"
+        puts "Sending email..."
+        if send_mail(email, subject, body)
+          puts "Email Sent Ok."
+        else
+          puts "Sending failed."
+        end
         redirect "/dashboard"
       else
         redirect "/profile?error1=1"
