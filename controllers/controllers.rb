@@ -121,6 +121,8 @@ get "/profile" do
   # TODO: Add descriptions
   @id = request.cookies.fetch("id", "0")
   @user = User.first(id: @id)
+  @description = Description.first(user_Id: @user.description)
+  puts @description.description
   @privilege = @user.privilege
   @error_correct = true if params.fetch("error1", "0") == "1"
   @error_correct2 = true if params.fetch("error2", "0") == "1"
@@ -154,7 +156,11 @@ post "/post-profile" do
     @user.industry_Sector = params.fetch("industry_Sector", "")
     @user.save_changes
   end
+  @description = Description.first(user_Id: @user.description)
+  @description.description = params.fetch("description", "")
+  @description.save_changes
   if params.fetch("password") == ""
+    @description
     @user.save_changes
     redirect "/dashboard"
   else
