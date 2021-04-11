@@ -50,19 +50,28 @@ end
 post "/post-mentor-accept" do
   @id = request.cookies.fetch("id")
   @user = User.first(id: @id)
-
   @mentee_id = params.fetch("mentee_Id")
   @mentee = User.first(id: @mentee_id)
-  @user.has_mentee = @mentee_id
-  @user.has_mentor = 1
-  @user.save_changes
+  decision = params.fetch("decision")
+  puts decision
+  case decision
+  when "accept"
+    @user.has_mentee = @mentee_id
+    @user.has_mentor = 1
+    @user.save_changes
 
-  @mentee.has_mentee = 1
-  @mentee.save_changes
+    @mentee.has_mentee = 1
+    @mentee.save_changes
 
+    subject = "Your mentorship by #{@user.name} has been accepted!"
+    body = "Please go back to the mentee dashboard to see the communicative method of your mentor!"
+  when "reject"
+    @mentee.has_mentor = 0
+    @mentee.save_changes
+    subject = "Your mentorship by #{@user.name} has been rejected!"
+    body = "Please go back to the mentee dashboard to choose a new mentor! (Only available 24 hours after initial invite to mentor)"
+  end
   email = @mentee.email
-  subject = "Your mentorship by #{@user.name} has been accepted!"
-  body = "Please go back to the mentee dashbaord to see the communicative method of your mentor!"
   puts "Sending email..."
   if send_mail(email, subject, body)
     puts "Email Sent Ok."

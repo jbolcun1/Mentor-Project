@@ -62,8 +62,23 @@ def init_db
     user.save_changes
 
     # AH ONLY FOR EMAIL TESTING
+    # -------------------------
+    # Mentee
     user_desc = Description.new
-    user_desc.description = "I am just a guy"
+    user_desc.description = "I am just a guy mentee"
+    user_desc.save_changes
+    params = {"first_name" => "Ariful","surname" => "Haque", "email" => "ahaque3@sheffield.ac.uk", "password" => "qwe", "confirmpassword" => "qwe", "privilege" => "Mentee"}
+    user = User.new
+    user.load(params)
+    user.university = "Uni of Sheffield"
+    user.degree = "Computer Science"
+    user.telephone = "0114 222 9134"
+    user.description = user_desc.user_Id
+    user.save_changes
+
+    # Mentor
+    user_desc = Description.new
+    user_desc.description = "I am just a guy mentor"
     user_desc.save_changes
     params = {"first_name" => "Ariful","surname" => "Haque", "email" => "ahaque3@sheffield.ac.uk", "password" => "Password1", "confirmpassword" => "Password1", "privilege" => "Mentor"}
     user = User.new
@@ -73,6 +88,8 @@ def init_db
     user.job_Title = "Streamer"
     user.industry_Sector = "Media and internet"
     user.save_changes
+
+    puts "Finished DB Init"
 end
 
 if $PROGRAM_NAME == __FILE__

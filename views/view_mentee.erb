@@ -2,8 +2,6 @@
 <!DOCTYPE html>
 <%= erb :"common/header_loggedin" %>
 <body id="Mentee Details Page">
-
-
     <main>
         <p>Your potential Mentee's profile</p>
         <p>
@@ -17,7 +15,11 @@
         </p>
 
         <form name="contact" method="post" action="/post-mentor-accept?mentee_Id=<%= h @mentee.id %>" >
-            <label for="GET-comments">Click Submit if you wish to start a mentorship with the mentee</label> 
+            <label for="GET-comments">Choose what you want to do with the inivite and click submit to send your decision:</label>
+            <input type="radio" id="acceptDecision" name="decision" value="accept" required>
+            <label for="mentee">Accept</label>
+            <input type="radio" id="rejectDecision" name="decision" value="reject">
+            <label for="mentor">Reject</label>
             <br>
             <br>
             <input type="submit" value="Submit"><br>
