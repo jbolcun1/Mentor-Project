@@ -32,6 +32,7 @@ post "/post-mentor-register" do
   @user.title = params.fetch("title", "")
   @user.job_Title = params.fetch("job_Title", "")
   @user.industry_Sector = params.fetch("industry_Sector", "")
+  @user.available_Time = params.fetch("available_Time", "")
   @description = Description.new
   @description.load(params)
   @description.save_changes

@@ -8,6 +8,7 @@ CREATE TABLE users (
     title TEXT,
     job_Title TEXT,
     industry_Sector TEXT,
+    available_Time TEXT,
     university TEXT,
     degree TEXT,
     telephone TEXT,

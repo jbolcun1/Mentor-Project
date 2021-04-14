@@ -154,6 +154,7 @@ post "/post-profile" do
     @user.title = params.fetch("title", "")
     @user.job_Title = params.fetch("job_Title", "")
     @user.industry_Sector = params.fetch("industry_Sector", "")
+    @user.available_Time = params.fetch("available_Time", "")
     @user.save_changes
   end
   @description = Description.first(user_Id: @user.description)

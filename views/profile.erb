@@ -69,8 +69,12 @@
                 maxlength="50" size="30" required>
             </p>
             <% elsif @mentor_profile %>
-                <%= erb :"common/titleProfile" %> <br>
+                <%= erb :"common/titleProfile" %> <br><br>
                 <%= erb :"common/industrySectorProfile" %>
+            <p><label1>Available Time:</label1>
+              <input type="text" name="available_Time" id="available_Time" value = "<%= @user.available_Time %>"
+                     maxlength="50" size="30" required>
+            </p>
             <% end %>
 
             </p>

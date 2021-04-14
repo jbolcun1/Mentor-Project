@@ -46,6 +46,7 @@ def init_db
     user.title = "Mrs"
     user.job_Title = "Professor"
     user.industry_Sector = "Teacher training and education"
+    user.available_Time = "Friday Afternoons"
     user.save_changes
 
     # Mentor2
@@ -59,6 +60,7 @@ def init_db
     user.title = "Dr"
     user.job_Title = "System Admin"
     user.industry_Sector = "Information technology"
+    user.available_Time = "Any Afternoon, no weekends"
     user.save_changes
 
     # AH ONLY FOR EMAIL TESTING
@@ -87,6 +89,7 @@ def init_db
     user.title = "Mr"
     user.job_Title = "Streamer"
     user.industry_Sector = "Media and internet"
+    user.available_Time = "Whenever"
     user.save_changes
 
     puts "Finished DB Init"
