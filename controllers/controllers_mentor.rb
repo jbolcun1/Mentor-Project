@@ -6,9 +6,7 @@ get "/mentor" do
   # Display a personalised message upon a successful mentor login
   @s = "Welcome, #{@user.name}. \n You have sucessfully logged in as a #{@user.privilege.downcase}."
   @mentees = User.where(has_mentor: @user.id)
-  if !@mentees.empty?
-    @table_Show = true
-  end
+  @table_Show = true unless @mentees.empty?
   if @user.has_mentor != 0
     @table_show2 = true
     @table_Show = false

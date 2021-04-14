@@ -173,7 +173,7 @@ post "/post-profile" do
         date_time = Time.new
         email = @user.email
         subject = "Your password changed on the eMentoring website"
-        body = "Your password was changed at #{date_time.strftime("%R")} on #{date_time.strftime("%A %D")}"
+        body = "Your password was changed at #{date_time.strftime('%R')} on #{date_time.strftime('%A %D')}"
         puts "Sending email..."
         if send_mail(email, subject, body)
           puts "Email Sent Ok."

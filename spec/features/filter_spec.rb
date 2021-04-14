@@ -19,7 +19,7 @@ describe "the filter functionality" do
     click_button "Submit"
     expect(page).to have_content "Mentor2 TestDudette"
   end
-    
+
   it "can display more information to mentees about a potential mentor" do
     visit "/login"
     fill_in "email", with: "Mentee1@gmail.ac.uk"
@@ -33,7 +33,7 @@ describe "the filter functionality" do
     expect(page).to have_content "The description of your mentor"
     expect(page).to have_content "Hello I am System Admin at UoS"
   end
-    
+
   it "allows mentees to contact potential mentors" do
     visit "/login"
     fill_in "email", with: "Mentee1@gmail.ac.uk"
@@ -45,7 +45,7 @@ describe "the filter functionality" do
     click_link "View More"
     expect(page).to have_content "Add your introduction here!"
   end
-    
+
   it "redirects mentees to their dashboard after contacting a mentor" do
     visit "/login"
     fill_in "email", with: "Mentee1@gmail.ac.uk"
@@ -58,7 +58,7 @@ describe "the filter functionality" do
     click_button "Submit"
     expect(page).to have_content "Mentee Dashboard"
   end
-    
+
   it "can display a message to mentees when no mentors are found" do
     visit "/login"
     fill_in "email", with: "Mentee1@gmail.ac.uk"
@@ -67,6 +67,5 @@ describe "the filter functionality" do
     fill_in "job_Title", with: "no job"
     click_button "Submit"
     expect(page).to have_content "Sorry, no mentors found."
-  end    
-    
+  end
 end

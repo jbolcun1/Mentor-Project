@@ -66,40 +66,15 @@ post "/post-mentee-invite" do
   @id = request.cookies.fetch("id")
   @user = User.first(id: @id)
   @last_Send = @user.last_send
-  
-  # Time class works in seconds. 86400 is one day in seconds. 
+
+  # Time class works in seconds. 86400 is one day in seconds.
   # We store the time since they last sent an invite in seconds.
-  # We check that the time time in last_Send and current time is greater 
+  # We check that the time time in last_Send and current time is greater
   # then one day. If so we can do the actual invite/etc
-  # If there is no last_Send we can assume they never sent an invite and 
-  # then we do the invite process. 
+  # If there is no last_Send we can assume they never sent an invite and
+  # then we do the invite process.
 
-  if !@last_Send.nil?
-    time_Now = Time.new
-    time_Last_send = Time.at(@last_Send.to_i)
-    @mentor_Id = params.fetch("mentor_Id")
-    if time_Now - time_Last_send >= 86400
-      @id = request.cookies.fetch("id")
-      @user = User.first(id: @id)
-      @user.has_mentor = @mentor_Id
-      @user.last_send = time_Now.to_i
-      @user.save_changes
-
-      mentor = User.first(id: @mentor_Id)
-      email = mentor.email
-      subject = "You have been invited to a mentorship!"
-      body = "This mentorship is by #{@user.name}. Below is the their introductory message \n" + params[:comments] 
-      puts "Sending email..."
-      if send_mail(email, subject, body)
-        puts "Email Sent Ok."
-      else
-        puts "Sending failed."
-      end
-      redirect "/mentee"
-    else 
-      redirect "/view-mentor?id=#{@mentor_Id}&error=1"
-    end
-  else
+  if @last_Send.nil?
     time_Now = Time.new
     time_Last_send = Time.at(@last_Send.to_i)
     @mentor_Id = params.fetch("mentor_Id")
@@ -119,5 +94,30 @@ post "/post-mentee-invite" do
       puts "Sending failed."
     end
     redirect "/mentee"
+  else
+    time_Now = Time.new
+    time_Last_send = Time.at(@last_Send.to_i)
+    @mentor_Id = params.fetch("mentor_Id")
+    if time_Now - time_Last_send >= 86_400
+      @id = request.cookies.fetch("id")
+      @user = User.first(id: @id)
+      @user.has_mentor = @mentor_Id
+      @user.last_send = time_Now.to_i
+      @user.save_changes
+
+      mentor = User.first(id: @mentor_Id)
+      email = mentor.email
+      subject = "You have been invited to a mentorship!"
+      body = "This mentorship is by #{@user.name}. Below is the their introductory message \n" + params[:comments]
+      puts "Sending email..."
+      if send_mail(email, subject, body)
+        puts "Email Sent Ok."
+      else
+        puts "Sending failed."
+      end
+      redirect "/mentee"
+    else
+      redirect "/view-mentor?id=#{@mentor_Id}&error=1"
+    end
   end
 end
