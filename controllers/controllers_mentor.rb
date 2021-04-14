@@ -6,10 +6,10 @@ get "/mentor" do
   # Display a personalised message upon a successful mentor login
   @s = "Welcome, #{@user.name}. \n You have sucessfully logged in as a #{@user.privilege.downcase}."
   @mentees = User.where(has_mentor: @user.id)
-  @table_Show = true unless @mentees.empty?
+  @table_show = true unless @mentees.empty?
   if @user.has_mentor != 0
     @table_show2 = true
-    @table_Show = false
+    @table_show = false
     @mentee = User.first(id: @user.has_mentee)
   end
   erb :mentor
@@ -40,9 +40,9 @@ post "/post-mentor-register" do
 end
 
 get "/view-mentee" do
-  @mentee_Id = params[:id]
-  @mentee = User.first(id: @mentee_Id)
-  @description = @mentee.getDescriptions
+  @mentee_id = params[:id]
+  @mentee = User.first(id: @mentee_id)
+  @description = @mentee.get_descriptions
   erb :view_mentee
 end
 
@@ -68,7 +68,8 @@ post "/post-mentor-accept" do
     @mentee.has_mentor = 0
     @mentee.save_changes
     subject = "Your mentorship by #{@user.name} has been rejected!"
-    body = "Please go back to the mentee dashboard to choose a new mentor! (Only available 24 hours after initial invite to mentor)"
+    body = "Please go back to the mentee dashboard to choose a new mentor!
+     (Only available 24 hours after initial invite to mentor)"
   end
   email = @mentee.email
   puts "Sending email..."

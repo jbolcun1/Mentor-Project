@@ -21,7 +21,7 @@ get "/" do
 end
 
 get "/login" do
-  @errorCorrect = true if params.fetch("error", "0") == "1"
+  @error_correct = true if params.fetch("error", "0") == "1"
   erb :login
 end
 
@@ -31,17 +31,17 @@ get "/logout" do
 end
 
 get "/index" do
-  @errorCorrect = true if params.fetch("error", "0") == "1"
+  @error_correct = true if params.fetch("error", "0") == "1"
   erb :index
 end
 
 get "/about" do
-  @errorCorrect = true if params.fetch("error", "0") == "1"
+  @error_correct = true if params.fetch("error", "0") == "1"
   erb :about
 end
 
 get "/register" do
-  @errorCorrect = true if params.fetch("error", "0") == "1"
+  @error_correct = true if params.fetch("error", "0") == "1"
   @error_correct2 = true if params.fetch("error", "0") == "2"
   erb :register
 end
@@ -79,7 +79,7 @@ post "/post-register" do
   # If valid, redirect associated page to register more information
   redirect "/register?error=2" if @user.privilege == ("Mentee") && !@user.email.end_with?(".ac.uk")
   # If not, redirect to register page with error
-  if @user.validPass(params)
+  if @user.valid_pass(params)
     @user.save_changes
     @id = @user.id
     response.set_cookie("id", @id)
@@ -142,7 +142,7 @@ end
 post "/post-profile" do
   @id = request.cookies.fetch("id", "0")
   @user = User.first(id: @id)
-  @user.loadProfile(params)
+  @user.load_profile(params)
 
   case @user.privilege
   when "Mentee"
@@ -161,13 +161,12 @@ post "/post-profile" do
   @description.description = params.fetch("description", "")
   @description.save_changes
   if params.fetch("password") == ""
-    @description
     @user.save_changes
     redirect "/dashboard"
   else
     redirect "/profile?error2=1" if params.fetch("password") != @user.password
     if params.fetch("newpassword") != "" && params.fetch("newconfirmpassword") != ""
-      if @user.validPassProfile(params)
+      if @user.valid_pass_profile(params)
         @user.password = params.fetch("newpassword")
         @user.save_changes
         date_time = Time.new

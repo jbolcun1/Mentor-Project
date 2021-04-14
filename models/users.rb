@@ -7,7 +7,7 @@ class User < Sequel::Model
 
   # .getDescriptions returns a string array of all of the user's
   # descriptions
-  def getDescriptions
+  def get_descriptions
     #     puts self.description
     # Retrieves a dataset from the database
     dataset = Description.first(user_Id: description)
@@ -38,17 +38,17 @@ class User < Sequel::Model
     self.has_mentor = 0
   end
 
-  def loadProfile(params)
+  def load_profile(params)
     self.first_name = params.fetch("first_name", "").strip
     self.surname = params.fetch("surname", "").strip
     self.email = params.fetch("email", "").strip
   end
 
-  def validPass(params)
+  def valid_pass(params)
     params.fetch("password") == params.fetch("confirmpassword")
   end
 
-  def validPassProfile(params)
+  def valid_pass_profile(params)
     params.fetch("newpassword", "") == params.fetch("newconfirmpassword", "")
   end
 end
