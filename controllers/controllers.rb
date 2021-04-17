@@ -21,27 +21,28 @@ get "/" do
 end
 
 get "/login" do
-  @errorCorrect = true if params.fetch("error", "0") == "1"
+  @error_correct = true if params.fetch("error", "0") == "1"
   erb :login
 end
 
-get "/logout" do 
+get "/logout" do
   response.delete_cookie("id")
   redirect "/index"
 end
 
 get "/index" do
-  @errorCorrect = true if params.fetch("error", "0") == "1"
+  @error_correct = true if params.fetch("error", "0") == "1"
   erb :index
 end
 
 get "/about" do
-  @errorCorrect = true if params.fetch("error", "0") == "1"
+  @error_correct = true if params.fetch("error", "0") == "1"
   erb :about
 end
 
 get "/register" do
-  @errorCorrect = true if params.fetch("error", "0") == "1"
+  @error_correct = true if params.fetch("error", "0") == "1"
+  @error_correct2 = true if params.fetch("error", "0") == "2"
   erb :register
 end
 
@@ -75,9 +76,10 @@ post "/post-register" do
   # Load given info into a new user object
   @user.load(params)
   # Check that the given info is valid.
-  # If valid, redirect associated page to register more infomation
+  # If valid, redirect associated page to register more information
+  redirect "/register?error=2" if @user.privilege == ("Mentee") && !@user.email.end_with?(".ac.uk")
   # If not, redirect to register page with error
-  if @user.validPass(params)
+  if @user.valid_pass(params)
     @user.save_changes
     @id = @user.id
     response.set_cookie("id", @id)
@@ -116,8 +118,11 @@ get "/dashboard" do
 end
 
 get "/profile" do
+  # TODO: Add descriptions
   @id = request.cookies.fetch("id", "0")
   @user = User.first(id: @id)
+  @description = Description.first(user_Id: @user.description)
+  puts @description.description
   @privilege = @user.privilege
   @error_correct = true if params.fetch("error1", "0") == "1"
   @error_correct2 = true if params.fetch("error2", "0") == "1"
@@ -137,26 +142,42 @@ end
 post "/post-profile" do
   @id = request.cookies.fetch("id", "0")
   @user = User.first(id: @id)
-  @user.loadProfile(params)
-  
-  if params.fetch("password") != ""
-    if params.fetch("password") != @user.password
-      redirect "/profile?error2=1"
-    end
+  @user.load_profile(params)
+
+  case @user.privilege
+  when "Mentee"
+    @user.university = params.fetch("university", "")
+    @user.degree = params.fetch("degree", "")
+    @user.telephone = params.fetch("telephone", "")
+    @user.save_changes
+  when "Mentor"
+    @user.title = params.fetch("title", "")
+    @user.job_Title = params.fetch("job_Title", "")
+    @user.industry_Sector = params.fetch("industry_Sector", "")
+    @user.available_Time = params.fetch("available_Time", "")
+    @user.save_changes
+  end
+  @description = Description.first(user_Id: @user.description)
+  @description.description = params.fetch("description", "")
+  @description.save_changes
+  if params.fetch("password") == ""
+    @user.save_changes
+    redirect "/dashboard"
+  else
+    redirect "/profile?error2=1" if params.fetch("password") != @user.password
     if params.fetch("newpassword") != "" && params.fetch("newconfirmpassword") != ""
-      
-      if @user.validPassProfile(params)
+      if @user.valid_pass_profile(params)
         @user.password = params.fetch("newpassword")
         @user.save_changes
-        @privilege = @user.privilege
-        case @privilege
-        when "Mentee"
-          @user.degree = params.fetch("degree", "")
-          @user.save_changes
-        when "Mentor"
-          @user.job_Title = params.fetch("job_Title", "")
-          @user.industry_Sector = params.fetch("industry_Sector", "")
-          @user.save_changes
+        date_time = Time.new
+        email = @user.email
+        subject = "Your password changed on the eMentoring website"
+        body = "Your password was changed at #{date_time.strftime('%R')} on #{date_time.strftime('%A %D')}"
+        puts "Sending email..."
+        if send_mail(email, subject, body)
+          puts "Email Sent Ok."
+        else
+          puts "Sending failed."
         end
         redirect "/dashboard"
       else
@@ -165,8 +186,5 @@ post "/post-profile" do
     else
       redirect "/profile?error3=1"
     end
-  else
-    @user.save_changes
-    redirect "/dashboard"
   end
 end

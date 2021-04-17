@@ -6,15 +6,12 @@ get "/mentor" do
   # Display a personalised message upon a successful mentor login
   @s = "Welcome, #{@user.name}. \n You have sucessfully logged in as a #{@user.privilege.downcase}."
   @mentees = User.where(has_mentor: @user.id)
-  if !@mentees.empty?
-    @table_Show = true
-  end
+  @table_show = true unless @mentees.empty?
   if @user.has_mentor != 0
     @table_show2 = true
-    @table_Show = false
+    @table_show = false
     @mentee = User.first(id: @user.has_mentee)
   end
-  # TODO: Add Mentor accept
   erb :mentor
 end
 
@@ -30,8 +27,10 @@ post "/post-mentor-register" do
   @id = request.cookies.fetch("id")
   @user = User.first(id: @id)
   # Get the info and add them to the user db record
+  @user.title = params.fetch("title", "")
   @user.job_Title = params.fetch("job_Title", "")
   @user.industry_Sector = params.fetch("industry_Sector", "")
+  @user.available_Time = params.fetch("available_Time", "")
   @description = Description.new
   @description.load(params)
   @description.save_changes
@@ -41,28 +40,38 @@ post "/post-mentor-register" do
 end
 
 get "/view-mentee" do
-  @mentee_Id = params[:id]
-  @mentee = User.first(id: @mentee_Id)
-  @description = @mentee.getDescriptions
+  @mentee_id = params[:id]
+  @mentee = User.first(id: @mentee_id)
+  @description = @mentee.get_descriptions
   erb :view_mentee
 end
 
 post "/post-mentor-accept" do
   @id = request.cookies.fetch("id")
   @user = User.first(id: @id)
-
   @mentee_id = params.fetch("mentee_Id")
   @mentee = User.first(id: @mentee_id)
-  @user.has_mentee = @mentee_id
-  @user.has_mentor = 1
-  @user.save_changes
+  decision = params.fetch("decision")
+  puts decision
+  case decision
+  when "accept"
+    @user.has_mentee = @mentee_id
+    @user.has_mentor = 1
+    @user.save_changes
 
-  @mentee.has_mentee = 1
-  @mentee.save_changes
+    @mentee.has_mentee = 1
+    @mentee.save_changes
 
+    subject = "Your mentorship by #{@user.name} has been accepted!"
+    body = "Please go back to the mentee dashboard to see the communicative method of your mentor!"
+  when "reject"
+    @mentee.has_mentor = 0
+    @mentee.save_changes
+    subject = "Your mentorship by #{@user.name} has been rejected!"
+    body = "Please go back to the mentee dashboard to choose a new mentor!
+     (Only available 24 hours after initial invite to mentor)"
+  end
   email = @mentee.email
-  subject = "Your mentorship by #{@user.name} has been accepted!"
-  body = "Please go back to the mentee dashbaord to see the communicative method of your mentor!"
   puts "Sending email..."
   if send_mail(email, subject, body)
     puts "Email Sent Ok."

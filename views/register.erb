@@ -19,6 +19,12 @@
                 maxlength="50" size="30" required>
             </p>
 
+          <% if @error_correct2%>
+            <p id="error">
+              <b>Mentee email must be a university email.</b>
+            </p>
+          <% end %>
+
             <p><label1>Email:</label1>
                 <input type="email" name="email" id="email"
                 maxlength="50" size="30" required>
@@ -34,14 +40,14 @@
                 maxlength="50" size="30" required>
             </p>
 
-            <% if @errorCorrect%>
+            <% if @error_correct%>
             <p id="error">
                 <b>The two password entries must be correct.</b>
             </p>
             <% end %>
 
             <p>Would you like to be a mentee or a mentor?
-            <input type="radio" id="mentee" name="privilege" value="Mentee">
+            <input type="radio" id="mentee" name="privilege" value="Mentee" required>
             <label for="mentee">Mentee</label>
             <input type="radio" id="mentor" name="privilege" value="Mentor">
             <label for="mentor">Mentor</label>

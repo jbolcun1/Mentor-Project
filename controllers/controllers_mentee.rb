@@ -5,12 +5,12 @@ get "/mentee" do
   # Find User
   @user = User.first(id: @id)
   # Check if the params have been given or not
-  job_TitleM = params.fetch("job_Title", "")
-  industry_SectorM = params.fetch("industry_Sector", "")
+  job_title_m = params.fetch("job_Title", "")
+  industry_sector_m = params.fetch("industry_Sector", "")
   # If given, we can try and find the mentors given the params and then display them
-  if job_TitleM != ""
-    @table_Show = true
-    @mentors = User.where(job_Title: job_TitleM).or(industry_Sector: industry_SectorM)
+  if job_title_m != ""
+    @table_show = true
+    @mentors = User.where(job_Title: job_title_m).or(industry_Sector: industry_sector_m)
     if @mentors.empty?
       # If none found, then an error can show
       @error = true
@@ -22,7 +22,6 @@ get "/mentee" do
   end
   # Display a personalised message upon a successful mentee login
   @s = "Welcome, #{@user.name}. \n You have sucessfully logged in as a #{@user.privilege.downcase}."
-  # TODO: Add mentee invitaion
   erb :mentee
 end
 
@@ -40,10 +39,10 @@ get "/mentee-register" do
 end
 
 get "/view-mentor" do
-  @errorCorrect = true if params.fetch("error", "0") == "1"
-  @mentor_Id =  params[:id]
-  @mentor = User.first(id: @mentor_Id)
-  @description = @mentor.getDescriptions
+  @error_correct = true if params.fetch("error", "0") == "1"
+  @mentor_id = params[:id]
+  @mentor = User.first(id: @mentor_id)
+  @description = @mentor.get_descriptions
   erb :view_mentor
 end
 
@@ -51,7 +50,9 @@ post "/post-mentee-register" do
   @id = request.cookies.fetch("id")
   @user = User.first(id: @id)
   # Get the info and add them to the user db record
+  @user.university = params.fetch("university", "")
   @user.degree = params.fetch("degree", "")
+  @user.telephone = params.fetch("telephone", "")
 
   @description = Description.new
   @description.load(params)
@@ -64,50 +65,23 @@ end
 post "/post-mentee-invite" do
   @id = request.cookies.fetch("id")
   @user = User.first(id: @id)
-  @last_Send = @user.last_send
-  
-  # Time class works in seconds. 86400 is one day in seconds. 
+  @last_send = @user.last_send
+
+  # Time class works in seconds. 86400 is one day in seconds.
   # We store the time since they last sent an invite in seconds.
-  # We check that the time time in last_Send and current time is greater 
+  # We check that the time time in last_Send and current time is greater
   # then one day. If so we can do the actual invite/etc
-  # If there is no last_Send we can assume they never sent an invite and 
-  # then we do the invite process. 
-
-  if !@last_Send.nil?
-    time_Now = Time.new
-    time_Last_send = Time.at(@last_Send.to_i)
-    @mentor_Id = params.fetch("mentor_Id")
-    if time_Now - time_Last_send >= 86400
-      @id = request.cookies.fetch("id")
-      @user = User.first(id: @id)
-      @user.has_mentor = @mentor_Id
-      @user.last_send = time_Now.to_i
-      @user.save_changes
-
-      mentor = User.first(id: @mentor_Id)
-      email = mentor.email
-      subject = "You have been invited to a mentorship!"
-      body = "This mentorship is by #{@user.name}. Below is the their introductory message \n" + params[:comments] 
-      puts "Sending email..."
-      if send_mail(email, subject, body)
-        puts "Email Sent Ok."
-      else
-        puts "Sending failed."
-      end
-      redirect "/mentee"
-    else 
-      redirect "/view-mentor?id=#{@mentor_Id}&error=1"
-    end
-  else
-    time_Now = Time.new
-    time_Last_send = Time.at(@last_Send.to_i)
-    @mentor_Id = params.fetch("mentor_Id")
+  # If there is no last_Send we can assume they never sent an invite and
+  # then we do the invite process.
+  time_now = Time.new
+  if @last_send.nil?
+    @mentor_id = params.fetch("mentor_Id")
     @id = request.cookies.fetch("id")
     @user = User.first(id: @id)
-    @user.has_mentor = @mentor_Id
-    @user.last_send = time_Now.to_i
+    @user.has_mentor = @mentor_id
+    @user.last_send = time_now.to_i
     @user.save_changes
-    mentor = User.first(id: @mentor_Id)
+    mentor = User.first(id: @mentor_id)
     email = mentor.email
     subject = "You have been invited to a mentorship!"
     body = "This mentorship is by #{@user.name}. Below is their introductory message \n" + params[:comments]
@@ -118,5 +92,29 @@ post "/post-mentee-invite" do
       puts "Sending failed."
     end
     redirect "/mentee"
+  else
+    time_last_send = Time.at(@last_send.to_i)
+    @mentor_id = params.fetch("mentor_Id")
+    if time_now - time_last_send >= 86_400
+      @id = request.cookies.fetch("id")
+      @user = User.first(id: @id)
+      @user.has_mentor = @mentor_id
+      @user.last_send = time_now.to_i
+      @user.save_changes
+
+      mentor = User.first(id: @mentor_id)
+      email = mentor.email
+      subject = "You have been invited to a mentorship!"
+      body = "This mentorship is by #{@user.name}. Below is the their introductory message \n" + params[:comments]
+      puts "Sending email..."
+      if send_mail(email, subject, body)
+        puts "Email Sent Ok."
+      else
+        puts "Sending failed."
+      end
+      redirect "/mentee"
+    else
+      redirect "/view-mentor?id=#{@mentor_id}&error=1"
+    end
   end
 end

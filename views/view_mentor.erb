@@ -8,10 +8,13 @@
     <main>
         <p>Your potential Mentor's profile</p>
         <p>
-            The mentor you have selected is <%= h @mentor.name %>
+            The mentor you have selected is: <%= h @mentor.name %>
         </p>
         <p>
-            The description of your mentor 
+        The mentor's available time is: <%= h @mentor.available_Time %>
+        </p>
+        <p>
+            The description of your mentor:
         </p>
         <p>
             <%= h @description %>

@@ -8,10 +8,20 @@
     <main>
         <%= h @message %>
         <form method="post" action="/post-mentee-register">
+            <p><label>University:</label></p>
+            <p>
+                <input type="text" name="university" id="university"
+                maxlength="50" size="30" required>
+            </p>
             <p><label>Degree:</label></p>
             <p>
                 <input type="text" name="degree" id="degree"
-                maxlength="50" size="30" required>
+                       maxlength="50" size="30" required>
+            </p>
+            <p><label>Telephone:</label></p>
+            <p>
+              <input type="text" name="telephone" id="telephone"
+                   maxlength="50" size="30" required>
             </p>
 
             <p><label>Description Of Yourself: </label> </p>

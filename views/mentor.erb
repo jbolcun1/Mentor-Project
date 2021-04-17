@@ -8,20 +8,23 @@
         <%= h @s %>
 
         <% if @table_show2%>
-                           <table class = "centerTable" border="1">
+                          <table class = "centerTable" border="1">
                     <tr  id = "mentorTable">
                         <th>Name</th>
                         <th>Email</th>
+                        <th>Telephone</th>
                     </tr>
                     <tr>
                         <td><%= h @mentee.name %></td>
                         <td><%= h @mentee.email %></td>
+                      <td><%= h @mentee.telephone %></td>
                     </tr>
                 </table>
         <% end %>
 
-        <% if @table_Show%>
-                           <table class = "centerTable" border="1">
+        <% if @table_show%>
+        <p>You have a potential mentorship!</p>
+        <table class = "centerTable" border="1">
                     <tr  id = "mentorTable">
                         <th>Name</th>
                         <th>Degree</th>
