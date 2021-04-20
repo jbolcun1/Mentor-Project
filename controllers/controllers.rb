@@ -122,7 +122,6 @@ get "/profile" do
   @id = request.cookies.fetch("id", "0")
   @user = User.first(id: @id)
   @description = Description.first(user_Id: @user.description)
-  puts @description.description
   @privilege = @user.privilege
   @error_correct = true if params.fetch("error1", "0") == "1"
   @error_correct2 = true if params.fetch("error2", "0") == "1"

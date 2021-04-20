@@ -35,8 +35,3 @@ post "/admin" do
   puts querystring
   redirect "/admin?#{querystring}"
 end
-
-get "/profile-admin" do
-  @id = request.cookies.fetch("id", "0")
-  @user = User.first(id: @id)
-end

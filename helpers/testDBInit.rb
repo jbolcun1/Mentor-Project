@@ -101,10 +101,14 @@ def init_db
   # -------------------------
 
   # Admin
+  user_desc = Description.new
+  user_desc.description = "I am founder admin"
+  user_desc.save_changes
   user = User.new
   params = { "first_name" => "Ariful", "surname" => "Admin", "email" => "ahaque3@sheffield.ac.uk",
              "password" => "admin", "confirmpassword" => "admin", "privilege" => "Founder" }
   user.load(params)
+  user.description = user_desc.user_Id
   user.save_changes
   puts "Finished DB Init"
 end
