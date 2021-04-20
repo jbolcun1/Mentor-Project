@@ -42,4 +42,13 @@ get "/view-user" do
   @user_id = params[:id]
   @view_user = User.first(id: @user_id)
   @description = @view_user.get_descriptions
+
+  case @view_user.privilege
+  when "Mentee"
+    @mentee_profile = true
+  when "Mentor"
+    @mentor_profile = true
+  end
+
+  erb :view_user
 end

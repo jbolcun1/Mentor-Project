@@ -2,10 +2,19 @@
 <%= erb :"common/header_loggedin_admin" %>
 <body id="User Details Page">
   <main>
-    <p>You have selected a user</p>
-    <p>The mentee you have selected is <%= h @view_user.name %></p>
-    <p>The description of your mentee</p>
-    <p><%= h @description %></p>
+    <p>You have selected a user who is a <%= h @view_user.privilege %></p>
+    <p>The user you have selected is: <%= h @view_user.name %></p>
+    <p>The description of your user: <%= h @description %></p>
+
+    <% if @mentee_profile %>
+      <p>Their university is: <%= h @view_user.university %> </p>
+      <p>Their degree is: <%= h @view_user.degree %> </p>
+      <p>Their telephone is: <%= h @view_user.telephone %> </p>
+    <% elsif @mentor_profile %>
+      <p>Their job title is: <%= h @view_user.job_Title %> </p>
+      <p>Their industry sector is: <%= h @view_user.industry_Sector %> </p>
+      <p>Their available time is: <%= h @view_user.available_Time %> </p>
+    <% end %>
   </main>
 </body>
 <%= erb :"common/footer" %>
