@@ -89,6 +89,7 @@ def init_db
   user_desc.save_changes
   params = { "first_name" => "Ariful", "surname" => "Haque", "email" => "ahaque3@sheffield.ac.uk",
              "password" => "Password1", "confirmpassword" => "Password1", "privilege" => "Mentor" }
+
   user = User.new
   user.load(params)
   user.description = user_desc.user_Id
@@ -97,7 +98,14 @@ def init_db
   user.industry_Sector = "Media and internet"
   user.available_Time = "Whenever"
   user.save_changes
+  # -------------------------
 
+  # Admin
+  user = User.new
+  params = { "first_name" => "Ariful", "surname" => "Admin", "email" => "ahaque3@sheffield.ac.uk",
+             "password" => "admin", "confirmpassword" => "admin", "privilege" => "Founder" }
+  user.load(params)
+  user.save_changes
   puts "Finished DB Init"
 end
 

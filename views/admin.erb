@@ -1,14 +1,66 @@
 <!--HTML admin page, displayed only to admins-->
 
 <!DOCTYPE html>
-<%= erb :"common/header" %>
+<%= erb :"common/header_loggedin_admin" %>
 <body id="Welcome Page">
-
-
 
     <main>
         <p>Your Admin Page</p>
-        <%= h @s %> 
+        <%= h @s %>
+
+      <p>Please enter the information on the user who you want to look at!</p>
+
+      <form method="post" action="/admin">
+        <p><label1>First Name:</label1>
+          <input type="text" name="first_name" id="firstname"
+                 maxlength="50" size="30" >
+        </p>
+
+        <p><label1>Last Name:</label1>
+          <input type="text" name="surname" id="surname"
+                 maxlength="50" size="30" >
+        </p>
+
+        <p><label1>Email:</label1>
+        <input type="email" name="email" id="email"
+               maxlength="50" size="30" >
+        </p>
+        <p><label1>University:</label1>
+          <input type="text" name="university" id="university"
+                 maxlength="50" size="30" >
+        </p>
+        <p><label1>Degree:</label1>
+          <input type="text" name="degree" id="degree"
+                 maxlength="50" size="30" >
+        </p>
+        <%= erb :"common/industrySectorAdmin" %>
+        <input type="submit" value="Submit">
+      </form>
+      <br>
+      <% if @table_show%>
+        <% if @user_list.count > 0 %>
+          <table class = "centerTable" border="1">
+            <tr  id = "mentorTable">
+              <th>Name</th>
+              <th>Email</th>
+              <th>Privilege</th>
+              <th>Action</th>
+            </tr>
+            <% @user_list.each do |user| %>
+              <tr>
+                <td><%= h user.name %></td>
+                <td><%= h user.email %></td>
+                <td><%= h user.privilege %></td>
+                <td><a href="/view-user?id=<%= h user.id %>">View More</a></td>
+              </tr>
+            <% end %>
+          </table>
+        <%else %>
+          <p class = "error">
+            Sorry, no users found.
+          </p>
+        <% end %>
+      <% end %>
 
     </main>
 </body>

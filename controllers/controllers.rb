@@ -111,7 +111,7 @@ get "/dashboard" do
       redirect "/mentee"
     when "Mentor"
       redirect "/mentor"
-    else
+    when "Founder", "Admin"
       redirect "/admin"
     end
   end
