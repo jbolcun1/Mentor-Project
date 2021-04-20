@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<%= erb :"common/header_loggedin_admin" %>
+<body id="User Details Page">
+  <main>
+    <p>You have selected a user</p>
+    <p>The mentee you have selected is <%= h @view_user.name %></p>
+    <p>The description of your mentee</p>
+    <p><%= h @description %></p>
+  </main>
+</body>
+<%= erb :"common/footer" %>

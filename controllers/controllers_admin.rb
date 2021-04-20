@@ -3,8 +3,9 @@ get "/admin" do
   redirect "/login" if @id == "0"
   @user = User.first(id: @id)
 
-  empty = params.fetch("empty", "1")
+  @founder = true if @user.privilege = "Founder"
 
+  empty = params.fetch("empty", "1")
   if empty != "1"
     first_name = params.fetch("first_name", "0")
     surname = params.fetch("surname", "0")
@@ -34,4 +35,11 @@ post "/admin" do
   querystring = URI.encode_www_form(params)
   puts querystring
   redirect "/admin?#{querystring}"
+end
+
+get "/view-user" do
+  puts "here"
+  @user_id = params[:id]
+  @view_user = User.first(id: @user_id)
+  @description = @view_user.get_descriptions
 end
