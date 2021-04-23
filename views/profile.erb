@@ -1,7 +1,12 @@
 <!DOCTYPE html>
-<%= erb :"common/header_loggedin" %>
-<body id="Welcome Page"> 
-    
+<% if @user.privilege == "Founder" || @user.privilege == "Admin"%>
+  <%= erb :"common/header_loggedin_admin" %>
+<% else %>
+  <%= erb :"common/header_loggedin" %>
+<% end %>
+
+<body id="Welcome Page">
+
 
     <main>
         <p>Please fill in the fields you wish to change:</p>
@@ -21,7 +26,7 @@
                 <input type="email" name="email" id="email" value = "<%= @user.email %>"
                 maxlength="50" size="30" required>
             </p>
-          
+
             <% if @error_correct2%>
             <p id="error">
                 <b>Enter old password to change it to the new one</b>
@@ -32,13 +37,13 @@
                 <input type="password" id="password" name="password"
                 maxlength="50" size="30" >
             </p>
-          
+
             <% if @error_correct3%>
             <p id="error">
                 <b>Please enter values for New Password and Confirm New Password</b>
             </p>
             <% end %>
-          
+
             <p><label1>New Password:</label1>
                 <input type="password" id="newpassword" name="newpassword"
                 maxlength="50" size="30" >

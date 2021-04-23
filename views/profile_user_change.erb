@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<%= erb :"common/header_loggedin_admin" %>
+<body id="Welcome Page">
+
+
+<main>
+  <p>Please fill in the fields you wish to change:</p>
+
+  <form method="post" action="/change-user?id=<%= @change_user.id %>">
+    <p><label1>First Name:</label1>
+      <input type="text" name="first_name" id="firstname" value = "<%= @change_user.first_name%>"
+             maxlength="50" size="30" required>
+    </p>
+
+    <p><label1>Last Name:</label1>
+      <input type="text" name="surname" id="surname" value = "<%= @change_user.surname %>"
+             maxlength="50" size="30" required>
+    </p>
+
+    <p><label1>Email:</label1>
+      <input type="email" name="email" id="email" value = "<%= @change_user.email %>"
+             maxlength="50" size="30" required>
+    </p>
+
+
+    <p><label1>New Password:</label1>
+      <input type="password" id="newpassword" name="newpassword"
+             maxlength="50" size="30" >
+    </p>
+
+
+    <% if @error_correct%>
+      <p id="error">
+        <b>The two password entries must be correct.</b>
+      </p>
+    <% end %>
+
+    <% if @mentee_profile %>
+      <p><label1>University:</label1>
+        <input type="text" name="university" id="university" value = "<%= @change_user.university %>"
+               maxlength="50" size="30" required>
+      </p>
+      <p><label1>Degree:</label1>
+        <input type="text" name="degree" id="degree" value = "<%= @change_user.degree %>"
+               maxlength="50" size="30" required>
+      </p>
+      <p><label1>Telephone:</label1>
+        <input type="text" name="telephone" id="telephone" value = "<%= @change_user.telephone %>"
+               maxlength="50" size="30" required>
+      </p>
+    <% elsif @mentor_profile %>
+      <%= erb :"common/titleProfile" %> <br><br>
+      <%= erb :"common/industrySectorProfile" %>
+      <p><label1>Available Time:</label1>
+        <input type="text" name="available_Time" id="available_Time" value = "<%= @change_user.available_Time %>"
+               maxlength="50" size="30" required>
+      </p>
+    <% end %>
+
+    </p>
+
+    <p><label>Description Of Yourself: </label><br>
+      <textarea id="descriptionBox" name="description" rows="8" cols="100" ><%= @description.description %></textarea>
+    </p>
+
+    <input type="submit" value="Change Details">
+  </form>
+</main>
+</body>
+<%= erb :"common/footer" %>

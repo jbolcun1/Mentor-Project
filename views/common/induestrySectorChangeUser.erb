@@ -1,0 +1,31 @@
+<!--HTML job title & industry sector page-->
+
+<label1>Job Title: </label1>
+<input type="text" name="job_Title" id="job_Title" value = "<%= @change_userr.job_Title %>" maxlength="50" size="30" required><br><br>
+<label1>Industry Sector:</label1>
+<select name="industry_Sector" value = "<%= @change_userr.industry_Sector %>" required>
+  <option value = "<%= @change_userr.industry_Sector %>" selected> <%= @change_userr.industry_Sector %> </option>
+  <option value="Accountancy, banking and finance" >Accountancy, banking and finance</option>
+  <option value="Business, consulting and management">Business, consulting and management</option>
+  <option value="Charity and voluntary work" >Charity and voluntary work</option>
+  <option value="Creative arts and design">Creative arts and design</option>
+  <option value="Energy and utilities">Energy and utilities</option>
+  <option value="Engineering and manufacturing">Engineering and manufacturing</option>
+  <option value="Environment and agriculture">Environment and agriculture</option>
+  <option value="Healthcare">Healthcare</option>
+  <option value="Hospitality and events management">Hospitality and events management</option>
+  <option value="Information technology">Information technology</option>
+  <option value="Law">Law</option>
+  <option value="Law enforcement and security">Law enforcement and security</option>
+  <option value="Leisure, sport and tourism">Leisure, sport and tourism</option>
+  <option value="Marketing, advertising and PR">Marketing, advertising and PR</option>
+  <option value="Media and internet">Media and internet</option>
+  <option value="Property and construction">Property and construction</option>
+  <option value="Public services and administration">Public services and administration</option>
+  <option value="Recruitment and HR">Recruitment and HR</option>
+  <option value="Retail">Retail</option>
+  <option value="Sales">Sales</option>
+  <option value="Science and pharmaceuticals">Science and pharmaceuticals</option>
+  <option value="Teacher training and education">Teacher training and education</option>
+  <option value="Transport and logistics">Transport and logistics</option>
+</select>

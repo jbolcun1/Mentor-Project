@@ -54,6 +54,53 @@ get "/view-user" do
   erb :view_user
 end
 
+get "/change-user" do
+  @id = request.cookies.fetch("id", "0")
+  @user = User.first(id: @id)
+
+  @user_id = params[:id]
+  @change_user = User.first(id: @user_id)
+  @privilege = @change_user.privilege
+  @description = Description.first(user_Id: @user.description)
+
+  case @privilege
+  when "Mentee"
+    @mentee_profile = true
+  when "Mentor"
+    @mentor_profile = true
+  else
+    @admin_profile = true
+  end
+  erb :profile_user_change
+end
+
+post "/change-user" do
+  puts params
+  @id = params[:id]
+  @user = User.first(id: @id)
+  @user.load_profile(params)
+
+  case @user.privilege
+  when "Mentee"
+    @user.university = params.fetch("university", "")
+    @user.degree = params.fetch("degree", "")
+    @user.telephone = params.fetch("telephone", "")
+  when "Mentor"
+    @user.title = params.fetch("title", "")
+    @user.job_Title = params.fetch("job_Title", "")
+    @user.industry_Sector = params.fetch("industry_Sector", "")
+    @user.available_Time = params.fetch("available_Time", "")
+  end
+
+  @description = Description.first(user_Id: @user.description)
+  @description.description = params.fetch("description", "")
+
+  @user.password = params.fetch("newpassword") if params.fetch("newpassword") != ""
+  @description.save_changes
+  @user.save_changes
+  redirect "/dashboard"
+end
+
 get "/admin-creation" do
   @id = request.cookies.fetch("id", "0")
   @user = User.first(id: @id)
