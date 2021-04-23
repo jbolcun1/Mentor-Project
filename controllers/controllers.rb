@@ -118,7 +118,6 @@ get "/dashboard" do
 end
 
 get "/profile" do
-  # TODO: Add descriptions
   @id = request.cookies.fetch("id", "0")
   @user = User.first(id: @id)
   @description = Description.first(user_Id: @user.description)

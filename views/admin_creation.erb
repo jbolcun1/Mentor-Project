@@ -1,0 +1,63 @@
+<!-- Main HTML registration page -->
+
+<!DOCTYPE html>
+<%= erb :"common/header_loggedin_admin" %>
+<body id="Welcome Page">
+
+
+<main>
+
+  <% if @success%>
+    <p id="success">
+      <b>The account has been made!</b>
+    </p>
+  <% end %>
+
+  <p>Please fill in the fields below to complete the registration process:</p>
+
+  <form method="post" action="/admin-creation">
+    <p><label1>First Name:</label1>
+      <input type="text" name="first_name" id="firstname"
+             maxlength="50" size="30" required>
+    </p>
+
+    <p><label1>Last Name:</label1>
+      <input type="text" name="surname" id="surname"
+             maxlength="50" size="30" required>
+    </p>
+
+
+    <p><label1>Email:</label1>
+      <input type="email" name="email" id="email"
+             maxlength="50" size="30" required>
+    </p>
+
+    <p><label1>Password:</label1>
+      <input type="password" name="password" id="password"
+             maxlength="50" size="30" required>
+    </p>
+
+    <p><label1>Confirm Password:</label1>
+      <input type="password" name="confirmpassword" id="confirmpassword"
+             maxlength="50" size="30" required>
+    </p>
+
+    <% if @error_correct%>
+      <p id="error">
+        <b>The two password entries must be correct.</b>
+      </p>
+    <% end %>
+
+    <p>Are they a founder or a admin?
+      <input type="radio" id="founder" name="privilege" value="Founder" required>
+      <label for="mentee">Founder</label>
+      <input type="radio" id="admin" name="privilege" value="Admin">
+      <label for="mentor">Admin</label>
+    </p>
+    <input type="submit" value="Sign Up">
+  </form>
+
+  <p>If you already have an account, <a href="/login">click here.</a></p>
+</main>
+</body>
+<%= erb :"common/footer" %>

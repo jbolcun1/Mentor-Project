@@ -28,7 +28,7 @@ end
 post "/admin" do
   empty = "1"
   puts params
-  params.each do |_paramName , value|
+  params.each do |_paramName, value|
     empty = "0" unless value.empty?
   end
   params[:empty] = empty
@@ -38,7 +38,8 @@ post "/admin" do
 end
 
 get "/view-user" do
-  puts "here"
+  @id = request.cookies.fetch("id", "0")
+  @user = User.first(id: @id)
   @user_id = params[:id]
   @view_user = User.first(id: @user_id)
   @description = @view_user.get_descriptions
@@ -51,4 +52,34 @@ get "/view-user" do
   end
 
   erb :view_user
+end
+
+get "/admin-creation" do
+  @id = request.cookies.fetch("id", "0")
+  @user = User.first(id: @id)
+  @error_correct = true if params.fetch("error", "0") == "1"
+  @success = true if params.fetch("success", "0") == "1"
+
+  puts @success
+  erb :admin_creation
+end
+
+post "/admin-creation" do
+  @new_user = User.new
+  # Load given info into a new user object
+  @new_user.load(params)
+  # Check that the given info is valid.
+  # If valid, redirect associated page
+  # If not, redirect to register page with error
+  if @new_user.valid_pass(params)
+    @description = Description.new
+    @description.load("description" => " I am a #{@new_user.privilege.downcase}")
+    @description.save_changes
+    @new_user.description = @description.user_Id
+    @new_user.save_changes
+    redirect "/admin-creation?success=1"
+  else
+    redirect "/admin-creation?error=1"
+  end
+  erb :admin_creation
 end

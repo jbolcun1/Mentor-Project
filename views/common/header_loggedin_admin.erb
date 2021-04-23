@@ -14,6 +14,9 @@
       <ul>
         <li><a href="/profile">Profile</a></li>
         <li><a href="/dashboard">Dashboard</a></li>
+        <% if @user.privilege == "Founder" %>
+          <li><a href="/admin-creation">Admin Creation</a></li>
+        <% end %>
         <li><a href="/logout">Logout</a></li>
 
       </ul>
