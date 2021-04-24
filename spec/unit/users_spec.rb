@@ -49,16 +49,20 @@ RSpec.describe User do
   end
 end
 
-#  Cannot test get_description as the user_Id is nil and i cannot assign a number to a restricted primary key  
-#  describe "#get_descriptions"do
-#    context "When a description object is given for a particular user" do
-#      it "returns the description text stored in the description database" do
-#        user = described_class.new
-#        description = Description.new(description: "I am a Computer Science Student.")
-#        user.description = description.user_Id
-#        expect(description).to respond_to(:load_profile)
-#        #expect(user.get_descriptions).to eq("I am a Computer Science Student.")
-#      end
-#    end
-#  end
+# Cannot test get_description as the user_Id is nil and i cannot assign a number to a restricted primary key
+ 
+describe "#get_descriptions"do
+  context "When a description object is given for a particular user" do
+    it "returns the description text stored in the description database" do
+      user = User.new
+      description = Description.new(description: "I am a Computer Science Student.")
+      description.save_changes
+      user.description = description.user_Id
+      user.save_changes
+      puts description.description
+      expect(description).to respond_to(:load_profile)
+      expect(user.get_descriptions).to eq("I am a Computer Science Student.")
+    end
+  end
+end
 
