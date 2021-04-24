@@ -22,7 +22,7 @@ RSpec.describe User do
       expect(user.surname).to eq("Smith")
       expect(user.email).to eq("AlanS@gmail.com")
       expect(user.password).to eq("Password1")
-      expect(user.privilege).to eq("Mentee")
+      expect(user.privilege).to eq(2)
     end
   end
   
@@ -37,7 +37,7 @@ RSpec.describe User do
       expect(user.surname).to eq("Ramsay")
       expect(user.email).to eq("GR11@gmail.com")
       expect(user.password).to eq("Password1")
-      expect(user.privilege).to eq("Mentee")
+      expect(user.privilege).to eq(2)
     end
   end
 
@@ -57,7 +57,7 @@ describe "#get_descriptions"do
       user = User.new
       description = Description.new(description: "I am a Computer Science Student.")
       description.save_changes
-      user.description = description.user_Id
+      user.description = description.id
       user.save_changes
       puts description.description
       expect(user.get_descriptions).to eq("I am a Computer Science Student.")
