@@ -57,7 +57,7 @@ post "/post-mentee-register" do
   @description = Description.new
   @description.load(params)
   @description.save_changes
-  @user.description = @description.user_Id
+  @user.description = @description.id
   @user.save_changes
   redirect "/mentee"
 end

@@ -77,7 +77,7 @@
                 <%= erb :"common/titleProfile" %> <br><br>
                 <%= erb :"common/industrySectorProfile" %>
             <p><label1>Available Time:</label1>
-              <input type="text" name="available_Time" id="available_Time" value = "<%= @user.available_Time %>"
+              <input type="text" name="available_Time" id="available_Time" value = "<%= @user.available_time %>"
                      maxlength="50" size="30" required>
             </p>
             <% end %>
@@ -85,7 +85,7 @@
             </p>
 
           <p><label>Description Of Yourself: </label><br>
-            <textarea id="descriptionBox" name="description" rows="8" cols="100" ><%= @description.description %></textarea>
+            <textarea id="descriptionBox" name="description" rows="8" cols="100" ><%= @user.get_descriptions %></textarea>
           </p>
 
             <input type="submit" value="Change Details">

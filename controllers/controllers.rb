@@ -6,7 +6,7 @@ get "/" do
   if @user.nil?
     redirect "/index"
   else
-    @privilege = @user.privilege
+    @privilege = @user.get_privileges
     # Find out what type of user they are and then redirect them to the correct page
     case @privilege
     when "Mentee"
@@ -51,14 +51,14 @@ post "/post-login" do
   email_u = params.fetch("email")
   password_u = params.fetch("password")
 
-  # Try to find the user with infomation given
+  # Try to find the user with information given
   @user = User.first(email: email_u, password: password_u)
   # Check if a user is found. If not, we redirect back to login with an error
   if @user.nil?
     redirect "/login?error=1"
   else
     redirect "/login?error=2" if @user.suspend == 1
-    @privilege = @user.privilege
+    @privilege = @user.get_privileges
     @id = @user.id
     response.set_cookie("id", @id)
     # Find out what type of user they are and then redirect them to the correct page
@@ -79,13 +79,13 @@ post "/post-register" do
   @user.load(params)
   # Check that the given info is valid.
   # If valid, redirect associated page to register more information
-  redirect "/register?error=2" if @user.privilege == ("Mentee") && !@user.email.end_with?(".ac.uk")
+  redirect "/register?error=2" if @user.get_privileges == ("Mentee") && !@user.email.end_with?(".ac.uk")
   # If not, redirect to register page with error
   if @user.valid_pass(params)
     @user.save_changes
     @id = @user.id
     response.set_cookie("id", @id)
-    @privilege = @user.privilege
+    @privilege = @user.get_privileges
     case @privilege
     when "Mentee"
       redirect "/mentee-register"
@@ -106,7 +106,7 @@ get "/dashboard" do
   if @user.nil?
     redirect "/index"
   else
-    @privilege = @user.privilege
+    @privilege = @user.get_privileges
     # Find out what type of user they are and then redirect them to the correct page
     case @privilege
     when "Mentee"
@@ -122,8 +122,7 @@ end
 get "/profile" do
   @id = request.cookies.fetch("id", "0")
   @user = User.first(id: @id)
-  @description = Description.first(user_Id: @user.description)
-  @privilege = @user.privilege
+  @privilege = @user.get_privileges
   @error_correct = true if params.fetch("error1", "0") == "1"
   @error_correct2 = true if params.fetch("error2", "0") == "1"
   @error_correct3 = true if params.fetch("error3", "0") == "1"
@@ -144,7 +143,7 @@ post "/post-profile" do
   @user = User.first(id: @id)
   @user.load_profile(params)
 
-  case @user.privilege
+  case @user.get_privileges
   when "Mentee"
     @user.university = params.fetch("university", "")
     @user.degree = params.fetch("degree", "")
@@ -152,12 +151,12 @@ post "/post-profile" do
     @user.save_changes
   when "Mentor"
     @user.title = params.fetch("title", "")
-    @user.job_Title = params.fetch("job_Title", "")
-    @user.industry_Sector = params.fetch("industry_Sector", "")
-    @user.available_Time = params.fetch("available_Time", "")
+    @user.job_title = params.fetch("job_Title", "")
+    @user.industry_sector = Industry_Sector.from_name(params.fetch("industry_Sector", ""))
+    @user.available_time = params.fetch("available_Time", "")
     @user.save_changes
   end
-  @description = Description.first(user_Id: @user.description)
+  @description = Description.first(id: @user.description)
   @description.description = params.fetch("description", "")
   @description.save_changes
   if params.fetch("password") == ""
