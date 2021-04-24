@@ -42,8 +42,8 @@
                     <% @mentors.each do |mentor| %>
                     <tr>
                         <td><%= h mentor.name %></td>
-                        <td><%= h mentor.job_Title %></td>
-                        <td><%= h mentor.industry_Sector %></td>
+                        <td><%= h mentor.job_title %></td>
+                        <td><%= h mentor.get_industry_sectors %></td>
                         <td><a href="/view-mentor?id=<%= h mentor.id %>">View More</a></td>
                     </tr>
                     <% end %>

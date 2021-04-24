@@ -7,10 +7,11 @@ get "/mentee" do
   # Check if the params have been given or not
   job_title_m = params.fetch("job_Title", "")
   industry_sector_m = params.fetch("industry_Sector", "")
+  industry_sector_id = Industry_Sector.from_name(industry_sector_m)
   # If given, we can try and find the mentors given the params and then display them
   if job_title_m != ""
     @table_show = true
-    @mentors = User.where(job_Title: job_title_m).or(industry_Sector: industry_sector_m)
+    @mentors = User.where(job_Title: job_title_m).or(industry_Sector: industry_sector_id)
     if @mentors.empty?
       # If none found, then an error can show
       @error = true
@@ -21,7 +22,7 @@ get "/mentee" do
     @mentee = User.first(id: @user.has_mentor)
   end
   # Display a personalised message upon a successful mentee login
-  @s = "Welcome, #{@user.name}. \n You have sucessfully logged in as a #{@user.privilege.downcase}."
+  @s = "Welcome, #{@user.name}. \n You have sucessfully logged in as a #{@user.get_privileges.downcase}."
   erb :mentee
 end
 
@@ -42,7 +43,6 @@ get "/view-mentor" do
   @error_correct = true if params.fetch("error", "0") == "1"
   @mentor_id = params[:id]
   @mentor = User.first(id: @mentor_id)
-  @description = @mentor.get_descriptions
   erb :view_mentor
 end
 

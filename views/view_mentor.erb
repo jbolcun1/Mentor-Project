@@ -11,15 +11,15 @@
             The mentor you have selected is: <%= h @mentor.name %>
         </p>
         <p>
-        The mentor's available time is: <%= h @mentor.available_Time %>
+        The mentor's available time is: <%= h @mentor.available_time %>
         </p>
         <p>
             The description of your mentor:
         </p>
         <p>
-            <%= h @description %>
+            <%= h @mentor.get_descriptions %>
         </p>
-        <% if @errorCorrect%>
+        <% if @error_correct%>
             <p  id="error" >
                 <b>You can't send more then one invitation in less then 24 hours</b>
             </p>
