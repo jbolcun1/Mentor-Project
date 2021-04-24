@@ -67,6 +67,17 @@ def init_db
   user.available_time = "Any Afternoon, no weekends"
   user.save_changes
 
+  # Founder1
+  user_desc = Description.new
+  user_desc.description = "I am Founder Admin1"
+  user_desc.save_changes
+  user = User.new
+  params = { "first_name" => "FounderAdmin", "surname" => "TestPerson", "email" => "Founder1@gmail.com",
+             "password" => "Password1", "confirmpassword" => "Password1", "privilege" => "Founder" }
+  user.load(params)
+  user.description = user_desc.id
+  user.save_changes
+
   # AH ONLY FOR EMAIL TESTING
   # -------------------------
   # Mentee
