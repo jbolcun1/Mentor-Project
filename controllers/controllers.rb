@@ -22,6 +22,7 @@ end
 
 get "/login" do
   @error_correct = true if params.fetch("error", "0") == "1"
+  @error_correct2 = true if params.fetch("error", "0") == "2"
   erb :login
 end
 
@@ -56,6 +57,7 @@ post "/post-login" do
   if @user.nil?
     redirect "/login?error=1"
   else
+    redirect "/login?error=2" if @user.suspend == 1
     @privilege = @user.privilege
     @id = @user.id
     response.set_cookie("id", @id)

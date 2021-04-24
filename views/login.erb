@@ -11,6 +11,10 @@
             <p  id="error" >
                 <b>There has been an error try again</b>
             </p>
+        <% elsif @error_correct2 %>
+        <p  id="error" >
+          <b>You have been suspended</b>
+        </p>
         <% end %>
         <form method="post" action="/post-login"> 
             <p>
