@@ -60,7 +60,6 @@ describe "#get_descriptions"do
       user.description = description.user_Id
       user.save_changes
       puts description.description
-      expect(description).to respond_to(:load_profile)
       expect(user.get_descriptions).to eq("I am a Computer Science Student.")
     end
   end
