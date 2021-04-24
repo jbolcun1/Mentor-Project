@@ -79,6 +79,8 @@ post "/change-user" do
   @user = User.first(id: @id)
   @user.load_profile(params)
 
+
+
   case @user.privilege
   when "Mentee"
     @user.university = params.fetch("university", "")
@@ -94,7 +96,19 @@ post "/change-user" do
   @description = Description.first(user_Id: @user.description)
   @description.description = params.fetch("description", "")
 
-  @user.password = params.fetch("newpassword") if params.fetch("newpassword") != ""
+  if params.fetch("newpassword") != ""
+    @user.password = params.fetch("newpassword")
+    date_time = Time.new
+    email = @user.email
+    subject = "Your password changed on the eMentoring website by an admin"
+    body = "Your password was changed at #{date_time.strftime('%R')} on #{date_time.strftime('%A %D')}"
+    puts "Sending email..."
+    if send_mail(email, subject, body)
+      puts "Email Sent Ok."
+    else
+      puts "Sending failed."
+    end
+  end
   @description.save_changes
   @user.save_changes
   redirect "/dashboard"
@@ -144,11 +158,23 @@ end
 post "/suspension" do
   @id = params[:id]
   @user = User.first(id: @id)
+  date_time = Time.new
+  email = @user.email
   case @user.suspend
   when 1
     @user.suspend = 0
+    subject = "You were unsuspended by an admin on the eMentoring website"
+    body = "You unsuspended at #{date_time.strftime('%R')} on #{date_time.strftime('%A %D')}"
   when 0
+    subject = "You were suspended by an admin on the eMentoring website"
+    body = "You suspended at #{date_time.strftime('%R')} on #{date_time.strftime('%A %D')}"
     @user.suspend = 1
+  end
+  puts "Sending email..."
+  if send_mail(email, subject, body)
+    puts "Email Sent Ok."
+  else
+    puts "Sending failed."
   end
   @user.save_changes
   redirect "/dashboard"
