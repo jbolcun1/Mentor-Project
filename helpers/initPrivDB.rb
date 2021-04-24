@@ -1,11 +1,14 @@
 require "require_all"
 
+ENV["APP_ENV"] = "test"
+
 require_rel "../db/db"
 require_rel "../models"
 
 def init_db_priv
   puts "Running privDB Init"
-  ENV["APP_ENV"] = "test"
+  DB[:users].delete
+
   dataset = DB[:privileges]
   dataset.delete
 

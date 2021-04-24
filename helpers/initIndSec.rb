@@ -1,11 +1,14 @@
 require "require_all"
 
+ENV["APP_ENV"] = "test"
+
 require_rel "../db/db"
 require_rel "../models"
 
 def init_db_ind_sec
-  puts "Running DB Init"
-  ENV["APP_ENV"] = "test"
+  puts "Running indSecDB Init"
+  DB[:users].delete
+
   dataset = DB[:industry_sectors]
   dataset.delete
 
@@ -21,7 +24,7 @@ def init_db_ind_sec
     sector_record.load(sector)
     sector_record.save_changes
   end
-  puts "Finished titleDB Init"
+  puts "Finished indSecDB Init"
 end
 
 init_db_ind_sec if $PROGRAM_NAME == __FILE__

@@ -1,11 +1,14 @@
 require "require_all"
 
+ENV["APP_ENV"] = "test"
+
 require_rel "../db/db"
 require_rel "../models"
 
 def init_db_title
-  puts "Running DB Init"
-  ENV["APP_ENV"] = "test"
+  puts "Running titleDB Init"
+  DB[:users].delete
+
   dataset = DB[:titles]
   dataset.delete
 

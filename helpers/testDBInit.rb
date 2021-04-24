@@ -5,6 +5,7 @@ def init_db
   ENV["APP_ENV"] = "test"
   require_rel "../db/db"
   require_rel "../models"
+
   dataset = DB[:users]
   dataset.delete
   dataset = DB[:descriptions]
