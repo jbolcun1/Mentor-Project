@@ -4,7 +4,7 @@ get "/mentor" do
   redirect "/login" if @id == "0"
   @user = User.first(id: @id)
   # Display a personalised message upon a successful mentor login
-  @s = "Welcome, #{@user.name}. \n You have sucessfully logged in as a #{@user.privilege.downcase}."
+  @s = "Welcome, #{@user.name}. \n You have sucessfully logged in as a #{@user.get_privileges.downcase}."
   @mentees = User.where(has_mentor: @user.id)
   @table_show = true unless @mentees.empty?
   if @user.has_mentor != 0
@@ -42,7 +42,6 @@ end
 get "/view-mentee" do
   @mentee_id = params[:id]
   @mentee = User.first(id: @mentee_id)
-  @description = @mentee.get_descriptions
   erb :view_mentee
 end
 

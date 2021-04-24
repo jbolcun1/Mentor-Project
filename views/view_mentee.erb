@@ -11,11 +11,11 @@
             The description of your mentee
         </p>
         <p>
-            <%= h @description %>
+            <%= h @mentee.get_descriptions %>
         </p>
 
         <form name="contact" method="post" action="/post-mentor-accept?mentee_Id=<%= h @mentee.id %>" >
-            <label for="GET-comments">Choose what you want to do with the inivite and click submit to send your decision:</label>
+            <label for="GET-comments">Choose what you want to do with the invite and click submit to send your decision:</label>
             <input type="radio" id="acceptDecision" name="decision" value="accept" required>
             <label for="mentee">Accept</label>
             <input type="radio" id="rejectDecision" name="decision" value="reject">
