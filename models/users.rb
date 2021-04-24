@@ -8,24 +8,25 @@ class User < Sequel::Model
   # .getDescriptions returns a string array of all of the user's
   # descriptions
   def get_descriptions
-    #     puts self.description
     # Retrieves a dataset from the database
     dataset = Description.first(user_Id: description)
-    #     puts dataset.nil?
     dataset.description
-    #     puts description
-    # if !@dataset.nil?
-    #   description = dataset.description
-    #   puts "here1"
-    #   puts description
-    #   if description == ""
-    #     "here2"
-    #     description = "No description found"
-    #   end
-    # else
-    #   puts "here3"
-    #   description = "No description found"
-    # end
+
+  end
+
+  def get_privileges
+    dataset = Privilege.from_id(self.privilege)
+    dataset.privilege
+  end
+
+  def get_titles
+    dataset = Title.from_id(self.title)
+    dataset.title
+  end
+
+  def get_industry_sectors
+    dataset = Industry_Sector.from_id(self.industry_sector)
+    dataset.sector
   end
 
   def load(params)
@@ -33,7 +34,7 @@ class User < Sequel::Model
     self.surname = params.fetch("surname", "").strip
     self.email = params.fetch("email", "").strip
     self.password = params.fetch("password", "").strip
-    self.privilege = params.fetch("privilege", "").strip
+    self.privilege = Privilege.from_name(params.fetch("privilege", "").strip)
     self.has_mentee = 0
     self.has_mentor = 0
     self.suspend = 0
@@ -54,8 +55,3 @@ class User < Sequel::Model
   end
 end
 
-class Description < Sequel::Model
-  def load(params)
-    self.description = params.fetch("description", "").strip
-  end
-end
