@@ -75,7 +75,6 @@ get "/change-user" do
 end
 
 post "/change-user" do
-  puts params
   @id = params[:id]
   @user = User.first(id: @id)
   @user.load_profile(params)
@@ -129,4 +128,28 @@ post "/admin-creation" do
     redirect "/admin-creation?error=1"
   end
   erb :admin_creation
+end
+
+get "/suspension" do
+  @id = request.cookies.fetch("id", "0")
+  @user = User.first(id: @id)
+  @user_id = params[:id]
+  @view_user = User.first(id: @user_id)
+  @description = @view_user.get_descriptions
+  puts @view_user.suspend
+  @suspended = true if @view_user.suspend == 1
+  erb :suspension
+end
+
+post "/suspension" do
+  @id = params[:id]
+  @user = User.first(id: @id)
+  case @user.suspend
+  when 1
+    @user.suspend = 0
+  when 0
+    @user.suspend = 1
+  end
+  @user.save_changes
+  redirect "/dashboard"
 end

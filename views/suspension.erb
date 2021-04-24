@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<%= erb :"common/header_loggedin_admin" %>
+<body id="User Details Page">
+<main>
+  <p>You have selected a user to suspend is a <%= h @view_user.privilege %></p>
+  <p>The user you have selected is: <%= h @view_user.name %></p>
+  <p>The description of your user: <%= h @description %></p>
+
+  <% if @mentee_profile %>
+    <p>Their university is: <%= h @view_user.university %> </p>
+    <p>Their degree is: <%= h @view_user.degree %> </p>
+    <p>Their telephone is: <%= h @view_user.telephone %> </p>
+  <% elsif @mentor_profile %>
+    <p>Their job title is: <%= h @view_user.job_Title %> </p>
+    <p>Their industry sector is: <%= h @view_user.industry_Sector %> </p>
+    <p>Their available time is: <%= h @view_user.available_Time %> </p>
+  <% end %>
+  <% if @suspended %>
+    <p>They are suspended </p>
+  <% else %>
+    <p>They are not suspended </p>
+  <% end %>
+  <form method="post" action="/suspension?id=<%= @view_user.id %>">
+    <% if @suspended %>
+      <p>Unsuspended?
+        <input type="radio" id="suspend" name="suspend" value="Yes" required>
+        <label for="mentee">Yes</label>
+      </p>
+    <% else %>
+      <p>Suspend?
+        <input type="radio" id="suspend" name="suspend" value="Yes" required>
+        <label for="mentee">Yes</label>
+      </p>
+    <% end %>
+    <input type="submit" value="Suspend / Unsuspend">
+  </form>
+
+</main>
+</body>
+<%= erb :"common/footer" %>

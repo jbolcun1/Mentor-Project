@@ -16,7 +16,8 @@
       <p>Their available time is: <%= h @view_user.available_Time %> </p>
     <% end %>
 
-    <a href="/change-user?id=<%= h @view_user.id %>">Change Details</a>
+    <a href="/change-user?id=<%= h @view_user.id %>">Change Details</a> <br>
+    <a href="/suspension?id=<%= h @view_user.id %>">Suspension</a>
   </main>
 </body>
 <%= erb :"common/footer" %>
