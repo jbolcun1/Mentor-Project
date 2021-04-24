@@ -14,14 +14,15 @@ get "/admin" do
     degree = params.fetch("degree", "0")
     job_title = params.fetch("job_Title", "0")
     industry_sector = params.fetch("industry_Sector", "0")
+    industry_sector_id = Industry_Sector.from_name(industry_sector)
     @user_list = User.where(first_name: first_name).or(surname: surname).or(email: email)
                      .or(university: university).or(degree: degree)
-                     .or(job_title: job_title).or(industry_Sector: industry_sector)
+                     .or(job_title: job_title).or(industry_sector: industry_sector_id)
     @table_show = true
   end
 
   # Display a personalised message upon a successful admin login
-  @s = "Welcome, #{@user.name}. \n You have sucessfully logged in as a #{@user.privilege.downcase}."
+  @s = "Welcome, #{@user.name}. \n You have sucessfully logged in as a #{@user.get_privileges.downcase}."
   erb :admin
 end
 
@@ -42,9 +43,8 @@ get "/view-user" do
   @user = User.first(id: @id)
   @user_id = params[:id]
   @view_user = User.first(id: @user_id)
-  @description = @view_user.get_descriptions
 
-  case @view_user.privilege
+  case @view_user.get_privileges
   when "Mentee"
     @mentee_profile = true
   when "Mentor"
@@ -60,7 +60,7 @@ get "/change-user" do
 
   @user_id = params[:id]
   @change_user = User.first(id: @user_id)
-  @privilege = @change_user.privilege
+  @privilege = @change_user.get_privileges
   @description = Description.first(user_Id: @user.description)
 
   case @privilege
@@ -79,21 +79,19 @@ post "/change-user" do
   @user = User.first(id: @id)
   @user.load_profile(params)
 
-
-
-  case @user.privilege
+  case @user.get_privileges
   when "Mentee"
     @user.university = params.fetch("university", "")
     @user.degree = params.fetch("degree", "")
     @user.telephone = params.fetch("telephone", "")
   when "Mentor"
     @user.title = params.fetch("title", "")
-    @user.job_Title = params.fetch("job_Title", "")
-    @user.industry_Sector = params.fetch("industry_Sector", "")
-    @user.available_Time = params.fetch("available_Time", "")
+    @user.job_title = params.fetch("job_Title", "")
+    @user.industry_sector = Industry_Sector.from_name(params.fetch("industry_Sector", ""))
+    @user.available_time = params.fetch("available_Time", "")
   end
 
-  @description = Description.first(user_Id: @user.description)
+  @description = Description.first(id: @user.description)
   @description.description = params.fetch("description", "")
 
   if params.fetch("newpassword") != ""
@@ -133,9 +131,9 @@ post "/admin-creation" do
   # If not, redirect to register page with error
   if @new_user.valid_pass(params)
     @description = Description.new
-    @description.load("description" => " I am a #{@new_user.privilege.downcase}")
+    @description.load("description" => " I am a #{@new_user.get_privileges.downcase}")
     @description.save_changes
-    @new_user.description = @description.user_Id
+    @new_user.description = @description.id
     @new_user.save_changes
     redirect "/admin-creation?success=1"
   else

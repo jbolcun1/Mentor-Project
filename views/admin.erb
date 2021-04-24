@@ -50,7 +50,7 @@
               <tr>
                 <td><%= h user.name %></td>
                 <td><%= h user.email %></td>
-                <td><%= h user.privilege %></td>
+                <td><%= h user.get_privileges %></td>
                 <td><a href="/view-user?id=<%= h user.id %>">View More</a></td>
               </tr>
             <% end %>
