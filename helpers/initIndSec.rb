@@ -17,7 +17,7 @@ def init_db_ind_sec
                  "Property and construction", "Public services and administration", "Recruitment and HR", "Retail",
                  "Sales", "Science and pharmaceuticals", "Teacher training and education", "Transport and logistics"]
   sectors_list.each do |sector|
-    sector_record = Industry_Sector.new
+    sector_record = Industry_sector.new
     sector_record.load(sector)
     sector_record.save_changes
   end

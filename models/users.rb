@@ -9,24 +9,24 @@ class User < Sequel::Model
   # descriptions
   def get_descriptions
     # Retrieves a dataset from the database
-    dataset = Description.first(user_Id: description)
+    dataset = Description.first(id: description)
     dataset.description
 
   end
 
   def get_privileges
-    dataset = Privilege.from_id(self.privilege)
-    dataset.privilege
+    dataset = Privilege.new.from_id(self.privilege)
+    dataset
   end
 
   def get_titles
-    dataset = Title.from_id(self.title)
-    dataset.title
+    dataset = Title.new.from_id(self.title)
+    dataset
   end
 
   def get_industry_sectors
-    dataset = Industry_Sector.from_id(self.industry_sector)
-    dataset.sector
+    dataset = Industry_sector.new.from_id(self.industry_sector)
+    dataset
   end
 
   def load(params)
@@ -34,7 +34,7 @@ class User < Sequel::Model
     self.surname = params.fetch("surname", "").strip
     self.email = params.fetch("email", "").strip
     self.password = params.fetch("password", "").strip
-    self.privilege = Privilege.from_name(params.fetch("privilege", "").strip)
+    self.privilege = Privilege.new.from_name(params.fetch("privilege", "").strip)
     self.has_mentee = 0
     self.has_mentor = 0
     self.suspend = 0

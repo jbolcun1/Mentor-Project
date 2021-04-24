@@ -150,9 +150,9 @@ post "/post-profile" do
     @user.telephone = params.fetch("telephone", "")
     @user.save_changes
   when "Mentor"
-    @user.title = params.fetch("title", "")
+    @user.title = Title.new.from_name(params.fetch("title", ""))
     @user.job_title = params.fetch("job_Title", "")
-    @user.industry_sector = Industry_Sector.from_name(params.fetch("industry_Sector", ""))
+    @user.industry_sector = Industry_sector.new.from_name(params.fetch("industry_Sector", ""))
     @user.available_time = params.fetch("available_Time", "")
     @user.save_changes
   end

@@ -7,9 +7,9 @@ get "/mentee" do
   # Check if the params have been given or not
   job_title_m = params.fetch("job_Title", "")
   industry_sector_m = params.fetch("industry_Sector", "")
-  industry_sector_id = Industry_Sector.from_name(industry_sector_m)
   # If given, we can try and find the mentors given the params and then display them
   if job_title_m != ""
+    industry_sector_id = Industry_sector.new.from_name(industry_sector_m)
     @table_show = true
     @mentors = User.where(job_Title: job_title_m).or(industry_Sector: industry_sector_id)
     if @mentors.empty?

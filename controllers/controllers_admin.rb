@@ -3,7 +3,7 @@ get "/admin" do
   redirect "/login" if @id == "0"
   @user = User.first(id: @id)
 
-  @founder = true if @user.privilege = "Founder"
+  @founder = true if @user.get_privileges == "Founder"
 
   empty = params.fetch("empty", "1")
   if empty != "1"
@@ -14,7 +14,7 @@ get "/admin" do
     degree = params.fetch("degree", "0")
     job_title = params.fetch("job_Title", "0")
     industry_sector = params.fetch("industry_Sector", "0")
-    industry_sector_id = Industry_Sector.from_name(industry_sector)
+    industry_sector_id = Industry_sector.new.from_name(industry_sector)
     @user_list = User.where(first_name: first_name).or(surname: surname).or(email: email)
                      .or(university: university).or(degree: degree)
                      .or(job_title: job_title).or(industry_sector: industry_sector_id)
@@ -85,9 +85,9 @@ post "/change-user" do
     @user.degree = params.fetch("degree", "")
     @user.telephone = params.fetch("telephone", "")
   when "Mentor"
-    @user.title = params.fetch("title", "")
+    @user.title = Title.new.from_name(params.fetch("title", ""))
     @user.job_title = params.fetch("job_Title", "")
-    @user.industry_sector = Industry_Sector.from_name(params.fetch("industry_Sector", ""))
+    @user.industry_sector = Industry_sector.new.from_name(params.fetch("industry_Sector", ""))
     @user.available_time = params.fetch("available_Time", "")
   end
 

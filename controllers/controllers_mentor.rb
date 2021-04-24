@@ -29,7 +29,7 @@ post "/post-mentor-register" do
   # Get the info and add them to the user db record
   @user.title = params.fetch("title", "")
   @user.job_title = params.fetch("job_Title", "")
-  @user.industry_sector = Industry_Sector.from_name(params.fetch("industry_Sector", ""))
+  @user.industry_sector = Industry_sector.new.from_name(params.fetch("industry_Sector", ""))
   @user.available_time = params.fetch("available_Time", "")
   @description = Description.new
   @description.load(params)

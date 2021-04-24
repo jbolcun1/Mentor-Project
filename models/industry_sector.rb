@@ -1,4 +1,4 @@
-class Industry_Sector < Sequel::Model
+class Industry_sector < Sequel::Model
   def load(sector)
     self.sector = sector
   end
