@@ -15,6 +15,7 @@ CREATE TABLE users (
     description INTEGER,
     has_mentee INTEGER,
     has_mentor INTEGER,
-    last_send TEXT
+    last_send TEXT,
+    suspend INTEGER
 );
 

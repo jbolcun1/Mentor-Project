@@ -36,6 +36,7 @@ class User < Sequel::Model
     self.privilege = params.fetch("privilege", "").strip
     self.has_mentee = 0
     self.has_mentor = 0
+    self.suspend = 0
   end
 
   def load_profile(params)
