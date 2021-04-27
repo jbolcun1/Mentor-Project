@@ -29,9 +29,9 @@ describe "the filter functionality" do
     select "Information technology", from: "industry_Sector"
     click_button "Submit"
     click_link "View More"
-    expect(page).to have_content "Your potential Mentor's profile"
-    expect(page).to have_content "The description of your mentor"
-    expect(page).to have_content "Hello I am System Admin at UoS"
+    expect(page).to have_content "The mentor you have selected is:"
+    expect(page).to have_content "The mentor's available time is:"
+    expect(page).to have_content "The description of your mentor:"
   end
 
   it "allows mentees to contact potential mentors" do
