@@ -3,12 +3,13 @@
 A web application written in Ruby which allows mentors and mentees to contact each other and exchange information.
 
 ## To Start The Web App
-Open the terinmal  
+Open the terminal by clicking "Tools", then "Terminal"
+Type  
 ``cd project``  
 ``bundle install``  
 ``ruby app.rb``  
 Then go to **image-karma-4567.codio.io** in a new tab
-If you wish to stop the web app press ``Control + C`` in the ternimal  
+If you wish to stop the web app press ``Control + C`` in the terminal  
 
 ## Example user accounts you can use
 
@@ -29,7 +30,7 @@ your mentor.
 
 ## Mentor Acceptance
 As a mentor you can go to your dashboard and you can view the mentees who have expressed their interest in a 
-mentorship. You can click view more to see a description of the mentee and accept the invitiaion.
+mentorship. You can click view more to see a description of the mentee and accept the invitation.
 
 ## Mentorship
 Once the mentee and mentor have started the mentorship, they will be able to see each others' emails to start 

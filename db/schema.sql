@@ -46,6 +46,7 @@ CREATE TABLE industry_sectors (
 CREATE TABLE reports (
     id INTEGER PRIMARY KEY,
     user_id INTEGER,
+    identifier TEXT,
     description_id INTEGER,
     date_time_made TEXT,
     FOREIGN KEY (user_id) REFERENCES users (id),

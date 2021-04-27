@@ -1,10 +1,10 @@
 <!-- HTML login page used by registered users-->
-
 <!DOCTYPE html>
+
+<!--Inserts a common header-->
 <%= erb :"common/header" %>
 <body id="Log in Page">
     
-
     <main>
         <p>Fill in credentials below to log into E-Mentor:</p>
         <% if @error_correct%>
@@ -31,11 +31,12 @@
             </p>
         </form>
 
-        
         <p>
             Don't have an account? 
             <a href="/register">Click here.</a>
         </p>
     </main>
 </body>
+
+<!--Inserts a common footer-->
 <%= erb :"common/footer" %>

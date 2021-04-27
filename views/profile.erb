@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+
+<!--Inserts a common header based on the users privileges-->
 <% if @user.privilege == "Founder" || @user.privilege == "Admin"%>
   <%= erb :"common/header_loggedin_admin" %>
 <% else %>
@@ -92,4 +94,6 @@
         </form>
     </main>
 </body>
+
+<!--Inserts a common footer-->
 <%= erb :"common/footer" %>
