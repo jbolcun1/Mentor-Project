@@ -50,6 +50,7 @@ end
 get "/view-user" do
   @id = request.cookies.fetch("id", "0")
   @user = User.first(id: @id)
+  @founder = true if @user.get_privileges == "Founder"
   @user_id = params[:id]
   @view_user = User.first(id: @user_id)
 
@@ -66,6 +67,7 @@ end
 get "/change-user" do
   @id = request.cookies.fetch("id", "0")
   @user = User.first(id: @id)
+  @founder = true if @user.get_privileges == "Founder"
 
   @user_id = params[:id]
   @change_user = User.first(id: @user_id)
@@ -130,6 +132,7 @@ end
 get "/admin-creation" do
   @id = request.cookies.fetch("id", "0")
   @user = User.first(id: @id)
+  @founder = true if @user.get_privileges == "Founder"
   @error_correct = true if params.fetch("error", "0") == "1"
   @success = true if params.fetch("success", "0") == "1"
 
@@ -161,6 +164,7 @@ end
 get "/suspension" do
   @id = request.cookies.fetch("id", "0")
   @user = User.first(id: @id)
+  @founder = true if @user.get_privileges == "Founder"
   @user_id = params[:id]
   @view_user = User.first(id: @user_id)
   @description = @view_user.get_descriptions
@@ -202,6 +206,9 @@ post "/suspension" do
 end
 
 get "/view-reports" do
+  @id = request.cookies.fetch("id", "0")
+  @user = User.first(id: @id)
+  @founder = true if @user.get_privileges == "Founder"
   @reports = Report.all
   erb :view_reports
 end

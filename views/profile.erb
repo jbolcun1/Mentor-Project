@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <!--Inserts a common header based on the users privileges-->
-<% if @user.privilege == "Founder" || @user.privilege == "Admin"%>
+<% if @user.get_privileges == "Founder" || @user.get_privileges == "Admin"%>
   <%= erb :"common/header_loggedin_admin" %>
 <% else %>
   <%= erb :"common/header_loggedin" %>

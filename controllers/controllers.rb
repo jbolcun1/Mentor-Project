@@ -136,6 +136,7 @@ end
 get "/profile" do
   @id = request.cookies.fetch("id", "0")
   @user = User.first(id: @id)
+  @founder = true if @user.get_privileges == "Founder"
   @privilege = @user.get_privileges
   @error_correct = true if params.fetch("error1", "0") == "1"
   @error_correct2 = true if params.fetch("error2", "0") == "1"
