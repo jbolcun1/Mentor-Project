@@ -200,3 +200,8 @@ post "/suspension" do
   @user.save_changes
   redirect "/dashboard"
 end
+
+get "/view-reports" do
+  @reports = Report.all
+  erb :view_reports
+end

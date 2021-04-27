@@ -213,3 +213,24 @@ post "/post-profile" do
     end
   end
 end
+
+get "/make-report" do
+
+  erb :make_report
+end
+
+post "/post-make-report" do
+  id = request.cookies.fetch("id", "0")
+  puts params
+  description = Description.new
+  description.load(params)
+  description.save_changes
+  identifier = params.fetch("identifier", "0")
+  puts identifier
+  time = Time.new.to_s
+  report = Report.new
+  report.load(id.to_i, identifier, description.id, time)
+  description.save_changes
+  report.save_changes
+  redirect "/dashboard"
+end
