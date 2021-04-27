@@ -14,7 +14,11 @@ get "/admin" do
     degree = params.fetch("degree", "0")
     job_title = params.fetch("job_Title", "0")
     industry_sector = params.fetch("industry_Sector", "0")
-    industry_sector_id = Industry_sector.new.from_name(industry_sector)
+    if industry_sector != ""
+      industry_sector_id = Industry_sector.new.from_name(industry_sector)
+    else 
+      industry_sector_id = 0
+    end
     @user_list = User.where(first_name: first_name).or(surname: surname).or(email: email)
                      .or(university: university).or(degree: degree)
                      .or(job_title: job_title).or(industry_sector: industry_sector_id)
