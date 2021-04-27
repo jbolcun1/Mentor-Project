@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+
+<!--Inserts a common header-->
 <%= erb :"common/header_loggedin_admin" %>
 <body id="User Details Page">
   <main>
@@ -20,4 +22,6 @@
     <a href="/suspension?id=<%= h @view_user.id %>">Suspension</a>
   </main>
 </body>
+
+<!--Inserts a common footer-->
 <%= erb :"common/footer" %>

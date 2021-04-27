@@ -3,6 +3,7 @@ get "/mentor" do
   @id = request.cookies.fetch("id", "0")
   redirect "/login" if @id == "0"
   @user = User.first(id: @id)
+    
   # Display a personalised message upon a successful mentor login
   @s = "Welcome, #{@user.name}. \n You have sucessfully logged in as a #{@user.get_privileges.downcase}."
   @mentees = User.where(has_mentor: @user.id)
@@ -26,6 +27,7 @@ end
 post "/post-mentor-register" do
   @id = request.cookies.fetch("id")
   @user = User.first(id: @id)
+    
   # Get the info and add them to the user db record
   @user.title = params.fetch("title", "")
   @user.job_title = params.fetch("job_Title", "")
@@ -52,6 +54,9 @@ post "/post-mentor-accept" do
   @mentee = User.first(id: @mentee_id)
   decision = params.fetch("decision")
   puts decision
+    
+  # Constructs a notification email to informa user of their 
+  # acceptance / rejection
   case decision
   when "accept"
     @user.has_mentee = @mentee_id

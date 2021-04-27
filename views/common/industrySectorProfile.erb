@@ -2,6 +2,7 @@
 
 <label1>Job Title: </label1>
 <input type="text" name="job_Title" id="job_Title" value = "<%= @user.job_title %>" maxlength="50" size="30" required><br><br>
+
 <label1>Industry Sector:</label1>
 <select name="industry_Sector" value = "<%= @user.get_industry_sectors %>" required>
     <option value = "<%= @user.get_industry_sectors %>" selected> <%= @user.get_industry_sectors %> </option>
