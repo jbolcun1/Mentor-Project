@@ -34,4 +34,22 @@ describe "the logout button" do
     click_link "Logout"
     expect(page).to have_content "Helping you to find the perfect mentor"
   end
+    
+  it "is accessible by a logged in admin" do
+    visit "/login"
+    fill_in "email", with: "ahaque3@sheffield.ac.uk"
+    fill_in "password", with: "admin"
+    click_button "Submit"
+    expect(page).to have_content "Logout"
+  end
+
+  it "can successfully log out a logged in admin" do
+    visit "/login"
+    fill_in "email", with: "ahaque3@sheffield.ac.uk"
+    fill_in "password", with: "admin"
+    click_button "Submit"
+    click_link "Logout"
+    expect(page).to have_content "Helping you to find the perfect mentor"
+  end 
+    
 end
