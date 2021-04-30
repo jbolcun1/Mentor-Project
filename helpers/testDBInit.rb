@@ -6,6 +6,8 @@ def init_db
   require_rel "../db/db"
   require_rel "../models"
 
+  dataset = DB[:reports]
+  dataset.delete
   dataset = DB[:users]
   dataset.delete
   dataset = DB[:descriptions]
