@@ -46,7 +46,7 @@ describe "the login page" do
     expect(page).to have_content "Mentor Dashboard"
     expect(page).to have_content "Logout"
   end
-    
+
   it "can get an admin logged in successfully" do
     visit "/login"
     fill_in "email", with: "ahaque3@sheffield.ac.uk"

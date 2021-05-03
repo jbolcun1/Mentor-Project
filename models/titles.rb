@@ -13,4 +13,3 @@ class Title < Sequel::Model
     record.title
   end
 end
-

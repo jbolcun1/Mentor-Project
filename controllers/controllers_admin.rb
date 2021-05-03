@@ -15,17 +15,17 @@ get "/admin" do
     degree = params.fetch("degree", "0")
     job_title = params.fetch("job_Title", "0")
     industry_sector = params.fetch("industry_Sector", "0")
-    if industry_sector != ""
-      industry_sector_id = Industry_sector.new.from_name(industry_sector)
-    else 
-      industry_sector_id = 0
-    end
-    
+    industry_sector_id = if industry_sector == ""
+                           0
+                         else
+                           Industry_sector.new.from_name(industry_sector)
+                         end
+
     # Assigns user_list to a list of all users with searched parameters
     @user_list = User.where(first_name: first_name).or(surname: surname).or(email: email)
                      .or(university: university).or(degree: degree)
                      .or(job_title: job_title).or(industry_sector: industry_sector_id)
-    
+
     @table_show = true
   end
 
@@ -111,8 +111,8 @@ post "/change-user" do
 
   @description = Description.first(id: @user.description)
   @description.description = params.fetch("description", "")
-    
-  # Constructs and sends a notification email to a user when an admin 
+
+  # Constructs and sends a notification email to a user when an admin
   # changes their password
   if params.fetch("newpassword") != ""
     @user.password = params.fetch("newpassword")
@@ -121,16 +121,16 @@ post "/change-user" do
     subject = "Your password changed on the eMentoring website by an admin"
     body = "Your password was changed at #{date_time.strftime('%R')} on #{date_time.strftime('%A %D')}"
     puts "Sending email..."
-      
-            # Sends the notification email to the user. redirect to dashboard 
-        # if the email sent successfully or to their profile page if not
+
+    # Sends the notification email to the user. redirect to dashboard
+    # if the email sent successfully or to their profile page if not
     if send_mail(email, subject, body)
       puts "Email Sent Ok."
     else
       puts "Sending failed."
     end
   end
-    
+
   @description.save_changes
   @user.save_changes
   redirect "/dashboard"
@@ -152,10 +152,10 @@ end
 
 post "/admin-creation" do
   @new_user = User.new
-    
+
   # Load given info into a new user object
   @new_user.load(params)
-    
+
   # Check that the given info is valid. If valid, redirect associated page
   # If not, redirect to register page with error
   if @new_user.valid_pass(params)
@@ -191,20 +191,20 @@ post "/suspension" do
   date_time = Time.new
   email = @user.email
   case @user.suspend
-      
+
   # Constructs restoration notification email to send to user
   when 1
     @user.suspend = 0
     subject = "You were unsuspended by an admin on the eMentoring website"
     body = "You unsuspended at #{date_time.strftime('%R')} on #{date_time.strftime('%A %D')}"
-  
+
   # Constructs suspension email to send to user
   when 0
     subject = "You were suspended by an admin on the eMentoring website"
     body = "You suspended at #{date_time.strftime('%R')} on #{date_time.strftime('%A %D')}"
     @user.suspend = 1
   end
-    
+
   # Sends the constructed email and redirect to dashboard
   puts "Sending email..."
   if send_mail(email, subject, body)
@@ -212,7 +212,7 @@ post "/suspension" do
   else
     puts "Sending failed."
   end
-    
+
   @user.save_changes
   redirect "/dashboard"
 end

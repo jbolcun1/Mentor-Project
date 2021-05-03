@@ -11,22 +11,18 @@ class User < Sequel::Model
     # Retrieves a dataset from the database
     dataset = Description.first(id: description)
     dataset.description
-
   end
 
   def get_privileges
-    dataset = Privilege.new.from_id(self.privilege)
-    dataset
+    Privilege.new.from_id(privilege)
   end
 
   def get_titles
-    dataset = Title.new.from_id(self.title)
-    dataset
+    Title.new.from_id(title)
   end
 
   def get_industry_sectors
-    dataset = Industry_sector.new.from_id(self.industry_sector)
-    dataset
+    Industry_sector.new.from_id(industry_sector)
   end
 
   def load(params)
@@ -54,4 +50,3 @@ class User < Sequel::Model
     params.fetch("newpassword", "") == params.fetch("newconfirmpassword", "")
   end
 end
-

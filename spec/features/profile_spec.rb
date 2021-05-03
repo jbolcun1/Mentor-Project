@@ -18,7 +18,7 @@ describe "the profile page" do
     click_link "Profile"
     expect(page.status_code).to eq(200)
   end
-    
+
   it "is accessible by logged in admins from the dashboard" do
     visit "/login"
     fill_in "email", with: "ahaque3@sheffield.ac.uk"
@@ -37,7 +37,7 @@ describe "the profile page" do
     expect(page).to have_content "University:"
     expect(page).to have_content "Degree:"
     expect(page).to have_content "Telephone:"
-    expect(page).to have_content "Description Of Yourself:"  
+    expect(page).to have_content "Description Of Yourself:"
   end
 
   it "displays profile information to a logged in mentor" do
@@ -52,7 +52,7 @@ describe "the profile page" do
     expect(page).to have_content "Available Time:"
     expect(page).to have_content "Description Of Yourself:"
   end
-    
+
   it "displays profile information to a logged in admin" do
     visit "/login"
     fill_in "email", with: "ahaque3@sheffield.ac.uk"

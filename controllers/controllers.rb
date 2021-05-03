@@ -8,7 +8,7 @@ get "/" do
     redirect "/index"
   else
     @privilege = @user.get_privileges
-      
+
     # Find out what type of user they are and then redirect them to the correct page
     case @privilege
     when "Mentee"
@@ -19,7 +19,7 @@ get "/" do
       redirect "/admin"
     end
   end
-    
+
   erb :index
 end
 
@@ -57,7 +57,7 @@ post "/post-login" do
 
   # Try to find the user with information given
   @user = User.first(email: email_u, password: password_u)
-    
+
   # Check if a user is found. If not, we redirect back to login with an error
   if @user.nil?
     redirect "/login?error=1"
@@ -66,8 +66,8 @@ post "/post-login" do
     @privilege = @user.get_privileges
     @id = @user.id
     response.set_cookie("id", @id)
-      
-    # Find out what type of user they are and then redirect them to the 
+
+    # Find out what type of user they are and then redirect them to the
     # correct page
     case @privilege
     when "Mentee"
@@ -104,7 +104,7 @@ post "/post-register" do
   else
     redirect "/register?error=1"
   end
-    
+
   erb :register
 end
 
@@ -118,8 +118,8 @@ get "/dashboard" do
     redirect "/index"
   else
     @privilege = @user.get_privileges
-      
-    # Find out what type of user they are and then redirect them to the 
+
+    # Find out what type of user they are and then redirect them to the
     # correct page
     case @privilege
     when "Mentee"
@@ -141,7 +141,7 @@ get "/profile" do
   @error_correct = true if params.fetch("error1", "0") == "1"
   @error_correct2 = true if params.fetch("error2", "0") == "1"
   @error_correct3 = true if params.fetch("error3", "0") == "1"
-    
+
   # Find out what type of user they are and then show the correct info panels for that user
   case @privilege
   when "Mentee"
@@ -151,7 +151,7 @@ get "/profile" do
   else
     @admin_profile = true
   end
-    
+
   erb :profile
 end
 
@@ -187,7 +187,7 @@ post "/post-profile" do
     # Throws an error to the profile page if the password is not correct
     redirect "/profile?error2=1" if params.fetch("password") != @user.password
 
-    # Updates a users password to "newpassword" and sends an email to 
+    # Updates a users password to "newpassword" and sends an email to
     # notify them
     if params.fetch("newpassword") != "" && params.fetch("newconfirmpassword") != ""
       if @user.valid_pass_profile(params)
@@ -199,7 +199,7 @@ post "/post-profile" do
         body = "Your password was changed at #{date_time.strftime('%R')} on #{date_time.strftime('%A %D')}"
         puts "Sending email..."
 
-        # Sends the notification email to the user. redirect to dashboard 
+        # Sends the notification email to the user. redirect to dashboard
         # if the email sent successfully or to their profile page if not
         if send_mail(email, subject, body)
           puts "Email Sent Ok."
