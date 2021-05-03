@@ -12,7 +12,7 @@ def init_db
   dataset.delete
   dataset = DB[:descriptions]
   dataset.delete
-    
+
   # Mentee1
   user_desc = Description.new
   user_desc.description = "Hello I do Computer Science"

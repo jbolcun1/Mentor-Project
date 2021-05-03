@@ -5,7 +5,7 @@ require_relative "../spec_helper"
 
 RSpec.describe User do
   include Rack::Test::Methods
-  let(:user) { User.new }
+  let(:user) { described_class.new }
 
   describe "#name" do
     it "returns the User's name and surname" do
