@@ -3,7 +3,7 @@ require "rack/test"
 
 require_relative "../spec_helper"
 
-RSpec.describe "App Test" do
+RSpec.describe "Route Test" do
   include Rack::Test::Methods
 
   def app
@@ -72,29 +72,50 @@ RSpec.describe "App Test" do
   end
   
   #doesn't work
-  describe "GET /profile" do
-    context "When no user is logged in" do
-      it "has a status code of 302 (Redirect)" do
-        get "/profile"
-        expect(last_response.status).to eq(302)
-      end
-    end 
-  end
+#   describe "GET /profile" do
+#     context "When no user is logged in" do
+#       it "has a status code of 302 (Redirect)" do
+#         get "/profile"
+#         expect(last_response.status).to eq(302)
+#       end
+#     end 
+#   end
   
   #doesn't work
-  describe "GET /make-report" do
+#   describe "GET /make-report" do
+#     context "When no user is logged in" do
+#       it "has a status code of 302 (Redirect)" do
+#         get "/make-report"
+#         expect(last_response.status).to eq(302)
+#       end
+#     end 
+#   end
+  
+  describe "GET /admin" do
     context "When no user is logged in" do
       it "has a status code of 302 (Redirect)" do
-        get "/make-report"
+        get "/admin"
         expect(last_response.status).to eq(302)
       end
-    end 
+    end
   end
   
+  #describe "GET /view-user" do
+  
+  #describe "GET /change-user" do
+  
+  #describe "GET /admin-creation" do
+  
+  #describe "GET /suspension" do
+  
+  #describe "GET /view-report" do
+  
   describe "GET /gibberish" do
-    it "has a status code of 404 (Not Found)" do
-      get "/gibberish"
-      expect(last_response.status).to eq(404)
+    context "typing in random stuff into the url" do
+      it "has a status code of 404 (Not Found)" do
+        get "/gibberish"
+        expect(last_response.status).to eq(404)
+      end
     end 
   end
 end

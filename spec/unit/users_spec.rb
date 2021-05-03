@@ -4,6 +4,7 @@ require "rack/test"
 require_relative "../spec_helper"
 
 RSpec.describe User do
+  include Rack::Test::Methods
   let(:user){ User.new }
   
   describe "#name" do
