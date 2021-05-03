@@ -111,7 +111,7 @@ end
 
 get "/dashboard" do
   @id = request.cookies.fetch("id", "0")
-  redirect "/index" if @id == "0"
+  redirect "/login" if @id == "0"
   @user = User.first(id: @id)
     
   # Check if a user is found. If not, we redirect back to login with an error
@@ -135,6 +135,7 @@ end
 
 get "/profile" do
   @id = request.cookies.fetch("id", "0")
+  redirect "/login" if @id == "0"
   @user = User.first(id: @id)
   @founder = true if @user.get_privileges == "Founder"
   @privilege = @user.get_privileges
@@ -216,7 +217,8 @@ post "/post-profile" do
 end
 
 get "/make-report" do
-
+  @id = request.cookies.fetch("id", "0")
+  redirect "/login" if @id == "0"
   erb :make_report
 end
 

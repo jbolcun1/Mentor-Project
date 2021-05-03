@@ -39,14 +39,16 @@ end
 
 get "/mentee-register" do
   # When a mentee is registering, we should add extra info
-  @id = request.cookies.fetch("id")
+  @id = request.cookies.fetch("id", "0")
+  redirect "/login" if @id == "0"
+
   @user = User.first(id: @id)
   @message = "Hello prospective Mentee, #{@user.name}. Please input the details below!"
   erb :mentee_register
 end
 
 get "/view-mentor" do
-  @error_correct = true if params.fetch("error", "0") == "1"
+  @error_correct = true if params.fetch("error", "0") == "0"
   @mentor_id = params[:id]
   @mentor = User.first(id: @mentor_id)
   erb :view_mentor
@@ -104,6 +106,7 @@ def invitationEmail
   @id = request.cookies.fetch("id")
   @user = User.first(id: @id)
   @user.has_mentor = @mentor_id
+  time_now = Time.new
   @user.last_send = time_now.to_i
   @user.save_changes
       

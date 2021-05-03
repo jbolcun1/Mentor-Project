@@ -18,7 +18,9 @@ end
 
 get "/mentor-register" do
   # When a Mentor is registering, we should add extra info
-  @id = request.cookies.fetch("id")
+  @id = request.cookies.fetch("id", "0")
+  redirect "/login" if @id == "0"
+
   @user = User.first(id: @id)
   @message = "Hello prospective mentor, #{@user.name}. Please input the details below!"
   erb :mentor_register

@@ -49,6 +49,8 @@ end
 
 get "/view-user" do
   @id = request.cookies.fetch("id", "0")
+  redirect "/login" if @id == "0"
+
   @user = User.first(id: @id)
   @founder = true if @user.get_privileges == "Founder"
   @user_id = params[:id]
@@ -66,6 +68,8 @@ end
 
 get "/change-user" do
   @id = request.cookies.fetch("id", "0")
+  redirect "/login" if @id == "0"
+
   @user = User.first(id: @id)
   @founder = true if @user.get_privileges == "Founder"
 
@@ -131,6 +135,8 @@ end
 
 get "/admin-creation" do
   @id = request.cookies.fetch("id", "0")
+  redirect "/login" if @id == "0"
+
   @user = User.first(id: @id)
   @founder = true if @user.get_privileges == "Founder"
   @error_correct = true if params.fetch("error", "0") == "1"
@@ -163,6 +169,8 @@ end
 
 get "/suspension" do
   @id = request.cookies.fetch("id", "0")
+  redirect "/login" if @id == "0"
+
   @user = User.first(id: @id)
   @founder = true if @user.get_privileges == "Founder"
   @user_id = params[:id]
@@ -207,6 +215,8 @@ end
 
 get "/view-reports" do
   @id = request.cookies.fetch("id", "0")
+  redirect "/login" if @id == "0"
+
   @user = User.first(id: @id)
   @founder = true if @user.get_privileges == "Founder"
   @reports = Report.all
