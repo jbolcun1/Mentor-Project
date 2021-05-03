@@ -57,7 +57,7 @@ post "/post-mentor-accept" do
   decision = params.fetch("decision")
   puts decision
     
-  # Constructs a notification email to informa user of their 
+  # Constructs a notification email to inform user of their
   # acceptance / rejection
   case decision
   when "accept"

@@ -2,7 +2,7 @@ get "/" do
   @id = request.cookies.fetch("id", "0")
   redirect "/index" if @id == "0"
   @user = User.first(id: @id)
-    
+
   # Check if a user is found. If not, we redirect back to login with an error
   if @user.nil?
     redirect "/index"
@@ -24,6 +24,7 @@ get "/" do
 end
 
 get "/login" do
+  # Errors will show if the are passed from the post login
   @error_correct = true if params.fetch("error", "0") == "1"
   @error_correct2 = true if params.fetch("error", "0") == "2"
   erb :login
@@ -81,15 +82,13 @@ end
 
 post "/post-register" do
   @user = User.new
-    
   # Load given info into a new user object
   @user.load(params)
-    
   # Check that the given info is valid.
   # If valid, redirect associated page to register more information
-    
+
   redirect "/register?error=2" if @user.get_privileges == ("Mentee") && !@user.email.end_with?(".ac.uk")
-  
+
   # If not, redirect to register page with error
   if @user.valid_pass(params)
     @user.save_changes
@@ -113,7 +112,7 @@ get "/dashboard" do
   @id = request.cookies.fetch("id", "0")
   redirect "/login" if @id == "0"
   @user = User.first(id: @id)
-    
+
   # Check if a user is found. If not, we redirect back to login with an error
   if @user.nil?
     redirect "/index"
@@ -143,8 +142,7 @@ get "/profile" do
   @error_correct2 = true if params.fetch("error2", "0") == "1"
   @error_correct3 = true if params.fetch("error3", "0") == "1"
     
-  # Find out what type of user they are and then redirect them to the 
-  # correct page
+  # Find out what type of user they are and then show the correct info panels for that user
   case @privilege
   when "Mentee"
     @mentee_profile = true
@@ -162,6 +160,7 @@ post "/post-profile" do
   @user = User.first(id: @id)
   @user.load_profile(params)
 
+  # Depending on the user privileges we may have to change different things
   case @user.get_privileges
   when "Mentee"
     @user.university = params.fetch("university", "")
@@ -178,15 +177,16 @@ post "/post-profile" do
   @description = Description.first(id: @user.description)
   @description.description = params.fetch("description", "")
   @description.save_changes
-    
+
+  # If the password has not been attempted to change we can redirect to the dashboard
   if params.fetch("password") == ""
     @user.save_changes
     redirect "/dashboard"
   else
-      
+
     # Throws an error to the profile page if the password is not correct
     redirect "/profile?error2=1" if params.fetch("password") != @user.password
-      
+
     # Updates a users password to "newpassword" and sends an email to 
     # notify them
     if params.fetch("newpassword") != "" && params.fetch("newconfirmpassword") != ""
@@ -198,7 +198,7 @@ post "/post-profile" do
         subject = "Your password changed on the eMentoring website"
         body = "Your password was changed at #{date_time.strftime('%R')} on #{date_time.strftime('%A %D')}"
         puts "Sending email..."
-        
+
         # Sends the notification email to the user. redirect to dashboard 
         # if the email sent successfully or to their profile page if not
         if send_mail(email, subject, body)

@@ -1,12 +1,12 @@
 get "/admin" do
   @id = request.cookies.fetch("id", "0")
   redirect "/login" if @id == "0"
-  @user = User.first(id: @id)
 
+  @user = User.first(id: @id)
   @founder = true if @user.get_privileges == "Founder"
 
   empty = params.fetch("empty", "1")
-    
+  # If now empty is zero is then we know they have not searched for any user
   if empty != "1"
     first_name = params.fetch("first_name", "0")
     surname = params.fetch("surname", "0")
@@ -36,14 +36,14 @@ end
 
 post "/admin" do
   empty = "1"
-  puts params
-  params.each do |_paramName, value|
+  # We can make empty 1 if there is an actual value in any of the searched terms
+  params.each do |_param_name, value|
     empty = "0" unless value.empty?
   end
-    
+
   params[:empty] = empty
+  # We encode the empty string into parms and then can give it back into the admin
   querystring = URI.encode_www_form(params)
-  puts querystring
   redirect "/admin?#{querystring}"
 end
 
@@ -56,6 +56,7 @@ get "/view-user" do
   @user_id = params[:id]
   @view_user = User.first(id: @user_id)
 
+  # Depending on the user privilege we can show certain info
   case @view_user.get_privileges
   when "Mentee"
     @mentee_profile = true
@@ -70,6 +71,8 @@ get "/change-user" do
   @id = request.cookies.fetch("id", "0")
   redirect "/login" if @id == "0"
 
+  # Very similar code to the profile route
+  # This route we can change the user selected
   @user = User.first(id: @id)
   @founder = true if @user.get_privileges == "Founder"
 
@@ -137,6 +140,7 @@ get "/admin-creation" do
   @id = request.cookies.fetch("id", "0")
   redirect "/login" if @id == "0"
 
+  # We can get the can create a founder very similar to user creation
   @user = User.first(id: @id)
   @founder = true if @user.get_privileges == "Founder"
   @error_correct = true if params.fetch("error", "0") == "1"

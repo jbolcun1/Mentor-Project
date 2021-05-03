@@ -85,7 +85,7 @@ post "/post-mentee-invite" do
   time_now = Time.new
   if @last_send.nil?
     @mentor_id = params.fetch("mentor_Id")
-    invitationEmail
+    invitation_email
       
   else
     time_last_send = Time.at(@last_send.to_i)
@@ -94,7 +94,7 @@ post "/post-mentee-invite" do
     # sends the invitation email if more than 1 day has passed since the last
     # invite was sent. If less than 1 day, redirect to view-mentor with error
     if time_now - time_last_send >= 86_400
-      invitationEmail
+      invitation_email
     else
       redirect "/view-mentor?id=#{@mentor_id}&error=1"
     end
@@ -102,7 +102,7 @@ post "/post-mentee-invite" do
 end
 
 # A small method that constructs and sends an invitation email
-def invitationEmail
+def invitation_email
   @id = request.cookies.fetch("id")
   @user = User.first(id: @id)
   @user.has_mentor = @mentor_id
