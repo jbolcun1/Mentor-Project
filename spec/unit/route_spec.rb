@@ -54,6 +54,27 @@ RSpec.describe "Route Test" do
       end
     end
   end
+  
+  describe "GET /login" do #continue from here
+    it "has a status code of 200 (OK)" do
+      get "/login"
+      expect(last_response.status).to eq(200)
+    end
+    
+    context "account details inputted are not found" do
+      it "will load the page with an error message" do
+        get "/login?error=1"
+        expect(last_response.body).to include("There has been an error try again")
+      end
+    end
+    
+    context "account details inputted are not found" do
+      it "will load the page with an error message" do
+        get "/login?error=2"
+        expect(last_response.body).to include("You have been suspended")
+      end
+    end
+  end
 
   describe "GET /logout" do
     it "has a status code of 302 (Redirect)" do
