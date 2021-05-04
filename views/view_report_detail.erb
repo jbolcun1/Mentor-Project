@@ -1,0 +1,15 @@
+<%= erb :"common/header_loggedin_admin" %>
+<body id="Report Details Page">
+<main>
+  <p>The report you selected is:</p>
+  <p>The ID of the report creator <%= h @report.user_id %></p>
+  <p>The person the report is against <%= h @report.identifier %></p>
+  <P>The report was made on <%= h @report.get_time %></P>
+  <p>The description of your in the report</p>
+  <p><%= h @report.get_description %></p>
+
+</main>
+</body>
+
+<!--Inserts a common footer-->
+<%= erb :"common/footer" %>

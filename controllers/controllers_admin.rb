@@ -226,3 +226,12 @@ get "/view-reports" do
   @reports = Report.all
   erb :view_reports
 end
+
+get "/view-report-detail" do
+  @id = request.cookies.fetch("id", "0")
+  redirect "/login" if @id == "0"
+
+  report_id = params.fetch("id", "0")
+  @report = Report.first(id: report_id)
+  erb :view_report_detail
+end
