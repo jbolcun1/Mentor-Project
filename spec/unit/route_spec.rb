@@ -71,25 +71,23 @@ RSpec.describe "Route Test" do
     end
   end
 
-  # doesn't work
-  #   describe "GET /profile" do
-  #     context "When no user is logged in" do
-  #       it "has a status code of 302 (Redirect)" do
-  #         get "/profile"
-  #         expect(last_response.status).to eq(302)
-  #       end
-  #     end
-  #   end
+  describe "GET /profile" do
+    context "When no user is logged in" do
+      it "has a status code of 302 (Redirect)" do
+        get "/profile"
+        expect(last_response.status).to eq(302)
+      end
+    end
+  end
 
-  # doesn't work
-  #   describe "GET /make-report" do
-  #     context "When no user is logged in" do
-  #       it "has a status code of 302 (Redirect)" do
-  #         get "/make-report"
-  #         expect(last_response.status).to eq(302)
-  #       end
-  #     end
-  #   end
+  describe "GET /make-report" do
+    context "When no user is logged in" do
+      it "has a status code of 302 (Redirect)" do
+        get "/make-report"
+        expect(last_response.status).to eq(302)
+      end
+    end
+  end
 
   describe "GET /admin" do
     context "When no user is logged in" do
@@ -100,15 +98,104 @@ RSpec.describe "Route Test" do
     end
   end
 
-  # describe "GET /view-user" do
+  describe "GET /view-user" do
+    context "When no user is logged in" do
+      it "has a status code of 302 (Redirect)" do
+        get "/view-user"
+        expect(last_response.status).to eq(302)
+      end
+    end
+  end
 
-  # describe "GET /change-user" do
+  describe "GET /change-user" do
+    context "When no user is logged in" do
+      it "has a status code of 302 (Redirect)" do
+        get "/change-user"
+        expect(last_response.status).to eq(302)
+      end
+    end
+  end
 
-  # describe "GET /admin-creation" do
+  describe "GET /admin-creation" do
+    context "When no user is logged in" do
+      it "has a status code of 302 (Redirect)" do
+        get "/admin-creation"
+        expect(last_response.status).to eq(302)
+      end
+    end
+  end
 
-  # describe "GET /suspension" do
+  describe "GET /suspension" do
+    context "When no user is logged in" do
+      it "has a status code of 302 (Redirect)" do
+        get "/suspension"
+        expect(last_response.status).to eq(302)
+      end
+    end
+  end
 
-  # describe "GET /view-report" do
+  describe "GET /view-reports" do
+    context "When no user is logged in" do
+      it "has a status code of 302 (Redirect)" do
+        get "/view-reports"
+        expect(last_response.status).to eq(302)
+      end
+    end
+  end
+  
+  describe "GET /mentee" do
+    context "When no user is logged in" do
+      it "has a status code of 302 (Redirect)" do
+        get "/mentee"
+        expect(last_response.status).to eq(302)
+      end
+    end
+  end
+  
+  describe "GET /mentee-register" do
+    context "When no user is logged in" do
+      it "has a status code of 302 (Redirect)" do
+        get "/mentee-register"
+        expect(last_response.status).to eq(302)
+      end
+    end
+  end
+  
+  describe "GET /view-mentor" do
+    context "When no user is logged in" do
+      it "has a status code of 302 (Redirect)" do
+        get "/view-mentor"
+        expect(last_response.status).to eq(302)
+      end
+    end
+  end
+  
+  describe "GET /mentor" do
+    context "When no user is logged in" do
+      it "has a status code of 302 (Redirect)" do
+        get "/mentor"
+        expect(last_response.status).to eq(302)
+      end
+    end
+  end
+  
+  describe "GET /mentor-register" do
+    context "When no user is logged in" do
+      it "has a status code of 302 (Redirect)" do
+        get "/mentor-register"
+        expect(last_response.status).to eq(302)
+      end
+    end
+  end
+  
+  describe "GET /view-mentee" do
+    context "When no user is logged in" do
+      it "has a status code of 302 (Redirect)" do
+        get "/view-mentee"
+        expect(last_response.status).to eq(302)
+      end
+    end
+  end
 
   describe "GET /gibberish" do
     context "typing in random stuff into the url" do

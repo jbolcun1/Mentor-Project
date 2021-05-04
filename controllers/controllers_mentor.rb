@@ -44,6 +44,9 @@ post "/post-mentor-register" do
 end
 
 get "/view-mentee" do
+  @id = request.cookies.fetch("id", "0")
+  redirect "/login" if @id == "0"
+  
   @mentee_id = params[:id]
   @mentee = User.first(id: @mentee_id)
   erb :view_mentee

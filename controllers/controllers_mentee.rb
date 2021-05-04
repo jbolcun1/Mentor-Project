@@ -48,6 +48,9 @@ get "/mentee-register" do
 end
 
 get "/view-mentor" do
+  @id = request.cookies.fetch("id", "0")
+  redirect "/login" if @id == "0"
+  
   @error_correct = true if params.fetch("error", "0") == "0"
   @mentor_id = params[:id]
   @mentor = User.first(id: @mentor_id)
