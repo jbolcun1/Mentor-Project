@@ -30,7 +30,7 @@ get "/admin" do
   end
 
   # Display a personalised message upon a successful admin login
-  @s = "Welcome, #{@user.name}. \n You have sucessfully logged in as a #{@user.get_privileges.downcase}."
+  @s = "Welcome, #{@user.name}. \n You have successfully logged in as a #{@user.get_privileges.downcase}."
   erb :admin
 end
 
@@ -79,7 +79,7 @@ get "/change-user" do
   @user_id = params[:id]
   @change_user = User.first(id: @user_id)
   @privilege = @change_user.get_privileges
-  @description = Description.first(user_Id: @user.description)
+  @description = Description.first(id: @user.description)
 
   case @privilege
   when "Mentee"
