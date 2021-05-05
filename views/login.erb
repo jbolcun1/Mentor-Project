@@ -6,6 +6,7 @@
 <body id="Log in Page">
     
     <main>
+        <div id="login">        
         <p>Fill in credentials below to log into E-Mentor:</p>
         <% if @error_correct%>
             <p  id="error" >
@@ -27,7 +28,7 @@
                 maxlength="50" size="30" required>
             </p>
             <p>
-                <input type="submit" value="Submit">
+                <input type="submit" value="Submit" id="button">
             </p>
         </form>
 
@@ -35,6 +36,7 @@
             Don't have an account? 
             <a href="/register">Click here.</a>
         </p>
+        </div>
     </main>
 </body>
 

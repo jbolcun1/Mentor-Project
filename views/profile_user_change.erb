@@ -6,8 +6,10 @@
 
 
 <main>
-  <p>Please fill in the fields you wish to change:</p>
-
+   <div id="intro">
+       <p>Please fill in the fields you wish to change:</p>
+   </div>
+    
   <form method="post" action="/change-user?id=<%= @change_user.id %>">
     <p><label1>First Name:</label1>
       <input type="text" name="first_name" id="firstname" value = "<%= @change_user.first_name%>"
