@@ -10,7 +10,7 @@ RSpec.describe "Route Test" do
     Sinatra::Application
   end
 
-  describe "GET /index" do
+  describe "GET /index" do #Done
     it "has status code of 200 (OK)" do
       get "/index"
       expect(last_response.status).to eq(200)
@@ -22,7 +22,7 @@ RSpec.describe "Route Test" do
     end
   end
 
-  describe "GET /about" do
+  describe "GET /about" do #Done
     it "has a status code of 200 (OK)" do
       get "/about"
       expect(last_response.status).to eq(200)
@@ -34,7 +34,7 @@ RSpec.describe "Route Test" do
     end
   end
 
-  describe "GET /register" do
+  describe "GET /register" do #done
     it "has a status code of 200 (OK)" do
       get "/register"
       expect(last_response.status).to eq(200)
@@ -44,18 +44,46 @@ RSpec.describe "Route Test" do
       get "/register"
       expect(last_response.body).to include "Please fill in the fields below to complete the registration process"
     end
+    
+    context "entering two different passwords for password and confirm password" do
+      it "will print 'The two password entries must be correct.'" do
+        get "/register?error=1"
+        expect(last_response.body).to include "The two password entries must be correct."
+      end
+    end
+    
+    context "Mentee entering an email that is not a university email" do
+      it "will say 'Mentee email must be a university email.'" do
+        get "/register?error=2"
+        expect(last_response.body).to include "Mentee email must be a university email."
+      end
+    end
   end
 
-  describe "GET /" do
+  describe "GET /" do #learn how to use cookies in test
     context "When no user is logged in" do
       it "has a status code of 302 (Redirect)" do
         get "/"
         expect(last_response.status).to eq(302)
       end
-    end
+    end  
+    
+#     context "logged in as mentee account" do
+#       it "will redirect to /mentee" do
+#         user = User.new(first_name: "Bonny", surname: "Simmons", email: "BSimmons@gmail.ac.uk", password: "Password1",
+#                         privilege: Privilege.new.from_name("Mentee"))
+#         user.save_changes
+#         #set_cookie "id=1"
+#         #rack_mock_session.cookie_jar["id"].should == user.id
+#         #rack_mock_session.cookie_jar["id"]. == user.id
+#         get "/"
+#         expect(last_response.location).to include("/mentee")
+#         DB.from("users").delete
+#       end
+#     end  
   end
   
-  describe "GET /login" do #continue from here
+  describe "GET /login" do #done
     it "has a status code of 200 (OK)" do
       get "/login"
       expect(last_response.status).to eq(200)
@@ -76,14 +104,14 @@ RSpec.describe "Route Test" do
     end
   end
 
-  describe "GET /logout" do
+  describe "GET /logout" do #done
     it "has a status code of 302 (Redirect)" do
       get "/logout"
       expect(last_response.status).to eq(302)
     end
   end
 
-  describe "GET /dashboard" do
+  describe "GET /dashboard" do #cookies needed
     context "When no user is logged in" do
       it "has a status code of 302 (Redirect)" do
         get "/dashboard"
@@ -92,7 +120,7 @@ RSpec.describe "Route Test" do
     end
   end
 
-  describe "GET /profile" do
+  describe "GET /profile" do #cookies needed
     context "When no user is logged in" do
       it "has a status code of 302 (Redirect)" do
         get "/profile"
@@ -101,7 +129,7 @@ RSpec.describe "Route Test" do
     end
   end
 
-  describe "GET /make-report" do
+  describe "GET /make-report" do #cookies
     context "When no user is logged in" do
       it "has a status code of 302 (Redirect)" do
         get "/make-report"
