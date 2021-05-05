@@ -3,7 +3,7 @@ get "/mentor" do
   @id = request.cookies.fetch("id", "0")
   redirect "/login" if @id == "0"
   @user = User.first(id: @id)
-    
+
   # Display a personalised message upon a successful mentor login
   @s = "Welcome, #{@user.name}. \n You have sucessfully logged in as a #{@user.get_privileges.downcase}."
   @mentees = User.where(has_mentor: @user.id)
@@ -18,7 +18,9 @@ end
 
 get "/mentor-register" do
   # When a Mentor is registering, we should add extra info
-  @id = request.cookies.fetch("id")
+  @id = request.cookies.fetch("id", "0")
+  redirect "/login" if @id == "0"
+
   @user = User.first(id: @id)
   @message = "Hello prospective mentor, #{@user.name}. Please input the details below!"
   erb :mentor_register
@@ -27,7 +29,7 @@ end
 post "/post-mentor-register" do
   @id = request.cookies.fetch("id")
   @user = User.first(id: @id)
-    
+
   # Get the info and add them to the user db record
   @user.title = params.fetch("title", "")
   @user.job_title = params.fetch("job_Title", "")
@@ -42,6 +44,9 @@ post "/post-mentor-register" do
 end
 
 get "/view-mentee" do
+  @id = request.cookies.fetch("id", "0")
+  redirect "/login" if @id == "0"
+  
   @mentee_id = params[:id]
   @mentee = User.first(id: @mentee_id)
   erb :view_mentee
@@ -54,8 +59,8 @@ post "/post-mentor-accept" do
   @mentee = User.first(id: @mentee_id)
   decision = params.fetch("decision")
   puts decision
-    
-  # Constructs a notification email to informa user of their 
+
+  # Constructs a notification email to inform user of their
   # acceptance / rejection
   case decision
   when "accept"

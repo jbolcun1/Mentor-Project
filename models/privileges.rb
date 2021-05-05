@@ -1,5 +1,4 @@
 class Privilege < Sequel::Model
-
   def load(priv)
     self.privilege = priv
   end
@@ -14,4 +13,3 @@ class Privilege < Sequel::Model
     record.privilege
   end
 end
-

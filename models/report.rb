@@ -10,12 +10,10 @@ class Report < Sequel::Model
     # Retrieves a dataset from the database
     dataset = Description.first(id: description_id)
     dataset.description
-
   end
 
   def get_time
-    time = Time.parse(self.date_time_made)
+    time = Time.parse(date_time_made)
     time.strftime("%T %m/%d/%Y")
   end
-
 end
