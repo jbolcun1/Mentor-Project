@@ -6,7 +6,9 @@
 <body id="Welcome Page">
 
     <main>
-        <p>Your Admin Page</p>
+        <div id="intro">     
+            <p>Your Admin Page</p>
+        </div>
         <%= h @s %>
 
       <p>Please enter the information on the user who you want to look at!</p>
@@ -35,7 +37,7 @@
                  maxlength="50" size="30" >
         </p>
         <%= erb :"common/industrySectorAdmin" %>
-        <input type="submit" value="Submit">
+        <input type="submit" value="Submit" id="button">
       </form>
       <br>
       <% if @table_show%>
