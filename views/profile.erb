@@ -11,8 +11,10 @@
 
 
     <main>
-        <p>Please fill in the fields you wish to change:</p>
-
+        <div id="intro">
+            <p>Please fill in the fields you wish to change:</p>
+        </div>
+        
         <form method="post" action="/post-profile">
             <p><label1>First Name:</label1>
                 <input type="text" name="first_name" id="firstname" value = "<%= @user.first_name %>"
@@ -87,10 +89,10 @@
             </p>
 
           <p><label>Description Of Yourself: </label><br>
-            <textarea id="descriptionBox" name="description" rows="8" cols="100" ><%= @user.get_descriptions %></textarea>
+            <textarea id="descriptionBox" name="description" rows="6" cols="100" ><%= @user.get_descriptions %></textarea>
           </p>
 
-            <input type="submit" value="Change Details">
+            <input type="submit" value="Change Details" id="button">
         </form>
     </main>
 </body>
