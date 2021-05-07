@@ -8,7 +8,7 @@ Go to "My Projects"
 Click "New Project"  
 Create a new box with a ruby + rails configuration  
 Add a project name (and description if you want)  
-``git clone git@git.shefcompsci.org.uk:com1001-2020-21/team02/project.git`` to clone project to your system
+``git clone git@git.shefcompsci.org.uk:com1001-2020-21/team02/project.git`` to clone project to your system  
 Open the terminal by clicking "Tools", then "Terminal"
 Type  
 ``cd project``  
