@@ -22,7 +22,7 @@ If you wish to stop the web app press ``Control + C`` in the terminal
 | Founder1@gmail.com | Password1 | FounderAdmin TestPerson | Founder           |       |              |                                |                  |                  |               |
 
 ## Make an account
-Use **Register** and enter your details to make an account. Select your role based on what you would like to be.
+**Register** by visiting the login page, where you’ll be asked if you have an account, and enter your details to make one. Select your role based on what you would like to be: a mentor or a mentee.
 
 ## Contact a mentor
 Use the search and filter functions to look for a suitable mentor. You can enter an introductory email that will be
