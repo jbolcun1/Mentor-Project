@@ -3,20 +3,18 @@
 A web application written in Ruby which allows mentors and mentees to contact each other and exchange information.
 
 ## To Start The Web App
-Go to codio.com, and log in  
-Go to "My Projects"  
-Click "New Project"  
-Create a new box with a ruby + rails configuration  
-Add a project name (and description if you want)  
-``git clone git@git.shefcompsci.org.uk:com1001-2020-21/team02/project.git`` to clone project to your system  
-Open the terminal by clicking "Tools", then "Terminal"
-Type  
-``cd project``  
-``bundle install``  
-``ruby app.rb``  
-Then in the terminal there should be an output of a website along the lines of **box-name-4567.codio.io**
-Open the URL in new tab to view the website
-If you wish to stop the web app press ``Control + C`` in the terminal  
+-Visit https://codio.com and log into your account, or register first.
+-Click on ‘My Projects’ and then on ‘New Project’.
+-Select Ruby + Rails as the starting point and give your project a name, then create it.
+-Open the terminal by clicking "Tools", then "Terminal" 
+-Type the following commands in the terminal and press enter after each:
+``git clone git@git.shefcompsci.org.uk:com1001-2020-21/team02/project.git`` to clone project to your system
+``cd project``
+``bundle install``
+``ruby app.rb``
+Finally, go to the URL of your app (‘This sinatra application is available at: *-4567.codio.io ‘) in a new tab. 
+If you wish to stop the web app, press Control + C in the terminal located in the other tab, the codio box.
+ 
 
 ## Example user accounts you can use
 
@@ -29,23 +27,31 @@ If you wish to stop the web app press ``Control + C`` in the terminal
 | Founder1@gmail.com | Password1 | FounderAdmin TestPerson | Founder           |       |              |                                |                  |                  |               |
 
 ## Make an account
-**Register** by visiting the login page, where you’ll be asked if you have an account, and enter your details to make one. Select your role based on what you would like to be: a mentor or a mentee.
+**Register** by visiting the login page, where you’ll be asked if you have an account, and enter your details to make one. 
+Select your role based on what you would like to be: a mentor or a mentee.
 
 ## Contact a mentor
-Use the search and filter functions to look for a suitable mentor. You can enter an introductory email that will be
-sent to the mentor. As a mentee-driven scheme, it is your responsibility to initiate and maintain contact with 
-your mentor. 
+Mentees can use the search and filter functions to look for a suitable mentor.
+You can enter an introductory email that will be sent to the mentor. 
+As a mentee-driven scheme, it is your responsibility to initiate and maintain contact with your mentor.
 
 ## Mentor Acceptance
-As a mentor you can go to your dashboard and you can view the mentees who have expressed their interest in a 
-mentorship. You can click view more to see a description of the mentee and accept the invitation.
+As a mentor, you can go to your dashboard and view the mentees who have expressed their interest in a mentorship. 
+You can click on ‘view more’ to see a description of the mentee and accept the invitation.
 
 ## Mentorship
 Once the mentee and mentor have started the mentorship, they will be able to see each others' emails to start 
 correspondence.
 
-## Change account credential
+## Change account credentials
 Use the **Profile** menu on the top tool bar to change your credentials.
 
 Simply enter your new credentials and the old ones for verification purposes and your details will be updated
 when you click Change Details.
+
+## Administration
+The administrator role is a special role with elevated privileges, such as suspending users, changing account details and viewing and dealing with reports.
+The initial administrator (the ‘founder’) can also promote other users.
+
+## The report system
+Users can submit reports to administrators in case something inappropriate happens during the mentoring process.
