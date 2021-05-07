@@ -60,7 +60,7 @@ RSpec.describe "Route Test" do
     end
   end
 
-  describe "GET /" do #learn how to use cookies in test
+  describe "GET /" do 
     context "When no user is logged in" do
       it "has a status code of 302 (Redirect)" do
         get "/"
@@ -68,19 +68,53 @@ RSpec.describe "Route Test" do
       end
     end  
     
-#     context "logged in as mentee account" do
-#       it "will redirect to /mentee" do
-#         user = User.new(first_name: "Bonny", surname: "Simmons", email: "BSimmons@gmail.ac.uk", password: "Password1",
-#                         privilege: Privilege.new.from_name("Mentee"))
-#         user.save_changes
-#         #set_cookie "id=1"
-#         #rack_mock_session.cookie_jar["id"].should == user.id
-#         #rack_mock_session.cookie_jar["id"]. == user.id
-#         get "/"
-#         expect(last_response.location).to include("/mentee")
-#         DB.from("users").delete
-#       end
-#     end  
+    context "logged in as mentee account" do
+      it "will redirect to /mentee" do
+        user = User.new(first_name: "Bonny", surname: "Simmons", email: "BSimmons@gmail.ac.uk", password: "Password1",
+                        privilege: Privilege.new.from_name("Mentee"))
+        user.save_changes
+        rack_mock_session.cookie_jar['id'] = user.id
+        get "/"
+        expect(last_response.location).to include("/mentee")
+        DB.from("users").delete
+      end
+    end  
+    
+    context "logged in as mentor account" do
+      it "will redirect to /admin" do
+        user = User.new(first_name: "Bonny", surname: "Simmons", email: "BSimmons@gmail.ac.uk", password: "Password1",
+                        privilege: Privilege.new.from_name("Mentor"))
+        user.save_changes
+        rack_mock_session.cookie_jar['id'] = user.id
+        get "/"
+        expect(last_response.location).to include("/mentor")
+        DB.from("users").delete
+      end
+    end 
+    
+    context "logged in as admin account" do
+      it "will redirect to /admin" do
+        user = User.new(first_name: "Bonny", surname: "Simmons", email: "BSimmons@gmail.ac.uk", password: "Password1",
+                        privilege: Privilege.new.from_name("Admin"))
+        user.save_changes
+        rack_mock_session.cookie_jar['id'] = user.id
+        get "/"
+        expect(last_response.location).to include("/admin")
+        DB.from("users").delete
+      end
+    end 
+    
+    context "user doesn't exist" do
+      it "will redirect to /index" do
+        user = User.new(first_name: "Bonny", surname: "Simmons", email: "BSimmons@gmail.ac.uk", password: "Password1",
+                        privilege: Privilege.new.from_name("Mentor"))
+        user.save_changes
+        rack_mock_session.cookie_jar['id'] = -10
+        get "/"
+        expect(last_response.location).to include("/index")
+        DB.from("users").delete
+      end
+    end 
   end
   
   describe "GET /login" do #done
@@ -111,13 +145,61 @@ RSpec.describe "Route Test" do
     end
   end
 
-  describe "GET /dashboard" do #cookies needed
+  describe "GET /dashboard" do #done
     context "When no user is logged in" do
       it "has a status code of 302 (Redirect)" do
         get "/dashboard"
         expect(last_response.status).to eq(302)
       end
     end
+    
+    context "logged in as mentee account" do
+      it "will redirect to /mentee" do
+        user = User.new(first_name: "Bonny", surname: "Simmons", email: "BSimmons@gmail.ac.uk", password: "Password1",
+                        privilege: Privilege.new.from_name("Mentee"))
+        user.save_changes
+        rack_mock_session.cookie_jar['id'] = user.id
+        get "/dashboard"
+        expect(last_response.location).to include("/mentee")
+        DB.from("users").delete
+      end
+    end  
+    
+    context "logged in as mentor account" do
+      it "will redirect to /admin" do
+        user = User.new(first_name: "Bonny", surname: "Simmons", email: "BSimmons@gmail.ac.uk", password: "Password1",
+                        privilege: Privilege.new.from_name("Mentor"))
+        user.save_changes
+        rack_mock_session.cookie_jar['id'] = user.id
+        get "/dashboard"
+        expect(last_response.location).to include("/mentor")
+        DB.from("users").delete
+      end
+    end 
+    
+    context "logged in as admin account" do
+      it "will redirect to /admin" do
+        user = User.new(first_name: "Bonny", surname: "Simmons", email: "BSimmons@gmail.ac.uk", password: "Password1",
+                        privilege: Privilege.new.from_name("Admin"))
+        user.save_changes
+        rack_mock_session.cookie_jar['id'] = user.id
+        get "/dashboard"
+        expect(last_response.location).to include("/admin")
+        DB.from("users").delete
+      end
+    end 
+    
+    context "user doesn't exist" do
+      it "will redirect to /index" do
+        user = User.new(first_name: "Bonny", surname: "Simmons", email: "BSimmons@gmail.ac.uk", password: "Password1",
+                        privilege: Privilege.new.from_name("Mentor"))
+        user.save_changes
+        rack_mock_session.cookie_jar['id'] = -10
+        get "/dashboard"
+        expect(last_response.location).to include("/index")
+        DB.from("users").delete
+      end
+    end 
   end
 
   describe "GET /profile" do #cookies needed
