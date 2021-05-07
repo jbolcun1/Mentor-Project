@@ -44,14 +44,14 @@ Select your role based on what you would like to be: a mentor or a mentee.
 ## Contact a mentor
 Mentees can use the search and filter functions to look for a suitable mentor.
 
-You can enter an introductory email that will be sent to the mentor. 
+They can enter an introductory email that will be sent to the mentor. 
 
-As a mentee-driven scheme, it is your responsibility to initiate and maintain contact with your mentor.
+As a mentee-driven scheme, it is their responsibility to initiate and maintain contact with your mentor.
 
 ## Mentor Acceptance
-As a mentor, you can go to your dashboard and view the mentees who have expressed their interest in a mentorship. 
+Mentors can go to their dashboard and view the mentees who have expressed their interest in a mentorship. 
 
-You can click on ‘view more’ to see a description of the mentee and accept the invitation.
+They can click on ‘view more’ to see a description of the mentee and accept the invitation.
 
 ## Mentorship
 Once the mentee and mentor have started the mentorship, they will be able to see each others' emails to start 
@@ -60,7 +60,7 @@ correspondence.
 ## Change account credentials
 Use the **Profile** menu on the top tool bar to change your credentials.
 
-Simply enter your new credentials and the old ones for verification purposes and your details will be updated
+Simply enter the new credentials and the old ones for verification purposes and the details will be updated
 when you click Change Details.
 
 ## Administration
