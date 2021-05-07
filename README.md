@@ -30,8 +30,8 @@ A web application written in Ruby which allows mentors and mentees to contact ea
 
 | Email              | Password  | Name                    | User Account Type | Title | Job Title    | Industry Sector                | University       | Degree           | Telephone     |
 | ------------------ | ----------| ----------------------- | ----------------- | ----- | ------------ | ------------------------------ | ---------------- | ---------------- | --------------|
-| Mentee1@gmail.com  | Password1 | Mentee1 TestDude        | Mentee            |       |              |                                | Uni of Sheffield | Computer Science | 0114 222 9134 |
-| Mentee2@gmail.com  | Password1 | Mentee2 TestDude        | Mentee            |       |              |                                | Uni of Sheffield | Computer Science | 0114 222 9134 |
+| Mentee1@gmail.ac.uk  | Password1 | Mentee1 TestDude        | Mentee            |       |              |                                | Uni of Sheffield | Computer Science | 0114 222 9134 |
+| Mentee2@gmail.ac.uk  | Password1 | Mentee2 TestDude        | Mentee            |       |              |                                | Uni of Sheffield | Computer Science | 0114 222 9134 |
 | Mentor1@gmail.com  | Password1 | Mentor1 TestDudette     | Mentor            | Mrs   | Professor    | Teacher training and education |                  |                  |               |
 | Mentor2@gmail.com  | Password1 | Mentor2 TestDudette     | Mentor            | Dr    | System Admin | Information technology         |                  |                  |               |
 | Founder1@gmail.com | Password1 | FounderAdmin TestPerson | Founder           |       |              |                                |                  |                  |               |
