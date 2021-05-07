@@ -21,9 +21,9 @@ A web application written in Ruby which allows mentors and mentees to contact ea
 
 ``ruby app.rb``
 
-Finally, go to the URL of your app (‘This sinatra application is available at: *-4567.codio.io ‘) in a new tab. 
+-Finally, go to the URL of your app (‘This sinatra application is available at: *-4567.codio.io ‘) in a new tab. 
 
-If you wish to stop the web app, press Control + C in the terminal located in the other tab, the codio box.
+*If you wish to stop the web app, press Control + C in the terminal located in the other tab, the codio box.
  
 
 ## Example user accounts you can use
