@@ -9,11 +9,11 @@ A web application written in Ruby which allows mentors and mentees to contact ea
 
 -Select Ruby + Rails as the starting point and give your project a name, then create it.
 
--Open the terminal by clicking "Tools", then "Terminal" 
+-Open the terminal by clicking the "Tools" tab, then "Terminal". 
 
 -Type the following commands in the terminal and press enter after each:
 
-``git clone git@git.shefcompsci.org.uk:com1001-2020-21/team02/project.git`` to clone project to your system
+``git clone git@git.shefcompsci.org.uk:com1001-2020-21/team02/project.git`` to clone the project to your system  
 
 ``cd project``
 
@@ -21,7 +21,7 @@ A web application written in Ruby which allows mentors and mentees to contact ea
 
 ``ruby app.rb``
 
--Finally, go to the URL of your app (‘This sinatra application is available at: *-4567.codio.io ‘) in a new tab. 
+-Finally, go to the URL of your app, this will be printed to the terminal (‘This sinatra application is available at: *-*-4567.codio.io ‘).   
 
 *If you wish to stop the web app, press Control + C in the terminal located in the other tab, the codio box.
  
@@ -69,4 +69,4 @@ The administrator role is a special role with elevated privileges, such as suspe
 The initial administrator (the ‘founder’) can also promote other users.
 
 ## The report system
-Users can submit reports to administrators in case something inappropriate happens during the mentoring process.
+Users can submit reports to administrators in case something inappropriate happens during the mentoring process. The administrators are then able to view the reports.  
