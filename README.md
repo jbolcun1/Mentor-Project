@@ -4,15 +4,25 @@ A web application written in Ruby which allows mentors and mentees to contact ea
 
 ## To Start The Web App
 -Visit https://codio.com and log into your account, or register first.
+
 -Click on ‘My Projects’ and then on ‘New Project’.
+
 -Select Ruby + Rails as the starting point and give your project a name, then create it.
+
 -Open the terminal by clicking "Tools", then "Terminal" 
+
 -Type the following commands in the terminal and press enter after each:
+
 ``git clone git@git.shefcompsci.org.uk:com1001-2020-21/team02/project.git`` to clone project to your system
+
 ``cd project``
+
 ``bundle install``
+
 ``ruby app.rb``
+
 Finally, go to the URL of your app (‘This sinatra application is available at: *-4567.codio.io ‘) in a new tab. 
+
 If you wish to stop the web app, press Control + C in the terminal located in the other tab, the codio box.
  
 
@@ -28,15 +38,19 @@ If you wish to stop the web app, press Control + C in the terminal located in th
 
 ## Make an account
 **Register** by visiting the login page, where you’ll be asked if you have an account, and enter your details to make one. 
+
 Select your role based on what you would like to be: a mentor or a mentee.
 
 ## Contact a mentor
 Mentees can use the search and filter functions to look for a suitable mentor.
+
 You can enter an introductory email that will be sent to the mentor. 
+
 As a mentee-driven scheme, it is your responsibility to initiate and maintain contact with your mentor.
 
 ## Mentor Acceptance
 As a mentor, you can go to your dashboard and view the mentees who have expressed their interest in a mentorship. 
+
 You can click on ‘view more’ to see a description of the mentee and accept the invitation.
 
 ## Mentorship
@@ -51,6 +65,7 @@ when you click Change Details.
 
 ## Administration
 The administrator role is a special role with elevated privileges, such as suspending users, changing account details and viewing and dealing with reports.
+
 The initial administrator (the ‘founder’) can also promote other users.
 
 ## The report system
