@@ -1,12 +1,18 @@
 <%= erb :"common/header_loggedin_admin" %>
 <body id="Report Details Page">
 <main>
-  <p>The report you selected is:</p>
-  <p>The ID of the report creator <%= h @report.user_id %></p>
-  <p>The person the report is against <%= h @report.identifier %></p>
-  <P>The report was made on <%= h @report.get_time %></P>
-  <p>The description of your in the report</p>
-  <p><%= h @report.get_description %></p>
+  <% if @found %>
+    <p>The report you selected is:</p>
+    <p>The ID of the report creator <%= h @report.user_id %></p>
+    <p>The person the report is against <%= h @report.identifier %></p>
+    <P>The report was made on <%= h @report.get_time %></P>
+    <p>The description of your in the report</p>
+    <p><%= h @report.get_description %></p>
+    <a href="/delete-report?id=<%= h @report.id %>">Delete report?</a>
+  <% else %>
+    <p> Sorry no report has been found! Perhaps it was deleted! </p>
+    <a href="/view-reports">Go back to all reports</a>
+  <% end %>
 
 </main>
 </body>

@@ -233,5 +233,13 @@ get "/view-report-detail" do
 
   report_id = params.fetch("id", "0")
   @report = Report.first(id: report_id)
+  @found = true unless @report.nil?
   erb :view_report_detail
+end
+
+get "/delete-report" do
+  report_id = params.fetch("id", "0")
+  @report = Report.first(id: report_id)
+  @report.delete
+  redirect "/view-reports"
 end
