@@ -3,12 +3,19 @@
 A web application written in Ruby which allows mentors and mentees to contact each other and exchange information.
 
 ## To Start The Web App
+Go to codio.com, and log in  
+Go to "My Projects"  
+Click "New Project"  
+Create a new box with a ruby + rails configuration  
+Add a project name (and description if you want)  
+``git clone git@git.shefcompsci.org.uk:com1001-2020-21/team02/project.git`` to clone project to your system
 Open the terminal by clicking "Tools", then "Terminal"
 Type  
 ``cd project``  
 ``bundle install``  
 ``ruby app.rb``  
-Then go to **image-karma-4567.codio.io** in a new tab
+Then in the terminal there should be an output of a website along the lines of **box-name-4567.codio.io**
+Open the URL in new tab to view the website
 If you wish to stop the web app press ``Control + C`` in the terminal  
 
 ## Example user accounts you can use
