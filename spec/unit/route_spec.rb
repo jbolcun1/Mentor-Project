@@ -227,6 +227,20 @@ RSpec.describe "Route Test" do
         expect(last_response.status).to eq(302)
       end
     end
+    
+    context "logged in as a founder" do
+      it "will have status code of 200 (OK)" do
+        user = User.new(first_name: "Bonny", surname: "Simmons", email: "BSimmons@gmail.ac.uk", password: "Password1",
+                        privilege: Privilege.new.from_name("Founder"))
+        testPerson = User.new(first_name: "Mentee1", surname: "TestDude", email: "Mentee1@gmail.ac.uk	", password: "Password1",
+                        privilege: Privilege.new.from_name("Mentee"))
+        user.save_changes
+        rack_mock_session.cookie_jar['id'] = user.id
+        get "/admin","empty"=>0, "first_name"=>"","surname"=>"","email"=>"Mentee1@gmail.ac.uk","university"=>"","degree"=>"","job_Title"=>"","industry_Sector"=>"Law" 
+        expect(last_response.status).to eq(200)
+        DB.from("users").delete
+      end
+    end
   end
 
   describe "GET /view-user" do
@@ -234,6 +248,46 @@ RSpec.describe "Route Test" do
       it "has a status code of 302 (Redirect)" do
         get "/view-user"
         expect(last_response.status).to eq(302)
+      end
+    end
+    
+    context "viewing a mentee account" do
+      it "will have a status code of 200 (OK)" do
+        testPerson = User.new(first_name: "Founder1", surname: "TestDude", email: "Founder1@gmail.ac.uk	", password: "Password1",
+                        privilege: Privilege.new.from_name("Founder"))
+        testPerson2 = User.new(first_name: "Mentee1", surname: "TestDude2", email: "Mentee1@gmail.ac.uk	", password: "Password1",
+                        privilege: Privilege.new.from_name("Mentee"))
+        desc = Description.new(description:"some text")
+        desc.save_changes
+        testPerson.save_changes
+        testPerson2.description = desc.id
+        testPerson2.save_changes
+        
+        rack_mock_session.cookie_jar['id'] = testPerson.id
+        get "/view-user", "id"=> testPerson2.id
+        expect(last_response.status).to eq(200)
+        DB.from("users").delete
+        DB.from("descriptions").delete
+      end
+    end
+    
+    context "viewing a mentor account" do
+      it "will have a status code of 200 (OK)" do
+        testPerson = User.new(first_name: "Founder1", surname: "TestDude", email: "Founder1@gmail.ac.uk	", password: "Password1",
+                        privilege: Privilege.new.from_name("Founder"))
+        testPerson2 = User.new(first_name: "Mentor1", surname: "TestDude2", email: "Mentor1@gmail.ac.uk	", password: "Password1",
+                        privilege: Privilege.new.from_name("Mentor"), industry_sector: Industry_sector.new.from_name("Law"))
+        desc = Description.new(description:"some text")
+        desc.save_changes
+        testPerson.save_changes
+        testPerson2.description = desc.id
+        testPerson2.save_changes
+        
+        rack_mock_session.cookie_jar['id'] = testPerson.id
+        get "/view-user", "id"=> testPerson2.id
+        expect(last_response.status).to eq(200)
+        DB.from("users").delete
+        DB.from("descriptions").delete
       end
     end
   end
@@ -245,9 +299,81 @@ RSpec.describe "Route Test" do
         expect(last_response.status).to eq(302)
       end
     end
+    
+    context "changing a Mentee account" do
+      it "will have a status code of 200 (OK)" do
+        testPerson = User.new(first_name: "Founder1", surname: "TestDude", email: "Founder1@gmail.ac.uk	", password: "Password1",
+                        privilege: Privilege.new.from_name("Founder"))
+        testPerson2 = User.new(first_name: "Mentee1", surname: "TestDude2", email: "Mentee1@gmail.ac.uk	", password: "Password1",
+                        privilege: Privilege.new.from_name("Mentee"))
+        desc = Description.new(description:"some text")
+        desc.save_changes
+        testPerson.save_changes
+        testPerson2.description = desc.id
+        testPerson2.save_changes
+        
+        rack_mock_session.cookie_jar['id'] = testPerson.id
+        get "/change-user", "id"=> testPerson2.id
+        expect(last_response.status).to eq(200)
+        DB.from("users").delete
+        DB.from("descriptions").delete
+      end
+    end
+    
+    context "changing a a Mentor account" do
+      it "will have a status code of 200 (OK)" do
+        testPerson = User.new(first_name: "Founder1", surname: "TestDude", email: "Founder1@gmail.ac.uk	", password: "Password1",
+                        privilege: Privilege.new.from_name("Founder"),title:Title.new.from_name("Mr"),industry_sector:Industry_sector.new.from_name("Law"))
+        testPerson2 = User.new(first_name: "Mentor1", surname: "TestDude2", email: "Mentor1@gmail.ac.uk	", password: "Password1",
+                        privilege: Privilege.new.from_name("Mentor"), industry_sector: Industry_sector.new.from_name("Law"),title:Title.new.from_name("Mr"))
+        desc = Description.new(description:"some text")
+        desc.save_changes
+        testPerson.save_changes
+        testPerson2.description = desc.id
+        testPerson2.save_changes
+        
+        rack_mock_session.cookie_jar['id'] = testPerson.id
+        get "/change-user", "id"=> testPerson2.id
+        expect(last_response.status).to eq(200)
+        DB.from("users").delete
+        DB.from("descriptions").delete
+      end
+    end
+    
+    context "changing a admin account" do
+      it "will have a status code of 200 (OK)" do
+        testPerson = User.new(first_name: "Founder1", surname: "TestDude", email: "Founder1@gmail.ac.uk	", password: "Password1",
+                        privilege: Privilege.new.from_name("Founder"))
+        testPerson2 = User.new(first_name: "Admin1", surname: "TestDude2", email: "Admin1@gmail.ac.uk	", password: "Password1",
+                        privilege: Privilege.new.from_name("Admin"))
+        desc = Description.new(description:"some text")
+        desc.save_changes
+        testPerson.save_changes
+        testPerson2.description = desc.id
+        testPerson2.save_changes
+        
+        rack_mock_session.cookie_jar['id'] = testPerson.id
+        get "/change-user", "id"=> testPerson2.id
+        expect(last_response.status).to eq(200)
+        DB.from("users").delete
+        DB.from("descriptions").delete
+      end
+    end
   end
 
   describe "GET /admin-creation" do
+    context "When founder account is logged in" do
+      it "has a status code of 200 (OK)" do
+        testPerson = User.new(first_name: "Founder1", surname: "TestDude", email: "Founder1@gmail.ac.uk	", password: "Password1",
+                        privilege: Privilege.new.from_name("Founder"))
+        testPerson.save_changes
+        rack_mock_session.cookie_jar['id'] = testPerson.id
+        get "/admin-creation"
+        expect(last_response.status).to eq(200)
+        DB.from("users").delete
+      end
+    end
+    
     context "When no user is logged in" do
       it "has a status code of 302 (Redirect)" do
         get "/admin-creation"
@@ -263,6 +389,25 @@ RSpec.describe "Route Test" do
         expect(last_response.status).to eq(302)
       end
     end
+    
+    context "When founder is logged in" do
+      it "has a status code of 200 (OK)" do
+        founder = User.new(first_name: "Founder1", surname: "TestDude", email: "Founder1@gmail.ac.uk	", password: "Password1",
+                        privilege: Privilege.new.from_name("Founder"))
+        founder.save_changes
+        testGuy = User.new(first_name: "Mentee1", surname: "TestDude", email: "Mentee1@gmail.ac.uk	", password: "Password1",
+                        privilege: Privilege.new.from_name("Mentee"))
+        desc = Description.new(description: "I am a mentee")
+        desc.save_changes
+        testGuy.description = desc.id
+        testGuy.save_changes
+        rack_mock_session.cookie_jar['id'] = founder.id
+        get "/suspension", "id"=>testGuy.id
+        expect(last_response.status).to eq(200)
+        DB.from("users").delete
+        DB.from("descriptions").delete
+      end
+    end
   end
 
   describe "GET /view-reports" do
@@ -270,6 +415,55 @@ RSpec.describe "Route Test" do
       it "has a status code of 302 (Redirect)" do
         get "/view-reports"
         expect(last_response.status).to eq(302)
+      end
+    end
+    
+    context "When founder is logged in" do
+      it "has a status code of 200 (OK)" do
+        founder = User.new(first_name: "founder", surname: "one", email: "Founder1@gmail.ac.uk", password: "Password1",
+          privilege: Privilege.new.from_name("Founder"),title:Title.new.from_name("Mr"))
+        founder.save_changes
+        rack_mock_session.cookie_jar['id'] = founder.id
+        get "/view-reports"
+        expect(last_response.status).to eq(200)
+        DB.from("users").delete
+      end
+    end
+  end
+  
+  describe "GET /view-report-detail" do
+    context "When founder account is logged in" do
+      it "has a status code of 200 (OK)" do
+        founder = User.new(first_name: "founder", surname: "one", email: "Founder1@gmail.ac.uk", password: "Password1",
+          privilege: Privilege.new.from_name("Founder"),title:Title.new.from_name("Mr"))
+        founder.save_changes
+        rack_mock_session.cookie_jar['id'] = founder.id
+        get "/view-report-detail", "id"=>0
+        expect(last_response.status).to eq(200)
+        DB.from("users").delete
+      end
+    end
+    
+    context "When no user is logged in" do
+      it "has a status code of 302 (Redirect)" do
+        get "/view-report-detail"
+        expect(last_response.status).to eq(302)
+      end
+    end
+  end
+  
+  describe "GET /delete-report" do
+    context "When no user is logged in" do
+      it "has a status code of 302 (Redirect)" do
+        founder = User.new(first_name: "founder", surname: "one", email: "Founder1@gmail.ac.uk", password: "Password1",
+          privilege: Privilege.new.from_name("Founder"),title:Title.new.from_name("Mr"))
+        founder.save_changes
+        report = Report.new
+        report.save_changes
+        rack_mock_session.cookie_jar['id'] = founder.id
+        get "/delete-report", "id" => report.id
+        expect(last_response.status).to eq(302)
+        DB.from("users").delete
       end
     end
   end

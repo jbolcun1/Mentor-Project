@@ -164,4 +164,154 @@ RSpec.describe "Form Test" do
 #       end
 #     end
 #   end
+  
+  describe "POST /admin" do
+    context "searching for an existing user" do
+      it "will return the user information in a table" do
+        user = User.new(first_name: "Bonny", surname: "Simmons", email: "BSimmons@gmail.ac.uk", password: "Password1",
+                        privilege: Privilege.new.from_name("Founder"))
+        testPerson = User.new(first_name: "Mentee1", surname: "TestDude", email: "Mentee1@gmail.ac.uk	", password: "Password1",
+                        privilege: Privilege.new.from_name("Mentee"))
+        user.save_changes
+        rack_mock_session.cookie_jar['id'] = user.id
+        post "/admin", "first_name"=>"","surname"=>"","email"=>"Mentee1@gmail.ac.uk","university"=>"","degree"=>"","job_Title"=>"","industry_Sector"=>"" 
+        expect(last_response.location).to include "/admin?first_name=&surname=&email=Mentee1%40gmail.ac.uk&university=&degree=&job_Title=&industry_Sector=&empty=0"
+        DB.from("users").delete
+      end
+    end
+  end
+  
+  describe "POST /change-user" do
+    context "changing another user's account details as a founder/admin" do
+      it "after changes made it will redirect to /dashboard" do
+        desc = Description.new(description: "I study maths")
+        desc.save_changes
+        user = User.new(first_name: "Bonny", surname: "Simmons", email: "BSimmons@gmail.ac.uk", password: "Password1",
+                        privilege: Privilege.new.from_name("Mentee"))
+        user.description = desc.id
+        user.save_changes
+        post "/change-user","id" => user.id ,"university" => "The University of Manchester", "degree" => "English", "telephone" => "07515448511", "newpassword" => ""
+        expect(last_response.location).to include("/dashboard")
+        DB.from("users").delete
+        DB.from("descriptions").delete
+      end
+    end
+    
+    context "changing mentor profile information" do
+      it "after changes made it will redirect to /dashboard" do
+        desc = Description.new(description: "I an mentor")
+        desc.save_changes
+        testPerson = User.new(first_name: "Bonny", surname: "Simmons", email: "BSimmons@gmail.ac.uk", password: "Password1",
+          privilege: Privilege.new.from_name("Mentor"),title:Title.new.from_name("Mrs"))
+        testPerson.description = desc.id
+        testPerson.save_changes
+        post "/change-user?id=1", "job_title" => "Teacher", "title" => "Mrs", "industry_Sector" => "Law", "newpassword" => ""
+        expect(last_response.location).to include("/dashboard")
+        DB.from("users").delete
+        DB.from("descriptions").delete
+      end
+    end
+    
+    context "changing password of account" do
+      it "send email and redirect to dashboard" do
+        desc = Description.new(description: "I an mentor")
+        desc.save_changes
+        testPerson = User.new(first_name: "Bonny", surname: "Simmons", email: "BSimmons@gmail.ac.uk", password: "Password1",
+          privilege: Privilege.new.from_name("Mentor"),title:Title.new.from_name("Mrs"))
+        testPerson.description = desc.id
+        testPerson.save_changes
+        post "/change-user?id=1", "job_title" => "Teacher", "title" => "Mrs", "industry_Sector" => "Law", "newpassword" => "Password2"
+        expect(last_response.location).to include("/dashboard")
+        DB.from("users").delete
+        DB.from("descriptions").delete
+      end
+    end
+  end
+  
+  describe "POST /admin-creation" do
+    it "creates a new admin account" do
+      founder = User.new(first_name: "founder", surname: "one", email: "Founder1@gmail.ac.uk", password: "Password1",
+          privilege: Privilege.new.from_name("Founder"),title:Title.new.from_name("Mr"))
+      founder.save_changes
+      rack_mock_session.cookie_jar['id'] = founder.id
+      post "/admin-creation", "first_name"=>"admin","surname"=>"one","email"=>"admin1@gmail.com","password"=>"Password1","confirmpassword"=>"Password1","privilege"=>"Admin"
+      expect(last_response.location).to include "/admin-creation?success=1"
+      DB.from("users").delete
+    end
+  
+    it "redirects with an error message due to passwords not matching" do
+      founder = User.new(first_name: "founder", surname: "one", email: "Founder1@gmail.ac.uk", password: "Password1",
+          privilege: Privilege.new.from_name("Founder"),title:Title.new.from_name("Mr"))
+      founder.save_changes
+      rack_mock_session.cookie_jar['id'] = founder.id
+      post "/admin-creation", "first_name"=>"admin","surname"=>"one","email"=>"admin1@gmail.com","password"=>"Password1","confirmpassword"=>"Password121","privilege"=>"Admin"
+      expect(last_response.location).to include "/admin-creation?error=1"
+      DB.from("users").delete
+    end
+  end
+  
+  describe "POST /suspension" do
+    it "suspends the test account" do
+      desc = Description.new(description: "I an mentee")
+      desc.save_changes
+      testPerson = User.new(first_name: "Mentee", surname: "One", email: "Mentee1@gmail.ac.uk", password: "Password1",
+        privilege: Privilege.new.from_name("Mentee"),title:Title.new.from_name("Mrs"),suspend:0)
+      testPerson.description = desc.id
+      testPerson.save_changes
+      post "/suspension", "id"=>testPerson.id,"suspend" => "Yes"
+      expect(last_response.location).to include("/dashboard")
+      DB.from("users").delete
+      DB.from("descriptions").delete
+    end
+    
+    it "unsuspends the test account" do
+      desc = Description.new(description: "I an mentee")
+      desc.save_changes
+      testPerson = User.new(first_name: "Mentee", surname: "One", email: "Mentee1@gmail.ac.uk", password: "Password1",
+        privilege: Privilege.new.from_name("Mentee"),title:Title.new.from_name("Mrs"),suspend:1)
+      testPerson.description = desc.id
+      testPerson.save_changes
+      post "/suspension", "id"=>testPerson.id,"suspend" => "Yes"
+      expect(last_response.location).to include("/dashboard")
+      DB.from("users").delete
+      DB.from("descriptions").delete
+    end
+  end
+  
+  describe "POST /post-mentee-register" do
+    it "will add further mentee information to mentee account then redirect to /mentee" do
+      testPerson = User.new(first_name: "Mentee", surname: "One", email: "Mentee1@gmail.ac.uk", password: "Password1",
+        privilege: Privilege.new.from_name("Mentee"),title:Title.new.from_name("Mrs"),suspend:1)
+      testPerson.save_changes
+      rack_mock_session.cookie_jar['id'] = testPerson.id
+      post "/post-mentee-register", "university"=>"The University of Sheffield", "degree"=>"Physics","telephone"=>"07768194123","description"=>"I am new student"
+      expect(last_response.location).to include ("/mentee")
+      DB.from("users").delete
+    end
+  end
+  
+  describe "POST /post-mentee-invite" do
+    it "will add further mentee information to mentee account then redirect to /mentee" do
+      testPerson = User.new(first_name: "Mentee", surname: "One", email: "Mentee1@gmail.ac.uk", password: "Password1",
+        privilege: Privilege.new.from_name("Mentee"),title:Title.new.from_name("Mrs"),last_send:Time.now)
+      testPerson.save_changes
+      rack_mock_session.cookie_jar['id'] = testPerson.id
+      post "/post-mentee-register", "university"=>"The University of Sheffield", "degree"=>"Physics","telephone"=>"07768194123","description"=>"I am new student"
+      expect(last_response.location).to include ("/mentee")
+      DB.from("users").delete
+    end
+  end
+  
+#   describe "POST /post-mentor-register" do
+#     it "will add further mentor information to mentor account then redirect to /mentor" do
+#       testPerson = User.new(first_name: "Mentor", surname: "One", email: "Mentor1@gmail.ac.uk", password: "Password1",
+#         privilege: Privilege.new.from_name("Mentor"))
+#       testPerson.save_changes
+#       rack_mock_session.cookie_jar['id'] = testPerson.id
+#       post "/post-mentor-register","title"=>"Mrs", "job_title"=>"Lawyer","industry_Sector"=>"Law","description"=>"text"
+#       expect(last_response.location).to include ("/mentor")
+#       DB.from("users").delete
+#       DB.from("industry_sectors").delete
+#     end
+#   end
 end
