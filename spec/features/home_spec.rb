@@ -26,6 +26,6 @@ describe "the home page" do
 
   it "can display the logo" do
     visit "/"
-    expect(page.find('#logo')['src']).to match 'images/E-mentor.PNG'
+      expect(page.find('#header')['src']).to match 'images/Logo.PNG'
   end
 end

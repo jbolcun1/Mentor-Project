@@ -4,7 +4,7 @@ describe "the register page" do
   it "is accessible from the index page" do
     visit "/"
     click_link "Login"
-    click_link "Click here."
+    click_link "Click here"
     expect(page.status_code).to eq(200)
   end
 
