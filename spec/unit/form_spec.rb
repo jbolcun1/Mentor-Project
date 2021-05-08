@@ -93,7 +93,75 @@ RSpec.describe "Form Test" do
     end
   end
   
-  describe "POST /post-make-report" do
-    #requires cookies
+  describe "POST /post-profile" do
+    context "changing mentee profile information" do
+      it "after changes made it will redirect to /dashboard" do
+        desc = Description.new(description: "I study maths")
+        desc.save_changes
+        user = User.new(first_name: "Bonny", surname: "Simmons", email: "BSimmons@gmail.ac.uk", password: "Password1",
+                        privilege: Privilege.new.from_name("Mentee"))
+        
+        user.description = desc.id
+        user.save_changes
+        rack_mock_session.cookie_jar['id'] = user.id
+        post "/post-profile", "university" => "The University of Sheffield", "degree" => "Mathematics", "telephone" => "07515448511", "password" => ""
+        expect(last_response.location).to include("/dashboard")
+        DB.from("users").delete
+        DB.from("descriptions").delete
+      end
+    end
+    
+    context "changing password" do
+      it "will save changes, send a notification email and redirect to /dashboard" do
+        desc = Description.new(description: "I study maths")
+        desc.save_changes
+        user = User.new(first_name: "Bonny", surname: "Simmons", email: "BSimmons@gmail.ac.uk", password: "Password1",
+                        privilege: Privilege.new.from_name("Mentee"))
+        
+        user.description = desc.id
+        user.save_changes
+        rack_mock_session.cookie_jar['id'] = user.id
+        post "/post-profile", "university" => "The University of Sheffield", "degree" => "Mathematics", "telephone" => "07515448511", "password" => "Password1","newpassword" => "Password2", "newconfirmpassword" => "Password2"
+        expect(last_response.location).to include("/dashboard")
+        DB.from("users").delete
+        DB.from("descriptions").delete
+      end
+    end
+    
+    context "made change to only one password field" do
+      it "redirect and print an error message on screen" do
+        desc = Description.new(description: "I study maths")
+        desc.save_changes
+        user = User.new(first_name: "Bonny", surname: "Simmons", email: "BSimmons@gmail.ac.uk", password: "Password1",
+                        privilege: Privilege.new.from_name("Mentee"))
+        
+        user.description = desc.id
+        user.save_changes
+        rack_mock_session.cookie_jar['id'] = user.id
+        post "/post-profile", "university" => "The University of Sheffield", "degree" => "Mathematics", "telephone" => "07515448511", "password" => "Password1","newpassword" => "", "newconfirmpassword" => "Password2"
+        expect(last_response.location).to include("/profile?error3=1")
+        DB.from("users").delete
+        DB.from("descriptions").delete
+      end
+    end
   end
+  
+#   describe "POST /post-make-report" do
+#     context "identifier and description of what happened is posted in form" do
+#       it "will make new report with saved information then redirect to /dashboard" do
+#         desc = Description.new
+#         desc.load("description"=>"something")
+#         desc.save_changes
+#         user = User.new
+#         user.save_changes
+# #         desc.save_changes
+#         #user.description = desc.id
+#         rack_mock_session.cookie_jar['id'] = user.id
+#         post "/post-make-report", "identifier" => "Name", "description"=> "something"
+#         expect(last_response.location).to include("/dashboard")
+#         DB.from("users").delete
+#         DB.from("descriptions").delete
+#       end
+#     end
+#   end
 end
