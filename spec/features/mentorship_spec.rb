@@ -30,7 +30,6 @@ describe "the mentorship process" do
     send_invitation
     click_link "Logout"
     mentor_login
-    save_page
     click_link "View More"
     choose("acceptDecision")
     click_button "Submit"
