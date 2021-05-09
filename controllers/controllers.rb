@@ -218,7 +218,9 @@ end
 
 get "/make-report" do
   @id = request.cookies.fetch("id", "0")
+  @user = User.first(id: @id)
   redirect "/login" if @id == "0"
+  redirect "/dashboard" if @user.get_privileges == "Founder" || @user.get_privileges = "Admin"
   erb :make_report
 end
 
