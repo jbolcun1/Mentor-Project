@@ -146,24 +146,19 @@ RSpec.describe "Form Test" do
     end
   end
   
-#   describe "POST /post-make-report" do
-#     context "identifier and description of what happened is posted in form" do
-#       it "will make new report with saved information then redirect to /dashboard" do
-#         desc = Description.new
-#         desc.load("description"=>"something")
-#         desc.save_changes
-#         user = User.new
-#         user.save_changes
-# #         desc.save_changes
-#         #user.description = desc.id
-#         rack_mock_session.cookie_jar['id'] = user.id
-#         post "/post-make-report", "identifier" => "Name", "description"=> "something"
-#         expect(last_response.location).to include("/dashboard")
-#         DB.from("users").delete
-#         DB.from("descriptions").delete
-#       end
-#     end
-#   end
+  describe "POST /post-make-report" do
+    context "identifier and description of what happened is posted in form" do
+      it "will make new report with saved information then redirect to /dashboard" do
+        user = User.new
+        user.save_changes
+        rack_mock_session.cookie_jar['id'] = user.id
+        post "/post-make-report", "identifier" => "Name", "description"=> "something"
+        expect(last_response.location).to include("/dashboard")
+        DB.from("reports").delete
+        DB.from("users").delete
+      end
+    end
+  end
   
   describe "POST /admin" do
     context "searching for an existing user" do
@@ -302,16 +297,55 @@ RSpec.describe "Form Test" do
     end
   end
   
-#   describe "POST /post-mentor-register" do
-#     it "will add further mentor information to mentor account then redirect to /mentor" do
-#       testPerson = User.new(first_name: "Mentor", surname: "One", email: "Mentor1@gmail.ac.uk", password: "Password1",
-#         privilege: Privilege.new.from_name("Mentor"))
-#       testPerson.save_changes
-#       rack_mock_session.cookie_jar['id'] = testPerson.id
-#       post "/post-mentor-register","title"=>"Mrs", "job_title"=>"Lawyer","industry_Sector"=>"Law","description"=>"text"
-#       expect(last_response.location).to include ("/mentor")
-#       DB.from("users").delete
-#       DB.from("industry_sectors").delete
-#     end
-#   end
+  describe "POST /post-mentor-register" do
+    it "will add further mentor information to mentor account then redirect to /mentor" do
+      testPerson = User.new(first_name: "Mentor", surname: "One", email: "Mentor1@gmail.ac.uk", password: "Password1",
+        privilege: Privilege.new.from_name("Mentor"))
+      testPerson.save_changes
+      rack_mock_session.cookie_jar['id'] = testPerson.id
+      post "/post-mentor-register","title"=>"Mrs", "job_Title"=>"Lawyer","industry_Sector"=>"Law","description"=>"text"
+      expect(last_response.location).to include ("/mentor")
+      DB.from("users").delete
+    end
+  end
+  
+  describe "POST /post-mentor-accept" do
+    context "mentor accepts the mentee" do
+      it "sends email and redirects to /mentor" do
+        mentor = User.new(first_name: "mentor", surname: "one", email: "mentor1@gmail.ac.uk", password: "Password1",
+          privilege: Privilege.new.from_name("Mentor"),title:Title.new.from_name("Mr"))
+        desc = Description.new(description: "Text")
+        desc.save_changes
+        mentor.save_changes
+        mentee = User.new(first_name: "mentee", surname: "one", email: "mentee1@gmail.ac.uk", password: "Password1",
+          privilege: Privilege.new.from_name("Mentee"),title:Title.new.from_name("Mr"))
+        mentee.description = desc.id
+        mentee.save_changes
+        rack_mock_session.cookie_jar['id'] = mentor.id
+        post "/post-mentor-accept", "mentee_Id"=>mentee.id, "decision"=>"accept"
+        expect(last_response.location).to include ("/mentor")
+        DB.from("users").delete
+        DB.from("descriptions").delete
+      end
+    end
+    
+    context "mentor rejects the mentee" do
+      it "sends email and redirects to /mentor" do
+        mentor = User.new(first_name: "mentor", surname: "one", email: "mentor1@gmail.ac.uk", password: "Password1",
+          privilege: Privilege.new.from_name("Mentor"),title:Title.new.from_name("Mr"))
+        desc = Description.new(description: "Text")
+        desc.save_changes
+        mentor.save_changes
+        mentee = User.new(first_name: "mentee", surname: "one", email: "mentee1@gmail.ac.uk", password: "Password1",
+          privilege: Privilege.new.from_name("Mentee"),title:Title.new.from_name("Mr"))
+        mentee.description = desc.id
+        mentee.save_changes
+        rack_mock_session.cookie_jar['id'] = mentor.id
+        post "/post-mentor-accept", "mentee_Id"=>mentee.id, "decision"=>"reject"
+        expect(last_response.location).to include ("/mentor")
+        DB.from("users").delete
+        DB.from("descriptions").delete
+      end
+    end
+  end
 end
