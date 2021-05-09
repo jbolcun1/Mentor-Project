@@ -51,7 +51,7 @@ get "/view-mentor" do
   @id = request.cookies.fetch("id", "0")
   redirect "/login" if @id == "0"
   
-  @error_correct = true if params.fetch("error", "0") == "0"
+  @error_correct = true if params.fetch("error", "0") == "1"
   @mentor_id = params[:id]
   @mentor = User.first(id: @mentor_id)
   erb :view_mentor
