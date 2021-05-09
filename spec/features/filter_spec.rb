@@ -11,17 +11,13 @@ describe "the filter functionality" do
 
   it "can display a suitable mentor for mentees" do
     mentee_login
-    fill_in "job_Title", with: "System Admin"
-    select "Information technology", from: "industry_Sector"
-    click_button "Submit"
+    mentor_filter
     expect(page).to have_content "Mentor2 TestDudette"
   end
 
   it "can display more information to mentees about a potential mentor" do
     mentee_login
-    fill_in "job_Title", with: "System Admin"
-    select "Information technology", from: "industry_Sector"
-    click_button "Submit"
+    mentor_filter
     click_link "View More"
     expect(page).to have_content "The mentor you have selected is: Mentor2 TestDudette"
     expect(page).to have_content "The mentor's available time is: Any Afternoon, no weekends"
@@ -29,11 +25,9 @@ describe "the filter functionality" do
     expect(page).to have_content "Hello I am System Admin at UoS"
   end
 
-  it "allows mentees to contact potential mentors" do
+  it "displays relevant information about contacting mentors to mentees" do
     mentee_login
-    fill_in "job_Title", with: "System Admin"
-    select "Information technology", from: "industry_Sector"
-    click_button "Submit"
+    mentor_filter
     click_link "View More"
     expect(page).to have_content "You can't send more than one invitation in less than 24 hours"
     expect(page).to have_content "Add your introduction here!"
@@ -42,9 +36,7 @@ describe "the filter functionality" do
 
   it "redirects mentees to their dashboard after contacting a mentor" do
     mentee_login
-    fill_in "job_Title", with: "System Admin"
-    select "Information technology", from: "industry_Sector"
-    click_button "Submit"
+    mentor_filter
     click_link "View More"
     click_button "Submit"
     expect(page).to have_content "Mentee Dashboard"

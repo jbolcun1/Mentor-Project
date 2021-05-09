@@ -53,3 +53,11 @@ def admin_login
   fill_in "password", with: "admin"
   click_button "Submit"    
 end
+
+# Filter method
+def mentor_filter
+  fill_in "job_Title", with: "System Admin"
+  select "Information technology", from: "industry_Sector"
+  click_button "Submit"    
+end
+    

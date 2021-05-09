@@ -10,7 +10,7 @@ RSpec.describe "Route Test" do
     Sinatra::Application
   end
 
-  describe "GET /index" do #Done
+  describe "GET /index" do 
     it "has status code of 200 (OK)" do
       get "/index"
       expect(last_response.status).to eq(200)
@@ -22,7 +22,7 @@ RSpec.describe "Route Test" do
     end
   end
 
-  describe "GET /about" do #Done
+  describe "GET /about" do 
     it "has a status code of 200 (OK)" do
       get "/about"
       expect(last_response.status).to eq(200)
@@ -34,7 +34,7 @@ RSpec.describe "Route Test" do
     end
   end
 
-  describe "GET /register" do #done
+  describe "GET /register" do 
     it "has a status code of 200 (OK)" do
       get "/register"
       expect(last_response.status).to eq(200)
@@ -202,7 +202,7 @@ RSpec.describe "Route Test" do
     end 
   end
 
-  describe "GET /profile" do #cookies needed
+  describe "GET /profile" do 
     context "When no user is logged in" do
       it "has a status code of 302 (Redirect)" do
         get "/profile"
@@ -211,7 +211,7 @@ RSpec.describe "Route Test" do
     end
   end
 
-  describe "GET /make-report" do #cookies
+  describe "GET /make-report" do 
     context "When no user is logged in" do
       it "has a status code of 302 (Redirect)" do
         get "/make-report"
@@ -453,18 +453,17 @@ RSpec.describe "Route Test" do
   end
   
   describe "GET /delete-report" do
-    context "When no user is logged in" do
-      it "has a status code of 302 (Redirect)" do
-        founder = User.new(first_name: "founder", surname: "one", email: "Founder1@gmail.ac.uk", password: "Password1",
-          privilege: Privilege.new.from_name("Founder"),title:Title.new.from_name("Mr"))
-        founder.save_changes
-        report = Report.new
-        report.save_changes
-        rack_mock_session.cookie_jar['id'] = founder.id
-        get "/delete-report", "id" => report.id
-        expect(last_response.status).to eq(302)
-        DB.from("users").delete
-      end
+    it "has a status code of 302 (Redirect)" do
+      founder = User.new(first_name: "founder", surname: "one", email: "Founder1@gmail.ac.uk", password: "Password1",
+        privilege: Privilege.new.from_name("Founder"),title:Title.new.from_name("Mr"))
+      founder.save_changes
+      report = Report.new
+      report.save_changes
+      rack_mock_session.cookie_jar['id'] = founder.id
+      get "/delete-report", "id" => report.id
+      expect(last_response.status).to eq(302)
+      DB.from("users").delete
+      DB.from("reports").delete
     end
   end
   
@@ -520,6 +519,25 @@ RSpec.describe "Route Test" do
         expect(last_response.status).to eq(302)
       end
     end
+    
+    context "When mentor is logged in" do
+      it "has a status code of 200 (OK)" do
+        mentor = User.new(first_name: "mentor", surname: "one", email: "mentor1@gmail.ac.uk", password: "Password1",
+          privilege: Privilege.new.from_name("Mentor"),title:Title.new.from_name("Mr"))
+        desc = Description.new
+        desc.save_changes
+        mentor.save_changes
+        mentee = User.new
+        mentee.description = desc.id
+        mentee.save_changes
+        rack_mock_session.cookie_jar['id'] = mentor.id
+        get "/view-mentee", "id"=>mentee.id
+        expect(last_response.status).to eq(200)
+        DB.from("users").delete
+        DB.from("descriptions").delete
+      end
+    end
+    
   end
 
   describe "GET /gibberish" do
