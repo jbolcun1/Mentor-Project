@@ -6,7 +6,7 @@
     <p>The ID of the report creator <%= h @report.user_id %></p>
     <p>The person the report is against <%= h @report.identifier %></p>
     <P>The report was made on <%= h @report.get_time %></P>
-    <p>The description of your in the report</p>
+    <p>The description from the report is:</p>
     <p><%= h @report.get_description %></p>
     <a href="/delete-report?id=<%= h @report.id %>">Delete report?</a>
   <% else %>
