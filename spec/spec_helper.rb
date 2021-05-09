@@ -59,5 +59,13 @@ def mentor_filter
   fill_in "job_Title", with: "Professor"
   select "Teacher training and education", from: "industry_Sector"
   click_button "Submit"    
+end    
+
+def reset_mentee 
+  @mentees = Mentee.where(Privilege: 1)
+  @mentees.each do |mentee|
+    mentee.last_send = "0"
+    mentee.has_mentor = 0
+    mentee.save_changes
+  end
 end
-    
