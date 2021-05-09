@@ -45,21 +45,21 @@ Select your role based on what you would like to be: a mentor or a mentee.
 
 ## Contact a mentor
 
-Mentees can use the search and filter functions to look for a suitable mentor.
+Mentees can use the **search and filter functions** to look for a suitable mentor.
 
-They can enter an introductory email that will be sent to the mentor. 
+They can enter an **introductory email** that will be sent to the mentor. 
 
 As a mentee-driven scheme, it is their responsibility to initiate and maintain contact with your mentor.
 
 ## Mentor Acceptance
 
-Mentors can go to their dashboard and view the mentees who have expressed their interest in a mentorship. 
+Mentors can go to their dashboard and **view the mentees** who have expressed their interest in a mentorship. 
 
-They can click on ‘view more’ to see a description of the mentee and accept the invitation.
+They can click on **‘view more’** to see a description of the mentee and accept the invitation.
 
 ## Mentorship
 
-Once the mentee and mentor have started the mentorship, they will be able to see each others' emails to start 
+Once the mentee and mentor have started the mentorship, they will be able to **see each others' emails** to start 
 correspondence.
 
 ## Change account credentials
@@ -71,10 +71,10 @@ when you click Change Details.
 
 ## Administration
 
-The administrator role is a special role with elevated privileges, such as suspending users, changing account details and viewing and dealing with reports.
+The administrator role is a **special role with elevated privileges**, such as suspending users, changing account details and viewing and dealing with reports.
 
-The initial administrator (the ‘founder’) can also promote other users.
+The initial administrator (the ‘founder’) can also **promote other users**.
 
 ## The report system
 
-Users can submit reports to administrators in case something inappropriate happens during the mentoring process. The administrators are then able to view the reports.  
+Users can **submit reports** to administrators in case something inappropriate happens during the mentoring process. The administrators are then able to view the reports.  
