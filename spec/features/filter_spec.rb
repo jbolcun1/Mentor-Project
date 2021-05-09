@@ -29,7 +29,6 @@ describe "the filter functionality" do
     mentee_login
     mentor_filter
     click_link "View More"
-    expect(page).to have_content "You can't send more than one invitation in less than 24 hours"
     expect(page).to have_content "Add your introduction here!"
     expect(page).to have_button "Submit"
   end
