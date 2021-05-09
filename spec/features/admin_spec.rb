@@ -14,20 +14,24 @@ describe "the admin functionality" do
     
   it "makes the profile accessible to a logged in admin" do
     admin_login
-    expect(page).to have_content "Your Admin Page"
-    expect(page).to have_content "Welcome, Ariful Admin. You have successfully logged in as a founder."
+    visit "/profile"
+    expect(page.status_code).to eq(200)
   end
     
   it "displays profile information to a logged in admin" do
     admin_login
-    expect(page).to have_content "Your Admin Page"
-    expect(page).to have_content "Welcome, Ariful Admin. You have successfully logged in as a founder."
+    visit "/profile"
+    expect(page).to have_content "Email:"
+    expect(page).to have_content "ahaque3@sheffield.ac.uk"
+    expect(page).to have_content "Description Of Yourself:"
+    expect(page).to have_content "I am founder admin"
   end
   
   it "allows the admin to change their own details" do
     admin_login
-    expect(page).to have_content "Your Admin Page"
-    expect(page).to have_content "Welcome, Ariful Admin. You have successfully logged in as a founder."
+    visit "/profile"
+    expect(page).to have_content "Please fill in the fields you wish to change:"
+    
   end
 
   it "can find a mentor by using the filter functionality" do
@@ -35,7 +39,7 @@ describe "the admin functionality" do
     expect(page).to have_content "Please enter the information on the user who you want to look at!"
     fill_in "first_name", with: "Mentor1"
     fill_in "surname", with: "TestDudette"
-    fill_in "job_Title", with "Professor"
+    fill_in "job_Title", with: "Professor"
     click_button "Submit"
     expect(page).to have_content "Mentor1 TestDudette"
     expect(page).to have_content "Mentor1@gmail.com"
@@ -47,7 +51,7 @@ describe "the admin functionality" do
     expect(page).to have_content "Please enter the information on the user who you want to look at!"
     fill_in "first_name", with: "Mentee1"
     fill_in "surname", with: "TestDude"
-    fill_in "degree", with "Computer Science"
+    fill_in "degree", with: "Computer Science"
     click_button "Submit"
     expect(page).to have_content "Mentee1 TestDude"
     expect(page).to have_content "Mentee1@gmail.ac.uk"
