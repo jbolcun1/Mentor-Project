@@ -56,8 +56,8 @@ end
 
 # Filter method
 def mentor_filter
-  fill_in "job_Title", with: "System Admin"
-  select "Information technology", from: "industry_Sector"
+  fill_in "job_Title", with: "Professor"
+  select "Teacher training and education", from: "industry_Sector"
   click_button "Submit"    
 end
     

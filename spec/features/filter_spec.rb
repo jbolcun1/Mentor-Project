@@ -12,17 +12,17 @@ describe "the filter functionality" do
   it "can display a suitable mentor for mentees" do
     mentee_login
     mentor_filter
-    expect(page).to have_content "Mentor2 TestDudette"
+    expect(page).to have_content "Mentor1 TestDudette"
   end
 
   it "can display more information to mentees about a potential mentor" do
     mentee_login
     mentor_filter
     click_link "View More"
-    expect(page).to have_content "The mentor you have selected is: Mentor2 TestDudette"
-    expect(page).to have_content "The mentor's available time is: Any Afternoon, no weekends"
+    expect(page).to have_content "The mentor you have selected is: Mentor1 TestDudette"
+    expect(page).to have_content "The mentor's available time is: Friday Afternoons"
     expect(page).to have_content "The description of your mentor:"
-    expect(page).to have_content "Hello I am System Admin at UoS"
+    expect(page).to have_content "Hello I am Professor at UoS"
   end
 
   it "displays relevant information about contacting mentors to mentees" do
