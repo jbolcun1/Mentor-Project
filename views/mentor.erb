@@ -39,7 +39,8 @@
                     </tr>
                     <% end %>
                 </table>
-        <% else %>
+        <% end %>
+        <% if !@table_show && !@table_show2 %>
           <p>Currently you have no requests from any mentees.</p>
         <% end %>
         

@@ -61,11 +61,29 @@ def mentor_filter
   click_button "Submit"    
 end    
 
+# Send invitation
+def send_invitation
+  click_link "View More"
+  fill_in "comments", with: "Hello, would you like to be my mentor?"
+  click_button "Submit"    
+end
+
 def reset_mentee 
-  @mentees = Mentee.where(Privilege: 1)
+  @mentees = User.where(Privilege: 2)
   @mentees.each do |mentee|
-    mentee.last_send = "0"
+    mentee.last_send = nil
     mentee.has_mentor = 0
+    mentee.has_mentee = 0
     mentee.save_changes
   end
 end
+    
+def reset_mentor
+    @mentors = User.where(Privilege: 3)
+    @mentors.each do |mentor|
+      mentor.has_mentee = 0
+      mentor.has_mentor = 0
+      mentor.save_changes
+    end
+end
+    
