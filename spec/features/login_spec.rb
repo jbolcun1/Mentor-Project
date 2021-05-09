@@ -16,7 +16,7 @@ describe "the login page" do
   it "can lead new users to the register page" do
     visit "/login"
     expect(page).to have_content "Don't have an account?"
-    expect(page).to have_content "Click here"
+    expect(page).to have_button ("Click here")
   end
 
   it "can display an error message when the credentials are wrong" do
