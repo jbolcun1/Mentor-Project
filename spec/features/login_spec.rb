@@ -7,10 +7,12 @@ describe "the login page" do
     expect(page.status_code).to eq(200)
   end
 
-  it "can display fields" do
+  it "can display text and the submit button" do
     visit "/login"
+    expect(page).to have_content "Fill in credentials below to log into E-Mentor:"
     expect(page).to have_content "Email:"
     expect(page).to have_content "Password:"
+    expect(page).to have_button "Submit"
   end
 
   it "can lead new users to the register page" do
@@ -28,33 +30,31 @@ describe "the login page" do
   end
 
   it "can get a mentee logged in successfully" do
-    visit "/login"
-    fill_in "email", with: "Mentee1@gmail.ac.uk"
-    fill_in "password", with: "Password1"
-    click_button "Submit"
+    mentee_login
     expect(page).to have_content "Profile"
     expect(page).to have_content "Mentee Dashboard"
+    expect(page).to have_content "Make A Report"
     expect(page).to have_content "Logout"
+    expect(page).to have_content "Welcome, Mentee1 TestDude. You have sucessfully logged in as a mentee."
   end
 
   it "can get a mentor logged in successfully" do
-    visit "/login"
-    fill_in "email", with: "Mentor1@gmail.com"
-    fill_in "password", with: "Password1"
-    click_button "Submit"
+    mentor_login
     expect(page).to have_content "Profile"
     expect(page).to have_content "Mentor Dashboard"
+    expect(page).to have_content "Make A Report"
     expect(page).to have_content "Logout"
+    expect(page).to have_content "Welcome, Mentor1 TestDudette. You have sucessfully logged in as a mentor."
   end
 
   it "can get an admin logged in successfully" do
-    visit "/login"
-    fill_in "email", with: "ahaque3@sheffield.ac.uk"
-    fill_in "password", with: "admin"
-    click_button "Submit"
+    admin_login
     expect(page).to have_content "Profile"
     expect(page).to have_content "Dashboard"
     expect(page).to have_content "Admin Creation"
+    expect(page).to have_content "View Reports"
     expect(page).to have_content "Logout"
+    expect(page).to have_content "Your Admin Page"
+    expect(page).to have_content "Welcome, Ariful Admin. You have successfully logged in as a founder."
   end
 end

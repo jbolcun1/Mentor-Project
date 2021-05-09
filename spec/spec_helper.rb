@@ -29,3 +29,27 @@ RSpec.configure do |config|
   config.include Capybara::DSL
   config.include Rack::Test::Methods
 end
+
+# Mentee login method
+def mentee_login 
+  visit "/login"
+  fill_in "email", with: "Mentee1@gmail.ac.uk"
+  fill_in "password", with: "Password1"
+  click_button "Submit"
+end
+
+# Mentor login method
+def mentor_login
+  visit "/login"
+  fill_in "email", with: "Mentor1@gmail.com"
+  fill_in "password", with: "Password1"
+  click_button "Submit"
+end
+
+# Admin login method
+def admin_login
+  visit "/login"
+  fill_in "email", with: "ahaque3@sheffield.ac.uk"
+  fill_in "password", with: "admin"
+  click_button "Submit"    
+end
