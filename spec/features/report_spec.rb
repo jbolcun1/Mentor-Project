@@ -1,6 +1,12 @@
 require_relative "../spec_helper"
 
 describe "the report functionality" do
+  it "is displays a message to admins when there are no reports" do
+    admin_login
+    visit "/view-reports"
+    expect(page).to have_content "Sorry, no reports found."
+  end    
+    
   it "is accessible by logged in mentees" do
     mentee_login
     visit "/make-report"

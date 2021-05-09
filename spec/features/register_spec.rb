@@ -20,7 +20,7 @@ describe "the register page" do
     expect(page).to have_button ("Click here")
   end
 
-  it "prints response to different password and confirm password" do
+  it "displays an error message if password and confirmpassword don't match" do
     visit "/register"
     fill_in "first_name", with: "Text"
     fill_in "surname", with: "Text"
@@ -30,6 +30,18 @@ describe "the register page" do
     choose("mentee")
     click_button "Sign Up"
     expect(page).to have_content "The two password entries must be correct."
+  end
+    
+  it "displays an error message if the mentee does not have a university email address" do
+    visit "/register"
+    fill_in "first_name", with: "Text"
+    fill_in "surname", with: "Text"
+    fill_in "email", with: "text@gmail.com"
+    fill_in "password", with: "ABCDE"
+    fill_in "confirmpassword", with: "AECDB"
+    choose("mentee")
+    click_button "Sign Up"
+    expect(page).to have_content "Mentee email must be a university email."
   end
 
   it "will direct to the mentee description page after registering details." do
