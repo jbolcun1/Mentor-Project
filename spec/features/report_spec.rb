@@ -78,6 +78,8 @@ describe "the report functionality" do
     expect(page).to have_content "Delete report?"
     click_link "Delete report?"
     expect(page).to have_content "Reports Below"
-  end     
+    DB[:reports].delete
+    init_db
+  end
     
 end

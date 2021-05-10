@@ -14,6 +14,7 @@ RSpec.describe "Form Test" do
         user.save_changes
         post "/post-login", "email" => "BSimmons@gmail.ac.uk", "password" => "Password1"
         expect(last_response.location).to include("/mentee")
+        DB[:reports].delete
         DB.from("users").delete
       end
     end
