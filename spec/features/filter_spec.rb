@@ -22,7 +22,7 @@ describe "the filter functionality" do
     expect(page).to have_content "The mentor you have selected is: Mentor1 TestDudette"
     expect(page).to have_content "The mentor's available time is: Friday Afternoons"
     expect(page).to have_content "The description of your mentor:"
-    expect(page).to have_content "Hello I am Professor at UoS"
+    expect(page).to have_content "A changed description."
   end
 
   it "displays relevant information about contacting mentors to mentees" do
@@ -47,4 +47,29 @@ describe "the filter functionality" do
     click_button "Submit"
     expect(page).to have_content "Sorry, no mentors found."
   end
+    
+  it "allows admins to search for a mentor" do
+    admin_login
+    expect(page).to have_content "Please enter the information on the user who you want to look at!"
+    fill_in "first_name", with: "Mentor1"
+    fill_in "surname", with: "TestDudette"
+    fill_in "job_Title", with: "Professor"
+    click_button "Submit"
+    expect(page).to have_content "Mentor1 TestDudette"
+    expect(page).to have_content "Mentor1@gmail.com"
+    expect(page).to have_content "View More"
+  end
+
+  it "allows admins to search for a mentee" do
+    admin_login
+    expect(page).to have_content "Please enter the information on the user who you want to look at!"
+    fill_in "first_name", with: "Mentee1"
+    fill_in "surname", with: "TestDude"
+    fill_in "degree", with: "Computer Science"
+    click_button "Submit"
+    expect(page).to have_content "Mentee1 TestDude"
+    expect(page).to have_content "Mentee1@gmail.ac.uk"
+    expect(page).to have_content "View More"
+  end    
+    
 end

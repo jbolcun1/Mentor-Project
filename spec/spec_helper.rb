@@ -68,6 +68,7 @@ def send_invitation
   click_button "Submit"    
 end
 
+# Reset methods
 def reset_mentee 
   @mentees = User.where(Privilege: 2)
   @mentees.each do |mentee|
@@ -79,11 +80,23 @@ def reset_mentee
 end
     
 def reset_mentor
-    @mentors = User.where(Privilege: 3)
-    @mentors.each do |mentor|
-      mentor.has_mentee = 0
-      mentor.has_mentor = 0
-      mentor.save_changes
-    end
+  @mentors = User.where(Privilege: 3)
+  @mentors.each do |mentor|
+    mentor.has_mentee = 0
+    mentor.has_mentor = 0
+    mentor.save_changes
+  end
 end
-    
+
+# Admin filter methods
+def filter_mentor_admin
+  fill_in "first_name", with: "Mentor1"
+  click_button "Submit"
+  click_link "View More"    
+end
+
+def filter_mentee_admin
+  fill_in "first_name", with: "Mentee1"
+  click_button "Submit"
+  click_link "View More"
+end 
