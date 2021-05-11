@@ -8,7 +8,7 @@ describe "the home page" do
 
   it "can display text" do
     visit "/"
-    expect(page).to have_content "Quickly. Effiently."
+    expect(page).to have_content "Quickly. Efficiently."
     expect(page).to have_content "Bob Proctor"
   end
 
