@@ -1,3 +1,4 @@
+Group Project collaborated by Jakub Bolcun, Ariful Haque, Wenxiang Cai, Josh AP Dixon, Edmond YJ Chu, Vlad-Cristian Prisacariu.
 # E-mentor scheme web application
 
 A web application written in Ruby which allows mentors and mentees to contact each other and exchange information.
